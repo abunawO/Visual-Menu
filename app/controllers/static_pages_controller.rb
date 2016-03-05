@@ -10,4 +10,8 @@ class StaticPagesController < ApplicationController
   
   def about
   end
+  
+  def contact
+    #render(text:"This text is beinged rendered...no html.")
+  end
 end
