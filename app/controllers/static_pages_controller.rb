@@ -14,4 +14,11 @@ class StaticPagesController < ApplicationController
   def contact
     #render(text:"This text is beinged rendered...no html.")
   end
+  
+  #Destroying a session (user logout).
+  def destroy
+    log_out
+    redirect_to root_url
+  end
+  
 end
