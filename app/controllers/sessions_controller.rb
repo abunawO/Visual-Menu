@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
       log_in user
       #Handling the submission of the “remember me” checkbox.
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      remember user
-      redirect_to user
+      redirect_back_or user #The Sessions create action with friendly forwarding.
     else
       # Create an error message.
       #flash[:danger] = 'Invalid email/password combination' # Not quite right!
