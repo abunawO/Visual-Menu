@@ -16,7 +16,7 @@ Rails.application.configure do
   #Email settings in development.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'localhost:3000'
+  host = 'rails-tutorial-crotchrocketboy.c9.io'
   config.action_mailer.default_url_options = { host: host }
   
   # Don't care if the mailer can't send.

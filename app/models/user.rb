@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   # Returns true if the given token matches the digest.
   #Adding an authenticated? method to the User model.
   # Returns true if the given token matches the digest.
+  # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil?
@@ -48,6 +49,7 @@ class User < ActiveRecord::Base
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
   end
+
 
   # Sends activation email.
   def send_activation_email
