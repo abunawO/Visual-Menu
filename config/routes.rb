@@ -27,6 +27,13 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
   #
   delete 'logout'  => 'sessions#destroy'
+  
+  #Adding following and followers actions to the Users controller.
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :account_activations, only: [:edit] 
   resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -34,6 +41,7 @@ Rails.application.routes.draw do
   #get 'edit'   => 'users#edit'
   #
   resources :users
+  resources :relationships,       only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

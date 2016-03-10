@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  #Adding a feed instance variable to the home action.
+ #Adding a feed instance variable to the home action.
   def home
     if logged_in?
       @micropost  = current_user.microposts.build
