@@ -7,18 +7,18 @@ class StaticPagesController < ApplicationController
   def help
     #render(text: "Help method in StaticPages controller class");
   end
-  
+
   def about
   end
-  
+
   def contact
-    #render(text:"This text is beinged rendered...no html.")
+    render(text:"This text is beinged rendered...no html.")
   end
-  
+
   #Destroying a session (user logout).
   def destroy
     log_out
     redirect_to root_url
   end
-  
+
 end
