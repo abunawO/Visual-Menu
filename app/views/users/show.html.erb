@@ -7,14 +7,21 @@
         <%= @user.name %>
       </h1>
     </section>
-    <section class="stats"> <!--Adding the follow form and follower stats to the user profile page.-->
-      <%= render 'shared/stats' %>
-    </section>
   </aside>
+  <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+   <div style="position: relative; right: -600px;">
+    <div class="input-group">
+      <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+      <div class="input-group-btn">
+        <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+      </div>
+    </div>
+  </div>
+  <% end %>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
-      <h3>Posts (<%= @user.microposts.count %>)</h3>
+      <h3>Menu Items (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>

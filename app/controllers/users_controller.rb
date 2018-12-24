@@ -3,24 +3,32 @@ class UsersController < ApplicationController
                                         :following, :followers] #Requiring a logged-in user for the index action
  before_action :correct_user,   only: [:edit, :update]
  before_action :admin_user,     only: :destroy   #A before filter restricting the destroy action to admins.
- 
+
   #@users = User.all
   def index
     @users = User.paginate(page: params[:page])
   end
-  
-  
+
+  def search
+    #binding.pry
+    if logged_in?
+      @feed_items = current_user.feed.where(:content => params[:search]).paginate(page: params[:page])
+    end
+  end
+
+
   def new
+    #binding.pry
     #render(text:"hello i am user");
     #@user = User.find(params[:id])
     @user = User.new
   end
-  
+
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
-  
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -45,14 +53,14 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
+
   #Adding a working destroy action.
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
-  
+
   #The following and followers actions.
   def following
     @title = "Following"
@@ -67,14 +75,14 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
-  
+
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-    
+
     # Before filters
 
     # Confirms a logged-in user.
@@ -85,7 +93,7 @@ class UsersController < ApplicationController
         redirect_to login_url
       end
     end
-    
+
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
@@ -95,6 +103,6 @@ class UsersController < ApplicationController
     # Confirms an admin user.
     def admin_user
       redirect_to(root_url) unless current_user.admin?
-    end 
-    
+    end
+
 end
