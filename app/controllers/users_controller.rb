@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def search
+    binding.pry
     @feed_items = current_user.feed.where(:content => params[:search]).paginate(page: params[:page])
   end
 
