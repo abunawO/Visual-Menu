@@ -8,6 +8,9 @@ module SessionsHelper
 
   # Returns the current logged-in user (if any).
   def current_user
+    logger.info "sssssssssssssssssssssssss"
+    logger.info session
+    logger.info cookies
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
@@ -17,6 +20,7 @@ module SessionsHelper
         @current_user = user
       end
     end
+    logger.info "sssssssssssssssssssssssss"
   end
 
   # Returns true if the user is logged in, false otherwise.
