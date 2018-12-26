@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   end
 
   def search
+    logger.info 'sssssssssssssssssss'
+    logger.info params
+    logger.info current_user.name
+    logger.info 'eeeeeeeeeeeeeeeeeee'
     @feed_items = current_user.feed.where(:content => params[:search]).paginate(page: params[:page])
   end
 
@@ -28,7 +32,11 @@ class UsersController < ApplicationController
     logger.info 'eeeeeeeeeeeeeeeeeee'
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    current_user = @user unless logged_in?
+    logged_in = logged_in? || nil
+    return unless logged_in
+    current_user = @user
+    logger.info 'xxxxxxxxxxxxxxxx'
+    logger.info current_user.name
   end
 
   def create
