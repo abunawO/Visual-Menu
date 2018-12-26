@@ -8,7 +8,6 @@ module SessionsHelper
 
   # Returns the current logged-in user (if any).
   def current_user
-    #binding.pry
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
@@ -17,10 +16,6 @@ module SessionsHelper
         log_in user
         @current_user = user
       end
-    elsif @_env["HTTP_REFERER"].present?
-      user_url = @_env["HTTP_REFERER"]
-      user_id = user_url.split(//).last.to_i
-      user = User.find_by(id: user_id)
     end
   end
 
