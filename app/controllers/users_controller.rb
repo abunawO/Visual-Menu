@@ -10,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   def search
-    @feed_items = current_user.feed.where(:content => params[:search]).paginate(page: params[:page])
+    user_url = @_env["HTTP_REFERER"]
+    user_id = user_url.split(//).last.to_i
+    user = User.find(user_id)
+    @feed_items = user.feed.where(:content => params[:search]).paginate(page: params[:page])
   end
 
 
