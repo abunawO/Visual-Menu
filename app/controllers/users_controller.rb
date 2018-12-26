@@ -31,9 +31,8 @@ class UsersController < ApplicationController
     logger.info logged_in?
     logger.info 'eeeeeeeeeeeeeeeeeee'
     @user = User.find(params[:id])
+    logger.info @user.email
     @microposts = @user.microposts.paginate(page: params[:page])
-    logged_in = logged_in? || nil
-    return unless logged_in
     current_user = @user
     logger.info 'xxxxxxxxxxxxxxxx'
     logger.info current_user.name
