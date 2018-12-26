@@ -9,6 +9,7 @@
     </section>
   </aside>
   <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+    <%= hidden_field_tag :user_id, @user.id %>
    <div style="position: relative; right: -600px;">
     <div class="input-group">
       <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
