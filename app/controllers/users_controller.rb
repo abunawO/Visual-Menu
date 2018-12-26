@@ -10,13 +10,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    #binding.pry
-    logger.info "sssssssssssssssssssssssss"
-    user_url = @_env["HTTP_REFERER"]
-    logger.info user_url
-    logger.info "sssssssssssssssssssssssss"
-    #user_id = user_url.split(//).last.to_i
-    #user = User.find_by(id: user_id)
+    binding.pry
     @feed_items = current_user.feed.where(:content => params[:search]).paginate(page: params[:page])
   end
 
@@ -29,13 +23,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    logger.info "sssssssssssssssssssssssss"
-    user_url = @_env["HTTP_REFERER"]
-    logger.info user_url
+    logger.info 'sssssssssssssssssss'
+    logger.info params
+    logger.info 'eeeeeeeeeeeeeeeeeee'
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    logger.info user_url
-    logger.info "sssssssssssssssssssssssss"
   end
 
   def create
