@@ -4,9 +4,11 @@ class Micropost < ActiveRecord::Base
   mount_uploader :picture, PictureUploader #Adding an image to the Micropost model.
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
- 
+
  #Adding validations to images.
   validate  :picture_size
+
+  before_save :clean_content
 
   private
 
@@ -15,5 +17,10 @@ class Micropost < ActiveRecord::Base
       if picture.size > 5.megabytes
         errors.add(:picture, "should be less than 5MB")
       end
+    end
+
+    def clean_content
+      self.content = self.content.upcase
+      self.content.gsub!(/[^0-9A-Za-z]/, '')
     end
 end
