@@ -22,7 +22,7 @@
     <% end %>
   </section>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
+    <!--<%= render 'follow_form' if logged_in? %>-->
     <% if @user.microposts.any? %>
       <h3>Menu Items (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
