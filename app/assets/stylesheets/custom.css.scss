@@ -27,6 +27,15 @@ body {
   color: white;
 }
 
+.main-page-bk {
+  background: lightslategray;
+  color: white;
+
+  a {
+    color: beige;
+  }
+}
+
 section {
   overflow: auto;
 }
@@ -260,7 +269,7 @@ input {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: white;
     display: block;
     margin-left: 60px;
   }
