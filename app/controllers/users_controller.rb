@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     #binding.pry
     @user = User.find(params[:user_id])
     user = @user
-    @feed_items = user.feed.where(:content => params[:search].upcase).paginate(page: params[:page])
+    @feed_items = user.feed.where(:content => params[:search].upcase.strip).paginate(page: params[:page])
   end
 
 
