@@ -20,6 +20,6 @@ class Micropost < ActiveRecord::Base
     end
 
     def clean_content
-      self.content = self.content.upcase
+      self.content = self.content.upcase.strip
     end
 end
