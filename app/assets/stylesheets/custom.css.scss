@@ -12,6 +12,7 @@ body {
   background-size: cover;
   padding-top: 1px;
   //background-repeat: repeat-y;
+  height: 1000px;
 }
 
 .sign-up-page {
@@ -94,16 +95,17 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  margin-top: 90px;
   //background-image: url("bk5.jpg");
   //background-size: cover;
 }
 
 footer a {
-  color: #555;
+  color: black;
 }
 
 footer a:hover {
-  color: #222;
+  color: white;
 }
 
 footer small {
