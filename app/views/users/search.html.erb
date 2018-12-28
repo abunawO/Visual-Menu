@@ -1,10 +1,12 @@
 <!--The status feed partial.-->
-<div style="padding-left: 880px; padding-top: 30px;">
-  <%= link_to "GO BACK", @user %></span>
+<div class="main-page-bk">
+  <div style="padding-left: 880px; padding-top: 30px;">
+    <%= link_to "GO BACK", @user %></span>
+  </div>
+  <% if @feed_items.any? %>
+    <ol class="microposts">
+      <%= render @feed_items %>
+    </ol>
+    <%= will_paginate @feed_items %>
+  <% end %>
 </div>
-<% if @feed_items.any? %>
-  <ol class="microposts">
-    <%= render @feed_items %>
-  </ol>
-  <%= will_paginate @feed_items %>
-<% end %>
