@@ -5,9 +5,26 @@
 
 body {
   padding-top: 60px;
+}
+
+.landing-page {
   //background-color:black;
-  //background-image: url("bg.jpg");
+  background-image: url("bk5.jpg");
+  background-size: cover;
+  padding-top: 1px;
   //background-repeat: repeat-y;
+}
+
+.sign-up-page {
+  color: white;
+}
+
+.log-in-page {
+  color: white;
+}
+
+.contact-page {
+  color: white;
 }
 
 section {
@@ -74,10 +91,12 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 50px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  //background-image: url("bk5.jpg");
+  //background-size: cover;
 }
 
 footer a {
@@ -95,6 +114,7 @@ footer small {
 footer ul {
   float: right;
   list-style: none;
+  margin-right: 50px;
 }
 
 footer ul li {
