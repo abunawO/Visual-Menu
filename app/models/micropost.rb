@@ -21,6 +21,5 @@ class Micropost < ActiveRecord::Base
 
     def clean_content
       self.content = self.content.upcase
-      self.content.gsub!(/[^0-9A-Za-z]/, '')
     end
 end
