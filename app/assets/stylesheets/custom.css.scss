@@ -28,8 +28,11 @@ body {
 }
 
 .main-page-bk {
-  background: lightslategray;
+  //background: lightslategray;
+  background-image: image-url("main-page-bk3.jpeg");
   color: white;
+  //background-repeat: repeat-y;
+
 
   a {
     color: beige;
