@@ -1,4 +1,8 @@
 <% provide(:title, @user.name) %>
+<!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <div class="row main-page-bk">
   <aside class="col-md-4">
     <section>
@@ -31,3 +35,19 @@
     <% end %>
   </div>
 </div>
+
+<!--scroll jQuery.-->
+<script type="text/javascript">
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= 5) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+  });
+</script>
