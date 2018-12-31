@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  background: #999999;
 }
 
 .landing-page {
@@ -51,9 +52,12 @@ body {
 
 .main-page-bk {
   //background: lightslategray;
-  background-image: image-url("main-page-bk3.jpeg");
+  background-image: image-url("main-page-bk2.jpeg");
   color: white;
-  //background-repeat: repeat-y;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 
   a {
