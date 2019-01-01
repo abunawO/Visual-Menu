@@ -6,12 +6,28 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Menu item created successfully!"
       redirect_to root_url
     else
       #Adding an (empty) @feed_items instance variable to the create action.
       @feed_items = []
       render 'static_pages/home'
+    end
+  end
+
+  def edit
+    @micropost = Micropost.find(params['micropost_id'])
+  end
+
+  def update
+    micropost = Micropost.find(params[:id])
+    micropost.content = params[:micropost][:content] if params[:micropost][:content]
+    micropost.picture = params[:micropost][:picture] if params[:micropost][:picture]
+    if micropost.save
+      flash[:success] = "Menu item updated successfully!"
+      redirect_to root_url
+    else
+      flash[:info] = "An error occured while saving the menu item."
     end
   end
 
