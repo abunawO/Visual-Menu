@@ -10,7 +10,7 @@
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     <% if current_user?(micropost.user) %>
       <%= link_to "Delete", micropost, method: :delete,
-                                       data: { confirm: "Are you sure?" } %>
+                                       data: { confirm: "Are you sure?" } %> |
       <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id) %>
     <% end %>
   </span>
