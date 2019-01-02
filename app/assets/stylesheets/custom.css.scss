@@ -5,7 +5,8 @@
 
 body {
   padding-top: 60px;
-  background: #999999;
+  background-image: image-url("menu-show-bk.png");
+  background-size: cover;
 }
 
 .landing-page {
@@ -52,8 +53,9 @@ body {
 
 .main-page-bk {
   //background: lightslategray;
-  background-image: image-url("main-page-bk3.png");
-  color: white;
+  //background-image: image-url("main-page-bk3.png");
+  background: #fefbf7;
+  color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,7 +63,7 @@ body {
 
 
   a {
-    color: beige;
+    color: gray;
   }
 }
 
@@ -304,7 +306,7 @@ input {
     }
   }
   .timestamp {
-    color: white;
+    color: black;
     display: block;
     margin-left: 60px;
   }
