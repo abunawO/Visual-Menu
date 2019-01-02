@@ -57,6 +57,7 @@ body {
   //background-image: image-url("main-page-bk3.png");
   background: #fefbf7;
   color: black;
+  width: 90%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -271,7 +272,6 @@ input {
 .search-not-found {
   width: 600px;
   padding: 10px;
-  margin-left: 200px;
 }
 
 /* Users index */
