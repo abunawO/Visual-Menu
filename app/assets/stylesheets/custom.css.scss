@@ -5,8 +5,9 @@
 
 body {
   padding-top: 60px;
-  background-image: image-url("menu-show-bk.png");
-  background-size: cover;
+  background-image: image-url("landing-bk.png");
+  background-size: contain;
+  //background-color: #939393;
 }
 
 .landing-page {
