@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   get 'search_page'   => 'users#search'
   #
   get 'micropost_edit' => 'microposts#edit'
+  #
+  get 'micropost_show' => 'microposts#show'
+
 
   #Adding following and followers actions to the Users controller.
   resources :users do

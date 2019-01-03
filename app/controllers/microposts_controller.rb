@@ -31,6 +31,10 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def show
+    @micropost = Micropost.find(params['micropost_id'])
+  end
+
   def destroy
     @micropost.destroy
     flash[:success] = "Menu item deleted successfully"

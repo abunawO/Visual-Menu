@@ -10,10 +10,14 @@ class UsersController < ApplicationController
   end
 
   def search
-    #binding.pry
     @user = User.find(params[:user_id])
     user = @user
-    @feed_items = user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
+    if params[:search].blank?
+      flash[:danger] = "Invalid search"
+      @feed_items = []
+    else
+      @feed_items = user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
+    end
   end
 
 

@@ -1,0 +1,16 @@
+<div class="row main-page-bk">
+  <div style="float: right; padding-top: 30px; margin-right: 30px;">
+    <%= link_to "GO BACK", @micropost.user %></span>
+  </div>
+  <h3 style="text-align: left;margin-left: 40px;"><%= @micropost.content %></h1>
+
+  <div class="row">
+    <div>
+      <section class="micropost-show">
+        <span class="content micropost-item">
+            <%= image_tag @micropost.picture.url if @micropost.picture? %> <!--Adding image display to microposts.-->
+        </span>
+      </section>
+    </div>
+  </div>
+</div>
