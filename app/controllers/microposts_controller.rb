@@ -16,14 +16,20 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    @micropost = Micropost.find(params['micropost_id'])
+    #binding.pry
+    micropost_id = params['micropost_id'] || params['id']
+    @micropost = Micropost.find(micropost_id)
+    update_micropost(params) if !params['edit_clicked']
   end
 
-  def update
-    micropost = Micropost.find(params[:id])
-    micropost.content = params[:micropost][:content] if params[:micropost][:content]
-    micropost.picture = params[:micropost][:picture] if params[:micropost][:picture]
-    if micropost.save
+  def update_micropost params
+    #binding.pry
+    @micropost.content = params[:micropost][:content]
+    @micropost.picture = params[:micropost][:picture]
+    @micropost.price   = params[:micropost][:price]
+    @micropost.description = params[:micropost][:description]
+
+    if @micropost.save
       flash[:success] = "Menu item updated successfully!"
       redirect_to root_url
     else
@@ -45,7 +51,7 @@ class MicropostsController < ApplicationController
 
     #Adding picture to the list of permitted attributes.
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :price, :description, :picture)
     end
 
      def correct_user

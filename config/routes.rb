@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   #
   get 'micropost_show' => 'microposts#show'
 
+  patch "/microposts/:id" => 'microposts#edit'
+
 
   #Adding following and followers actions to the Users controller.
   resources :users do
@@ -44,7 +46,7 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy, :update]
+  resources :microposts,          only: [:create, :destroy, :edit]
   #get 'edit'   => 'users#edit'
   #
   resources :users

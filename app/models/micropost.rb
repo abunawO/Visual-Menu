@@ -4,6 +4,8 @@ class Micropost < ActiveRecord::Base
   mount_uploader :picture, PictureUploader #Adding an image to the Micropost model.
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  validates :price,   presence: true, numericality: true
+  validates :description, presence: true, length: { maximum: 200 }
 
  #Adding validations to images.
   validate  :picture_size
