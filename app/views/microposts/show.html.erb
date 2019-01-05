@@ -1,6 +1,8 @@
-<div class="row main-page-bk">
-  <div style="float: right; padding-top: 30px; margin-right: 30px;">
-    <%= link_to "GO BACK", @micropost.user %></span>
+<div class="row main-page-bk" style="height: auto;">
+  <div class="back-btn">
+    <%= link_to @micropost.user do %>
+      <%= image_tag('back-btn-2.png', width: 40, height: 20, alt: 'GO BACK') %>
+    <% end %>
   </div>
 
   <div class="row">
@@ -9,11 +11,11 @@
         <span class="content micropost-item">
           <h3><%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%></h1>
         </span>
-        <span class="content micropost-item">
+        <span class="content micropost-item micropost-item-show">
             <%= image_tag @micropost.picture.url if @micropost.picture? %> <!--Adding image display to microposts.-->
         </span>
         <span class="content micropost-item">
-            <p style="color: dimgray;">
+            <p class="item-description-show">
               <%= @micropost.description %>
             </p>
         </span>

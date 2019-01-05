@@ -1,7 +1,7 @@
 <!--Adding a status feed to the Home page.-->
 <% if logged_in? %>
-  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
   <div class="row main-page-bk">
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
     <aside class="col-md-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
@@ -17,10 +17,10 @@
   </div>
 <% else %>
 <div style="padding-top: 30px;">
-  <div class="center" style="padding-top: 30px;">
-    <h1 style="color: white;">Visually extend your menu....</h1>
+  <div class="center intro-text">
+    <h1>Visually extend your menu....</h1>
 
-    <h2 style="color: gainsboro;">
+    <h2>
       So customers can see a visual presentation of your food.
     </h2>
 
@@ -36,6 +36,9 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  if (!document.getElementById("backToTopBtn")) {
+    return ;
+  }
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("backToTopBtn").style.display = "block";
   } else {

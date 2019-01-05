@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
-<button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
 <div class="row main-page-bk" style="margin-left: 0px;">
+  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
   <aside class="col-md-4">
     <section>
       <h1>
@@ -24,7 +24,7 @@
   </section>
   <div class="col-md-8">
     <% if @user.microposts.any? %>
-      <h3>Menu Items (<%= @user.microposts.count %>)</h3>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
@@ -39,6 +39,9 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  if (!document.getElementById("backToTopBtn")) {
+    return ;
+  }
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("backToTopBtn").style.display = "block";
   } else {

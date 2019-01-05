@@ -1,8 +1,10 @@
 <!--Updating the errors for password resets.-->
 <% provide(:title, 'Edit Menu Item') %>
 <div class="row main-page-bk">
-  <div style="float: right; padding-top: 30px; margin-right: 30px;">
-    <%= link_to "GO BACK", @micropost.user %></span>
+  <div class="back-btn">
+    <%= link_to @micropost.user do %>
+      <%= image_tag('back-btn-2.png', width: 40, height: 20, alt: 'GO BACK')%>
+    <% end %>
   </div>
   <h1>Edit Menu Item</h1>
 

@@ -2,12 +2,12 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="content micropost-item">
+  <span class="content micropost-item" style="font-size: 20px;">
       <%= micropost.content %> | <%= number_to_currency(micropost.price, :unit => "$")%>
       <%= link_to image_tag(micropost.picture.url), micropost_show_path(:micropost_id => micropost.id) %>
   </span>
   <span class="content micropost-item">
-      <p style="color: dimgray;">
+      <p style="color: #333; font-size: 14px;font-family: 'Raleway', sans-serif;">
         <%= micropost.description %>
       </p>
   </span>
