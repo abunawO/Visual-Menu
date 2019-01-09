@@ -1,9 +1,5 @@
 <div class="row main-page-bk" style="height: auto;">
-  <div class="back-btn">
-    <%= link_to @micropost.user do %>
-      <%= image_tag('back-btn-2.png', width: 40, height: 20, alt: 'GO BACK') %>
-    <% end %>
-  </div>
+  <%= render :partial => "shared/back_button" %> 
 
   <div class="row">
     <div>

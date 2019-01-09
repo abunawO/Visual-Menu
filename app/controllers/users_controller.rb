@@ -10,13 +10,17 @@ class UsersController < ApplicationController
   end
 
   def search
+    #binding.pry
     @user = User.find(params[:user_id])
-    user = @user
     if params[:search].blank?
       flash[:danger] = "Invalid search"
       @feed_items = []
     else
-      @feed_items = user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
+      if params[:category]
+        @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").where("category LIKE ?", "%#{ params[:category].upcase.strip}%").paginate(page: params[:page])
+      else
+        @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
+      end
     end
   end
 
@@ -30,7 +34,22 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @categories = Micropost.where(:user_id => current_user.id).select(:category).distinct.select { |e| e.category.present? }
     @microposts = @user.microposts.paginate(page: params[:page])
+  end
+
+  def category_search
+    #binding.pry
+    @user = User.find(params[:user_id])
+    unless params[:category][:title].present?
+      flash[:danger] = "Invalid Category"
+      @feed_items = []
+    else
+      @category = params[:category][:title]
+      @feed_items = @user.feed.where("category LIKE ?", "%#{params[:category][:title]}%").paginate(page: params[:page])
+      #redirect_to "/searched?_method=get&category_title%5Bmodel_field%5D=DINNER&user_id=2"
+      #redirect_to root_url
+    end
   end
 
   def create

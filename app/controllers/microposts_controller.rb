@@ -16,7 +16,6 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    #binding.pry
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     update_micropost(params) if !params['edit_clicked']
@@ -25,8 +24,8 @@ class MicropostsController < ApplicationController
   def update_micropost params
     #binding.pry
     @micropost.content = params[:micropost][:content]
+    @micropost.category = params[:micropost][:category]
     @micropost.picture = params[:micropost][:picture]
-    @micropost.price   = params[:micropost][:price]
     @micropost.description = params[:micropost][:description]
 
     if @micropost.save
@@ -51,7 +50,7 @@ class MicropostsController < ApplicationController
 
     #Adding picture to the list of permitted attributes.
     def micropost_params
-      params.require(:micropost).permit(:content, :price, :description, :picture)
+      params.require(:micropost).permit(:content, :category, :price, :description, :picture)
     end
 
      def correct_user
