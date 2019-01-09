@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    #binding.pry
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id] || params[:user_id]) || current_user
     if params[:search].blank?
       flash[:danger] = "Invalid search"
       @feed_items = []
@@ -33,19 +32,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) || current_user
+    @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
-    puts "user id isssss " + @user.id
-    @categories = Micropost.where(:user_id => @user.id)
-    puts "@categories " + @categories
-    @categoriesPresent = @categories.map(&:category).compact
-    puts "@categoriesPresent " + @categoriesPresent
-    @categories = Micropost.where(:user_id => @user.id).select(:category)&.distinct.select { |e| e.category.present? }
+    #binding.pry
+    @categoriesPresnt = Micropost.where(:user_id => @user.id).select(:category).map(&:category).compact.present?
+    return unless @categoriesPresnt
+    @categories = Micropost.where(:user_id => @user.id).select(:category)&.distinct.select { |e| e.category.present? } || nil
   end
 
   def category_search
     #binding.pry
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id] || params[:user_id]) || current_user
     unless params[:category][:title].present?
       flash[:danger] = "Invalid Category"
       @feed_items = []

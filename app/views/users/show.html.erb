@@ -13,20 +13,20 @@
     <div>
       <%= render :partial => "shared/search_option" %>
     </div>
-    <% if @categoriesPresent %>
-      <div class="category-select">
-        <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-          <%= hidden_field_tag :user_id, @user.id %>
-          <div class="input-group">
-            <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-            <div class="input-group-btn">
-              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-serach',:name => nil%>
-            </div>
+
+    <div class="category-select">
+      <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+        <%= hidden_field_tag :user_id, @user.id %>
+        <div class="input-group">
+          <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
+          <div class="input-group-btn">
+            <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-serach',:name => nil%>
           </div>
-          <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
-        <% end %>
-      </div>
-   <% end %>
+        </div>
+        <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+      <% end %>
+    </div>
+   
   </section>
 
   <div class="col-md-8">

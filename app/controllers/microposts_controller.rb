@@ -4,6 +4,8 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
+    #binding.pry
+    @categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Menu item created successfully!"
@@ -22,7 +24,7 @@ class MicropostsController < ApplicationController
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     micropost_category = [@micropost.category]
-    
+
     if @micropost.category.present?
       @categories = (to_sub_categories.replace(micropost_category) + micropost_category.replace(standard_categories)).uniq
     else
