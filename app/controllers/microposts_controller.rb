@@ -16,9 +16,19 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    @categories = ["Appetizer", "Breakfast", "Lunch", "Dinner", "Desserts", "Beverages", "Special of the day"]
+    #binding.pry
+    to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
+    micropost_category = [@micropost.category]
+    
+    if @micropost.category.present?
+      @categories = (to_sub_categories.replace(micropost_category) + micropost_category.replace(standard_categories)).uniq
+    else
+      @categories = standard_categories
+    end
+
     update_micropost(params) if !params['edit_clicked']
   end
 
