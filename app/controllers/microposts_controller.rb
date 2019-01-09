@@ -16,6 +16,7 @@ class MicropostsController < ApplicationController
   end
 
   def edit
+    @categories = ["Appetizer", "Breakfast", "Lunch", "Dinner", "Desserts", "Beverages", "Special of the day"]
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     update_micropost(params) if !params['edit_clicked']

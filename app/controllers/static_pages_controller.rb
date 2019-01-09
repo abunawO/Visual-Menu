@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 
  #Adding a feed instance variable to the home action.
   def home
+    @categories = ["Appetizer", "Breakfast", "Lunch", "Dinner", "Desserts", "Beverages", "Special of the day"]
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])

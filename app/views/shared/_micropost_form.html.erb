@@ -4,8 +4,8 @@
   <div class="field menu-item-title">
     <%= f.text_area :content, placeholder: "Menu item title..." %>
   </div>
-  <div class="field menu-item-category">
-    <%= f.text_area :category, placeholder: "Menu item category..." %>
+  <div class="field menu-item-title">
+    <%= f.select(:category, options_for_select(@categories), {:prompt => "--Select Category--"}) %>
   </div>
   <div class="field menu-item-title">
     <%= f.text_area :price, placeholder: "Menu item price..." %>
