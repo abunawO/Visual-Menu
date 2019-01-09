@@ -33,8 +33,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @categories = Micropost.where(:user_id => current_user.id).select(:category).distinct.select { |e| e.category.present? }
+    @user = User.find(params[:id]) || current_user
+    @categories = Micropost.where(:user_id => @user.id).select(:category).distinct.select { |e| e.category.present? }
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
