@@ -4,16 +4,16 @@
 
 .category-select {
   top: 11px;
-left: 90px;
-width: 70%;
-position: relative;
+  left: 90px;
+  width: auto;
+  position: relative;
   select {
     //width: 200%;
     margin-left: -35px;
   }
 }
 
-.category-serach {
+.category-search {
   padding: .1px 14px;
   right: 31px;
   top: -7px;
@@ -163,7 +163,7 @@ body {
 }
 
 section {
-  overflow: auto;
+  overflow: hidden;
 }
 
 textarea {
