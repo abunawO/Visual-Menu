@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
     @categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Menu item created successfully!"
+      flash.now[:success] = "Menu item created successfully!"
       redirect_to root_url
     else
       #Adding an (empty) @feed_items instance variable to the create action.
@@ -42,10 +42,10 @@ class MicropostsController < ApplicationController
     @micropost.description = params[:micropost][:description]
 
     if @micropost.save
-      flash[:success] = "Menu item updated successfully!"
+      flash.now[:success] = "Menu item updated successfully!"
       redirect_to root_url
     else
-      flash[:info] = "An error occured while saving the menu item."
+      flash.now[:info] = "An error occured while saving the menu item."
     end
   end
 
@@ -55,7 +55,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash[:success] = "Menu item deleted successfully"
+    flash.now[:success] = "Menu item deleted successfully"
     redirect_to request.referrer || root_url
   end
 

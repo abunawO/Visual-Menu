@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def search
     @user = User.find(params[:id] || params[:user_id]) || current_user
     if params[:search].blank?
-      flash[:danger] = "Invalid search"
+      flash.now[:danger] = "Invalid search"
       @feed_items = []
     else
       if params[:category]
@@ -43,10 +43,9 @@ class UsersController < ApplicationController
   end
 
   def category_search
-    #binding.pry
     @user = User.find(params[:id] || params[:user_id]) || current_user
     unless params[:category][:title].present?
-      flash[:danger] = "Invalid Category"
+      flash.now[:danger] = "Invalid Category"
       @feed_items = []
     else
       @category = params[:category][:title]
@@ -60,7 +59,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash.now[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
       render 'new'
@@ -74,7 +73,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash.now[:success] = "Profile updated"
       redirect_to @user
     else
       render 'edit'
@@ -84,7 +83,7 @@ class UsersController < ApplicationController
   #Adding a working destroy action.
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash.now[:success] = "User deleted"
     redirect_to users_url
   end
 
@@ -116,7 +115,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash.now[:danger] = "Please log in."
         redirect_to login_url
       end
     end

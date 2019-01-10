@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       else
         message  = "Account not activated. "
         message += "Check your email for the activation link."
-        flash[:warning] = message
+        flash.now[:warning] = message
         redirect_to root_url
       end
     else
@@ -21,13 +21,13 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  
+
 
   #Only logging out if logged in.
   def destroy
     log_out if logged_in?
     redirect_to root_url
   end
-  
-  
+
+
 end
