@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
     #@user.microposts.select(:category).uniq
-    @categories =  []
+    @categories =  @user.microposts.select(:category) || []
   end
 
   def category_search
