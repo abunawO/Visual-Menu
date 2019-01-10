@@ -24,14 +24,6 @@ body {
   background-color: #ffffff;
 }
 
-.landing-page {
-  background-size: cover;
-  //padding-top: 1px;
-  //background-repeat: repeat-y;
-  margin: 40px;
-  //height: 1000px;
-}
-
 .btn-primary {
   color: #fff;
   background-color: #8ac5c3;
@@ -44,30 +36,63 @@ body {
   background: #edece8;
   color: dimgray;
   font-family: "Times New Roman", Georgia, serif;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  position: relative;
+  margin: 10px;
 
   a {
     color: #8ac5c3;
   }
 }
 
+.intro-text {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 30px;
+  color: lightyellow;
+  background-image: image-url("body-bk-img.png");
+  background-size: cover;
+  h2 {
+    color: white;
+  }
+  div {
+    margin: 30px;
+    padding-bottom: 50%;
+    position: relative;
+    top: 50px;
+  }
+}
+
 .sign-up-page {
   //color: #8ac5c3;
-  color: dimgray;
+  color: lightyellow;
+  background-image: image-url("body-bk-img.png");
+  background-size: cover;
+  .row {
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
+.log-in-page {
+  color: lightyellow;
+  background-image: image-url("body-bk-img.png");
+  background-size: cover;
+  .row {
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a {
+    color: #8ac5c3;
+  }
+}
+
 .forgot-password-page {
   color: dimgray;
 }
 
 .navbar-inverse {
   opacity: 0.8;
-}
-
-.log-in-page {
-  color: dimgray;
 }
 
 .forgot-password-page {
@@ -103,14 +128,6 @@ body {
   }
 }
 
-.intro-text {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 30px;
-  color: dimgray;
-  h2 {
-    color: dimgray;
-  }
-}
 #backToTopBtn {
   display: none;
   position: fixed;
@@ -320,7 +337,7 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 3px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;

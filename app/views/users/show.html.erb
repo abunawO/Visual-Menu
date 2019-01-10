@@ -1,65 +1,67 @@
-<% provide(:title, @user.name) %>
-<div class="row main-page-bk" style="margin-left: 0px;">
-  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
-  <aside class="col-md-4">
+<% if @user %>
+  <% provide(:title, @user.name) %>
+  <div class="row main-page-bk">
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+    <aside class="col-md-4">
+      <section>
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+        </h1>
+      </section>
+    </aside>
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <section>
-    <div>
-      <%= render :partial => "shared/search_option" %>
-    </div>
-  <% if @user.microposts.any? %>
-    <div class="category-select">
-      <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-        <%= hidden_field_tag :user_id, @user.id %>
-        <div class="input-group">
-          <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-          <div class="input-group-btn">
-            <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
+      <div>
+        <%= render :partial => "shared/search_option" %>
+      </div>
+    <% if @user.microposts.any? %>
+      <div class="category-select">
+        <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+          <%= hidden_field_tag :user_id, @user.id %>
+          <div class="input-group">
+            <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
+            <div class="input-group-btn">
+              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
+            </div>
           </div>
-        </div>
-        <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+          <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+        <% end %>
+      </div>
+    <% end %>
+
+    </section>
+
+    <div class="col-md-8">
+      <% if @user.microposts.any? %>
+        <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
+        <%= will_paginate @microposts %>
       <% end %>
     </div>
-  <% end %>
-
-  </section>
-
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
   </div>
-</div>
 
-<!--scroll jQuery.-->
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+  <!--scroll jQuery.-->
+  <script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (!document.getElementById("backToTopBtn")) {
-    return ;
+  function scrollFunction() {
+    if (!document.getElementById("backToTopBtn")) {
+      return ;
+    }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+      document.getElementById("backToTopBtn").style.display = "none";
+    }
   }
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("backToTopBtn").style.display = "block";
-  } else {
-    document.getElementById("backToTopBtn").style.display = "none";
-  }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+<% end %>

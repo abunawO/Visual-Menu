@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def search
     @user = User.find(params[:id] || params[:user_id]) || current_user
     if params[:search].blank?
-      flash.now[:danger] = "Invalid search"
+      flash.now[:danger] = "Invalid title search"
       @feed_items = []
     else
       if params[:category]
@@ -32,20 +32,25 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id] || params[:user_id]) || current_user
-    @microposts = @user.microposts.paginate(page: params[:page])
-    @categories = []
-    @user.microposts.each do |micropost|
-      if micropost.category.present?
-        @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
+    begin
+      @user = User.find(params[:id] || params[:user_id]) || current_user
+      @microposts = @user.microposts.paginate(page: params[:page])
+      @categories = []
+      @user.microposts.each do |micropost|
+        if micropost.category.present?
+          @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
+        end
       end
+    rescue ActiveRecord::RecordNotFound => e
+      @user = nil
+      flash.now[:danger] = "User does not exists."
     end
   end
 
   def category_search
     @user = User.find(params[:id] || params[:user_id]) || current_user
     unless params[:category][:title].present?
-      flash.now[:danger] = "Invalid Category"
+      flash.now[:danger] = "Invalid category search"
       @feed_items = []
     else
       @category = params[:category][:title]
