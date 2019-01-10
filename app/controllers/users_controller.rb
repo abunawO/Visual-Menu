@@ -34,8 +34,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
-    #@user.microposts.select(:category).uniq
-    @categories =  @user.microposts.select(:category) || []
+    @categories = []
+    @user.microposts.each do |micropost|
+      if micropost.category.present?
+        @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
+      end
+    end
   end
 
   def category_search

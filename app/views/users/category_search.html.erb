@@ -1,30 +1,29 @@
 <!--The status feed partial.-->
 <div class="main-page-bk">
   <%= render :partial => "shared/back_button" %>
-
-  <div style="float: right; margin-top: 10px;">
-    <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
-      <%= hidden_field_tag :user_id, @user.id %>
-     <div style="position: relative; right: 70px;">
-      <div class="input-group">
-        <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
-        <%= hidden_field_tag :category, @category %>
-        <div class="input-group-btn">
-          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+  <% if @feed_items.any? %>
+    <div style="float: right; margin-top: 10px;">
+      <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+        <%= hidden_field_tag :user_id, @user.id %>
+       <div style="position: relative; right: 70px;">
+        <div class="input-group">
+          <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
+          <%= hidden_field_tag :category, @category %>
+          <div class="input-group-btn">
+            <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
 
-  <% if @feed_items.any? %>
     <div>
       <ol class="microposts">
         <%= render @feed_items %>
       </ol>
       <%= will_paginate @feed_items %>
-  <% else %>
-    <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
-  <% end %>
     </div>
+<% else %>
+   <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
+<% end %>
 </div>
