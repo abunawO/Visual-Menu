@@ -10,11 +10,15 @@
         </h1>
       </section>
     </aside>
+
     <section>
+      
+    <% if @user.microposts.any? %>
+
       <div>
         <%= render :partial => "shared/search_option" %>
       </div>
-    <% if @user.microposts.any? %>
+
       <div class="category-select">
         <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
           <%= hidden_field_tag :user_id, @user.id %>
