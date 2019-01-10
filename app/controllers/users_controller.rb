@@ -34,11 +34,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
-    #binding.pry
-    @categories = []
     @categoriesPresnt = Micropost.where(:user_id => @user.id).select(:category).map(&:category).compact.present?
     return unless @categoriesPresnt
-    @categories = Micropost.where(:user_id => @user.id).select(:category)&.distinct.select { |e| e.category.present? } || nil
+    @categories = Micropost.where(:user_id => @user.id).select(:category)&.distinct.select { |e| e.category.present? } || []
   end
 
   def category_search
