@@ -3,16 +3,61 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300);
 
 .category-select {
-  top: 11px;
+  //top: 11px;
   left: 90px;
   width: auto;
   position: relative;
+  select {
+    background-color: #8ac5c3;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+  }
+}
+
+.category-select-form {
+  width: auto;
+  position: relative;
+  padding-bottom: 10px;
+
+  select {
+    background-color: #8ac5c3;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+  }
+}
+
+.btn-info {
+  color: #fff;
+  background-color: dimgray;
+  border-color: white;
+  background: dimgray !important;
 }
 
 .category-search {
-  padding: .1px 14px;
-  //right: 31px;
-  top: -7px;
+  padding: 8px 14px;
+  top: -.5px;
 }
 
 .container {
@@ -30,8 +75,9 @@ body {
 
 .btn-primary {
   color: #fff;
-  background-color: #8ac5c3;
+  //background-color: #8ac5c3;
   border-color: dimgray;
+  background: #8ac5c3 !important;
 }
 
 .main-page-bk {
