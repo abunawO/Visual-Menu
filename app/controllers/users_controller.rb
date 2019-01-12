@@ -54,6 +54,7 @@ class UsersController < ApplicationController
       @feed_items = []
     else
       @category = params[:category][:title]
+      @category_title = params[:category][:title]
       @feed_items = @user.feed.where("category LIKE ?", "%#{params[:category][:title]}%").paginate(page: params[:page])
       #redirect_to "/searched?_method=get&category_title%5Bmodel_field%5D=DINNER&user_id=2"
       #redirect_to root_url

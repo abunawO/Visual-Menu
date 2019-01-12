@@ -56,7 +56,7 @@
 }
 
 .well-alt {
-  width: 73%;
+  width: 100%;
   //margin-left: 60px;
   background-color: #8ac5c3;
   p {
@@ -66,21 +66,27 @@
     margin: 0.875em 0 0.2916em;
     font-weight: bold;
     font-size: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Georgia', sans-serif;
   }
 
   .description-section {
-    right: 60px;
-    position: relative;
+    margin-bottom: 10px;
   }
 }
 
-.well-alt-title {
-  width: 73%;
+.well {
+  margin-bottom: 0px;
+}
+
+.well-alt-main {
+  width: 80%;
+  margin-bottom: 25px;
   position: relative;
   top: 10px;
   p {
     color: white !important;
+    position: relative;
+    //left: -60px;
   }
 }
 
@@ -111,6 +117,18 @@ body {
   //background-color: #8ac5c3;
   border-color: dimgray;
   background: #8ac5c3 !important;
+}
+
+.category-show-title {
+  h1 {
+    color: dimgray;
+    font-family: 'Raleway',sans-serif;
+    font-size: 30px; font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .main-page-bk {
@@ -260,7 +278,7 @@ body {
 
 .micropost-item{
   img {
-    width: 73%;
+    width: 100%;
     height: auto;
   }
 }

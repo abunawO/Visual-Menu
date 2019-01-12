@@ -3,18 +3,18 @@
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content micropost-item" style="font-size: 20px;">
-    <div class="well well-alt-title">
+    <div class="well well-alt-main">
       <%= micropost.content %> | <%= number_to_currency(micropost.price, :unit => "$")%>
-    </div>
 
       <%= link_to image_tag(micropost.picture.url), micropost_show_path(:micropost_id => micropost.id) %>
 
-    <div class="well well-alt">
-      <span class="content micropost-item">
-          <p class="description-section">
-            <%= micropost.description %>
-          </p>
-      </span>
+      <div class="well well-alt">
+        <span class="content micropost-item">
+            <p class="description-section">
+              <%= micropost.description %>
+            </p>
+        </span>
+      </div>
     </div>
   </span>
   <span class="timestamp">

@@ -1,5 +1,8 @@
 <!--The status feed partial.-->
 <div class="main-page-bk">
+  <div class="category-show-title">
+    <h1><%= @category_title %> - Category</h1>
+  </div>
   <%= render :partial => "shared/back_button" %>
   <%= render 'shared/back_to_top' %>
   <% if @feed_items.any? %>
