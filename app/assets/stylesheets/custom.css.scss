@@ -55,6 +55,24 @@
   background: dimgray !important;
 }
 
+.well-alt {
+  width: 73%;
+  //margin-left: 60px;
+  background-color: #8ac5c3;
+  p {
+    color: white !important;
+  }
+}
+
+.well-alt-title {
+  width: 73%;
+  position: relative;
+  top: 10px;
+  p {
+    color: white !important;
+  }
+}
+
 .category-search {
   padding: 8px 14px;
   top: -.5px;
@@ -208,14 +226,14 @@ body {
 
 .micropost-item{
   img {
-    width: 80%;
+    width: 73%;
     height: auto;
   }
 }
 
 .back-btn {
   float: right;
-  padding-top: 20px;
+  padding-top: 10px;
   margin-right: 30px;
   font-size: 18px;
 }
@@ -224,6 +242,10 @@ body {
   color: #333;
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
+}
+
+.show-searched-item {
+  margin-left: 75px;
 }
 
 .micropost-show {
