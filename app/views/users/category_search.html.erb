@@ -1,6 +1,7 @@
 <!--The status feed partial.-->
 <div class="main-page-bk">
   <%= render :partial => "shared/back_button" %>
+  <%= render 'shared/back_to_top' %>
   <% if @feed_items.any? %>
     <div class="category-search-main-div">
       <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>

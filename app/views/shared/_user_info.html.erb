@@ -1,6 +1,12 @@
 <!--The partial for the user info sidebar.-->
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h1><%= current_user.name %></h1>
-  <span><%= link_to "View my profile", current_user %></span>
-  <span><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
-<span><%= pluralize(current_user.microposts.count, "Menu Item") %></span>
+<div class="user-info-section">
+  <%= link_to gravatar_for(current_user, size: 50), current_user %>
+  <h1><%= current_user.name %></h1>
+     <span>
+      <%= link_to current_user do %>
+       <button class="your-vizhooel-button"> Your VIZHO͞OƏLS</button>
+      <% end %>
+    </span>
+    <span><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
+  <span><%= pluralize(current_user.microposts.count, "Menu Item") %></span>
+</div>

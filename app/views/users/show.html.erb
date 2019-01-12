@@ -1,7 +1,8 @@
 <% if @user %>
   <% provide(:title, @user.name) %>
   <div class="row main-page-bk">
-    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+    <%= render 'shared/back_to_top' %>
+
     <aside class="col-md-4">
       <section>
         <h1>
@@ -18,6 +19,12 @@
       <div>
         <%= render :partial => "shared/search_option" %>
       </div>
+
+      <% if logged_in? %>
+        <div>
+          <%= render 'shared/home_btn' %>
+        </div>
+      <% end %>
 
       <div class="category-select">
         <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
@@ -45,27 +52,4 @@
       <% end %>
     </div>
   </div>
-
-  <!--scroll jQuery.-->
-  <script>
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-    if (!document.getElementById("backToTopBtn")) {
-      return ;
-    }
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById("backToTopBtn").style.display = "block";
-    } else {
-      document.getElementById("backToTopBtn").style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-  </script>
 <% end %>
