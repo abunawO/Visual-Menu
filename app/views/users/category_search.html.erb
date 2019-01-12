@@ -2,7 +2,7 @@
 <div class="main-page-bk">
   <%= render :partial => "shared/back_button" %>
   <% if @feed_items.any? %>
-    <div style="float: right;">
+    <div class="category-search-main-div">
       <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
         <%= hidden_field_tag :user_id, @user.id %>
        <div style="position: relative;">

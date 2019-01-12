@@ -61,6 +61,12 @@
   background-color: #8ac5c3;
   p {
     color: white !important;
+    //font-size: 1.7142em;
+    line-height: 1.286em;
+    margin: 0.875em 0 0.2916em;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
   }
 }
 
@@ -76,6 +82,10 @@
 .category-search {
   padding: 8px 14px;
   top: -.5px;
+}
+
+.category-search-main-div {
+  float: right;
 }
 
 .container {
