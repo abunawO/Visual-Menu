@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     #binding.pry
     @user = current_user
+    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
