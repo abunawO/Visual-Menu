@@ -102,6 +102,15 @@
   left: 30%;
   position: relative;
   color: dimgray;
+  top: 20px;
+}
+
+.well-forgot-password-page {
+  width: 50%;
+  left: 30%;
+  position: relative;
+  color: dimgray;
+  top: 20px;
 }
 
 .category-search {
@@ -179,19 +188,15 @@ body {
 
 .sign-up-page {
   //color: #8ac5c3;
-  color: lightyellow;
   background-image: image-url("body-bk-img.png");
   background-size: cover;
   padding: 30px;
   .row {
     padding-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
 .log-in-page {
-  color: lightyellow;
   background-image: image-url("body-bk-img.png");
   background-size: cover;
   padding-bottom: 30px;
@@ -206,18 +211,16 @@ body {
 }
 
 .forgot-password-page {
-  color: dimgray;
+  background-image: image-url("body-bk-img.png");
+  background-size: cover;
+  padding-bottom: 30px;
+  a {
+    color: #8ac5c3
+  }
 }
 
 .navbar-inverse {
   opacity: 0.8;
-}
-
-.forgot-password-page {
-  color: dimgray;
-  a {
-    color: #8ac5c3
-  }
 }
 
 .contact-page {
