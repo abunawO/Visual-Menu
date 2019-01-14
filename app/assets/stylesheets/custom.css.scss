@@ -169,21 +169,26 @@ body {
 }
 
 .intro-text {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 30px;
-  color: lightyellow;
+  font-family: "Times New Roman", Times, serif;
+  padding: 30px;
+  color: white;
   background-image: image-url("body-bk-img.png");
   background-size: cover;
-  h2 {
-    color: white;
-    font-size: 30px;
-  }
-  div {
-    margin: 30px;
-    padding-bottom: 50%;
+
+  .intro-text-para {
+    width: 80%;
+    left: 10%;
     position: relative;
-    top: 50px;
+    color: dimgray;
+    padding-bottom: 30p;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    h1 {
+      font-size: 2em;
+    }
   }
+
 }
 
 .sign-up-page {
