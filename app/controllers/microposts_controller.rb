@@ -31,6 +31,8 @@ class MicropostsController < ApplicationController
       @categories = standard_categories
     end
 
+    @categories_select = @categories
+
     update_micropost(params) if !params['edit_clicked']
   end
 
