@@ -1,23 +1,25 @@
 <div class="row main-page-bk" style="height: auto;">
   <%= render :partial => "shared/back_button" %>
 
-  <div class="row show-searched-item">
+  <div class="show-searched-item">
+    <div class="row">
 
-    <span class="content micropost-item" style="font-size: 20px;">
-      <div class="well well-alt-main">
-        <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
+      <span class="content micropost-item" style="font-size: 20px;">
+        <div class="well well-alt-show">
+          <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
 
-        <%= link_to image_tag(@micropost.picture.url), micropost_show_path(:micropost_id => @micropost.id) %>
+          <%= link_to image_tag(@micropost.picture.url), micropost_show_path(:micropost_id => @micropost.id) %>
 
-        <div class="well well-alt">
-          <span class="content micropost-item">
-              <p class="description-section">
-                <%= @micropost.description %>
-              </p>
-          </span>
+          <div class="well well-alt">
+            <span class="content micropost-item">
+                <p class="description-section">
+                  <%= @micropost.description %>
+                </p>
+            </span>
+          </div>
         </div>
-      </div>
-    </span>
+      </span>
 
+    </div>
   </div>
 </div>

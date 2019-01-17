@@ -5,14 +5,17 @@ class MicropostsController < ApplicationController
 
   def create
     #binding.pry
-    @categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    #@categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     @micropost = current_user.microposts.build(micropost_params)
+    @user = current_user
     if @micropost.save
       flash.now[:success] = "Menu item created successfully!"
       redirect_to root_url
     else
       #Adding an (empty) @feed_items instance variable to the create action.
       @feed_items = []
+      @categories  = []
       render 'static_pages/home'
     end
   end
