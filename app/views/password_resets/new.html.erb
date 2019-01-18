@@ -1,6 +1,6 @@
 <% provide(:title, "Forgot password") %>
 <div class="forgot-password-page">
-  <%= render :partial => "shared/back_button" %> 
+  <%= render :partial => "shared/home_button" %>
   <div class="well well-forgot-password-page">
     <section id="contact" class="parallax-section">
       <div class="overlay"></div>
@@ -13,8 +13,11 @@
             </div>
             <div class="contact-form wow fadeInUp" data-wow-delay="0.7s">
               <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+                <% flash.each do |message_type, message| %>
+                  <div class="alert alert-<%= message_type %>"><%= message %></div>
+                <% end %>
                 <%= f.label :email %>
-                <%= f.email_field :email, class: 'form-control' %>
+                <%= f.email_field :email, class: 'form-control', required: true %>
 
                 <%= f.submit "Submit", class: "btn btn-primary" %>
               <% end %>

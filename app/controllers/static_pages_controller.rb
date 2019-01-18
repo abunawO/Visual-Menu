@@ -17,11 +17,16 @@ class StaticPagesController < ApplicationController
         end
       end
     end
+
   end
 
   def contact_us
     UserMailer.say_hello(params).deliver_now
     redirect_to root_url
+  end
+
+  def index
+    render :template => 'static_pages/home'
   end
 
   def help
