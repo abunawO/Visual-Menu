@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   #get 'static_pages/contact'
   get 'contact' => 'static_pages#contact'
   #
+  post "/mail_contact"  => 'static_pages#contact_us'
+  #
   get 'signup' => 'users#new'
   #
   get 'login'   => 'sessions#new'

@@ -1,30 +1,41 @@
 <% provide(:title, "Log in") %>
 <div class="log-in-page">
-
+  <%= render :partial => "shared/back_button" %>
   <div class="well well-login">
-    <h1>Log in</h1>
-    
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_for(:session, url: login_path) do |f| %>
+    <section id="contact" class="parallax-section">
+      <div class="overlay"></div>
+    	<div class="container">
+    		<div class="row">
 
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
+    			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+            <div class="wow">
+                <h2 style="color: white;">Log in</h2>
+            </div>
+    				<div class="contact-form" data-wow-delay="0.7s">
 
-          <%= f.label :password %>
-          <%= link_to "(forgot password)", new_password_reset_path %>
-          <%= f.password_field :password, class: 'form-control' %>
+              <%= form_for(:session, url: login_path) do |f| %>
 
-          <%= f.label :remember_me, class: "checkbox inline" do %>
-            <%= f.check_box :remember_me %>
-            <span>Remember me on this computer</span>
-          <% end %>
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
 
-          <%= f.submit "Log in", class: "btn btn-primary" %>
-        <% end %>
+                <%= f.label :password %>
+                <%= link_to "(forgot password)", new_password_reset_path %>
+                <%= f.password_field :password, class: 'form-control' %>
 
-        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-      </div>
-    </div>
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                  <%= f.check_box :remember_me %>
+                  <span>Remember me on this computer</span>
+                <% end %>
+
+                <%= f.submit "Log in", class: "btn btn-primary" %>
+              <% end %>
+
+              <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    				</div>
+    			</div>
+
+    		</div>
+    	</div>
+    </section>
   </div>
 </div>

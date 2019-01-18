@@ -19,6 +19,11 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def contact_us
+    UserMailer.say_hello(params).deliver_now
+    redirect_to root_url
+  end
+
   def help
   end
 

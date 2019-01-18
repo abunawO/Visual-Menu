@@ -1,17 +1,28 @@
 <% provide(:title, "Forgot password") %>
 <div class="forgot-password-page">
-
+  <%= render :partial => "shared/back_button" %> 
   <div class="well well-forgot-password-page">
-    <h1>Forgot password</h1>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
+    <section id="contact" class="parallax-section">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
 
-          <%= f.submit "Submit", class: "btn btn-primary" %>
-        <% end %>
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+            <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+                <h2 style="color: white;">Forgot password</h2>
+            </div>
+            <div class="contact-form wow fadeInUp" data-wow-delay="0.7s">
+              <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+
+                <%= f.submit "Submit", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </div>

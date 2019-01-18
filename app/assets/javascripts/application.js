@@ -14,4 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap.min
+//= require custom
+//= require isotope
+//= require isotope.min
+//= require jquery.backstretch.min
+//= require jquery.flexslider-min
+//= require jquery.magnific-popup.min
+//= require jquery.parallax
+//= require jquery.sticky
+//= require nivo-lightbox.min
+//= require smoothscroll
+//= require wow.min
 //= require_tree .

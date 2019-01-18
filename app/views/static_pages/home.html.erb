@@ -38,18 +38,8 @@
     </div>
   </div>
 <% else %>
-  <div class="center intro-text">
-    <div>
-
-      <div class="well intro-text-para">
-        <h1>VIZHO͞OƏLLY extend your menu....</h1>
-        <h2>
-          So customers can see a visual presentation of your food.<br>
-          Get customer's attention – and whet their appetite – with high-quality, full-color <br>VIZHO͞OƏLS.
-        </h2>
-      </div>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-    </div>
+  <div class="center intro-page">
+    <%= render :partial => "static_pages/main_landing_page" %>
   </div>
 
 <% end %>
