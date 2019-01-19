@@ -12,10 +12,6 @@
   <section id="home" class="parallax-section">
     <div class="gradient-overlay"></div>
       <div class="container">
-        <div class="row" style="float: right;position: relative;width: 20%;">
-          <!-- jquery.self Uncaught Error: Syntax error, unrecognized expression:-->
-          <%= link_to "Log in", login_path, class: "wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" %>
-        </div>
         <div class="row">
 
             <div class="col-md-offset-2 col-md-8 col-sm-12">
@@ -52,8 +48,8 @@
           <li><a href="#feature" class="smoothScroll">Features</a></li>
           <li><a href="#menu" class="smoothScroll">VIZHO͞OƏLS</a></li>
           <li><a href="#about" class="smoothScroll">About</a></li>
-          <!--<li><a href="#team" class="smoothScroll">Team</a></li>-->
           <li><a href="#contact" class="smoothScroll">Contact</a></li>
+          <li><%= link_to "Log in", login_path, class: "smoothScroll" %></li>
         </ul>
       </div>
 
