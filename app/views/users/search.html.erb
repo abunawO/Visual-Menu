@@ -1,5 +1,6 @@
-<!--The status feed partial.-->
-<div class="main-page-bk">
+<!--The is the page returned after user performs regular search.-->
+<!--Displays searched menu item matches or not found-->
+<div class="search-page-display">
   <%= render :partial => "shared/back_button" %>
   <div class="category-search-main-div">
     <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>

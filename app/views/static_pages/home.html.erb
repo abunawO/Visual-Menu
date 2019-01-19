@@ -1,42 +1,45 @@
-<!--Adding a status feed to the Home page.-->
+<!--This is the page the user sees when they click the home button.-->
+<!--Basically the create menu item page-->
 <% if logged_in? %>
-  <div class="row main-page-bk">
-    <%= render 'shared/back_to_top' %>
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
+  <div class="users-create-menu-page-display">
+    <div class="row">
+      <%= render 'shared/back_to_top' %>
+      <aside class="col-md-4">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
 
-    <div class="col-md-8">
+      <div class="col-md-8">
 
-      <div>
-        <%= render :partial => "shared/search_option" %>
-      </div>
+        <div>
+          <%= render :partial => "shared/search_option" %>
+        </div>
 
-      <div class="category-select">
-        <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-          <%= hidden_field_tag :user_id, @user.id %>
-          <div class="input-group">
-            <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-            <div class="input-group-btn">
-              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
+        <div class="category-select">
+          <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <div class="input-group">
+              <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
+              <div class="input-group-btn">
+                <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
+              </div>
             </div>
-          </div>
-          <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
-        <% end %>
-      </div>
+            <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+          <% end %>
+        </div>
 
-      <div class="user-home-page">
-        <h3>Menu Items Feed</h3>
-        <%= render 'shared/feed' %>
-      </div>
+        <div class="user-home-page">
+          <h3>Menu Items Feed</h3>
+          <%= render 'shared/feed' %>
+        </div>
 
+      </div>
     </div>
-  </div>
+   </div>
 <% else %>
   <div class="center intro-page">
     <%= render :partial => "static_pages/main_landing_page" %>

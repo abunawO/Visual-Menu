@@ -1,30 +1,32 @@
-<!--The form partial for creating microposts.-->
-<%= form_for(@micropost, html: { multipart: true }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field menu-item-title">
-    <%= f.text_area :content, placeholder: "Menu item title..." %>
-  </div>
-  <div class="field category-select-form">
-    <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "--Select Category--"}) %>
-  </div>
-  <div class="field menu-item-title">
-    <%= f.text_area :price, placeholder: "Menu item price..." %>
-  </div>
-  <div class="field menu-item-description">
-    <%= f.text_area :description, placeholder: "Menu item description..." %>
-  </div>
-  <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
-  <%= f.submit "Post", class: "btn btn-primary", style: "margin-bottom: 30px;" %>
-<% end %>
+<!--The form partial for creating menu item on the home.html.erb file-->
+<div class="create-menu-item-display">
+  <%= form_for(@micropost, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field menu-item-title">
+      <%= f.text_area :content, placeholder: "Menu item title..." %>
+    </div>
+    <div class="field category-select-form">
+      <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "--Select Category--"}) %>
+    </div>
+    <div class="field menu-item-title">
+      <%= f.text_area :price, placeholder: "Menu item price..." %>
+    </div>
+    <div class="field menu-item-description">
+      <%= f.text_area :description, placeholder: "Menu item description..." %>
+    </div>
+    <span class="picture">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+    <%= f.submit "Post", class: "btn btn-primary", style: "margin-bottom: 30px;" %>
+  <% end %>
 
-<!--Checking the file size with jQuery.-->
-<script type="text/javascript">
-  $('#micropost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-</script>
+  <!--Checking the file size with jQuery.-->
+  <script type="text/javascript">
+    $('#micropost_picture').bind('change', function() {
+      var size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+        alert('Maximum file size is 5MB. Please choose a smaller file.');
+      }
+    });
+  </script>
+</div>
