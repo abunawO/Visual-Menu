@@ -309,7 +309,7 @@ a:focus {
   display: table-cell;
   vertical-align: middle;
 	position: relative;
-  right: -10px;
+  right: -12px;
 }
 #feature .feature-icon .fa {
   color: #ffffff;
