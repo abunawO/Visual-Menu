@@ -80,7 +80,7 @@
 			<div class="control-group">
 					<label class="control-label">Country</label>
 					<div class="controls">
-						<%= f.select(:country, options_for_select(@countries, :selected => f.object.country), {:prompt => "please select a country"}) %>
+						<%= f.select(:country, options_for_select(@countries, :selected => f.object.country), {:prompt => "please select a country"}, style: 'height: 40px;') %>
 					</div>
 			</div>
 
