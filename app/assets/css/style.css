@@ -308,6 +308,8 @@ a:focus {
 #feature .feature-icon span {
   display: table-cell;
   vertical-align: middle;
+	position: relative;
+  right: -10px;
 }
 #feature .feature-icon .fa {
   color: #ffffff;
