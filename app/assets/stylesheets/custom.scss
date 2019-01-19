@@ -147,6 +147,10 @@ body {
   background: #8ac5c3 !important;
 }
 
+.contact-section {
+  background-color: #8ac5c3;
+}
+
 .category-show-title {
   h1 {
     color: dimgray;
@@ -219,10 +223,17 @@ body {
   .row {
     padding: 30px;
   }
-  .form-section {
+  .form {
     //width: 70%;
     //position: relative;
     //left: 15%;
+    text-align: left;
+  }
+}
+
+.sign-up-page-form-section {
+  section {
+    background: none !important;
   }
 }
 
@@ -249,12 +260,13 @@ body {
   a {
     color: #8ac5c3;
   }
-  .login-form {
+  .form {
     //width: 70%;
     //left: 15%;
     //position: relative;
     //color: dimgray;
     //top: 20px;
+    text-align: left;
   }
 }
 
@@ -277,12 +289,13 @@ body {
   a {
     color: #8ac5c3
   }
-  .forgot-password-form {
+  .form {
     //width: 70%;
     //left: 12%;
     //position: relative;
     //color: dimgray;
     //top: 20px;
+    text-align: left;
   }
 }
 
