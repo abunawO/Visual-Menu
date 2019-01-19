@@ -647,9 +647,9 @@ a:focus {
 
 /* Footer section  */
 footer {
-  background-color: dimgray;
-  color: #757575;
-  padding-top: 100px;
+  /*background-color: dimgray;
+  color: #757575;*/
+  padding-top: 10px;
   padding-bottom: 100px;
 }
 

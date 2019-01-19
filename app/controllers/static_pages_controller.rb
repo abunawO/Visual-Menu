@@ -22,7 +22,8 @@ class StaticPagesController < ApplicationController
 
   def contact_us
     UserMailer.say_hello(params).deliver_now
-    redirect_to root_url
+    flash.now[:info] = "Message sent successfully."
+    render :template => 'static_pages/home'
   end
 
   def index

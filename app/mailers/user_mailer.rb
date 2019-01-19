@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
     contact_email   = params[:message_params]['email']
     contact_message = params[:message_params]['message']
 
-    mail(to: 'vizhooelmenu@gmail.com', subject: 'SAY HELLO') do |format|
+    mail to: 'vizhooelmenu@gmail.com', subject: "SAY HELLO" do |format|
       format.text { render plain: contact_message }
       format.html { render html: "<h1>Hello VIZHO͞OƏLS!</h1><br><p>My name is #{contact_name} and my email is #{contact_email}. My Message is: #{contact_message}</p>".html_safe }
     end
