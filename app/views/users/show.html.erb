@@ -24,6 +24,8 @@
         <div>
           <%= render 'shared/home_btn' %>
         </div>
+      <% else %>
+        <%= render :partial => "shared/home_button" %>
       <% end %>
 
       <div class="category-select">
