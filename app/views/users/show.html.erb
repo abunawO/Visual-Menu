@@ -3,6 +3,7 @@
   <% provide(:title, @user.name) %>
   <div class="users-show-menu-page-display">
     <div class="row">
+
       <%= render 'shared/back_to_top' %>
 
       <aside class="col-md-4">
@@ -14,47 +15,47 @@
         </section>
       </aside>
 
-      <section>
-
-      <% if @user.microposts.any? %>
-
-        <div>
-          <%= render :partial => "shared/search_option" %>
-        </div>
-
+      <div class="row" >
         <% if logged_in? %>
-          <div>
-            <%= render 'shared/home_btn' %>
-          </div>
+          <%= render 'shared/home_btn' %>
         <% else %>
           <%= render :partial => "shared/home_button" %>
         <% end %>
+      </div>
 
-        <div class="category-select">
-          <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-            <%= hidden_field_tag :user_id, @user.id %>
-            <div class="input-group">
-              <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-              <div class="input-group-btn">
-                <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
-              </div>
+      <div class="feed-section">
+        <div class="row" style="width: 60%;left: 30%;position: relative;">
+          <% if @user.microposts.any? %>
+
+            <div>
+              <%= render :partial => "shared/search_option" %>
             </div>
-            <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+
+            <div class="category-select">
+              <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+                <%= hidden_field_tag :user_id, @user.id %>
+                <div class="input-group">
+                  <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
+                  <div class="input-group-btn">
+                    <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search category-search',:name => nil%>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           <% end %>
         </div>
-      <% end %>
 
-      </section>
-
-      <div class="col-md-8">
-        <% if @user.microposts.any? %>
-          <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-          <ol class="microposts">
-            <%= render @microposts %>
-          </ol>
-          <%= will_paginate @microposts %>
-        <% end %>
+        <div class="row col-md-7">
+          <% if @user.microposts.any? %>
+            <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+            <ol class="microposts">
+              <%= render @microposts %>
+            </ol>
+            <%= will_paginate @microposts %>
+          <% end %>
+        </div>
       </div>
+
     </div>
   </div>
 <% end %>

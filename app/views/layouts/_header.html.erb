@@ -1,18 +1,26 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="containe navbar-links">
     <%= link_to "viZHo͞oəls", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <% if logged_in? %>
-          <!--<li><%= link_to "Users", users_path %></li>-->
-          <li class="dropdown">
+      <div class="row">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 30px;margin-top: 15px;">
+          <div style="float: right;">
             <%= link_to "Log out", logout_path, method: "delete" %>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
+          </div>
+          <% if logged_in? %>
+            <!--<li><%= link_to "Users", users_path %></li>-->
+            <div style="float: right;padding-right: 30px;">
+              <li class="dropdown">
+                <li><%= link_to "Home", root_path %></li>
+              </li>
+            </div>
+          <% else %>
+            <div style="float: right;">
+              <li><%= link_to "Log in", login_path %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>

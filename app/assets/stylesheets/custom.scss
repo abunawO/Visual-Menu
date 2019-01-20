@@ -4,7 +4,7 @@
 
 .category-select {
   //top: 11px;
-  left: 90px;
+  //left: 90px;
   width: auto;
   position: relative;
   select {
@@ -22,6 +22,12 @@
     cursor: pointer;
     border: none;
     height: 40px;
+  }
+}
+
+.navbar-links {
+  a {
+    color: white;
   }
 }
 

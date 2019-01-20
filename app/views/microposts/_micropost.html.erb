@@ -4,21 +4,16 @@
   <li id="micropost-<%= micropost.id %>">
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+
     <span class="content micropost-item" style="font-size: 20px;">
-      <div class="well well-alt-main">
-        <%= micropost.content %> | <%= number_to_currency(micropost.price, :unit => "$")%>
-
-        <%= link_to image_tag(micropost.picture.url), micropost_show_path(:micropost_id => micropost.id) %>
-
-        <div class="well well-alt">
-          <span class="content micropost-item">
-              <p class="description-section">
-                <%= micropost.description %>
-              </p>
-          </span>
-        </div>
-      </div>
+      <p><%= link_to image_tag(micropost.picture.url), micropost_show_path(:micropost_id => micropost.id) %></p>
     </span>
+
+    <span class="timestamp">
+      <p><%= micropost.content %> | <%= number_to_currency(micropost.price, :unit => "$")%> </p>
+      <p><%= micropost.description %></p>
+    </span>
+
     <span class="timestamp">
       <% if current_user?(micropost.user) %>
         Posted <%= time_ago_in_words(micropost.created_at) %> ago.
