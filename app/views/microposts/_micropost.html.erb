@@ -3,15 +3,28 @@
 <div class="menu-item-display">
   <li id="micropost-<%= micropost.id %>">
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-    <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-
-    <span class="content micropost-item" style="font-size: 20px;">
-      <p><%= link_to image_tag(micropost.picture.url), micropost_show_path(:micropost_id => micropost.id) %></p>
+    <span class="user">
+      <%= link_to micropost.user.name, micropost.user %>
     </span>
 
-    <span class="timestamp">
-      <p><%= micropost.content %> | <%= number_to_currency(micropost.price, :unit => "$")%> </p>
-      <p><%= micropost.description %></p>
+    <span class="content micropost-item" style="font-size: 20px;">
+
+      <div class="row">
+
+        <div class="col-lg-7" style="margin: 5%;">
+          <a href="<%= micropost.picture.url %>" class="fh5co-card-item">
+            <figure>
+              <img src= "<%= micropost.picture.url %>" alt="Image" class="img-responsive">
+            </figure>
+            <div class="fh5co-text">
+              <h2><%= micropost.content %></h2>
+              <p><%= micropost.description %>..</p>
+              <p><span class="price cursive-font"><%= number_to_currency(micropost.price, :unit => "$")%></span></p>
+            </div>
+          </a>
+        </div>
+
+      </div>
     </span>
 
     <span class="timestamp">

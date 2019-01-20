@@ -110,14 +110,6 @@ $(document).ready(function() {
   })
 
 
-   /* Flexslider
-    -----------------------------------------------*/
-    $(window).load(function() {
-      $('.flexslider').flexslider({
-         animation: "slide"
-      });
-    });
-
 
   /* Parallax section
     -----------------------------------------------*/
@@ -132,13 +124,6 @@ $(document).ready(function() {
     $('#contact').parallax("100%", 0.2);
   }
   initParallax();
-
-
-  /* Nivo lightbox
-    -----------------------------------------------*/
-  $('#gallery .col-md-4 a').nivoLightbox({
-        effect: 'fadeScale',
-    });
 
 
   /* wow
