@@ -21,7 +21,6 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    #binding.pry
     to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     micropost_id = params['micropost_id'] || params['id']
@@ -40,10 +39,10 @@ class MicropostsController < ApplicationController
   end
 
   def update_micropost params
-    #binding.pry
-    @micropost.content = params[:micropost][:content]
+    @micropost.content  = params[:micropost][:content]
     @micropost.category = params[:micropost][:category]
-    @micropost.picture = params[:micropost][:picture]
+    @micropost.picture  = params[:micropost][:picture]
+    @micropost.price    = params[:micropost][:price]
     @micropost.description = params[:micropost][:description]
 
     if @micropost.save
