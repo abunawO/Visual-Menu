@@ -10,7 +10,7 @@
           <div class="well well-alt-show">
             <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
 
-            <%= link_to image_tag(@micropost.picture.url), micropost_show_path(:micropost_id => @micropost.id) %>
+            
 
             <div class="well well-alt">
               <span class="content micropost-item">
