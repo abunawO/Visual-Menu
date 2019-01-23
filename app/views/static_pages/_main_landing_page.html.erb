@@ -442,8 +442,7 @@
               <h4>we are always ready to serve you!</h4>
           </div>
   				<div class="wow fadeInUp" data-wow-delay="0.7s">
-
-            <%= form_for('message_params', url: "/mail_contact", method: "post" ) do |f| %>
+            <%= form_for('message_params', url: {:controller => "static_pages", :action => "contact_us", method: "post"} ) do |f| %>
 
               <%= f.text_area :name, placeholder: "Your Name", class: 'form-control', required: true %>
 
