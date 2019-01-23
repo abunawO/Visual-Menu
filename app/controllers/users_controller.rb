@@ -59,7 +59,7 @@ class UsersController < ApplicationController
       end
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
-      flash.now[:danger] = "User does not exists."
+      flash[:danger] = "User does not exists."
     end
   end
 

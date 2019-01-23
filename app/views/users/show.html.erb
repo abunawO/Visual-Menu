@@ -82,4 +82,18 @@
 
     </div>
   </div>
+
+<% else %>
+  <section id="contact" style="background-color: black;color: white;">
+    <div class="container">
+      <div class="row">
+
+          <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.6s">
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= 'info' %>"><%= message %></div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </section>
 <% end %>
