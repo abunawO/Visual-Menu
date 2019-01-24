@@ -11,7 +11,7 @@
             <span ><%= image_tag @micropost.picture.url, class: "img-responsive", style:'top:0;left:0;right:0;bottom:0;margin:auto;' %></span>
             <span>
               <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
-              <div style="overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
+              <div style="color: gray;overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
                 <br><%= @micropost.description %>
               </div>
             </span>
