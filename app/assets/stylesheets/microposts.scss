@@ -15,8 +15,10 @@
 }
 
 .microposts {
+  background-color: #1f1f1f;
   display: flex;
   overflow-x: scroll;
+  margin-bottom: 0;
   -webkit-overflow-scrolling: touch;
   li {
     padding: 0 !important;
@@ -45,6 +47,7 @@
     // padding: 10px;
     margin: 10px;
     margin-right: 0;
+    margin-bottom: 0;
     background: white;
     display: flex;
     flex-direction: column;
@@ -69,14 +72,6 @@
     padding: 0 !important;
     // width: 200px !important;
     // height: 200px !important;
-  }
-
-  .mp-image-class {
-    /* min-width: 100%; */
-    min-height: 100%;
-    object-fit: cover;
-    border: none;
-    padding: 0 !important;
   }
   .mp-info {
     bottom: 0;
