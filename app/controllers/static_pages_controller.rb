@@ -11,6 +11,9 @@ class StaticPagesController < ApplicationController
 
       @microposts = @user.microposts.paginate(page: params[:page])
       @categories = []
+
+      _set_up_categories(@categories)
+
       @user.microposts.each do |micropost|
         if micropost.category.present?
           @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
@@ -42,4 +45,16 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  private
+
+   def _set_up_categories(items)
+     @appetizer_cat = items.select {|mic| mic.category == "APPETIZER" } || []
+     @breakfast_cat = items.select {|mic| mic.category  == "BREAKFAST" } || []
+     @lunch_cat = items.select {|mic| mic.category  == "LUNCH" } || []
+     @dinner_cat = items.select {|mic| mic.category == "DINNER" } || []
+     @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
+     @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
+     @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
+   end
 end

@@ -29,8 +29,8 @@
   .container,
   .col-md-8,
   .main-page-bk {
-    padding: 0 !important;
-    margin: 0 !important;
+    //padding: 0 !important;
+    //margin: 0 !important;
   }
   .microposts {
     li {
@@ -40,7 +40,7 @@
   .mp-c {
     // width: auto;
     width: 200px !important;
-    height: 200px !important;
+    height: 156px !important;
 
     // padding: 10px;
     margin: 10px;
@@ -50,7 +50,7 @@
     border-radius: 5px;
     overflow: hidden;
     position: relative;
-    border: 1px solid #9f9f9f;
+    //border: 1px solid #9f9f9f;
     // border-top: 1px solid #9f9f9f;
     // border-bottom: 1px solid #9f9f9f;
     // position: relative;

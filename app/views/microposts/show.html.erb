@@ -1,28 +1,22 @@
 <!--This is the page returned when user clicks a menu item-->
 <div class="selected-menu-item-display" style="height: auto;">
   <div class="row">
-    <%= render :partial => "shared/back_button" %>
+    <div class="row">
+      <%= render :partial => "shared/back_button" %>
+    </div>
 
-    <div class="show-searched-item">
-      <div class="row">
-
-        <span class="content micropost-item" style="font-size: 20px;">
-          <div class="well well-alt-show">
-            <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
-
-            
-
-            <div class="well well-alt">
-              <span class="content micropost-item">
-                  <p class="description-section">
-                    <%= @micropost.description %>
-                  </p>
-              </span>
-            </div>
+    <div>
+      <%= link_to @micropost.picture.url do %>
+          <div class="row" style="position:relative;height: 100%;text-align: center;">
+            <span ><%= image_tag @micropost.picture.url, class: "img-responsive", style:'top:0;left:0;right:0;bottom:0;margin:auto;' %></span>
+            <span>
+              <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
+              <div style="overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
+                <br><%= @micropost.description %>
+              </div>
+            </span>
           </div>
-        </span>
-
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

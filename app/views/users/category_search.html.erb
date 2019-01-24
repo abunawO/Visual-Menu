@@ -1,36 +1,55 @@
 <!--The is the page returned after user performs category search.-->
 <!--Displays menu items matched by category search.-->
 <div class="category-search-display">
-  <div class="category-show-title">
-    <% if @category_title %>
-      <h1><%= @category_title %> - Category</h1>
-    <% end %>
-  </div>
-  <%= render :partial => "shared/back_button" %>
   <%= render 'shared/back_to_top' %>
-  <% if @feed_items.any? %>
-    <div class="category-search-main-div">
-      <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
-        <%= hidden_field_tag :user_id, @user.id %>
-       <div style="position: relative;">
-        <div class="input-group">
-          <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
-          <%= hidden_field_tag :category, @category %>
-          <div class="input-group-btn">
-            <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
-          </div>
-        </div>
-      </div>
+
+  <div style="margin-right: 10%; margin-left: 10%;">
+    <div class="row">
+      <%= render :partial => "shared/back_button" %>
+    </div>
+
+    <div class="row category-show-title">
+      <% if @category_title %>
+        <h1><%= @category_title %> - Category</h1>
       <% end %>
     </div>
 
-    <div>
-      <ol class="microposts">
-        <%= render @feed_items %>
-      </ol>
-      <%= will_paginate @feed_items %>
+    <div class="row">
+      <div>
+        <div class="row category-search-main-div">
+          <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+           <div style="position: relative;">
+            <div class="input-group">
+              <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
+              <%= hidden_field_tag :category, @category %>
+              <div class="input-group-btn">
+                <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-<% else %>
-   <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
-<% end %>
+  </div>
+
+  <div class="menu-display-section">
+    <% if @feed_items.any? %>
+      <div class="row" style="margin-left: 5%;margin-right: 5%;">
+        <div class="row"></div>
+        <div>
+          <% if @selected_cat.any? %>
+            <p><%= @category_title %></p>
+            <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+            <ol class="microposts">
+              <%= render @selected_cat %>
+            </ol>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+       <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
+    <% end %>
+ </div>
 </div>

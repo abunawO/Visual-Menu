@@ -4,20 +4,26 @@
 <!--Displayed in the feed.html.erb partial.-->
 <div class="menu-item-display">
   <li id="micropost-<%= micropost.id %>">
-  <span class="mp-w content micropost-item" style="font-size: 20px;">
-  <div class="mp-c">
-    <img src= "<%= micropost.picture.url %>" alt="Image" class="img-responsive">
-    <!-- <img class='mp-image' src='https://via.placeholder.com/100' /> -->
-    <div class='mp-info'>
-      <p class='mp-title'> <%= micropost.content %> </p>
-      <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
-      <p class='mp-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
-    </div>
+    <span class="mp-w content micropost-item" style="font-size: 20px;">
+      <div class="mp-c fh5co-card-item">
+        <%= link_to micropost_show_path(:micropost_id => micropost.id) do %>
+          <%= image_tag micropost.picture.url, class: "img-responsive" %>
+          <div class='mp-info'>
+            <p class='mp-title'> <%= micropost.content %> </p>
+            <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
+            <p class='mp-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
+          </div>
+        <% end %>
+      </div>
+    </span>
 
-  </div>
-</span>
+    <span class="timestamp">
+      <% if current_user?(micropost.user) %>
+
+        <%= link_to "Delete", micropost, method: :delete,
+                                         data: { confirm: "Are you sure?" } %> |
+        <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) %>
+      <% end %>
+    </span>
   </li>
 </div>
-
-
-

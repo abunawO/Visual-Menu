@@ -3,6 +3,7 @@
 <% if logged_in? %>
   <div class="users-create-menu-page-display">
     <div class="row">
+
       <%= render 'shared/back_to_top' %>
       <aside class="col-md-4">
         <section class="user_info">
@@ -13,12 +14,10 @@
         </section>
       </aside>
 
-      <div class="col-md-8">
-
+      <div class="col-md-6">
         <div>
           <%= render :partial => "shared/search_option" %>
         </div>
-
         <div class="category-select">
           <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
             <%= hidden_field_tag :user_id, @user.id %>
@@ -31,15 +30,14 @@
             <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
           <% end %>
         </div>
-
-        <div class="user-home-page">
-          <h3>Menu Items Feed</h3>
-          <%= render 'shared/feed' %>
-        </div>
-
       </div>
+
     </div>
-   </div>
+
+    <div class="row menu-display-section">
+      <%= render :partial=> "shared/micropost_list_display" %>
+    </div>
+  </div>
 <% else %>
   <div class="center intro-page">
     <%= render :partial => "static_pages/main_landing_page" %>

@@ -35,6 +35,9 @@ class UsersController < ApplicationController
       else
         @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
       end
+
+      _set_default_categories(@feed_items)
+
     end
   end
 
@@ -51,6 +54,9 @@ class UsersController < ApplicationController
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts.paginate(page: params[:page])
+
+      _set_default_categories(@microposts)
+
       @categories = []
       @user.microposts.each do |micropost|
         if micropost.category.present?
@@ -65,15 +71,16 @@ class UsersController < ApplicationController
 
   def category_search
     @user = User.find(params[:id] || params[:user_id]) || current_user
+    @microposts = @user.microposts.paginate(page: params[:page])
+
     unless params[:category][:title].present?
       flash.now[:danger] = "Invalid category search"
       @feed_items = []
     else
+      @selected_cat = @microposts.select {|mic| mic.category == params[:category][:title] }
       @category = params[:category][:title]
       @category_title = params[:category][:title]
       @feed_items = @user.feed.where("category LIKE ?", "%#{params[:category][:title]}%").paginate(page: params[:page])
-      #redirect_to "/searched?_method=get&category_title%5Bmodel_field%5D=DINNER&user_id=2"
-      #redirect_to root_url
     end
   end
 
@@ -134,6 +141,16 @@ class UsersController < ApplicationController
                             :password_confirmation,
                             :address_line1, :address_line2,
                             :city, :region, :postal_code, :country)
+    end
+
+    def _set_default_categories(items)
+      @appetizer_cat = items.select {|mic| mic.category == "APPETIZER" } || []
+      @breakfast_cat = items.select {|mic| mic.category  == "BREAKFAST" } || []
+      @lunch_cat = items.select {|mic| mic.category  == "LUNCH" } || []
+      @dinner_cat = items.select {|mic| mic.category == "DINNER" } || []
+      @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
+      @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
+      @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
     end
 
     # Before filters

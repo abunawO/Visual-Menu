@@ -68,31 +68,22 @@
         </header>
       </div>
 
-        <div class="row col-md-8">
-          <% if @user.microposts.any? %>
-            <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-            <ol class="microposts">
-              <%= render @microposts %>
-            </ol>
-            <%= will_paginate @microposts %>
-          <% end %>
-        </div>
+      <div class="row menu-display-section">
+        <%= render :partial=> "shared/micropost_list_display" %>
       </div>
 
     </div>
+
   </div>
+ </div>
 
 <% else %>
   <section id="contact" style="background-color: black;color: white;">
     <div class="container">
       <div class="row">
-
-          <div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="1.6s">
-            <% flash.each do |message_type, message| %>
-             <%= image_tag("404-error-graphic.png", class: "fluid-img", alt: "Gallery")  %>
-              <div class="alert alert-<%= 'info' %>"><%= message %></div>
-            <% end %>
-          </div>
+        <div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="1.6s">
+           <%= image_tag("404-error-graphic.png", class: "fluid-img", alt: "Gallery")  %>
+        </div>
       </div>
     </div>
   </section>

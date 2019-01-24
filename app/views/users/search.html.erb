@@ -1,27 +1,46 @@
-<!--The is the page returned after user performs regular search.-->
-<!--Displays searched menu item matches or not found-->
-<div class="search-page-display">
-  <%= render :partial => "shared/back_button" %>
-  <div class="category-search-main-div">
-    <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
-      <%= hidden_field_tag :user_id, @user.id %>
-     <div style="position: relative;">
-      <div class="input-group">
-        <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
-        <%= hidden_field_tag :category, @category %>
-        <div class="input-group-btn">
-          <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
+<!--The is the page returned after user performs category search.-->
+<!--Displays menu items matched by category search.-->
+<div class="category-search-display">
+  <%= render 'shared/back_to_top' %>
+
+  <div style="margin-right: 10%; margin-left: 10%;">
+    <div class="row">
+      <%= render :partial => "shared/back_button" %>
+    </div>
+
+    <div class="row category-show-title">
+      <% if @category_title %>
+        <h1><%= @category_title %> - Category</h1>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div>
+        <div class="row category-search-main-div">
+          <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+           <div style="position: relative;">
+            <div class="input-group">
+              <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
+              <%= hidden_field_tag :category, @category %>
+              <div class="input-group-btn">
+                <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
+              </div>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-  <% if @feed_items.any? %>
-    <ol class="microposts">
-      <%= render @feed_items %>
-    </ol>
-    <%= will_paginate @feed_items %>
-  <% else %>
-    <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
-  <% end %>
+
+  <div class="" style="margin-top: 30px;">
+    <% if @feed_items.any? %>
+      <div class="row" style="margin-left: 5%;margin-right: 5%; margin-top: 30px;">
+        <%= render :partial=> "shared/micropost_list_display" %>
+      </div>
+    <% else %>
+       <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
+    <% end %>
+ </div>
 </div>

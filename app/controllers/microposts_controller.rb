@@ -4,8 +4,6 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
-    #binding.pry
-    #@categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
     @micropost = current_user.microposts.build(micropost_params)
     @user = current_user
@@ -14,8 +12,8 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     else
       #Adding an (empty) @feed_items instance variable to the create action.
-      @feed_items = []
-      @categories  = []
+      _set_defaults
+
       render 'static_pages/home'
     end
   end
@@ -73,6 +71,19 @@ class MicropostsController < ApplicationController
      def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
       redirect_to root_url if @micropost.nil?
+    end
+
+    def _set_defaults
+      @feed_items = []
+      @categories  = []
+
+      @appetizer_cat = []
+      @breakfast_cat = []
+      @lunch_cat = []
+      @dinner_cat = []
+      @dessert_cat = []
+      @beverage_cat = []
+      @special_of_day_cat = []
     end
 
 end
