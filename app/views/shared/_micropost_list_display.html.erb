@@ -1,70 +1,71 @@
 <div class="row"></div>
-<div>
   <% if @appetizer_cat.any? %>
-    <p>APPETIZER</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @appetizer_cat %>
-    </ol>
+    <div>
+      <p>APPETIZER</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @appetizer_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @breakfast_cat.any? %>
-    <p>BREAKFAST</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @breakfast_cat %>
-    </ol>
+    <div>
+      <p>BREAKFAST</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @breakfast_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @lunch_cat.any? %>
-    <p>LUNCH</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @lunch_cat %>
-    </ol>
+    <div>
+      <p>LUNCH</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @lunch_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @dinner_cat.any? %>
-    <p>DINNER</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @dinner_cat %>
-    </ol>
+    <div>
+      <p>DINNER</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @dinner_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @dessert_cat.any? %>
-    <p>DESSERT</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @dessert_cat %>
-    </ol>
+    <div>
+      <p>DESSERT</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @dessert_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @beverage_cat.any? %>
-    <p>BEVERAGE</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @beverage_cat %>
-    </ol>
+    <div>
+      <p>BEVERAGE</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @beverage_cat %>
+      </ol>
+    </div>
   <% end %>
-</div>
 
-<div class="">
   <% if @special_of_day_cat.any? %>
-    <p>SPECIAL OF THE DAY</p>
-    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
-    <ol class="microposts">
-      <%= render @special_of_day_cat %>
-    </ol>
-  <% end %>
+    <div>
+      <p>SPECIAL OF THE DAY</p>
+      <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+      <ol class="microposts">
+        <%= render @special_of_day_cat %>
+      </ol>
+    </div>
+<% end %>
 </div>

@@ -3,28 +3,27 @@
 <!--Displayed in the feed.html.erb partial.-->
 <div class="menu-item-display">
   <li id="micropost-<%= micropost.id %>">
-    <span class="mp-w content micropost-item" style="font-size: 20px;">
-      <div class="mp-c">
-        <div style="height: 200px;">
-        <%= link_to micropost_show_path(:micropost_id => micropost.id) do %>
-          <%= image_tag micropost.picture.url, class: "mp-image-class" %>
-          <div class='mp-info'>
-            <p class='mp-title'> <%= micropost.content %> </p>
-            <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
-            <p class='mp-price price cursive-font'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
-          </div>
-        <% end %>
-       </div>
-      </div>
-    </span>
-
-    <span class="timestamp">
+    <div class="row" style="position: relative;margin: 20px;right: -20px;">
       <% if current_user?(micropost.user) %>
         <!--Posted <%= time_ago_in_words(micropost.created_at) %> ago. --->
         <%= link_to "Delete", micropost, method: :delete,
                                          data: { confirm: "Are you sure?" } %> |
         <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) %>
       <% end %>
+    </div>
+    <span class="mp-w content micropost-item" style="font-size: 20px;">
+      <div class="mp-c">
+        <div style="height: 200px;">
+        <%= link_to micropost_show_path(:micropost_id => micropost.id) do %>
+          <%= image_tag micropost.picture.url, class: "mp-image mp-image-class" %>
+          <div class='mp-info'>
+            <p class='mp-title'> <%= micropost.content %> </p>
+            <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
+            <p class='mp-price price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
+          </div>
+        <% end %>
+       </div>
+      </div>
     </span>
   </li>
 </div>
