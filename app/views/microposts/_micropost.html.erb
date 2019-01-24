@@ -4,10 +4,9 @@
 <!--Displayed in the feed.html.erb partial.-->
 <div class="menu-item-display">
   <li id="micropost-<%= micropost.id %>">
-  <span class="mp-w content micropost-item" style="font-size: 20px;">
+  <span class="content micropost-item" style="font-size: 20px;">
   <div class="mp-c">
-    <img src= "<%= micropost.picture.url %>" alt="Image" class="img-responsive">
-    <!-- <img class='mp-image' src='https://via.placeholder.com/100' /> -->
+    <img class="mp-image" src= "/assets/appetizer.jpg" alt="Image">
     <div class='mp-info'>
       <p class='mp-title'> <%= micropost.content %> </p>
       <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
