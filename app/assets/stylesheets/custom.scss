@@ -161,16 +161,18 @@ body {
   background-color: #8ac5c3;
 }
 
-.category-show-title {
+.category-show-edit-title {
   h1 {
     color: dimgray;
-    font-family: 'Raleway', sans-serif;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 18px;
     line-height: 72px;
     margin: 0 0 24px;
     text-align: center;
     text-transform: uppercase;
+    color: #000;
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
   }
 }
 
@@ -458,8 +460,6 @@ body {
 }
 
 .menu-display-section {
-  margin-left: 5%;
-  margin-right: 5%;
   margin-top: 30px;
 
   p {

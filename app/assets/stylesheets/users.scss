@@ -46,7 +46,7 @@
   padding: 0 3px !important;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
-  background-color: #1f1f1f !important;
+  //background-color: #1f1f1f !important;
   text-align: center;
   color: white;
 }
@@ -71,4 +71,6 @@
 .ushow-list > p {
   padding: 10px;
   margin: 0;
+  color: #e5e5e5;
+  vertical-align: bottom;
 }
