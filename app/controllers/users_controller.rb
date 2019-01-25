@@ -63,6 +63,8 @@ class UsersController < ApplicationController
           @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
         end
       end
+
+      @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
       flash[:danger] = "User does not exists."

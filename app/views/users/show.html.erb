@@ -2,76 +2,60 @@
 <% if @user %>
   <% provide(:title, @user.name) %>
   <div class="users-show-menu-page-display">
-
     <div class="row">
 
       <%= render 'shared/back_to_top' %>
 
-      <aside class="col-md-4">
-        <section>
-          <h1>
-            <%= gravatar_for @user %>
-            <%= @user.name %>
-          </h1>
-        </section>
-      </aside>
-
-      <div class="row" >
-        <% if logged_in? %>
-          <%= render 'shared/home_btn' %>
-        <% else %>
-          <%= render :partial => "shared/home_button" %>
-        <% end %>
-      </div>
-
-      <div class="feed-section">
-        <div class="row" style="width: 60%;left: 30%;position: relative;">
-          <% if @user.microposts.any? %>
-
-            <div>
-              <%= render :partial => "shared/search_option" %>
-            </div>
-
-            <div class="category-select">
-              <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-                <%= hidden_field_tag :user_id, @user.id %>
-                <div class="input-group">
-                  <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-                  <div class="input-group-btn">
-                    <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+      <header class="ushow-header" role="banner" data-stellar-background-ratio="0.5">
+        <div class='ushow-banner'>
+          <% if @spacial %>
+            <%= image_tag @spacial.picture.url, alt: 'res-banner' %>
+          <% else %>
+            <img src='/assets/img_bg_1.jpg' alt='res-banner'>
           <% end %>
         </div>
 
-        <div class="row">
-        <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" data-stellar-background-ratio="0.5">
-          <div class="overlay"></div>
-          <div class="gtco-container">
-            <div class="row">
-              <div class="col-md-12 col-md-offset-0 text-center">
+        <div class='ushow-content'>
+          <%= gravatar_for @user, size: 50 %>
+          <h3><%= @user.name %></h3>
+        </div>
 
+        <div class='ushow-title'>
+          <div class="animate-box" data-animate-effect="fadeInUp">
+            <span>
+              <a href="" target="_blank">VIZHO͞OƏL</a>
+              MENU
+            </span>
+          </div>
+        </div>
+      </header>
 
-                <div class="row row-mt-15em">
-                  <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-                    <span class="intro-text-small"><a href="" target="_blank">VIZHO͞OƏL</a> MENU</span>
-                  </div>
+    </div>
 
-                </div>
+    <div class="row" style="width: 60%;position: relative;right: -130px;top: 20px;">
+        <div style="position:relative;">
+          <%= render :partial => "shared/search_option" %>
+        </div>
 
-
+        <div class="category-select">
+          <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <div class="input-group">
+              <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
+              <div class="input-group-btn">
+                <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
               </div>
             </div>
-          </div>
-        </header>
-      </div>
+            <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
+          <% end %>
+        </div>
+    </div>
 
-      <div class="row menu-display-section">
+
+    <div class="row">
+      <div class="menu-display-section">
         <%= render :partial=> "shared/micropost_list_display" %>
       </div>
-
     </div>
 
   </div>
@@ -81,13 +65,16 @@
   <section id="contact" style="background-color: black;color: white;">
     <div class="container">
       <div class="row">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="1.6s">
            <%= image_tag("404-error-graphic.png", class: "fluid-img", alt: "Gallery")  %>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Copyright section -->
-  <%= render 'layouts/footer' %>
 <% end %>
+
+<!-- Copyright section -->
+<%= render 'layouts/footer' %>

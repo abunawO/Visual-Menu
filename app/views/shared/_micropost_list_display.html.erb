@@ -1,70 +1,69 @@
-<div class="row"></div>
-<div>
-  <% if @appetizer_cat.any? %>
+<% if @appetizer_cat.any? %>
+  <div class='ushow-list'>
     <p>APPETIZER</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @appetizer_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @breakfast_cat.any? %>
+<% if @breakfast_cat.any? %>
+  <div class="ushow-list">
     <p>BREAKFAST</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @breakfast_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @lunch_cat.any? %>
+<% if @lunch_cat.any? %>
+  <div class="ushow-list">
     <p>LUNCH</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @lunch_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @dinner_cat.any? %>
+<% if @dinner_cat.any? %>
+  <div class="ushow-list">
     <p>DINNER</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @dinner_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @dessert_cat.any? %>
+<% if @dessert_cat.any? %>
+  <div class="ushow-list">
     <p>DESSERT</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @dessert_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @beverage_cat.any? %>
+ <% if @beverage_cat.any? %>
+  <div class="ushow-list">
     <p>BEVERAGE</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @beverage_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
-<div class="">
-  <% if @special_of_day_cat.any? %>
+<% if @special_of_day_cat.any? %>
+  <div class="ushow-list">
     <p>SPECIAL OF THE DAY</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @special_of_day_cat %>
     </ol>
-  <% end %>
-</div>
+  </div>
+<% end %>
