@@ -1,0 +1,12 @@
+<% if Rails.env.production? %>
+  <script>
+    // This is an example script - don't forget to change it!
+    $.get('/user_profile', function(result){
+      FS.identify(result.id, {
+        displayName: result.name,
+        email: result.email,
+        reviewsWritten_int: 14,
+      });
+    });
+  </script>
+<% end %>

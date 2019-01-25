@@ -20,6 +20,17 @@ class UsersController < ApplicationController
     "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"]
 
 
+  def user_profile
+    begin
+      @user = User.find(@_env["HTTP_REFERER"].last)
+      render json: {name: @user.name , email: @user.email }
+
+    rescue ActiveRecord::RecordNotFound => e
+      @user = nil
+      render json: {name: 'vizhooels', email: 'vizhooelmenu@gmail.com' }
+    end
+  end
+
   def index
     @users = User.paginate(page: params[:page])
   end
