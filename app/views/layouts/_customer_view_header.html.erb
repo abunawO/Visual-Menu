@@ -1,8 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="containe navbar-links">
+  <div class="row containe navbar-links">
     <span>
-      <%= link_to "viZHo͞oəls", root_path, id: "logo" %>
-      <p style="font-size: 8px;position: relative;top: 25px;color: #FBB448;">feast with your eyes before you buy...</p>
+      <%= link_to index_path, method: :get, id: "logo" do %>
+        <p style="padding-left: 20px;">VIZHo͞oəls</p>
+        <p style="padding-left: 35px;position: fixed;font-size: 8px;top: 26px;color: #FBB448;">
+          feast with your eyes before you buy...
+        </p>
+      <% end %>
     </span>
   </div>
 </header>
