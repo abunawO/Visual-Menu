@@ -47,7 +47,7 @@ class MicropostsController < ApplicationController
       flash.now[:success] = "Menu item updated successfully!"
       redirect_to "/users/#{current_user.id}"
     else
-      flash.now[:info] = "An error occured while saving the menu item."
+      flash[:info] = "An error occured while saving the menu item."
     end
   end
 

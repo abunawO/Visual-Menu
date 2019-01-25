@@ -4,18 +4,19 @@
     <nav>
       <div class="row">
         <ul class="nav navbar-nav navbar-right" style="margin-right: 30px;margin-top: 15px;">
-          <div style="float: right;">
-            <%= link_to "Log out", logout_path, method: "delete" %>
-          </div>
           <% if logged_in? %>
             <!--<li><%= link_to "Users", users_path %></li>-->
+            <div style="float: right;padding-right: 10px;">
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </div>
+
             <div style="float: right;padding-right: 30px;">
               <li class="dropdown">
                 <li><%= link_to "Home", root_path %></li>
               </li>
             </div>
           <% else %>
-            <div style="float: right;">
+            <div style="float: right;padding-right: 10px;">
               <li><%= link_to "Log in", login_path %></li>
             </div>
           <% end %>
