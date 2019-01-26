@@ -1,0 +1,63 @@
+@import 'const';
+
+// below does not belong here. but for the time being..
+.config-c {
+  background-color: #1f1f1f;
+  padding: 0 10px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+}
+.navbar-form {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+// above does not belong here. but for the time being..
+
+.so-input {
+  background: transparent !important;
+  border: none !important;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 0;
+  height: 40px !important;
+  font-size: 18px !important;
+  color: $secondary !important;
+}
+@media (min-width: 768px) {
+  .so-input {
+    width: 359px !important;
+  }
+}
+
+.so-c {
+  margin-bottom: 10px;
+  border: 1px solid $extra;
+  background-color: transparent !important;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.so-c:hover,
+.so-c:active,
+.so-c:focus {
+  border: 1px solid $third;
+}
+.so-btn {
+  outline: none;
+  background: transparent !important;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-radius: 30px;
+  border: none !important;
+  color: $third !important;
+  height: 40px !important;
+  padding: 0 10px !important;
+  font-size: 20px !important;
+}
+.so-btn:hover {
+  background-color: $third !important;
+  color: $secondary !important;
+}
