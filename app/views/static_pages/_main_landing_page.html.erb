@@ -1,476 +1,500 @@
+<body class="landing-page-body">
+  <div>
+    <div id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-<div>
-  <div id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+    <!-- Preloader section -->
+    <div class="preloader">
+    	<div class="sk-spinner sk-spinner-pulse"></div>
+    </div>
 
-  <!-- Preloader section -->
-  <div class="preloader">
-  	<div class="sk-spinner sk-spinner-pulse"></div>
-  </div>
-
-  <div class="row" style="padding-top: 55px;position:relative;">
-    <% flash.each do |message_type, message| %>
-      <% if message_type == "info" %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <div class="row" style="padding-top: 55px;position:relative;">
+      <% flash.each do |message_type, message| %>
+        <% if message_type == "info" %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <!-- Home section -->
-  <section id="home" class="parallax-section">
-    <div class="gradient-overlay"></div>
+    <!-- Home section -->
+    <section id="home" class="parallax-section">
+      <div class="gradient-overlay"></div>
+        <div class="container">
+          <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                  <h1 class="wow fadeInUp" data-wow-delay="0.6s" style="font-size: 25px;" style="color: white;">VIZHO͞OƏLS...Upgrading Experiences</h1>
+                  <p class="wow fadeInUp" data-wow-delay="1.0s">
+                    A simple web application that gives our users access to a
+                    fully interactive, real-time  updatable, filterable, searchable,
+                    synchronized and accessible ( via NFC technology ) VIZHO͞OƏL menu. <br>
+                    <a  target="_blank" href="http://www1.opendining.net/blog/are-food-images-really-important-on-your-online-menu">
+                      Remember, “You eat first with your eyes.”
+                    </a>
+                  </p>
+                  <!-- jquery.self Uncaught Error: Syntax error, unrecognized expression:-->
+                  <%= link_to "Sign up now!", signup_path, class: "wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" %>
+              </div>
+
+          </div>
+        </div>
+    </section>
+
+
+    <!-- Navigation section -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">VIZHO͞OƏLS</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#top" class="smoothScroll">Home</a></li>
+            <li><a href="#about" class="smoothScroll">About</a></li>
+            <li><a href="#feature" class="smoothScroll">Features</a></li>
+            <li><a href="#menu" class="smoothScroll">VIZHO͞OƏLS</a></li>
+            <li><a href="#contact" class="smoothScroll">Contact</a></li>
+            <li><%= link_to "Log in", login_path, class: "smoothScroll" %></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- About section -->
+    <section id="about" class="parallax-section">
+    	<div class="container">
+    		<div class="row">
+
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+              <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+                <h2>Our Story</h2>
+                <h4>Creating VIZHO͞OƏLS since 2018</h4>
+              </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="wow fadeInUp col-md-3 col-sm-5" data-wow-delay="0.3s">
+            <%= image_tag("about-img.jpg", class: "img-responsive", alt: "About")  %>
+            <p>VIZHO͞OƏLS...attract and retain customer interest.</p>
+          </div>
+
+          <div class="wow fadeInUp col-md-5 col-sm-7" data-wow-delay="0.5s">
+
+            <!-- flexslider -->
+            <div>
+              <ul class="slides">
+
+                <li>
+                  <%= image_tag("slide-img3.jpg", alt: "Flexslider", width: 400)  %>
+                </li>
+
+              </ul>
+            </div>
+
+             <p>VIZHO͞OƏLS...because "You eat first with your eyes."</p>
+          </div>
+
+           <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="0.9s">
+            	<h2>The Service</h2>
+             	<p>
+                We are not offering you a website for your establishment but rather,
+                a service with a solution that aims to solve a very common problem that
+                exists in the restaurant industry...heavy text-based menus and the separation
+                that exists between online and in the establishment menu representation.
+              </p>
+                <br>
+              <p>
+                Pairing our technology with NFC tags placed throughout
+                your restaurant or menus allows customers to simply hold their phone to a tag and
+                be greeted to beautiful images of
+                your mouth watering VIZHO͞OƏL menu.
+                 <br>
+              <p>You as the owner of the restaurant, the ambassador of your menu,
+                 have control over the presentation of your VIZHO͞OƏL menu.
+              </p>
+                 <br>
+              <p>
+                 Your customers can view updated menu
+                 items every time they walk in your door, they can share your menu with their friends,
+                 you can see what customers are looking at most and pinpoint which menu item gets passed up often.
+              </p>
+          </div>
+
+    		</div>
+    	</div>
+    </section>
+
+    <!-- Feature section -->
+    <section id="feature" class="parallax-section">
       <div class="container">
         <div class="row">
 
-            <div class="col-md-offset-2 col-md-8 col-sm-12">
-                <h1 class="wow fadeInUp" data-wow-delay="0.6s" style="font-size: 25px;" style="color: white;">VIZHO͞OƏLS...Upgrading Experiences</h1>
-                <p class="wow fadeInUp" data-wow-delay="1.0s">
-                  A simple web application that gives our users access to a
-                  fully interactive, real-time  updatable, filterable, searchable,
-                  synchronized and accessible ( via NFC technology ) VIZHO͞OƏL menu. <br>
-                  <a  target="_blank" href="http://www1.opendining.net/blog/are-food-images-really-important-on-your-online-menu">
-                    Remember, “You eat first with your eyes.”
-                  </a>
-                </p>
-                <!-- jquery.self Uncaught Error: Syntax error, unrecognized expression:-->
-                <%= link_to "Sign up now!", signup_path, class: "wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" %>
-            </div>
-
-        </div>
-      </div>
-  </section>
-
-
-  <!-- Navigation section -->
-  <div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-
-      <div class="navbar-header">
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon icon-bar"></span>
-          <span class="icon icon-bar"></span>
-          <span class="icon icon-bar"></span>
-        </button>
-        <a href="#" class="navbar-brand">VIZHO͞OƏLS</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#top" class="smoothScroll">Home</a></li>
-          <li><a href="#about" class="smoothScroll">About</a></li>
-          <li><a href="#feature" class="smoothScroll">Features</a></li>
-          <li><a href="#menu" class="smoothScroll">VIZHO͞OƏLS</a></li>
-          <li><a href="#contact" class="smoothScroll">Contact</a></li>
-          <li><%= link_to "Log in", login_path, class: "smoothScroll" %></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- About section -->
-  <section id="about" class="parallax-section">
-  	<div class="container">
-  		<div class="row">
-
-        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-            <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-              <h2>Our Story</h2>
-              <h4>Creating VIZHO͞OƏLS since 2018</h4>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="wow fadeInUp col-md-3 col-sm-5" data-wow-delay="0.3s">
-          <%= image_tag("about-img.jpg", class: "img-responsive", alt: "About")  %>
-          <p>VIZHO͞OƏLS...attract and retain customer interest.</p>
-        </div>
-
-        <div class="wow fadeInUp col-md-5 col-sm-7" data-wow-delay="0.5s">
-
-          <!-- flexslider -->
-          <div>
-            <ul class="slides">
-
-              <li>
-                <%= image_tag("slide-img3.jpg", alt: "Flexslider", width: 400)  %>
-              </li>
-
-            </ul>
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+              <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
+                <h2>Why Choose Us?</h2>
+                <h4>
+                  because you get a menu not a website.
+                </h4>
+              </div>
           </div>
 
-           <p>VIZHO͞OƏLS...because "You eat first with your eyes."</p>
-        </div>
+          <div class="clearfix"></div>
 
-         <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="0.9s">
-          	<h2>The Service</h2>
-           	<p>
-              We are not offering you a website for your establishment but rather,
-              a service with a solution that aims to solve a very common problem that
-              exists in the restaurant industry...heavy text-based menus and the separation
-              that exists between online and in the establishment menu representation.
-            </p>
-              <br>
-            <p>
-              Pairing our technology with NFC tags placed throughout
-              your restaurant or menus allows customers to simply hold their phone to a tag and
-              be greeted to beautiful images of
-              your mouth watering VIZHO͞OƏL menu.
-               <br>
-            <p>You as the owner of the restaurant, the ambassador of your menu,
-               have control over the presentation of your VIZHO͞OƏL menu.
-            </p>
-               <br>
-            <p>
-               Your customers can view updated menu
-               items every time they walk in your door, they can share your menu with their friends,
-               you can see what customers are looking at most and pinpoint which menu item gets passed up often.
-            </p>
-        </div>
-
-  		</div>
-  	</div>
-  </section>
-
-  <!-- Feature section -->
-  <section id="feature" class="parallax-section">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-            <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
-              <h2>Why Choose Us?</h2>
-              <h4>
-                because you get a menu not a website.
-              </h4>
+          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="feature-thumb">
+              <div class="feature-icon">
+                 <span style="position: relative;right: 0px; color: white;">VIZHO͞OƏLS</span>
+              </div>
+              <h3>VIZHO͞OƏL MENU</h3>
+              <p>
+                A service purposefully designed to not just be the online visual representation of your restaurants menu,
+                but to beautifully incorporate it within your establishment.
+              </p>
             </div>
-        </div>
+          </div>
 
-        <div class="clearfix"></div>
-
-        <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
           <div class="feature-thumb">
             <div class="feature-icon">
-               <span style="position: relative;right: 0px; color: white;">VIZHO͞OƏLS</span>
+               <span><%= image_tag("nfc-sign-icon.png", width: 50, height: 20, class: "features-icons img-responsive", alt: "NFC")  %></span>
             </div>
-            <h3>VIZHO͞OƏL MENU</h3>
+            <h3>NFC Technology</h3>
             <p>
-              A service purposefully designed to not just be the online visual representation of your restaurants menu,
-              but to beautifully incorporate it within your establishment.
+              Near Field Communication, a short-range wireless technology
+              that enables simple and secure communication between electronic devices...synchronized
+              with your VIZHO͞OƏL menu for quick access.
             </p>
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="feature-thumb">
-          <div class="feature-icon">
-             <span><%= image_tag("nfc-sign-icon.png", width: 50, height: 20, class: "features-icons img-responsive", alt: "NFC")  %></span>
+          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
+            <div class="feature-thumb">
+              <div class="feature-icon">
+                 <span><%= image_tag("phone-white.png", width: 50, height: 20, class: "features-icons img-responsive", alt: "SMARTPHONE")  %></span>
+              </div>
+               <h3>SMARTPHONE/DEVICE</h3>
+               <p>
+                 A smartphone or smart device with NFC scan technology can be used
+                 to scan NFC technology to access VIZHO͞OƏL menu.
+               </p>
+            </div>
           </div>
-          <h3>NFC Technology</h3>
-          <p>
-            Near Field Communication, a short-range wireless technology
-            that enables simple and secure communication between electronic devices...synchronized
-            with your VIZHO͞OƏL menu for quick access.
-          </p>
+
         </div>
       </div>
+    </section>
 
-        <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
-          <div class="feature-thumb">
-            <div class="feature-icon">
-               <span><%= image_tag("phone-white.png", width: 50, height: 20, class: "features-icons img-responsive", alt: "SMARTPHONE")  %></span>
+    <!-- Menu section -->
+    <section id="menu" class="parallax-section">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+             <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+                <h2>CREATE AND Categorize</h2>
+                <h4>VIZHO͞OƏLS of your food</h4>
             </div>
-             <h3>SMARTPHONE/DEVICE</h3>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <div class="media wow fadeInUp" data-wow-delay="0.6s">
+              <div class="media-object pull-left">
+                <%= image_tag("appetizer.jpg", class: "img-responsive", alt: "Appetizer")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Appetizer</h3>
+                <p>Cheesy Reuben </p>
+              </div>
+            </div>
+
+            <div class="media wow fadeInUp" data-wow-delay="0.9s">
+              <div class="media-object pull-left">
+                <%= image_tag("breakfast.jpg", class: "img-responsive", alt: "Breakfast")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Breakfast</h3>
+                <p>Classic Bacon and Eggs</p>
+              </div>
+            </div>
+
+            <div class="media wow fadeInUp" data-wow-delay="1.2s">
+              <div class="media-object pull-left">
+                <%= image_tag("lunch.jpg", class: "img-responsive", alt: "Lunch")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Lunch</h3>
+                <p>Steak tomatoe sauce and fries</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <div class="media wow fadeInUp" data-wow-delay="1s">
+              <div class="media-object pull-left">
+                <%= image_tag("dinner.jpg", class: "img-responsive", alt: "Dinner")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Dinner</h3>
+                <p>Braised Chicken</p>
+              </div>
+            </div>
+
+            <div class="media wow fadeInUp" data-wow-delay="1.3s">
+              <div class="media-object pull-left">
+                <%= image_tag("dessert.jpg", class: "img-responsive", alt: "Dessert")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Dessert</h3>
+                <p>Red Velvet Ice Cream Float</p>
+              </div>
+            </div>
+
+            <div class="media wow fadeInUp" data-wow-delay="1.6s">
+              <div class="media-object pull-left">
+                <%= image_tag("beverage.jpg", class: "img-responsive", alt: "Beverage")  %>
+                <!--<span class="menu-price">$24</span>-->
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Beverage</h3>
+                <p>Coconut Mojito</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery" class="parallax-section">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+
+           <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+             <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+                <h2>VIZHO͞OƏL menu</h2>
+                <h4>Synchronized | filterable | Searchable | Accessible</h4>
+            </div>
+          </div>
+
+              <!-- iso section -->
+              <div class="iso-section wow fadeInUp" data-wow-delay="0.6s">
+
+                		<ul class="filter-wrapper clearfix">
+                            <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".appetizer">Appetizer</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".breakfast">Breakfast</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".lunch">Lunch</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".dinner">Dinner</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".dessert">Dessert</a></li>
+                            <li><a href="#" class="opc-main-bg" data-filter=".beverage">Beverages</a></li>
+                        </ul>
+
+                        <!-- iso box section -->
+                        <div class="iso-box-section wow fadeInUp" data-wow-delay="0.9s">
+                          <div class="iso-box-wrapper col4-iso-box">
+
+                            <div class="iso-box breakfast col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("breakfast.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                        <span class="menu-price">$9</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Classic Bacon and Eggs</h3>
+                            </div>
+
+                            <div class="iso-box lunch col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("lunch.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                      <span class="menu-price">$13</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Steak tomatoe sauce and fries</h3>
+                            </div>
+
+                            <div class="iso-box dinner col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("dinner.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                      <span class="menu-price">$10</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Braised Chicken</h3>
+                            </div>
+
+                            <div class="iso-box dessert col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("dessert.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                      <span class="menu-price">$8</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Red Velvet Ice Cream Float</h3>
+                            </div>
+
+                            <div class="iso-box beverage col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("beverage.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                      <span class="menu-price">$8</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Coconut Mojito</h3>
+                            </div>
+
+                            <div class="iso-box appetizer col-md-4 col-sm-6">
+                              <div class="gallery-thumb">
+                                <%= image_tag("appetizer.jpg", class: "fluid-img", alt: "Gallery")  %>
+                                  <div class="gallery-overlay">
+                                    <div class="gallery-item">
+                                      <span class="menu-price">$8</span>
+                                    </div>
+                                  </div>
+                              </div>
+                              <h3>Cheesy Reuben</h3>
+                            </div>
+
+                           </div>
+                        </div>
+
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Video section -->
+    <section id="video" class="parallax-section">
+      <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                  <%= link_to image_tag('play-icon-2.png'), "https://www.youtube.com/watch?v=VHlnWgZh7Ks", class: "popup-youtube" %>
+                  <h2 class="wow fadeInUp" data-wow-delay="0.5s">HOW VIZHO͞OƏLS WORKS</h2>
+                  <p class="wow fadeInUp" data-wow-delay="0.8s">Web space URL + NFC technology + smartphone / smart device<br>VIZHO͞OƏL MENU</p>
+              </div>
+
+          </div>
+        </div>
+    </section>
+
+    <!-- Team section -->
+    <section id="team" class="parallax-section">
+      <div class="container">
+        <div class="row">
+
+          <div class="clearfix"></div>
+
+          <!--<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="team-thumb">
+                <%= image_tag("chef1.jpg", class: "img-responsive", alt: "Team")  %>
+                    <div class="team-des">
+                      <h3>Sandar</h3>
+                      <h4>Kitchen Manager</h4>
+                        <ul class="social-icon">
+                          <li><a href="#" class="fa fa-facebook"></a></li>
+                          <li><a href="#" class="fa fa-twitter"></a></li>
+                          <li><a href="#" class="fa fa-dribbble"></a></li>
+                        </ul>
+                    </div>
+              </div>
+          </div>-->
+
+          <div class="clearfix"></div>
+
+          <div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.6s">
+            <h2>Our mission</h2>
              <p>
-               A smartphone or smart device with NFC scan technology can be used
-               to scan NFC technology to access VIZHO͞OƏL menu.
+               To bridge the gap that exists between online and in the establishment menu representation. A
+               service purposefully designed to not just be the online visual representation of your
+               restaurants menu, but to beautifully incorporate it within your establishment.
              </p>
           </div>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Menu section -->
-  <section id="menu" class="parallax-section">
+    <!-- Contact section -->
+    <section id="contact" class="parallax-section">
+      <div class="overlay"></div>
+    	<div class="container">
+    		<div class="row contact-section">
+
+    			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+            <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+                <h2>Say hello</h2>
+                <h4>we are always ready to serve you!</h4>
+            </div>
+    				<div class="wow fadeInUp" data-wow-delay="0.7s">
+              <%= form_for('message_params', url: {:controller => "static_pages", :action => "contact_us", method: "post"} ) do |f| %>
+
+                <%= f.text_area :name, placeholder: "Your Name", class: 'form-control', required: true %>
+
+                <%= f.text_area :email, placeholder: "Your email", class: 'form-control', required: true %>
+
+                <%= f.text_area :message, placeholder: "Message", class: 'form-control', required: true %>
+
+                <%= f.submit "SEND MESSAGE", class: "form-control submit" %>
+              <% end %>
+    				</div>
+    			</div>
+
+    		</div>
+    	</div>
+    </section>
+
+  <section id="contact" style="background-color: black;color: white;">
     <div class="container">
       <div class="row">
 
-        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-           <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-              <h2>CREATE AND Categorize</h2>
-              <h4>VIZHO͞OƏLS of your food</h4>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-12">
-          <div class="media wow fadeInUp" data-wow-delay="0.6s">
-            <div class="media-object pull-left">
-              <%= image_tag("appetizer.jpg", class: "img-responsive", alt: "Appetizer")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Appetizer</h3>
-              <p>Cheesy Reuben </p>
-            </div>
+          <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.6s">
+            <h3>Contact Detail</h3>
+            <p>abunawose@vizhooels.com</p>
+            <p>ericamartin@vizhooels.com</p>
           </div>
 
-          <div class="media wow fadeInUp" data-wow-delay="0.9s">
-            <div class="media-object pull-left">
-              <%= image_tag("breakfast.jpg", class: "img-responsive", alt: "Breakfast")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Breakfast</h3>
-              <p>Classic Bacon and Eggs</p>
-            </div>
+          <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.6s">
+            <h3>Contact Detail</h3>
+            <p>arslan.abdallah@vizhooels.com</p>
           </div>
 
-          <div class="media wow fadeInUp" data-wow-delay="1.2s">
-            <div class="media-object pull-left">
-              <%= image_tag("lunch.jpg", class: "img-responsive", alt: "Lunch")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Lunch</h3>
-              <p>Steak tomatoe sauce and fries</p>
-            </div>
+          <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
+            <h3>Location</h3>
+            <strong>Atlanta, GA</strong>
           </div>
-        </div>
-
-        <div class="col-md-6 col-sm-12">
-          <div class="media wow fadeInUp" data-wow-delay="1s">
-            <div class="media-object pull-left">
-              <%= image_tag("dinner.jpg", class: "img-responsive", alt: "Dinner")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Dinner</h3>
-              <p>Braised Chicken</p>
-            </div>
-          </div>
-
-          <div class="media wow fadeInUp" data-wow-delay="1.3s">
-            <div class="media-object pull-left">
-              <%= image_tag("dessert.jpg", class: "img-responsive", alt: "Dessert")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Dessert</h3>
-              <p>Red Velvet Ice Cream Float</p>
-            </div>
-          </div>
-
-          <div class="media wow fadeInUp" data-wow-delay="1.6s">
-            <div class="media-object pull-left">
-              <%= image_tag("beverage.jpg", class: "img-responsive", alt: "Beverage")  %>
-              <!--<span class="menu-price">$24</span>-->
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Beverage</h3>
-              <p>Coconut Mojito</p>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
-  </section>
-
-  <!-- Gallery section -->
-  <section id="gallery" class="parallax-section">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-12">
-
-         <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-           <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-              <h2>VIZHO͞OƏL menu</h2>
-              <h4>Synchronized | filterable | Searchable | Accessible</h4>
-          </div>
-        </div>
-
-            <!-- iso section -->
-            <div class="iso-section wow fadeInUp" data-wow-delay="0.6s">
-
-              		<ul class="filter-wrapper clearfix">
-                          <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".appetizer">Appetizer</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".breakfast">Breakfast</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".lunch">Lunch</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".dinner">Dinner</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".dessert">Dessert</a></li>
-                          <li><a href="#" class="opc-main-bg" data-filter=".beverage">Beverages</a></li>
-                      </ul>
-
-                      <!-- iso box section -->
-                      <div class="iso-box-section wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="iso-box-wrapper col4-iso-box">
-
-                          <div class="iso-box breakfast col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("breakfast.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                      <span class="menu-price">$9</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Classic Bacon and Eggs</h3>
-                          </div>
-
-                          <div class="iso-box lunch col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("lunch.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                    <span class="menu-price">$13</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Steak tomatoe sauce and fries</h3>
-                          </div>
-
-                          <div class="iso-box dinner col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("dinner.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                    <span class="menu-price">$10</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Braised Chicken</h3>
-                          </div>
-
-                          <div class="iso-box dessert col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("dessert.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                    <span class="menu-price">$8</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Red Velvet Ice Cream Float</h3>
-                          </div>
-
-                          <div class="iso-box beverage col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("beverage.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                    <span class="menu-price">$8</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Coconut Mojito</h3>
-                          </div>
-
-                          <div class="iso-box appetizer col-md-4 col-sm-6">
-                            <div class="gallery-thumb">
-                              <%= image_tag("appetizer.jpg", class: "fluid-img", alt: "Gallery")  %>
-                                <div class="gallery-overlay">
-                                  <div class="gallery-item">
-                                    <span class="menu-price">$8</span>
-                                  </div>
-                                </div>
-                            </div>
-                            <h3>Cheesy Reuben</h3>
-                          </div>
-
-                         </div>
-                      </div>
-
-            </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Video section -->
-  <section id="video" class="parallax-section">
-    <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-
-            <div class="col-md-offset-2 col-md-8 col-sm-12">
-                <%= link_to image_tag('play-icon-2.png'), "https://www.youtube.com/watch?v=VHlnWgZh7Ks", class: "popup-youtube" %>
-                <h2 class="wow fadeInUp" data-wow-delay="0.5s">HOW VIZHO͞OƏLS WORKS</h2>
-                <p class="wow fadeInUp" data-wow-delay="0.8s">Web space URL + NFC technology + smartphone / smart device<br>VIZHO͞OƏL MENU</p>
-            </div>
-
-        </div>
-      </div>
-  </section>
-
-  <!-- Team section -->
-  <section id="team" class="parallax-section">
-    <div class="container">
-      <div class="row">
-
-        <div class="clearfix"></div>
-
-        <!--<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="team-thumb">
-              <%= image_tag("chef1.jpg", class: "img-responsive", alt: "Team")  %>
-                  <div class="team-des">
-                    <h3>Sandar</h3>
-                    <h4>Kitchen Manager</h4>
-                      <ul class="social-icon">
-                        <li><a href="#" class="fa fa-facebook"></a></li>
-                        <li><a href="#" class="fa fa-twitter"></a></li>
-                        <li><a href="#" class="fa fa-dribbble"></a></li>
-                      </ul>
-                  </div>
-            </div>
-        </div>-->
-
-        <div class="clearfix"></div>
-
-        <div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.6s">
-          <h2>Our mission</h2>
-           <p>
-             To bridge the gap that exists between online and in the establishment menu representation. A
-             service purposefully designed to not just be the online visual representation of your
-             restaurants menu, but to beautifully incorporate it within your establishment.
-           </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact section -->
-  <section id="contact" class="parallax-section">
-    <div class="overlay"></div>
-  	<div class="container">
-  		<div class="row contact-section">
-
-  			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-          <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-              <h2>Say hello</h2>
-              <h4>we are always ready to serve you!</h4>
-          </div>
-  				<div class="wow fadeInUp" data-wow-delay="0.7s">
-            <%= form_for('message_params', url: {:controller => "static_pages", :action => "contact_us", method: "post"} ) do |f| %>
-
-              <%= f.text_area :name, placeholder: "Your Name", class: 'form-control', required: true %>
-
-              <%= f.text_area :email, placeholder: "Your email", class: 'form-control', required: true %>
-
-              <%= f.text_area :message, placeholder: "Message", class: 'form-control', required: true %>
-
-              <%= f.submit "SEND MESSAGE", class: "form-control submit" %>
-            <% end %>
-  				</div>
-  			</div>
-
-  		</div>
-  	</div>
   </section>
 
   <section id="contact" style="background-color: black;color: white;">

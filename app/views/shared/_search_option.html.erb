@@ -2,13 +2,13 @@
   <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
     <%= hidden_field_tag :user_id, @user.id %>
    <div style="position: relative;">
-    <div class="input-group">
-      <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
+    <div class="so-c input-group">
+      <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "so-input form-control" %>
       <% if @category %>
         <%= hidden_field_tag :category, @category %>
       <% end %>
-      <div class="input-group-btn">
-        <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
+      <div class="input-group-btn">.
+        <%= button_tag "search", :class => 'so-btn material-icons category-search',:name => nil %>
       </div>
     </div>
   </div>
