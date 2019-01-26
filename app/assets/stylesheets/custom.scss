@@ -147,7 +147,11 @@ body {
   //background-image: image-url("body-bk-img.png");
   background-size: contain;
   //background-color: #939393;
-  background-color: #ffffff;
+  background-color:  #ffffff;
+}
+
+.landing-page-body {
+  background-color:  #ffffff !important;
 }
 
 .btn-primary {
@@ -169,7 +173,7 @@ body {
     margin: 0 0 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #000;
+    color: white;
     font-family: 'Lato', Arial, sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
@@ -413,9 +417,11 @@ body {
 
 .back-btn {
   float: right;
-  padding-top: 5px;
+  padding-top: 20px;
   margin-right: 30px;
   font-size: 18px;
+  top: -15px;
+  position: relative;
 }
 
 .home_button {

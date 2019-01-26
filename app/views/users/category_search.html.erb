@@ -14,20 +14,9 @@
       <% end %>
     </div>
 
-    <div class="row">
+    <div class="config-c row">
       <div class="category-search-main-div">
-        <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
-          <%= hidden_field_tag :user_id, @user.id %>
-           <div style="position: relative;">
-            <div class="input-group">
-              <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-control" %>
-              <%= hidden_field_tag :category, @category %>
-              <div class="input-group-btn">
-                <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+        <%= render :partial => "shared/search_option" %>
       </div>
     </div>
   </div>
@@ -50,6 +39,3 @@
     <% end %>
  </div>
 </div>
-
-<!-- Copyright section -->
-<%= render 'layouts/footer' %>
