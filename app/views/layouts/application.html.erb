@@ -78,6 +78,7 @@
         <%= render 'layouts/customer_view_header' %>
       </div>
       <%= yield %>
+      <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
 
