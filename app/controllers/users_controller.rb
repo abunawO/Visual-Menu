@@ -37,10 +37,14 @@ class UsersController < ApplicationController
 
   def search
     @user = User.find(params[:id] || params[:user_id]) || current_user
+    @categories = []
     if params[:search].blank?
       flash.now[:danger] = "Invalid title search"
       @feed_items = []
     else
+
+      @categories = _creat_menu_categories(@user, @categories)
+
       if params[:category]
         @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").where("category LIKE ?", "%#{ params[:category].upcase.strip}%").paginate(page: params[:page])
       else
@@ -54,9 +58,6 @@ class UsersController < ApplicationController
 
 
   def new
-    #binding.pry
-    #render(text:"hello i am user");
-    #@user = User.find(params[:id])
     @countries = COUNTRIES
     @user = User.new
   end
@@ -69,11 +70,7 @@ class UsersController < ApplicationController
       _set_default_categories(@microposts)
 
       @categories = []
-      @user.microposts.each do |micropost|
-        if micropost.category.present?
-          @categories.push(micropost) unless @categories.map(&:category).include?(micropost.category)
-        end
-      end
+      @categories = _creat_menu_categories(@user, @categories)
 
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
@@ -83,6 +80,7 @@ class UsersController < ApplicationController
   end
 
   def category_search
+    #binding.pry
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
 
@@ -147,6 +145,15 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def _creat_menu_categories(user, categories)
+      user.microposts.each do |micropost|
+        if micropost.category.present?
+          categories.push(micropost) unless categories.map(&:category).include?(micropost.category)
+        end
+      end
+      categories
+    end
 
     def user_params
       params.require(:user).permit(

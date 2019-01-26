@@ -1,0 +1,20 @@
+<div class="category-select">
+  <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left', id: 'form') do %>
+    <%= hidden_field_tag :user_id, @user.id %>
+    <div class="input-group">
+      <%= select_tag("category[title]",options_from_collection_for_select(@categories, "category", "category"),
+            prompt: "Select Category", :onchange => "submit_func()", :id => "selectedCategory") %>
+    </div>
+  <% end %>
+</div>
+
+
+<script type="text/javascript">
+  function submit_func() {
+    var selectedCategory = document.getElementById("selectedCategory").value;
+    var form = document.getElementById("form");
+    if( selectedCategory !== "" ){
+      form.submit();
+    }
+  }
+</script>

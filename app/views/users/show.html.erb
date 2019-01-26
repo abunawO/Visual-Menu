@@ -33,22 +33,9 @@
     </div>
 
     <div class="row" style="width: 60%;position: relative;right: -130px;top: 20px;">
-        <div style="position:relative;">
-          <%= render :partial => "shared/search_option" %>
-        </div>
+        <%= render :partial => "shared/search_option" %>
 
-        <div class="category-select">
-          <%= form_tag(category_search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-            <%= hidden_field_tag :user_id, @user.id %>
-            <div class="input-group">
-              <%= select_tag("category[title]", options_from_collection_for_select(@categories, "category", "category", params[:category]), prompt: "Select Category") %>
-              <div class="input-group-btn">
-                <%= button_tag "search", :class => 'material-icons btn-info category-search',:name =>  nil %>
-              </div>
-            </div>
-            <!--<%= select_tag "category", options_from_collection_for_select(@categories, "category", "category"), prompt: "Select Category", :onchange => "$.get('#{category_search_path}', {'_method':'get', 'category_title[model_field]': this.value, user_id: #{@user.id} } );", :include_blank => false %>-->
-          <% end %>
-        </div>
+        <%= render :partial => "shared/category_select_search" %>
     </div>
 
 
