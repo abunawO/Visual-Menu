@@ -43,13 +43,14 @@ class UsersController < ApplicationController
       @feed_items = []
     else
 
-      @categories = _creat_menu_categories(@user, @categories)
-
       if params[:category]
         @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").where("category LIKE ?", "%#{ params[:category].upcase.strip}%").paginate(page: params[:page])
       else
         @feed_items = @user.feed.where("content LIKE ?", "%#{params[:search].upcase.strip}%").paginate(page: params[:page])
       end
+
+
+      @categories = _creat_menu_categories(@feed_items)
 
       _set_default_categories(@feed_items)
 
@@ -70,8 +71,7 @@ class UsersController < ApplicationController
       _set_default_categories(@microposts)
 
       @categories = []
-      @categories = _creat_menu_categories(@user, @categories)
-
+      @categories = _creat_menu_categories(@microposts)
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
@@ -80,7 +80,6 @@ class UsersController < ApplicationController
   end
 
   def category_search
-    #binding.pry
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts.paginate(page: params[:page])
 
@@ -146,13 +145,14 @@ class UsersController < ApplicationController
 
   private
 
-    def _creat_menu_categories(user, categories)
-      user.microposts.each do |micropost|
+    def _creat_menu_categories(feed_items)
+      no_doubles = []
+      feed_items.each do |micropost|
         if micropost.category.present?
-          categories.push(micropost) unless categories.map(&:category).include?(micropost.category)
+          no_doubles.push(micropost) unless no_doubles.map(&:category).include?(micropost.category)
         end
       end
-      categories
+      no_doubles
     end
 
     def user_params
