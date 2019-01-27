@@ -3,21 +3,21 @@
   <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field menu-item-title">
-      <%= f.text_area :content, placeholder: "Menu item title..." %>
+      <%= f.text_field :content, placeholder: "Menu item title...", class: 'create-form-item-effect' %>
     </div>
     <div class="field category-select-form">
       <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "--Select Category--"}) %>
     </div>
     <div class="field menu-item-title">
-      <%= f.text_area :price, placeholder: "Menu item price..." %>
+      <%= f.text_field :price, placeholder: "Menu item price...", class: 'create-form-item-effect' %>
     </div>
     <div class="field menu-item-description">
-      <%= f.text_area :description, placeholder: "Menu item description..." %>
+      <%= f.text_area :description, placeholder: "Menu item description...", class: 'create-form-item-effect' %>
     </div>
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
-    <%= f.submit "Post", class: "btn btn-primary", style: "margin-bottom: 30px;" %>
+    <%= f.submit "Post", class: "menu-item-btn btn btn-primary", style: "margin-bottom: 30px;" %>
   <% end %>
 
   <!--Checking the file size with jQuery.-->

@@ -1,0 +1,83 @@
+@import 'const';
+// below does not belong here but for the time being...
+.gravatar {
+  border-radius: 5px !important;
+}
+// above does not beong here but for the time being...
+.user_info {
+  margin: 0 !important;
+}
+.uhome-create-c {
+  background-color: $secondary;
+  margin: 15px;
+  //   margin-right: 0;
+  border-radius: 5px;
+  padding: 15px !important;
+}
+.user-info-display {
+}
+.uidisplay-set-picture > a {
+  //   color: $primary !important;
+  text-decoration: underline !important;
+}
+
+.uidisplay-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.uidisplay-name {
+  color: $primary !important;
+}
+
+.your-vizhooel-button {
+  padding: 0 !important;
+  background-color: transparent;
+  font-size: 15px !important;
+  color: $primary !important;
+}
+.your-vizhooel-button:hover {
+  text-decoration: underline;
+}
+
+// micropost form
+.micropost_form {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.menu-item-title > input,
+.category-select-form > select,
+.menu-item-description > textarea {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid $primary;
+  padding: 5px 15px !important;
+  margin: 5px 0 !important;
+  border-radius: 40px;
+  color: $primary;
+}
+.create-form-item-effect:hover,
+.create-form-item-effect:active,
+.create-form-item-effect:focus {
+  background-color: $extra !important;
+}
+
+.category-select-form {
+  padding: 0 !important;
+}
+.category-select-form > select {
+  background-color: $secondary !important;
+}
+.menu-item-description > textarea {
+  border-radius: 10px !important;
+}
+.menu-item-btn {
+  background-color: transparent !important;
+  outline: none;
+  border: 1px solid $primary !important;
+  margin: 0 !important;
+  border-radius: 40px !important;
+  color: $primary !important;
+  transition-duration: 0.2s !important;
+}
