@@ -20,6 +20,7 @@
                 <% end %>
                 <%= f.label :email %>
                 <%= f.email_field :email, class: 'form-control', required: true %>
+                <p>Log in <%= link_to "(Log in)", login_path %></p>
 
                 <%= f.submit "Submit", class: "btn btn-primary" %>
               <% end %>
