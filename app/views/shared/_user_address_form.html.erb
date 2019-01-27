@@ -77,7 +77,7 @@
 					</div>
 			</div>
 			<!-- country select -->
-			<div class="control-group">
+			<div class="control-group category-select-form">
 					<label class="control-label">Country</label>
 					<div class="controls">
 						<%= f.select(:country, options_for_select(@countries, :selected => f.object.country), {:prompt => "please select a country"}, style: 'height: 40px;') %>

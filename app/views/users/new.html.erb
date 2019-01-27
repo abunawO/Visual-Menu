@@ -1,13 +1,16 @@
 <!--Updating the rendering of user signup errors.-->
 <% provide(:title, 'Sign up') %>
 <div class="sign-up-page">
-  <%= render :partial => "shared/home_button" %>
   <div class="form-section">
     <section id="contact" class="parallax-section">
       <div class="overlay"></div>
     	<div class="container">
     		<div class="row">
 
+          <div class="row">
+            <%= render :partial => "shared/home_button" %>
+          </div>
+          
     			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
             <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
                 <h2 style="color: white;">Sign up</h2>
