@@ -34,7 +34,7 @@
 .category-select-form {
   width: auto;
   position: relative;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 
   select {
     background-color: #8ac5c3;
@@ -55,7 +55,9 @@
 }
 
 .fa-play {
-  background-image: image-url('video_play_icon_png_1.jpg');
+  background-image: image-url(
+    'video_play_icon_png_1.jpg'
+  );
 }
 
 .btn-info {
@@ -174,7 +176,8 @@ body {
     text-align: center;
     text-transform: uppercase;
     color: white;
-    font-family: 'Lato', Arial, sans-serif;
+    font-family: 'Lato', Arial,
+      sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
   }
@@ -185,7 +188,8 @@ body {
   //background-image: image-url("main-page-bk3.png");
   background: #edece8;
   color: dimgray;
-  font-family: 'Times New Roman', Georgia, serif;
+  font-family: 'Times New Roman',
+    Georgia, serif;
   position: relative;
   margin: 10px;
 
@@ -201,10 +205,13 @@ body {
 }
 
 .intro-text {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times,
+    serif;
   padding: 30px;
   color: white;
-  background-image: image-url('body-bk-img.png');
+  background-image: image-url(
+    'body-bk-img.png'
+  );
   background-size: cover;
 
   .intro-text-para {
@@ -233,7 +240,11 @@ body {
     #ffc500
   );
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #c21500, #ffc500);
+  background: linear-gradient(
+    to left,
+    #c21500,
+    #ffc500
+  );
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.8;
   position: relative;
@@ -268,7 +279,11 @@ body {
     #ffc500
   );
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #c21500, #ffc500);
+  background: linear-gradient(
+    to left,
+    #c21500,
+    #ffc500
+  );
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.8;
   position: relative;
@@ -305,7 +320,11 @@ body {
     #ffc500
   );
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #c21500, #ffc500);
+  background: linear-gradient(
+    to left,
+    #c21500,
+    #ffc500
+  );
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.8;
   position: relative;

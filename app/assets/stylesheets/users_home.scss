@@ -45,31 +45,41 @@
   margin: 0 !important;
   padding: 0 !important;
 }
-
-.menu-item-title > input,
-.category-select-form > select,
-.menu-item-description > textarea {
+.category-select-form {
+}
+.menu-item-title input,
+.category-select-form select,
+.menu-item-description textarea {
+  width: 100%;
   background-color: transparent;
   outline: none;
   border: 1px solid $primary;
   padding: 5px 15px !important;
   margin: 5px 0 !important;
-  border-radius: 40px;
+  border-radius: 40px !important;
   color: $primary;
 }
-.create-form-item-effect:hover,
-.create-form-item-effect:active,
-.create-form-item-effect:focus {
+.create-form-item-effect input:hover,
+.create-form-item-effect input:active,
+.create-form-item-effect input:focus,
+.create-form-item-effect select:hover,
+.create-form-item-effect select:active,
+.create-form-item-effect select:focus,
+.create-form-item-effect textarea:hover,
+.create-form-item-effect
+  textarea:active,
+.create-form-item-effect
+  textarea:focus {
   background-color: $extra !important;
 }
 
 .category-select-form {
-  padding: 0 !important;
+  // padding: 0 !important;
 }
-.category-select-form > select {
+.category-select-form select {
   background-color: $secondary !important;
 }
-.menu-item-description > textarea {
+.menu-item-description textarea {
   border-radius: 10px !important;
 }
 .menu-item-btn {
