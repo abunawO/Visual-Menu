@@ -2,17 +2,18 @@
 <div class="create-menu-item-display">
   <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class="field menu-item-title">
-      <%= f.text_field :content, placeholder: "Menu item title...", class: 'create-form-item-effect' %>
+    <div class="field menu-item-title create-form-item-effect">
+      <%= f.text_field :content, placeholder: "Menu item title..."  %>
+      <%# class: 'menu-item-title create-form-item-effect' %>
     </div>
-    <div class="field category-select-form">
+    <div class="field category-select-form create-form-item-effect">
       <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "--Select Category--"}) %>
     </div>
-    <div class="field menu-item-title">
-      <%= f.text_field :price, placeholder: "Menu item price...", class: 'create-form-item-effect' %>
+    <div class="field menu-item-title create-form-item-effect">
+      <%= f.text_field :price, placeholder: "Menu item price..." %>
     </div>
-    <div class="field menu-item-description">
-      <%= f.text_area :description, placeholder: "Menu item description...", class: 'create-form-item-effect' %>
+    <div class="field menu-item-description create-form-item-effect">
+      <%= f.text_area :description, placeholder: "Menu item description..." %>
     </div>
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
