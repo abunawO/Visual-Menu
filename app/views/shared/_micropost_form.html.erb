@@ -15,8 +15,9 @@
     <div class="field menu-item-description create-form-item-effect">
       <%= f.text_area :description, placeholder: "Menu item description..." %>
     </div>
-    <span class="picture">
-      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    <span class="picture menu-item-file">
+      <%= f.file_field :picture, class: 'file-element', id: 'file', accept: 'image/jpeg,image/gif,image/png' %>
+      <label class='file-label' for="file">Choose a file</label>
     </span>
     <%= f.submit "Post", class: "menu-item-btn btn btn-primary", style: "margin-bottom: 30px;" %>
   <% end %>
