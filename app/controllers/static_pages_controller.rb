@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
       @microposts = @user.microposts.paginate(page: params[:page])
       @categories = []
 
-      _set_up_categories(@microposts)
+      _set_up_categories(@user.microposts)
 
       @user.microposts.each do |micropost|
         if micropost.category.present?

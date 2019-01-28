@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts.paginate(page: params[:page])
 
-      _set_default_categories(@microposts)
+      _set_default_categories(@user.microposts)
 
       @categories = []
       @categories = _creat_menu_categories(@microposts)
