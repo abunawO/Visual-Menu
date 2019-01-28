@@ -8,7 +8,7 @@
   margin: 0 !important;
 }
 .uhome-create-c {
-  background-color: $secondary;
+  // background-color: $secondary;
   margin: 15px;
   //   margin-right: 0;
   border-radius: 5px;
@@ -47,6 +47,7 @@
 }
 .category-select-form {
 }
+.menu-item-file label,
 .menu-item-title input,
 .category-select-form select,
 .menu-item-description textarea {
@@ -72,12 +73,44 @@
   textarea:focus {
   background-color: $extra !important;
 }
+.menu-item-file {
+  width: max-content;
+  padding-bottom: 5px !important;
+}
+
+// .menu-item-file label {
+//   cursor: pointer;
+//   background-color: $third;
+//   color: $primary;
+//   text-align: center;
+//   margin-top: 0 !important;
+//   padding: 10px 15px !important;
+// }
+// .menu-item-file label:hover {
+//   background-color: lighten(
+//     $third,
+//     10%
+//   );
+//   color: $primary;
+// }
+.menu-item-file label {
+  border-color: $third;
+  cursor: pointer;
+  color: $primary;
+  text-align: center;
+  margin-top: 0 !important;
+  padding: 10px 15px !important;
+}
+.menu-item-file label:hover {
+  background-color: $third;
+  color: $primary;
+}
 
 .category-select-form {
   // padding: 0 !important;
 }
 .category-select-form select {
-  background-color: $secondary !important;
+  // background-color: $secondary !important;
 }
 .menu-item-description textarea {
   border-radius: 10px !important;
