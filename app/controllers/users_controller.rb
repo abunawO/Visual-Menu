@@ -81,7 +81,7 @@ class UsersController < ApplicationController
 
   def category_search
     @user = User.find(params[:id] || params[:user_id]) || current_user
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts
 
     unless params[:category][:title].present?
       flash.now[:danger] = "Invalid category search"
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
       @selected_cat = @microposts.select {|mic| mic.category == params[:category][:title] }
       @category = params[:category][:title]
       @category_title = params[:category][:title]
-      @feed_items = @microposts.where(:category => params[:category][:title]).paginate(page: params[:page])
+      @feed_items = @microposts.where(:category => params[:category][:title])
     end
   end
 
