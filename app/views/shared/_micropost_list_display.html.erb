@@ -50,7 +50,7 @@
 
  <% if @beverage_cat.any? %>
   <div class="ushow-list">
-    <p>BEVERAGES</p>
+    <p>BEVERAGE</p>
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @beverage_cat %>
@@ -64,6 +64,16 @@
     <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
     <ol class="microposts">
       <%= render @special_of_day_cat %>
+    </ol>
+  </div>
+<% end %>
+
+<% if @side_cat.any? %>
+  <div class="ushow-list">
+    <p>SIDE</p>
+    <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
+    <ol class="microposts">
+      <%= render @side_cat %>
     </ol>
   </div>
 <% end %>

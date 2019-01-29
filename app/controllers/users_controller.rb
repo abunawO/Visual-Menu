@@ -171,6 +171,7 @@ class UsersController < ApplicationController
       @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
       @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
       @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
+      @side_cat = items.select {|mic| mic.category  == "SIDE" } || []
     end
 
     # Before filters
