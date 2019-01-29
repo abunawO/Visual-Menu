@@ -91,6 +91,11 @@
   line-height: $form-comp-size !important;
   width: $form-comp-size !important;
 }
+.fcb-active {
+  height: $form-comp-size !important;
+  line-height: $form-comp-size !important;
+  width: 100px !important;
+}
 .fcb-hover {
   &:hover {
     background-color: $third !important;
