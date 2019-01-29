@@ -1,16 +1,14 @@
 <div style="position:relative;">
   <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
     <%= hidden_field_tag :user_id, @user.id %>
-   <div style="position: relative;">
-    <div class="so-c input-group">
-      <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "so-input form-control" %>
+    <div class="input-group form-component-c fc-min-width">
+      <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-component fc-small" %>
       <% if @category %>
         <%= hidden_field_tag :category, @category %>
       <% end %>
-      <div class="input-group-btn">.
-        <%= button_tag "search", :class => 'so-btn material-icons category-search',:name => nil %>
+      <div class="form-component-btn-c">
+        <%= button_tag "search", :class => 'material-icons category-search form-component-btn fcb-active fcb-hover', :name => nil %>
       </div>
     </div>
-  </div>
   <% end %>
 </div>

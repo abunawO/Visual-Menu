@@ -8,7 +8,7 @@
   margin: 0 !important;
 }
 .uhome-create-c {
-  background-color: $secondary;
+  // background-color: $secondary;
   margin: 15px;
   //   margin-right: 0;
   border-radius: 5px;
@@ -17,8 +17,11 @@
 .user-info-display {
 }
 .uidisplay-set-picture > a {
-  //   color: $primary !important;
+  color: $off !important;
   text-decoration: underline !important;
+}
+.uidisplay-item-count {
+  color: $fade !important;
 }
 
 .uidisplay-details {
@@ -48,21 +51,22 @@
 .category-select-form {
 }
 .menu-item-file label,
-.menu-item-title input,
+// EXMAPLE
+// .menu-item-title input,
 .category-select-form select,
 .menu-item-description textarea {
   width: 100%;
   background-color: transparent;
   outline: none;
-  border: 1px solid $primary;
+  border: 1px solid $border;
   padding: 5px 15px !important;
-  margin: 5px 0 !important;
+  // margin: 5px 0 !important;
   border-radius: 40px !important;
   color: $primary;
 }
-.create-form-item-effect input:hover,
-.create-form-item-effect input:active,
-.create-form-item-effect input:focus,
+// .create-form-item-effect input:hover,
+// .create-form-item-effect input:active,
+// .create-form-item-effect input:focus,
 .create-form-item-effect select:hover,
 .create-form-item-effect select:active,
 .create-form-item-effect select:focus,
@@ -118,7 +122,7 @@
 .menu-item-btn {
   background-color: transparent !important;
   outline: none;
-  border: 1px solid $primary !important;
+  border: 1px solid $border !important;
   margin: 0 !important;
   border-radius: 40px !important;
   color: $primary !important;

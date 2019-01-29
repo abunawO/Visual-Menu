@@ -3,7 +3,7 @@
 <div class="category-search-display">
   <%= render 'shared/back_to_top' %>
 
-  <div style="margin-right: 10%; margin-left: 10%;">
+  <div style="margin-right: 10%;">
     <div class="row">
       <%= render :partial => "shared/back_button" %>
     </div>
@@ -26,7 +26,7 @@
       <div class="row">
         <div>
           <% if @selected_cat.any? %>
-            <p style="margin: 10px;color: #e5e5e5;"><%= @category_title %></p>
+            <p style="margin: 10px;color: #1f1f1f;"><%= @category_title %></p>
             <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
             <ol class="microposts">
               <%= render @selected_cat %>

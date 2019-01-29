@@ -2,24 +2,36 @@
 <div class="create-menu-item-display">
   <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class="field menu-item-title create-form-item-effect">
-      <%= f.text_field :content, placeholder: "Menu item title..."  %>
-      <%# class: 'menu-item-title create-form-item-effect' %>
+    <div class="field form-component-c">
+      <%= f.text_field :content, placeholder: "Menu item title...", class: "form-component fc-small"  %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
-    <div class="field category-select-form create-form-item-effect">
-      <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "--Select Category--"}) %>
+    <div class="field form-component-c">
+      <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
     </div>
-    <div class="field menu-item-title create-form-item-effect">
-      <%= f.text_field :price, placeholder: "Menu item price..." %>
+    <div class="field form-component-c">
+      <%= f.text_field :price, placeholder: "Menu item price...", class: "form-component fc-small" %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
     </div>
-    <div class="field menu-item-description create-form-item-effect">
-      <%= f.text_area :description, placeholder: "Menu item description..." %>
+    <div class="field form-component-c fc-big">
+      <%= f.text_area :description, placeholder: "Menu item description...", class: "form-component fc-big" %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
     </div>
-    <span class="picture menu-item-file">
-      <%= f.file_field :picture, class: 'file-element', id: 'file', accept: 'image/jpeg,image/gif,image/png' %>
-      <label class='file-label' for="file">Choose a file</label>
+    <span class="picture form-component-c">
+      <%= f.file_field :picture, class: 'fc-hide', id: 'file', accept: 'image/jpeg,image/gif,image/png' %>
+      <label class='form-component fc-small fc-point' for="file">
+        Choose a file
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_file'} %>
+      </label>
     </span>
-    <%= f.submit "Post", class: "menu-item-btn btn btn-primary", style: "margin-bottom: 30px;" %>
+    <div class="field form-component-c fc-active ">
+      <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+      <label class='form-component fc-small fc-point' for="send">
+        Create
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+      </label>
+    </div>
   <% end %>
 
   <!--Checking the file size with jQuery.-->
