@@ -16,9 +16,6 @@
 //= require bootstrap
 //= require bootstrap.min
 //= require custom
-//= require isotope
-//= require isotope.min
-//= require jquery.flexslider-min
 //= require jquery.magnific-popup.min
 //= require nivo-lightbox.min
 //= require smoothscroll
@@ -32,6 +29,5 @@
 //= require magnific-popup-options
 //= require main
 //= require modernizr-2.6.2.min
-//= require owl.carousel.min
 //= require respond.min
 //= require_tree .
