@@ -10,5 +10,5 @@
   </div>
 
   <div class='uidisplay-set-picture'><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></div>
-  <div><%= pluralize(current_user.microposts.count, "Menu Item") %></div>
+  <div class='uidisplay-item-count'><%= pluralize(current_user.microposts.count, "Menu Item") %></div>
 </div>

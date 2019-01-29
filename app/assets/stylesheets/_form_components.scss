@@ -1,0 +1,99 @@
+@import 'const';
+.filter-form {
+  width: 100% !important;
+}
+.form-component-c {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex !important;
+  background-color: transparent;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  border: 1px solid $border;
+  border-radius: $form-comp-size;
+  &:hover {
+    border-color: $third !important;
+    .form-component-btn-c {
+      .form-component-btn {
+        color: $third;
+      }
+    }
+  }
+  &.fc-max-content {
+    min-width: max-content;
+  }
+  .form-component {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none !important;
+    border: none !important;
+    font-size: 16px !important;
+    background-color: transparent !important;
+    color: $primary !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    padding-right: $form-comp-size !important;
+    &:hover {
+      border-color: $third !important;
+    }
+    &::placeholder {
+      color: $fade;
+    }
+  }
+  .form-component-btn-c {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: $form-comp-size !important;
+    .form-component-btn {
+      outline: none !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+      border: none !important;
+      background: transparent;
+      font-size: 16px !important;
+      padding: 0px !important;
+      border-radius: $form-comp-size !important;
+    }
+  }
+}
+.fc-point {
+  cursor: pointer !important;
+}
+.fc-active {
+  border-color: $third !important;
+}
+.fc-min-width {
+  @media (min-width: 450px) {
+    min-width: 400px;
+  }
+}
+.fc-hide {
+  display: none !important;
+}
+.fc-small {
+  height: $form-comp-size !important;
+  line-height: $form-comp-size !important;
+}
+.fc-big {
+  border-radius: 10px !important;
+}
+.fcb-icon-behind {
+  z-index: -99;
+}
+.fcb-small {
+  height: $form-comp-size !important;
+  line-height: $form-comp-size !important;
+  width: $form-comp-size !important;
+}
+.fcb-hover {
+  &:hover {
+    background-color: $third !important;
+    color: $secondary !important;
+  }
+}

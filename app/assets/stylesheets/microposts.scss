@@ -1,3 +1,4 @@
+@import 'const';
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -62,7 +63,8 @@
   // position: relative;
   // box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
 }
-.menu-item-display:nth-last-child(1) .mp-c {
+.menu-item-display:nth-last-child(1)
+  .mp-c {
   margin-right: 10px;
 }
 .mp-image {
@@ -78,7 +80,10 @@
 .mp-info {
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(
+    $third,
+    0.7
+  ) !important;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   position: absolute;
@@ -90,7 +95,7 @@
 .mp-title {
   font-size: 12px;
   line-height: 12px;
-  color: #f1f1f1 !important;
+  color: $secondary !important;
   margin: 0 !important;
   padding-bottom: 5px;
 }
@@ -105,6 +110,13 @@
   line-height: 20px;
   padding-right: 10px;
   font-size: 20px;
-  color: white !important;
+  color: $extra !important;
   margin: 0 !important;
+}
+
+.timestamp {
+  color: $primary !important;
+  a {
+    color: $off !important;
+  }
 }
