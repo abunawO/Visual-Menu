@@ -90,7 +90,7 @@ class UsersController < ApplicationController
       @selected_cat = @microposts.select {|mic| mic.category == params[:category][:title] }
       @category = params[:category][:title]
       @category_title = params[:category][:title]
-      @feed_items = @user.feed.where("category LIKE ?", "%#{params[:category][:title]}%").paginate(page: params[:page])
+      @feed_items = @microposts.where(:category => params[:category][:title]).paginate(page: params[:page])
     end
   end
 
