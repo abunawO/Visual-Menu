@@ -293,33 +293,19 @@
 	};
 
 
-	var parallax = function() {
-
-		if ( !isMobile.any() ) {
-			$(window).stellar({
-				horizontalScrolling: false,
-				hideDistantElements: false,
-				responsive: true
-
-			});
-		}
-	};
-
-
-
 	$(function(){
 		mobileMenuOutsideClick();
 		formTab();
 		offcanvasMenu();
 		burgerMenu();
-		contentWayPoint();
+		//contentWayPoint();
 		dropdown();
-		owlCarousel();
+		//owlCarousel();
 		goToTop();
 		loaderPage();
-		counterWayPoint();
+		//counterWayPoint();
 		//dateTimeForm();
-		parallax();
+		//parallax();
 	});
 
 

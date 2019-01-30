@@ -1,58 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html class="wow-animation" lang="en">
   <head>
-    <title>VIZHO͞OƏLS</title>
-    <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
-
+    <title>Application</title>
     <meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<meta name="keywords" content="">
-  	<meta name="description" content="">
-    <meta name="google-site-verification" content="fRD1FzHUEveMq-OwTw5cFd8pWRrr-36_JShIY3P1c8w" />
-
-
-    <!-- Favicons
-        ================================================== -->
-
-    <!-- Stylesheet
-        ================================================== -->
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-  	<link rel="stylesheet" href="/assets/themify-icons.css">
-  	<!-- Bootstrap  -->
-
-
-  	<!-- Magnific Popup -->
-  	<link rel="stylesheet" href="/assets/magnific-popup.css">
-
-
-
-
-    <!-- Theme style  -->
-  	<link rel="stylesheet" href="/assets/menu-style.css">
-
-  	<!-- Modernizr JS -->
-  	<script src="/assets/modernizr-2.6.2.min.js"></script>
-  	<!-- FOR IE9 below -->
-  	<!--[if lt IE 9]>
-  	<script src="js/respond.min.js"></script>
-  	<![endif]-->
-
-    <%= render 'shared/full_story_script' %>
-    <!--<%= render 'shared/identify_users_script' %>-->
-
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="date" content="Dec 26">
+    <!--<link rel="icon" href="images/favicon.ico" type="image/x-icon">-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
 
   </head>
+  <body>
   <body>
     <% if logged_in? %>
       <di class="row">
@@ -67,34 +29,20 @@
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <di class="row">
-        <%= render 'layouts/customer_view_header' %>
-      </div>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
 
-    <!-- jQuery -->
-	<!--<script src="/assets/jquery.min.js"></script>-->
-	<!-- jQuery Easing -->
-	<script src="/assets/jquery.easing.1.3.js"></script>
+  <!-- Java script -->
+  <script src="/assets/core.min.js"></script>
+  <script src="/assets/script.js"></script>
+
 	<!-- Bootstrap -->
 	<script src="/assets/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="/assets/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="/assets/owl.carousel.min.js"></script>
 
-	<!-- Stellar Parallax -->
-	<script src="/assets/jquery.stellar.min.js"></script>
-
-	<!-- Magnific Popup -->
-	<script src="/assets/jquery.magnific-popup.min.js"></script>
-	<script src="/assets/magnific-popup-options.js"></script>
 
 	<script src="/assets/moment.min.js"></script>
-
 
 	<!-- Main -->
 	<script src="/assets/main.js"></script>
