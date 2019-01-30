@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
   	<link rel="stylesheet" href="/assets/themify-icons.css">
   	<!-- Bootstrap  -->
 
@@ -67,18 +67,19 @@
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <di class="row">
+      <!--<di class="row">
         <%= render 'layouts/customer_view_header' %>
-      </div>
+      </div>-->
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
 
     <!-- jQuery -->
-	<!--<script src="/assets/jquery.min.js"></script>-->
-	<!-- jQuery Easing -->
-	<script src="/assets/jquery.easing.1.3.js"></script>
+	<script src="/assets/jquery.min.js"></script>
+  <!-- Java script -->
+  <script src="/assets/core.min.js"></script>
+  <script src="/assets/script.js"></script>
 	<!-- Bootstrap -->
 	<script src="/assets/bootstrap.min.js"></script>
 	<!-- Waypoints -->
@@ -94,7 +95,6 @@
 	<script src="/assets/magnific-popup-options.js"></script>
 
 	<script src="/assets/moment.min.js"></script>
-
 
 	<!-- Main -->
 	<script src="/assets/main.js"></script>
