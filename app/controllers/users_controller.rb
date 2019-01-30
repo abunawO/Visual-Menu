@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   def show
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
-      @microposts = @user.microposts.paginate(page: params[:page])
+      @microposts = @user.microposts
 
       _set_default_categories(@user.microposts)
 
