@@ -32,11 +32,11 @@
             <ul class="rd-navbar-nav">
               <li class="active"><a href="#home">Home</a></li>
               <li><a href="#features">Features</a></li>
-              <li><a href="#responsive">Responsive</a></li>
-              <li><a href="#benefit">Benefit</a></li>
               <li><a href="#service">Service</a></li>
-              <li><a href="#the_process">The Process</a></li>
+              <li><a href="#benefit">Benefit</a></li>
+              <li><a href="#responsive">Responsive</a></li>
               <li><a href="#shareable">Shareable</a>
+              <li><a href="#the_process">The Process</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><%= link_to "Log in", login_path %></li>
             </ul>
@@ -113,21 +113,34 @@
           </div>
         </div>
       </section>
-      <!--Extremely Responsive and Retina-->
-      <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-gray-lighter" id="responsive" data-preset='{"title":"Content","category":"content","id":"content"}'>
+
+      <!--Our Services-->
+      <section class="section novi-background section-navigation section-80 bg-gray-lighter" id="service">
         <div class="container">
-          <div class="row grid-group-md justify-content-sm-center align-items-md-center">
-            <div class="col-lg-6 text-lg-left wow fadeInLeft">
-              <h2 class="font-weight-bold">Extremely Responsive</h2>
-              <p class="inset-lg-right-100">
-                Due to the responsive design built in
-                our platform, it can be launched on any smart device.
-              </p>
-              <div class="offset-top-30">
-                <%= link_to "TRY FOR FREE", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
+          <div class="row grid-group-md justify-content-between">
+            <div class="col-lg-5 text-lg-left">
+              <div class="offset-lg-top-30 wow fadeInRight">
+                <h2 class="font-weight-bold">Our Service</h2>
+                <p>
+                  While websites offer just a basic menu, we give our users
+                  access to a <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank">vizho͞oəl</a> menu</span>
+                  that is ready to adapt to your daily needs, with full control over the presentation of your food.
+                </p>
+                <p>
+                  Pairing our platform, that is purposefully designed to be a menu with NFC technology
+                  allows for a fully synchronized and accessible menu.
+                </p>
+                <p>
+                  Customers can simply use their smartphone to scan the paired NFC technology and
+                  be greeted to beautiful images of your mouth watering
+                 <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank">vizho͞oəl</a> menu.</span>
+                </p>
+                <div class="offset-top-30 offset-lg-top-55">
+                  <%= link_to "CREATE FREE MENU", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
+                </div>
               </div>
             </div>
-            <div class="col-lg-6"><img class="img-fluid" src="/assets/menu-white.png" width="441" height="240" alt=""></div>
+            <div class="col-lg-6"><img style="margin-top: -60px;" class="img-fluid d-inline-block wow fadeInUp offset-lg-top--160" src="/assets/create-menu-item.png" width="617" height="599" alt=""></div>
           </div>
         </div>
       </section>
@@ -159,33 +172,21 @@
           </div>
         </div>
       </section>
-      <!--Our Services-->
-      <section class="section novi-background section-navigation section-80 bg-gray-lighter" id="service">
+      <!--Extremely Responsive and Retina-->
+      <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-gray-lighter" id="responsive" data-preset='{"title":"Content","category":"content","id":"content"}'>
         <div class="container">
-          <div class="row grid-group-md justify-content-between">
-            <div class="col-lg-5 text-lg-left">
-              <div class="offset-lg-top-30 wow fadeInRight">
-                <h2 class="font-weight-bold">Our Service</h2>
-                <p>
-                  While websites offer just a basic menu, we give our users
-                  access to a <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank">vizho͞oəl</a> menu</span>
-                  that is ready to adapt to your daily needs, with full control over the presentation of your food.
-                </p>
-                <p>
-                  Pairing our platform, that is purposefully designed to be a menu with NFC technology
-                  allows for a fully synchronized and accessible menu.
-                </p>
-                <p>
-                  Customers can simply use their smartphone to scan the paired NFC technology and
-                  be greeted to beautiful images of your mouth watering
-                 <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank">vizho͞oəl</a> menu.</span>
-                </p>
-                <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "CREATE FREE MENU", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
-                </div>
+          <div class="row grid-group-md justify-content-sm-center align-items-md-center">
+            <div class="col-lg-6 text-lg-left wow fadeInLeft">
+              <h2 class="font-weight-bold">Extremely Responsive</h2>
+              <p class="inset-lg-right-100">
+                Due to the responsive design built in
+                our platform, it can be launched on any smart device.
+              </p>
+              <div class="offset-top-30">
+                <%= link_to "TRY FOR FREE", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
               </div>
             </div>
-            <div class="col-lg-6"><img style="margin-top: -60px;" class="img-fluid d-inline-block wow fadeInUp offset-lg-top--160" src="/assets/create-menu-item.png" width="617" height="599" alt=""></div>
+            <div class="col-lg-6"><img class="img-fluid" src="/assets/menu-disp-cat-show.png" width="441" height="240" alt=""></div>
           </div>
         </div>
       </section>
@@ -205,7 +206,7 @@
                 <div class="offset-top-30 inset-lg-right-100">
                   <p>
                     Customers can share your menu with their friends.
-                    You can see what Customers are looking at the most
+                    You can see what customers are looking at the most
                     and pinpoint which menu item gets passed up often.
                   </p>
                 </div>
