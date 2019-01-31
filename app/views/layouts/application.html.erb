@@ -67,7 +67,7 @@
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <di class="row">
+      <div>
         <%= yield %>
       </div>
       <%= debug(params) if Rails.env.development? %>
