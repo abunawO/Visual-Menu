@@ -67,8 +67,9 @@
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+      <di class="row">
+        <%= yield %>
+      </div>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
 
