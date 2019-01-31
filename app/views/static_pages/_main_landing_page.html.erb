@@ -49,12 +49,10 @@
           </div>
         </nav>
       </header>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <section class="section novi-background section-navigation bg-macaroni context-dark" id="home" data-preset='{"title":"Intro","category":"content","id":"intro"}'>
-        <div style="position: fixed;top: 59px;left: 5%;">
-          <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %>"><%= message %></div>
-          <% end %>
-        <div>
         <div class="container">
           <div class="row section-cover justify-content-center align-items-center justify-content-lg-between">
             <div class="col-xl-5 text-xl-left section-80 section-relative">
