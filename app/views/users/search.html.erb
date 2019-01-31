@@ -1,5 +1,10 @@
 <!--The is the page returned after user performs category search.-->
 <!--Displays menu items matched by category search.-->
+<% unless logged_in? %>
+  <di class="row">
+  <%= render 'layouts/customer_view_header' %>
+  </div>
+<% end %>
 <div class="category-search-display">
   <%= render 'shared/back_to_top' %>
 
