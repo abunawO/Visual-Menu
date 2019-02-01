@@ -12,7 +12,6 @@
 //
 //= require core.min.js
 //= require script.js
-//= require revolution.min.js
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
