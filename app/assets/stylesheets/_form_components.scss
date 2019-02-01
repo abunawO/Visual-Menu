@@ -20,6 +20,17 @@
       }
     }
   }
+  // &:active,
+  // &:focus {
+  //   .form-component-btn-c {
+  //     .form-component-btn {
+  //       color: $third;
+  //       width: 100px !important;
+  //       background-color: $third !important;
+  //       color: $secondary !important;
+  //     }
+  //   }
+  // }
   &.fc-max-content {
     min-width: max-content;
   }
@@ -59,6 +70,7 @@
       font-size: 16px !important;
       padding: 0px !important;
       border-radius: $form-comp-size !important;
+      transition: ease-out 0.2s;
     }
   }
 }
@@ -94,10 +106,14 @@
 .fcb-active {
   height: $form-comp-size !important;
   line-height: $form-comp-size !important;
-  width: 100px !important;
+  width: $form-comp-size !important;
 }
 .fcb-hover {
-  &:hover {
+  transition: ease-out 0.2s;
+  &:hover,
+  &:active,
+  &:focus {
+    width: 100px !important;
     background-color: $third !important;
     color: $secondary !important;
   }
