@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
-  <body>
+  <body style="background: white;">
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="/assets/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="page text-center">
       <!-- RD Navbar-->
@@ -59,7 +59,7 @@
               <h1 class="font-weight-bold"><span class="text-uppercase">VIZHO͞OƏLS...</span></h1>
               <div class="offset-top-34">
                 <p class="big">
-                  A smart visual menu available for access everywhere.
+                  The first smart visual menu available for access everywhere.
                 </p>
               </div>
               <%= link_to "Sign up free", signup_path, class: "wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" %>
@@ -70,7 +70,7 @@
       <!--Our Key Features-->
       <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-white" id="features" data-preset='{"title":"Key Features","category":"content","id":"key-features"}'>
         <div class="container">
-          <h2 class="font-weight-bold">Our Key Features</h2>
+          <h2 class="font-weight-bold">Our Features</h2>
           <div class="row grid-group-md offset-top-50 offset-lg-top-93">
             <div class="col-md-4"><img class="img-fluid d-inline-block" src="/assets/menu-icon.png" width="64" height="64" alt="">
               <div class="offset-lg-top-40 offset-top-20">
@@ -152,7 +152,7 @@
             <div class="col-lg-6 col-xl-5">
               <div class="offset-top-41 graph-content wow fadeInLeft">
                 <div style="width: 100%; height: 450px; margin-bottom: 30px;">
-                  <img class="img-fluid" src="/assets/cat-select-menu.png" width="360" height="240" alt="">
+                  <img class="img-fluid" src="/assets/menu-view.png" width="360" height="240" alt="">
                 </div>
               </div>
             </div>
@@ -297,10 +297,10 @@
               </div>
             </div>
           </div>
+          <%= render 'layouts/footer' %>
       </footer>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
-    <%= render 'layouts/footer' %>
   </body>
 </html>
