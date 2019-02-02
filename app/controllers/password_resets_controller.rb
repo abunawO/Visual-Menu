@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 
   #A create action for password resets.
   def create
-    @user = User.find_by(email: params[:password_reset][:email].downcase)
+    @user = User.find_by(email: params[:email].downcase)
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email

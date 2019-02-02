@@ -54,17 +54,6 @@
  </div>
 
 <% else %>
-  <section id="contact" style="background-color: black;color: white;">
-    <div class="container">
-      <div class="row">
-        <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
-        <div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="1.6s">
-           <%= image_tag("404-error-graphic.png", class: "fluid-img", alt: "Gallery")  %>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%= render :partial=> "shared/user_not_found_error" %>
 <% end %>
 <%= render 'layouts/footer' %>

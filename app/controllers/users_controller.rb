@@ -75,7 +75,7 @@ class UsersController < ApplicationController
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
-      flash[:danger] = "User does not exists."
+      flash.now[:danger] = "User does not exists."
     end
   end
 
@@ -95,8 +95,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    #binding.pry
-    @countries = COUNTRIES
+    #@countries = COUNTRIES
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
