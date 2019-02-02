@@ -32,10 +32,11 @@
                   <!-- RD Mailform-->
 
                   <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-                    <% flash.each do |message_type, message| %>
-                      <div class="alert alert-<%= message_type %>"><%= message %></div>
-                    <% end %>
-
+                    <div style="position:relative; bottom: 10px;">
+                      <% flash.each do |message_type, message| %>
+                        <div class="alert alert-<%= message_type %>"><%= message %></div>
+                      <% end %>
+                    </div>
                     <div class="form-group">
                       <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
                         <input class="form-control" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
