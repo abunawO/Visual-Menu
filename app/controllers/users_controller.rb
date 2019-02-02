@@ -95,10 +95,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
-    @countries = COUNTRIES
-    #params.delete(:authenticity_token)
-    #user_params = params
+    #@countries = COUNTRIES
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
