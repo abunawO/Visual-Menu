@@ -1,10 +1,20 @@
 // size
 $form-comp-size: 40px;
+// colors for static pages
+$s-bg-gradient: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
+$s-bg: white;
+$s-primary: #ffffff;
+$s-primary-fade: #f9f9f9;
+$s-secondary: #1f1f1f;
+$s-secondary-fade: #4f4f4f;
+$s-extra: #f5f5f5;
+
+// colors for user pages
 // blue
 $bg: #f9f9f9;
 $border: #1f1f1f;
 $primary: #1f1f1f;
-$secondary: hsl(0, 0%, 100%);
+$secondary: #ffffff;
 $third: darken(#47bbff, 10%);
 $extra: #f1f1f1;
 $fade: #6f6f6f;
