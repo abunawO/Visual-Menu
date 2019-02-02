@@ -26,7 +26,8 @@
           <!--Navbar Brand-->
           <div class="offset-top-41 text-center">
             <div class="wow fadeInUp rd-navbar-brand"><a href="/index"><span style="color:#fbb448;">VIZHO͞OƏL</span> MENU</a></div>
-          </div>        </div>
+          </div>
+         </div>
         <!-- Login-->
         <section>
           <div class="container">
@@ -48,12 +49,12 @@
                     <% end %>
                     <div class="form-group">
                       <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
-                        <input class="form-control" id="email" placeholder="Your Login" type="email" name="email" required= 'true' data-constraints="@Required">
+                        <input class="form-control" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
                       </div>
                     </div>
                     <div class="form-group offset-top-20">
                       <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-open-outline"></span></span></span>
-                        <input class="form-control" id="password" placeholder="Your Password" type="password" name="password" data-constraints="@Required">
+                        <input class="form-control" id="password" placeholder="Password" type="password" name="password" data-constraints="@Required" required= 'true'>
                       </div>
                     </div>
                     <button class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon novi-icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
@@ -70,6 +71,6 @@
     </div>
     <!-- Global RD Mailform Output -->
     <div class="snackbars" id="form-output-global"></div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
-<%= render 'layouts/footer' %>
