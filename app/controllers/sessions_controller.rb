@@ -1,14 +1,16 @@
 class SessionsController < ApplicationController
 
   def new
+    #binding.pry
   end
 
  def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+   #binding.pry
+    user = User.find_by(email: params[:email].downcase)
+    if user && user.authenticate(params[:password])
       if user.activated?
         log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        remember(user) #params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_back_or user
       else
         message  = "Account not activated. "
