@@ -1,4 +1,9 @@
 <!--This is the page returned when user clicks a menu item-->
+<% unless logged_in? %>
+  <di class="row">
+  <%= render 'layouts/customer_view_header' %>
+  </div>
+<% end %>
 <div class="selected-menu-item-display" style="height: auto;">
   <div class="row">
     <div class="row">
