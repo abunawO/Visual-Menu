@@ -75,7 +75,7 @@ class UsersController < ApplicationController
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
-      flash[:danger] = "User does not exists."
+      flash.now[:danger] = "User does not exists."
     end
   end
 
