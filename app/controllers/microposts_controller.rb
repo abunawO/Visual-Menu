@@ -42,7 +42,6 @@ class MicropostsController < ApplicationController
     @micropost.picture  = params[:micropost][:picture]
     @micropost.price    = params[:micropost][:price]
     @micropost.description = params[:micropost][:description]
-    @micropost.side     = params[:micropost][:side]
 
     if @micropost.save
       flash.now[:success] = "Menu item updated successfully!"
