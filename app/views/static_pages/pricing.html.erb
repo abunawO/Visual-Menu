@@ -4,25 +4,33 @@
 <h1 class='pricing-title ph-h1'>Lorem Ipsum is simply dummy text</h1>
 <h3 class='pricing-title ph-h2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
 <div class='pricing-action-c'>
-       <%# <a class='pricing-action' href=''>Contact us</a> %>
        <a class='pricing-action ph-important' href=''>Sign up</a>
        </div>
 </header>
 <section class='pricing-section'>
     <div class='pricing-box'>
     <h1 class='pricing-box-title'>Starter</h1>
-    <p class='pricing-box-description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <a class='pricing-box-action' href=''>$25 <span class='pricing-box-action-info'>/month</span></a>
+    <p class='pricing-box-description'>We offer a 1 month free trial.</p>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'Create a beautiful menu online and share it with your customers.'
+    } %>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'You will get <how many?> access of your menu.'
+    } %>
+    <a class='pricing-box-action' href=''>FREE<span class='pricing-box-action-info'>/1 month</span></a>
     </div>
     <div class='pricing-box pricing-box-important'>
     <h1 class='pricing-box-title'>Professional</h1>
     <p class='pricing-box-description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <a class='pricing-box-action' href=''>$10005 <span class='pricing-box-action-info'>/month</span></a>
+    <%# 5 nfc tags %>
+    <a class='pricing-box-action' href=''>$30<span class='pricing-box-action-info'>/month</span></a>
     </div>
     <div class='pricing-box'>
     <h1 class='pricing-box-title'>Enterprise</h1>
-    <p class='pricing-box-description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <a class='pricing-box-action' href=''>$999,999,999 <span class='pricing-box-action-info'>/month</span></a>
+    <p class='pricing-box-description'>Get in touch with us to get a one on one business </p>
+    <a class='pricing-box-action' href=''>GET IN TOUCH</a>
     </div>
 </section>
 </div>
