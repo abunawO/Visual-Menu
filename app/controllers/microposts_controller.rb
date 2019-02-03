@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
-    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
     @micropost = current_user.microposts.build(micropost_params)
     @user = current_user
     if @micropost.save
@@ -19,8 +19,8 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
-    standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
+    standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     micropost_category = [@micropost.category]
@@ -65,7 +65,7 @@ class MicropostsController < ApplicationController
 
     #Adding picture to the list of permitted attributes.
     def micropost_params
-      params.require(:micropost).permit(:content, :category, :price, :description, :picture)
+      params.require(:micropost).permit(:content, :category, :price, :description, :picture, :side)
     end
 
      def correct_user
@@ -84,6 +84,7 @@ class MicropostsController < ApplicationController
       @dessert_cat = []
       @beverage_cat = []
       @special_of_day_cat = []
+      @side_cat = []
     end
 
 end

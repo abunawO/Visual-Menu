@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     #binding.pry
     @user = current_user
-    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY"]
+    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
@@ -56,5 +56,6 @@ class StaticPagesController < ApplicationController
      @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
      @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
      @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
+     @side_cat = items.select {|mic| mic.category  == "SIDE" } || []
    end
 end

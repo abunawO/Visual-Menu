@@ -1,48 +1,65 @@
 <% provide(:title, "Log in") %>
-<div class="log-in-page">
-  <div class="login-form">
-    <section id="contact" class="parallax-section">
-      <div class="overlay"></div>
-    	<div class="container">
-    		<div class="row">
-
-    			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-            <div class="row">
-              <%= render :partial => "shared/home_button" %>
+<!DOCTYPE html>
+<html class="wow-animation" lang="en">
+  <head>
+    <title>VIZHO͞OƏLS</title>
+    <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body style="background: #191919;">
+    <div class="page text-center">
+      <section class="section novi-background one-page bg-shark-radio" style="background: #191919;">
+        <%= render :partial => "shared/home_button" %>
+        <div class="one-page-header">
+          <!--Navbar Brand-->
+          <div class="offset-top-41 text-center">
+            <div class="wow fadeInUp rd-navbar-brand"><a href="/index"><span style="color:#fbb448;">VIZHO͞OƏL</span> <span style="color: white;">MENU</span></a></div>
+          </div>
+         </div>
+        <!-- Login-->
+        <section>
+          <div class="container">
+            <div class="section-110 section-cover row justify-content-sm-center align-items-sm-center">
+              <div style="width: 100%;" class="col-sm-8 col-md-6 col-lg-4">
+                <div class="card text-center section-34 section-sm-41 inset-left-20 inset-right-20 inset-md-left-20 inset-md-right-20 inset-xl-left-30 inset-xl-right-30 bg-default shadow-drop-md">
+                  <div class="text-center">
+                            <!-- Icon Box Type 4--><span class="icon novi-icon icon-circle icon-bordered icon-lg icon-default mdi mdi-account-multiple-outline"></span>
+                            <div>
+                              <div class="offset-top-24 text-darker big font-weight-bold">SIGN IN</div>
+                              <p class="text-extra-small text-dark offset-top-4">Enter your credentials below</p>
+                            </div>
+                  </div>
+                  <!-- RD Mailform-->
+                  <form id="session" accept-charset="UTF-8" class="text-left offset-top-30" data-form-output="form-output-global" action="/login" data-form-type="contact" method="post">
+                    <input type="hidden" name="authenticity_token" value="zXIRzU253nalVgWKElGpSBajARGTuCuAlDPpxjg7ga/4aJwIk2CneezzQnzRGei2dD/8F3lX6xEBn7c/XhhtqQ==" />
+                    <% flash.each do |message_type, message| %>
+                      <div style="margin-bottom: 40px;" class="alert alert-<%= message_type %>"><%= message %></div>
+                    <% end %>
+                    <div class="form-group">
+                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
+                        <input class="form-control" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
+                      </div>
+                    </div>
+                    <div class="form-group offset-top-20">
+                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-open-outline"></span></span></span>
+                        <input class="form-control" id="password" placeholder="Password" type="password" name="password" data-constraints="@Required" required= 'true'>
+                      </div>
+                    </div>
+                    <button style="margin-bottom: 10px;" class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon novi-icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
+                  </form>
+                  <div class="offset-top-30 text-md-left text-dark text-extra-small"><a style="color: #55bbeb;" class="text-picton-blue" href="/password_resets/new">Forgot your password?</a>
+                    <div class="offset-top-0">Haven’t an account? <a style="color: #55bbeb;" class="text-picton-blue" href="signup">Sign up here</a>.</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="row wow">
-                <h2 style="color: white;font-size: 20px;">Log in</h2>
-            </div>
-    				<div class="row form" data-wow-delay="0.7s">
-
-              <%= form_for(:session, url: login_path) do |f| %>
-                <% flash.each do |message_type, message| %>
-                  <div class="alert alert-<%= message_type %>"><%= message %></div>
-                <% end %>
-
-                <%= f.label :email %>
-                <%= f.email_field :email, class: 'form-control', required: true %>
-
-                <%= f.label :password %>
-                <%= link_to "(forgot password)", new_password_reset_path %>
-                <%= f.password_field :password, class: 'form-control' %>
-
-                <%= f.label :remember_me, class: "checkbox inline" do %>
-                  <%= f.check_box :remember_me %>
-                  <span>Remember me on this computer</span>
-                <% end %>
-
-                <%= f.submit "Log in", class: "btn btn-primary" %>
-              <% end %>
-
-              <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-    				</div>
-    			</div>
-
-    		</div>
-    	</div>
-    </section>
-  </div>
-
-  <%= render 'layouts/footer' %>
-</div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <!-- Global RD Mailform Output -->
+    <div class="snackbars" id="form-output-global"></div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

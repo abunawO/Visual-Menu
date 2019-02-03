@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   def show
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
-      @microposts = @user.microposts.paginate(page: params[:page])
+      @microposts = @user.microposts
 
       _set_default_categories(@user.microposts)
 
@@ -75,13 +75,13 @@ class UsersController < ApplicationController
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
-      flash[:danger] = "User does not exists."
+      flash.now[:danger] = "User does not exists."
     end
   end
 
   def category_search
     @user = User.find(params[:id] || params[:user_id]) || current_user
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts
 
     unless params[:category][:title].present?
       flash.now[:danger] = "Invalid category search"
@@ -90,13 +90,12 @@ class UsersController < ApplicationController
       @selected_cat = @microposts.select {|mic| mic.category == params[:category][:title] }
       @category = params[:category][:title]
       @category_title = params[:category][:title]
-      @feed_items = @user.feed.where("category LIKE ?", "%#{params[:category][:title]}%").paginate(page: params[:page])
+      @feed_items = @microposts.where(:category => params[:category][:title])
     end
   end
 
   def create
-    #binding.pry
-    @countries = COUNTRIES
+    #@countries = COUNTRIES
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
@@ -171,6 +170,7 @@ class UsersController < ApplicationController
       @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
       @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
       @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
+      @side_cat = items.select {|mic| mic.category  == "SIDE" } || []
     end
 
     # Before filters

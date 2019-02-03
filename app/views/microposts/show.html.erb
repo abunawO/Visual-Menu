@@ -1,4 +1,9 @@
 <!--This is the page returned when user clicks a menu item-->
+<% unless logged_in? %>
+  <di class="row">
+  <%= render 'layouts/customer_view_header' %>
+  </div>
+<% end %>
 <div class="selected-menu-item-display" style="height: auto;">
   <div class="row">
     <div class="row">
@@ -12,7 +17,7 @@
             <%= image_tag @micropost.picture.url, class: "img-responsive", style:'top:0;left:0;right:0;bottom:0;margin:auto;' %>
             </span>
             <span>
-              <div class="mp-info" style="margin-top: 20px;background: black; position: relative;overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
+              <div class="mp-info" style="color: dimgray; margin-top: 20px;background: black; position: relative;overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
                 <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
                 <br><p style="color:white;"><%= @micropost.description %></p>
               </div>
@@ -22,3 +27,4 @@
     </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

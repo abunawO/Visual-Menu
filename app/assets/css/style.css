@@ -79,10 +79,6 @@ a:focus {
   text-decoration: none !important;
 }
 
-.parallax-section {
-  background-attachment: fixed !important;
-  background-size: cover !important;
-}
 
 /* hover min css */
 .hvr-bounce-to-bottom:before,
