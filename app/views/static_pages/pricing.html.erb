@@ -1,36 +1,58 @@
 <% provide(:title, "Pricing") %>
 <div class='pricing'>
 <header class='pricing-header'>
-<h1 class='pricing-title ph-h1'>Lorem Ipsum is simply dummy text</h1>
-<h3 class='pricing-title ph-h2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+<div style="position: relative;left: 45%;top: -25px;">
+  <%= render :partial => "shared/home_button" %>
+</div>
+<h2 class="font-weight-bold">
+  <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VIZHO͞OƏL</span> <span style="color: white;">MENU</span></div>
+</h2>
+<h3 class='pricing-title ph-h2'>Technology is a tool utilized to effect change and visual content gets peoples attention.</h3>
 <div class='pricing-action-c'>
-       <a class='pricing-action ph-important' href=''>Sign up</a>
-       </div>
+ <%= link_to "Sign up free", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
+ </div>
 </header>
 <section class='pricing-section'>
     <div class='pricing-box'>
-    <h1 class='pricing-box-title'>Starter</h1>
-    <p class='pricing-box-description'>We offer a 1 month free trial.</p>
+    <h1 class='pricing-box-title'>One time use</h1>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
-        :text => 'Create a beautiful menu online and share it with your customers.'
+        :text => 'Create a beautiful mouth watering visual menu.'
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
-        :text => 'You will get <how many?> access of your menu.'
+        :text => 'You get 30 days access to your visual menu.'
     } %>
-    <a class='pricing-box-action' href=''>FREE<span class='pricing-box-action-info'>/1 month</span></a>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'You get 5 free NFC tags.'
+    } %>
+    <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$30</span></a>
     </div>
     <div class='pricing-box pricing-box-important'>
     <h1 class='pricing-box-title'>Professional</h1>
-    <p class='pricing-box-description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <%# 5 nfc tags %>
-    <a class='pricing-box-action' href=''>$30<span class='pricing-box-action-info'>/month</span></a>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'Create a beautiful mouth watering visual menu.'
+    } %>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'Get unlimitted access to your visual menu.'
+    } %>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'Get access to menu interaction feedback data.'
+    } %>
+    <%= render :partial => "shared/pricing_box_item",:locals => {
+        :icon => 'check_circle_outline',
+        :text => 'You get 20 free NFC tags.'
+    } %>
+    <a class='pricing-box-action' href='/signup'>$20<span class='pricing-box-action-info'>/month</span></a>
     </div>
     <div class='pricing-box'>
     <h1 class='pricing-box-title'>Enterprise</h1>
     <p class='pricing-box-description'>Get in touch with us to get a one on one business </p>
-    <a class='pricing-box-action' href=''>GET IN TOUCH</a>
+    <a class='pricing-box-action' href='/signup'>GET IN TOUCH</a>
     </div>
 </section>
 </div>

@@ -1,6 +1,8 @@
 @import 'const';
 .pricing {
   background: $s-bg-gradient;
+  position: relative;
+  top: -90px;
 }
 .pricing-header {
   min-height: 400px;
