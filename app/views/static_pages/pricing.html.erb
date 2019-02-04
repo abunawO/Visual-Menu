@@ -1,33 +1,33 @@
 <% provide(:title, "Pricing") %>
 <div class='pricing'>
 <header class='pricing-header'>
-<div style="position: relative;left: 45%;top: -25px;">
-  <%= render :partial => "shared/home_button" %>
-</div>
-<h2 class="font-weight-bold">
-  <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VIZHO͞OƏL</span> <span style="color: white;">MENU</span></div>
-</h2>
-<h3 class='pricing-title ph-h2'>Technology is a tool utilized to effect change and visual content gets peoples attention.</h3>
+    <div style="position: relative;left: 45%;top: -25px;">
+      <%= render :partial => "shared/home_button" %>
+    </div>
+    <h1 class='pricing-title ph-h1'>
+      <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VIZHO͞OƏL</span> <span style="color: white;">MENU</span></div>
+    </h1>
+    <h3 class='pricing-title ph-h2'>Visually present the food on your menu and get customers attention.</h3>
 <div class='pricing-action-c'>
- <%= link_to "Sign up free", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
+ <%= link_to "Try for free", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
  </div>
 </header>
 <section class='pricing-section'>
     <div class='pricing-box'>
-    <h1 class='pricing-box-title'>One time use</h1>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
+        <h1 class='pricing-box-title'>One time use</h1>
+        <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
         :text => 'Create a beautiful mouth watering visual menu.'
-    } %>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'You get 30 days access to your visual menu.'
-    } %>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'You get 5 free NFC tags.'
-    } %>
-    <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$30</span></a>
+        } %>
+        <%= render :partial => "shared/pricing_box_item",:locals => {
+            :icon => 'check_circle_outline',
+            :text => 'You get 15 days access to your visual menu.'
+        } %>
+        <%= render :partial => "shared/pricing_box_item",:locals => {
+            :icon => 'check_circle_outline',
+            :text => 'You get 5 free NFC tags.'
+        } %>
+        <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$29.95</span></a>
     </div>
     <div class='pricing-box pricing-box-important'>
     <h1 class='pricing-box-title'>Professional</h1>
@@ -37,22 +37,82 @@
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
-        :text => 'Get unlimitted access to your visual menu.'
+        :text => 'You get unlimitted access to your visual menu.'
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
-        :text => 'Get access to menu interaction feedback data.'
+        :text => 'You get access to menu interaction feedback data.'
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
         :text => 'You get 20 free NFC tags.'
     } %>
-    <a class='pricing-box-action' href='/signup'>$20<span class='pricing-box-action-info'>/month</span></a>
+    <a class='pricing-box-action' href='/signup'>$19.95<span class='pricing-box-action-info'>/month</span></a>
     </div>
     <div class='pricing-box'>
-    <h1 class='pricing-box-title'>Enterprise</h1>
-    <p class='pricing-box-description'>Get in touch with us to get a one on one business </p>
-    <a class='pricing-box-action' href='/signup'>GET IN TOUCH</a>
+        <h1 class='pricing-box-title'>Enterprise</h1>
+        <p class='pricing-box-description'>Get in touch with us to get a one on one business offer.</p>
+        <a class="pricing-box-action" href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com">GET IN TOUCH</a>
     </div>
 </section>
+
+</section>
+   <!-- Features-->
+   <section class="section novi-background section-66 section-collar">
+     <div class="container"><img class="img-fluid" src="" width="1165" height="365" alt="">
+       <h2 class="offset-top-10"><span class="big">Features Available</span></h2>
+     </div>
+     <div class="container-fluid offset-top-50">
+       <div class="row">
+         <div class="col-md-6 col-xxl-3">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-cellphone-link"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">Responsive &amp; Retina</h4>
+                     <p>A vizho͞oəl menu looks the same on any screen resolution. A responsive and ultra sharp visual menu.</p>
+                   </div>
+                 </div>
+         </div>
+         <div class="col-md-6 col-xxl-3 offset-top-50 offset-md-top-0">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-television-guide"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">Accessibility</h4>
+                     <p>A vizho͞oəl menu is accessible online as well as anywhere you decide to use
+                        your synchronized NFC tag(s).
+                     </p>
+                   </div>
+                 </div>
+         </div>
+         <div class="col-md-6 col-xxl-3 offset-top-50 offset-xxl-top-0">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-play-box-outline"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">Interactive menu</h4>
+                     <p>
+                       <ul class="rd-navbar-nav">
+                         <li>Customers can filter your visual menu</li>
+                         <li>Customers can search your visual menu for menu items</li>
+                         <li>Your visual menu is easy to update from any smart device</li>
+                         <li>Your visual menu is fully synchronized...updates show immediately online and anywhere your NFC tag
+                           is available.
+                         </li>
+                         <li>
+                           Customers can view updated menu items every time they interact with your visual menu
+                         </li>
+                         <li>
+                           Customers can share your visual menu
+                         </li>
+                         <li>You can see what customers are looking at the most and pinpoint which menu item gets passed up often</li>
+                       </ul>
+                     </p>
+                   </div>
+                 </div>
+         </div>
+       </div>
+     </div>
+   </section>
 </div>

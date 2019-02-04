@@ -27,7 +27,6 @@
 //= require jquery.magnific-popup.min
 //= require jquery.min
 //= require jquery.stellar.min
-//= require jquery.waypoints.min
 //= require magnific-popup-options
 //= require main
 //= require modernizr-2.6.2.min
