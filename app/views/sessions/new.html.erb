@@ -36,14 +36,17 @@
                     <% flash.each do |message_type, message| %>
                       <div style="margin-bottom: 40px;" class="alert alert-<%= message_type %>"><%= message %></div>
                     <% end %>
+
                     <div class="form-group">
-                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
-                        <input class="form-control" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
+                      <div class="input-group input-group-sm form-component-c"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
+                        <input class="form-control form-component fc-small" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
+                        <%= render :partial => "shared/form_icon_login", :locals => {:icon => 'edit'} %>
                       </div>
+                      
                     </div>
                     <div class="form-group offset-top-20">
-                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-open-outline"></span></span></span>
-                        <input class="form-control" id="password" placeholder="Password" type="password" name="password" data-constraints="@Required" required= 'true'>
+                      <div class="input-group input-group-sm form-component-c"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-open-outline"></span></span></span>
+                        <input class="form-control form-component fc-small" id="password" placeholder="Password" type="password" name="password" data-constraints="@Required" required= 'true'>
                       </div>
                     </div>
                     <button style="margin-bottom: 10px;" class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon novi-icon mdi mdi-arrow-right-bold-circle-outline"></span></button>

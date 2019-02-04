@@ -2,7 +2,6 @@ class StaticPagesController < ApplicationController
 
  #Adding a feed instance variable to the home action.
   def home
-    #binding.pry
     @user = current_user
     @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
     if logged_in?

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/user_profile' => "users#user_profile"
 
+  get '/' => 'static_pages#home'
+
   #root 'static_pages#home'
   root          'static_pages#home'
   #get 'static_pages/home'
