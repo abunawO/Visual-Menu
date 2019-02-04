@@ -27,27 +27,32 @@
                             <!-- Icon Box Type 4--><span class="icon novi-icon icon-circle icon-bordered icon-lg icon-default mdi mdi-account-multiple-outline"></span>
                             <div>
                               <div class="offset-top-24 text-darker big font-weight-bold">SIGN IN</div>
-                              <p class="text-extra-small text-dark offset-top-4">Enter your credentials below</p>
                             </div>
                   </div>
                   <!-- RD Mailform-->
-                  <form id="session" accept-charset="UTF-8" class="text-left offset-top-30" data-form-output="form-output-global" action="/login" data-form-type="contact" method="post">
-                    <input type="hidden" name="authenticity_token" value="zXIRzU253nalVgWKElGpSBajARGTuCuAlDPpxjg7ga/4aJwIk2CneezzQnzRGei2dD/8F3lX6xEBn7c/XhhtqQ==" />
-                    <% flash.each do |message_type, message| %>
-                      <div style="margin-bottom: 40px;" class="alert alert-<%= message_type %>"><%= message %></div>
-                    <% end %>
+                  <%= form_for(:session, url: login_path) do |f| %>
+                    <div style="position: relative; bottom: 10px;">
+
+                      <% flash.each do |message_type, message| %>
+                        <div class="alert alert-<%= message_type %>"><%= message %></div>
+                      <% end %>
+                    </div>
+
                     <div class="form-group">
                       <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
-                        <input class="form-control" id="email" placeholder="Email address" type="email" name="email" required= 'true' data-constraints="@Required">
+                        <%= f.email_field :email, class: 'form-control', required: true, placeholder: "email" %>
                       </div>
                     </div>
+
                     <div class="form-group offset-top-20">
-                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-open-outline"></span></span></span>
-                        <input class="form-control" id="password" placeholder="Password" type="password" name="password" data-constraints="@Required" required= 'true'>
+                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-outline"></span></span></span>
+                        <%= f.password_field :password, class: 'form-control', placeholder: "Password", required: true %>
                       </div>
                     </div>
+
                     <button style="margin-bottom: 10px;" class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon novi-icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
-                  </form>
+
+                  <% end %>
                   <div class="offset-top-30 text-md-left text-dark text-extra-small"><a style="color: #55bbeb;" class="text-picton-blue" href="/password_resets/new">Forgot your password?</a>
                     <div class="offset-top-0">Haven’t an account? <a style="color: #55bbeb;" class="text-picton-blue" href="signup">Sign up here</a>.</div>
                   </div>
