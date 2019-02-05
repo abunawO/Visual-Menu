@@ -10,45 +10,8 @@
   <body style="background: white;">
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="/assets/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="page text-center">
-<<<<<<< HEAD
-      <!-- RD Navbar-->
-      <header class="section rd-navbar-wrap page-head" data-preset='{"title":"Header","category":"header","reload":true,"id":"header"}'>
-        <nav class="rd-navbar novi-background" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static">
-          <!-- RD Navbar Panel-->
-          <div class="rd-navbar-panel">
-            <!-- RD Navbar Toggle-->
-            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-            <div class="rd-navbar-brand" style="    position: relative;top: -95px;">
-              <img class="logo-dark" src="/assets/logo-black.png" width="250" height="50" alt="">
-            </div>
-          </div>
-          <div class="rd-navbar-nav-wrap">
-            <!-- RD Navbar Nav-->
-            <ul class="rd-navbar-nav">
-              <li class="active"><a href="#home">Home</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#service">Service</a></li>
-              <!--<li><a href="#benefit">Interactivity</a></li>
-              <li><a href="#responsive">Responsive</a></li>
-              <li><a href="#shareable">Menu IQ</a>-->
-              <li><a href="#the_process">The Process</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li> <%= link_to "Pricing", pricing_path %></li>
-              <li><%= link_to "Log in", login_path %></li>
-            </ul>
-          </div>
-          <div class="rd-navbar-subpanel">
-            <ul class="list-inline list-inline-primary list-inline-md">
-              <li class="list-inline-item"><a class="novi-icon icon fa" href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com"><img style="top: 10px;position: relative;"src="https://img.icons8.com/cotton/64/000000/secured-letter.png"></a></li>
-              <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://www.instagram.com/visual_food_creation/" target="_blank"></a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-=======
      <!-- navigation -->
       <%= render :partial => "shared/static/navigation/navigation" %>
->>>>>>> landing-page/branch
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
