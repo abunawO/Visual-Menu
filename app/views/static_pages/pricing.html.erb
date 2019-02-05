@@ -9,19 +9,19 @@
     </h1>
     <h3 class='pricing-title ph-h2'>Visually present the food on your menu.</h3>
 <div class='pricing-action-c'>
- <%= link_to "Try for free", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
+ <%= link_to "Try free for 14 days", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
  </div>
 </header>
 <section class='pricing-section'>
     <div class='pricing-box'>
-        <h1 class='pricing-box-title'>One time use</h1>
+        <h1 class='pricing-box-title'>Starter</h1>
         <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
         :text => 'Create a beautiful mouth watering visual menu.'
         } %>
         <%= render :partial => "shared/pricing_box_item",:locals => {
             :icon => 'check_circle_outline',
-            :text => 'You get 15 days access to your visual menu.'
+            :text => 'You get 30 days access to your visual menu.'
         } %>
         <%= render :partial => "shared/pricing_box_item",:locals => {
             :icon => 'check_circle_outline',
@@ -37,11 +37,7 @@
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
-        :text => 'You get unlimitted access to your visual menu.'
-    } %>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'You get access to menu interaction feedback data.'
+        :text => 'You get unlimited access to your visual menu.'
     } %>
     <%= render :partial => "shared/pricing_box_item",:locals => {
         :icon => 'check_circle_outline',
@@ -51,7 +47,7 @@
     </div>
     <div class='pricing-box'>
         <h1 class='pricing-box-title'>Enterprise</h1>
-        <p class='pricing-box-description'>Get in touch with us to get a one on one business offer.</p>
+        <p class='pricing-box-description'>Get in touch with one of our consultants to see how we can provide you a custom solution for your business.</p>
         <a class="pricing-box-action" href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com">GET IN TOUCH</a>
     </div>
 </section>
