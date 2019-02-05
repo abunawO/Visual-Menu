@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'sprockets', '3.6.3'
 gem 'bootstrap-sass', '3.2.0.0'
-gem 'rails',        '4.2.8'
+gem 'rails',        '4.2.2'
 gem 'thin'
 gem 'bcrypt',       '3.1.7'
 gem 'faker',        '1.4.2'
@@ -37,4 +36,3 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end
-
