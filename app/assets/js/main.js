@@ -106,24 +106,6 @@
 	};
 
 
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-gtco-nav-toggle', function(event){
-			var $this = $(this);
-
-
-			if ( $('body').hasClass('overflow offcanvas') ) {
-				$('body').removeClass('overflow offcanvas');
-			} else {
-				$('body').addClass('overflow offcanvas');
-			}
-			$this.toggleClass('active');
-			event.preventDefault();
-
-		});
-	};
-
-
 	var dropdown = function() {
 
 		$('.has-dropdown').mouseenter(function(){
@@ -142,56 +124,6 @@
 				.css('display', 'none')
 				.removeClass('animated-fast fadeInUpMenu');
 		});
-
-	};
-
-
-	var owlCarousel = function(){
-
-		var owl = $('.owl-carousel-carousel');
-		owl.owlCarousel({
-			items: 3,
-			loop: true,
-			margin: 20,
-			nav: true,
-			dots: true,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='ti-arrow-left owl-direction'></i>",
-		      "<i class='ti-arrow-right owl-direction'></i>"
-	     	],
-	     	responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    	}
-		});
-
-
-		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 20,
-			nav: true,
-			dots: true,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='ti-arrow-left owl-direction'></i>",
-		      "<i class='ti-arrow-right owl-direction'></i>"
-	     	]
-		});
-
-
-
 
 	};
 
@@ -268,13 +200,13 @@
 		mobileMenuOutsideClick();
 		formTab();
 		offcanvasMenu();
-		burgerMenu();
+		//burgerMenu();
 		//contentWayPoint();
 		dropdown();
-		owlCarousel();
+		//owlCarousel();
 		goToTop();
 		loaderPage();
-		counterWayPoint();
+		//counterWayPoint();
 		//dateTimeForm();
 		//parallax();
 	});
