@@ -1,0 +1,34 @@
+<!-- landing-header -->
+<header class='landing-header' id="home">
+    <h1>VIZHO͞OƏL MENU</h1>
+    <h3>A visual menu available for access everywhere.</h3>
+    <div class='v-btn-c'>
+        <%= link_to "Try for free", signup_path, class: "v-btn v-btn-dark v-btn-important" %>
+    </div>
+    <div class='menu-example'>
+        <div onclick="scrollHorizontal(-640)" class='scroll-btn left'></div>
+        <p>Your menu in one location</p>
+        <ul id='_menu_example'>
+            <li><img src='/assets/landing/img_1.jpg' alt='sample' /></li>
+            <li><img src='/assets/landing/img_6.jpg' alt='sample' /></li>
+            <li><img src='/assets/landing/img_3.jpg' alt='sample' /></li>
+            <li><img src='/assets/landing/img_2.jpg' alt='sample' /></li>
+            <li><img src='/assets/landing/img_4.jpg' alt='sample' /></li>
+            <li><img src='/assets/landing/img_5.jpg' alt='sample' /></li>
+            
+        </ul>
+        <div onclick="scrollHorizontal(640)" class='scroll-btn right'></div>
+    </div>
+    <img class='phone-cut' src='/assets/phone-cut.svg' alt='phone-cut' />
+</header>
+<script>
+    // this function allows scrolling when clicked on btn
+    function scrollHorizontal(amount) {
+        document.getElementById('_menu_example')
+        .scrollBy({
+            top: 0,
+            left: amount,
+            behavior: 'smooth'
+        })
+    }
+</script>
