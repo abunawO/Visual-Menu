@@ -12,9 +12,6 @@
     <div class="page text-center">
      <!-- navigation -->
       <%= render :partial => "shared/static/navigation/navigation" %>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
       <!-- landing-header -->
       <%= render :partial => "shared/static/landing-page/header" %>
       <!--landing-features-->

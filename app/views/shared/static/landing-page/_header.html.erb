@@ -1,5 +1,10 @@
 <!-- landing-header -->
 <header class='landing-header' id="home">
+    <div style="margin-bottom: 10px;" class="row">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
     <h1>VIZHO͞OƏL MENU</h1>
     <h3>A visual menu available for access everywhere.</h3>
     <div class='v-btn-c'>
@@ -15,7 +20,7 @@
             <li><img src='/assets/landing/img_2.jpg' alt='sample' /></li>
             <li><img src='/assets/landing/img_4.jpg' alt='sample' /></li>
             <li><img src='/assets/landing/img_5.jpg' alt='sample' /></li>
-            
+
         </ul>
         <div onclick="scrollHorizontal(640)" class='scroll-btn right'></div>
     </div>
