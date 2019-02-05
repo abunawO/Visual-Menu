@@ -276,7 +276,7 @@
 		loaderPage();
 		counterWayPoint();
 		//dateTimeForm();
-		parallax();
+		//parallax();
 	});
 
 
