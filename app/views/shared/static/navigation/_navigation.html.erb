@@ -1,0 +1,57 @@
+<%# this is the navigation for the static pages %>
+<nav class='static-navigation'>
+
+    <button onclick="toggleNav()" id='sn-btn' class='sn-btn'>
+        <div class='sn-btn-item top'></div>
+        <div class='sn-btn-item middle'></div>
+        <div class='sn-btn-item bottom'></div>
+    </button>
+
+    <p class='sn-brand'>VIZHO͞OƏL</p>
+
+    <%= link_to "Login", login_path, class: 'sn-login' %>
+
+    <div id='static-navigation-drawer' class='static-navigation-drawer'>
+    <span onclick="toggleNav()" class='static-navication-space'></span>
+    <div id='static-navigation-c' class='static-navigation-c'>
+        <ul class="static-navigation-list">
+            <li><a onclick='linkActive(this)' class='sn-link active' href="#home">Home</a></li>
+            <li><a onclick='linkActive(this)' class='sn-link' href="#features">Features</a></li>
+            <li><a onclick='linkActive(this)' class='sn-link' href="#service">Service</a></li>
+            <!--<li><a onclick='linkActive(this)' class='sn-link' href="#benefit">Benefit</a></li>
+            <li><a onclick='linkActive(this)' class='sn-link' href="#responsive">Responsive</a></li>
+            <li><a onclick='linkActive(this)' class='sn-link' href="#shareable">Menu IQ</a>-->
+            <li><a onclick='linkActive(this)' class='sn-link' href="#the_process">The Process</a></li>
+            <li><a onclick='linkActive(this)' class='sn-link' href="#contact">Contact</a></li>
+        </ul>
+
+        <ul class="static-navigation-footer">
+            <li>
+                <a href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com">
+                    <img src="https://img.icons8.com/cotton/64/000000/secured-letter.png">
+                </a>
+            </li>
+            <li class="list-inline-item">
+              <a style="margin-left: 10px;" class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://www.instagram.com/visual_food_creation/" target="_blank">
+              </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+</nav>
+<script>
+    function toggleNav() {
+        document.getElementById('static-navigation-drawer')
+            .classList.toggle('active');
+        document.getElementById('static-navigation-c')
+            .classList.toggle('active');
+    }
+    function linkActive(e) {
+        let linkArray = document.getElementsByClassName('sn-link');
+        for (var i = 0; i < linkArray.length; i++) {
+            linkArray[i].classList.remove('active');
+        }
+        e.classList.toggle('active');
+    }
+</script>
