@@ -1,0 +1,92 @@
+@import 'const';
+.landing-features {
+  background-color: $s-text-third;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  @media (max-width: 550px) {
+    padding: 0;
+  }
+  @media (max-height: 550px) {
+    padding: 0;
+  }
+  h2 {
+    padding: 0 20px;
+    padding-bottom: 50px;
+    font-size: 2em;
+    margin: 0;
+    color: $s-text-primary;
+    font-weight: bold;
+  }
+  .landing-features-item-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+      margin: 10px;
+      transition: ease-in-out 0.2s;
+      overflow: hidden;
+      border-radius: 10px;
+      &.lfi-important {
+        box-shadow: 0px 0px 45px rgba($s-primary, 0.1);
+        border: 1px solid $s-primary;
+        &:hover {
+          border-color: $s-secondary;
+        }
+      }
+      &:hover {
+        box-shadow: 0px 0px 45px rgba($s-secondary, 0.2);
+      }
+      .landing-features-item {
+        height: 100%;
+        background-color: $s-text-third;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 420px;
+        @media (max-width: 550px) {
+          width: auto;
+        }
+        .lfi-header {
+          padding: 20px;
+          padding-bottom: 0px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          background-color: $s-bg-primary;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          h3 {
+            font-size: 1.5em;
+            padding: 10px 0;
+            margin: 0;
+            font-weight: bold;
+            color: $s-text-primary;
+            text-align: left;
+            a {
+              color: $s-secondary;
+            }
+          }
+        }
+
+        p {
+          color: $s-text-secondary;
+          text-align: left;
+          margin: 0;
+          padding: 20px;
+          a {
+            color: $s-secondary;
+          }
+        }
+      }
+    }
+  }
+}

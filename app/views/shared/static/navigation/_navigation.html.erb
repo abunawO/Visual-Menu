@@ -42,12 +42,14 @@
 
 </nav>
 <script>
+    // this function allows nav to toggle on and off
     function toggleNav() {
         document.getElementById('static-navigation-drawer')
             .classList.toggle('active');
         document.getElementById('static-navigation-c')
             .classList.toggle('active');
     }
+    // this function changes active link on nav
     function linkActive(e) {
         let linkArray = document.getElementsByClassName('sn-link');
         for (var i = 0; i < linkArray.length; i++) {

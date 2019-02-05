@@ -14,7 +14,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //   background-color: transparent;
 
   background: url('/assets/pricing-bg-debris.svg') no-repeat center
     center fixed;
@@ -86,7 +85,7 @@
   .pricing-box {
     margin: 20px;
     z-index: 20;
-    box-shadow: 0px 10px 25px rgba(#ff5f6d, 0.5);
+    box-shadow: 0px 10px 25px rgba(#ff5f6d, 0.2);
     border-radius: 10px;
     max-width: 450px !important;
     display: flex;
@@ -107,7 +106,7 @@
       }
     }
     &:hover {
-      box-shadow: 0px 10px 45px rgba(#ee6c55, 0.5);
+      box-shadow: 0px 10px 45px rgba(#ee6c55, 0.2);
       .pricing-box-title {
         border-color: rgba(#ee6c55, 0.5);
       }
@@ -123,7 +122,7 @@
       &:hover {
         padding-left: 10px;
         // background-color: #ee6c55;
-        box-shadow: 0px 10px 45px rgba(#ff5f6d, 0.5);
+        box-shadow: 0px 10px 45px rgba(#ff5f6d, 0.2);
         // box-shadow: 0px 10px 25px rgba(#ff5f6d, 0.5);
         background-color: $s-text-third;
         .pricing-box-item-icon {
