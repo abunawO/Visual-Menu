@@ -1,0 +1,76 @@
+<div class='ls-example'>
+    <div class='lse-header'>
+    <span class='lse-header-title'>TRY A DEMO!</span>
+        <div class='lse-profile'>
+            <a href="https://vizhooels.herokuapp.com/users/31" target="_blank">
+                <img src='/assets/fish-food-icon.png' alt='fish-food-restaurant-icon' />
+            </a>
+            <div>
+                <a href="https://vizhooels.herokuapp.com/users/31" target="_blank">
+                    <p>Fish Food Restaurant</p>
+                </a>
+                <p>93 Menu Items</p>
+            </div>
+        </div>
+    </div>
+    <div class='lse-form'>
+        <button onclick="editExampleField(this, 'Burger')">
+            <p>Title...</p>
+            <span class="material-icons">edit</span>
+        </button>
+        <button onclick="editExampleField(this, 'Lunch')">
+            <p>Category</p>
+            <span class="material-icons">expand_more</span>
+        </button>
+        <button onclick="editExampleField(this, '8.99')">
+            <p>Price...</p>
+            <span class="material-icons">attach_money</span>
+        </button>
+        <button onclick="editExampleField(this, 'A tasty burger.')">
+            <p>Description...</p>
+            <span class="material-icons">notes</span>
+        </button>
+        <button onclick="editExampleField(this, 'burger.jpg')">
+            <p>Picture</p>
+            <span class="material-icons">attach_file</span>
+        </button>
+        <button onclick="editExampleField(this, 'It is that easy!')">
+            <p>Create</p>
+            <span class="material-icons">send</span>
+        </button>
+        
+    </div>
+    <div id='se-complete' class='se-complete'>
+        <div class='se-img-c'>
+            <img class='se-img' src='/assets/landing/img_5.jpg' alt='sample' />
+            <div class='se-img-text'>
+                <p>Burger</p>
+                <p>$8.99</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var seCounter = 0;
+var seArray = ['Title...', 'Category', 'Price...', 'Description...', 'Picture'];
+function editExampleField(item, text) {
+    var seItem = item.children[0].textContent
+    seArray.includes(seItem) && seCounter++;
+    if (seItem === 'Create' || seItem === 'Enter all fields') {
+        if (seCounter === 5) {
+            item.children[0].textContent = text;
+            item.classList.remove('se-error');
+            item.classList.add('se-save');
+            document.getElementById('se-complete').classList.add('se-complete-active');
+        } else {
+            item.children[0].textContent = 'Enter all fields';
+            item.classList.add('se-error');
+        }
+    } else {
+        item.children[0].textContent = text;
+        item.classList.add('se-save');
+    }
+}
+
+</script>
