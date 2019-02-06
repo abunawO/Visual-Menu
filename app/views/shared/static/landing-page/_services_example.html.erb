@@ -1,0 +1,54 @@
+<div class='ls-example'>
+    <div class='lse-header'>
+    <span class='lse-header-title'>TRY IT OUT!</span>
+        <div class='lse-profile'>
+        <a href="https://vizhooels.herokuapp.com/users/31" target="_blank">
+            <img src='/assets/fish-food-icon.png' alt='fish-food-restaurant-icon' />
+            </a>
+            <div>
+                <p>Fish Food Restaurant</p>
+                <a href="https://vizhooels.herokuapp.com/users/31" target="_blank">
+                    <p>Your VIZHO͞OƏL</p>
+                </a>
+            </div>
+        </div>
+        <div class='lse-control'>
+            <p>Set profile picture</p>
+            <p>93 Menu Items</p>
+        </div>
+    </div>
+    <div class='lse-form'>
+        <button onclick="editExampleField(this, 'Burger')">
+            <p>Title...</p>
+            <span class="material-icons">edit</span>
+        </button>
+        <button onclick="editExampleField(this, 'lunch')">
+            <p>Category</p>
+            <span class="material-icons">expand_more</span>
+        </button>
+        <button onclick="editExampleField(this, '8.99')">
+            <p>Price...</p>
+            <span class="material-icons">attach_money</span>
+        </button>
+        <button onclick="editExampleField(this, 'A tasty burger.')">
+            <p>Description...</p>
+            <span class="material-icons">notes</span>
+        </button>
+        <button onclick="editExampleField(this, 'Burger.jpg')">
+            <p>Picture</p>
+            <span class="material-icons">attach_file</span>
+        </button>
+        <button onclick="editExampleField(this, 'It is that easy!')">
+            <p>Create</p>
+            <span class="material-icons">send</span>
+        </button>
+        
+    </div>
+</div>
+
+<script>
+function editExampleField(item, text) {
+item.children[0].textContent = text;
+}
+
+</script>
