@@ -162,6 +162,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  transition: ease-in-out 0.2s;
   &:hover {
     border-color: rgba($s-primary, 0.1);
     // background-color: $s-bg-primary;
@@ -305,9 +306,11 @@
     }
     .se-img-c {
       border-radius: 5px;
-      position: relative;
+      position: absolute;
+      top: 25%;
       overflow: hidden;
       box-shadow: 0px 0px 45px rgba($third, 0.2);
+      transition: ease-in-out 0.5s;
       .se-img {
         width: 100%;
       }
