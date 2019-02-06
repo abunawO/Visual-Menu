@@ -146,6 +146,7 @@
 }
 
 .ls-example {
+  overflow: hidden;
   border-radius: 10px;
   background-color: white;
   border: 1px solid $s-bg-primary;
@@ -171,6 +172,7 @@
     right: 70%;
   }
   @media (max-width: 1200px) {
+    opacity: 1 !important;
     right: 0px;
     top: 20px;
     margin: 20px;
@@ -244,8 +246,7 @@
   }
   .lse-form {
     width: 100%;
-
-    //
+    position: relative;
     button {
       margin-bottom: 10px;
       width: 100%;
@@ -263,6 +264,18 @@
           color: $third;
         }
       }
+      &.se-error {
+        border-color: $s-primary;
+        span {
+          color: $s-primary;
+        }
+      }
+      &.se-save {
+        border-color: $third;
+        span {
+          color: $third;
+        }
+      }
       p {
         color: $s-text-secondary;
         font-size: 0.7em;
@@ -274,6 +287,44 @@
         color: $s-text-secondary;
         text-align: right;
         font-size: 0.7em;
+      }
+    }
+  }
+  .se-complete {
+    display: none;
+    left: 0;
+    top: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($s-text-primary, 0.3);
+    &.se-complete-active {
+      display: flex;
+    }
+    .se-img-c {
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0px 0px 45px rgba($third, 0.2);
+      .se-img {
+        width: 100%;
+      }
+      .se-img-text {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 0 5px;
+        background-color: rgba($third, 0.7);
+        color: $secondary;
+        p {
+          font-weight: bold;
+          line-height: 1.5;
+          font-size: 14px;
+          text-align: left;
+          margin: 0;
+        }
       }
     }
   }

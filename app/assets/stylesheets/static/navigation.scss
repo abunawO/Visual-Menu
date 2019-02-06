@@ -53,7 +53,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 5px 5px 5px 0 rgba($s-text-primary, 0.2);
     &.active {
       .static-navication-space {
         position: absolute;
@@ -78,6 +77,7 @@
       top: 50px;
       left: -270px;
       transition: ease-in-out 0.3s;
+      box-shadow: 5px 5px 5px 0 rgba($s-text-primary, 0.2);
       &.active {
         left: 0px;
       }
