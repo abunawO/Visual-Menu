@@ -51,6 +51,9 @@
     color: $s-text-primary;
     font-weight: bold;
     font-size: 3em;
+    span {
+      color: $s-secondary;
+    }
     @media (max-width: 768px) {
       font-size: 2em;
     }

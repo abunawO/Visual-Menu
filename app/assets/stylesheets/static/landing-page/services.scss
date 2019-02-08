@@ -64,6 +64,9 @@
       padding-right: 50px;
       background-color: $s-bg-primary;
       border-bottom: 1px solid $s-primary;
+      span {
+        color: $s-secondary;
+      }
     }
     ul {
       padding: 0;
@@ -200,13 +203,16 @@
     justify-content: flex-start;
 
     .lse-header-title {
+      margin-bottom: 5px;
+      font-size: 0.8em;
       color: $s-text-primary;
       font-weight: bold;
     }
     .lse-profile {
+      margin-bottom: 10px;
       display: flex;
       // flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       a {
         img {
@@ -220,10 +226,10 @@
         padding-left: 10px;
         p {
           color: $s-text-primary;
-          height: 20px;
           font-size: 0.7em;
           margin: 0;
           text-align: left;
+          line-height: 2;
         }
         a {
           p {

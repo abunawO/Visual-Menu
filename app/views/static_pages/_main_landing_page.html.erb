@@ -10,42 +10,16 @@
   <body style="background: white; padding-top: 0;">
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="/assets/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="page text-center">
-     <!-- navigation -->
+     <!-- static-navigation -->
       <%= render :partial => "shared/static/navigation/navigation" %>
-      <!-- landing-header -->
+      <!--landing-header-->
       <%= render :partial => "shared/static/landing-page/header" %>
       <!--landing-features-->
       <%= render :partial => "shared/static/landing-page/features" %>
-      <!--Our Services-->
+      <!--landing-services-->
       <%= render :partial => "shared/static/landing-page/services" %>
-      <!--We Help You Grow-->
-      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="benefit" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
-        <div class="container">
-          <div class="row grid-group-md justify-content-between">
-            <div class="col-lg-6 col-xl-5">
-              <div class="offset-top-41 graph-content wow fadeInLeft">
-                <div style="width: 100%; height: 450px; margin-bottom: 30px;">
-                  <img class="img-fluid" src="/assets/menu-black.png" width="360" height="240" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 text-lg-left">
-              <div class="inset-md-lef-100 offset-lg-top-30 wow fadeInRight">
-                <h4 class="font-weight-bold">AN INTERACTIVE MENU</h4>
-                <div class="offset-top-30 inset-lg-right-100">
-                  <p>
-                    A <span style="color:yellow;">vizho͞oəl</span> menu has a wide set of tools to help customers
-                    as they interact with your visual menu.
-                  </p>
-                </div>
-                <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "Try free for 14 days", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-70" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!--landing-interactive-menu-->
+      <%= render :partial => "shared/static/landing-page/interactive_menu" %>
       <!--Extremely Responsive and Retina-->
       <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-gray-lighter" id="responsive" data-preset='{"title":"Content","category":"content","id":"content"}'>
         <div class="container">
