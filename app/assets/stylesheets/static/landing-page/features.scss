@@ -20,6 +20,9 @@
     margin: 0;
     color: $s-text-primary;
     font-weight: bold;
+    span {
+      color: $s-secondary;
+    }
   }
   .landing-features-item-list {
     padding: 0;

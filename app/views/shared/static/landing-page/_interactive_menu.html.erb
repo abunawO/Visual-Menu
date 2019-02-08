@@ -1,0 +1,246 @@
+<section class='landing-interactive-menu'>
+    <div class='lim-tool'>
+        <h2>A INTERACTIVE MENU FOR EVERYONE</h2>
+        <p class='lim-tools-details'>
+            A <span>vizho͞oəl</span> menu has a wide set of tools to help customers
+            as they interact with your visual menu.
+        </p>
+        <div class='lim-demo'>
+        <p class='lim-tools-demo'>TRY A DEMO!</p>
+        <button id='lim-example-search' onclick='limSearch(this)'>
+            <p>Search</p>
+            <span class="material-icons">search</span>
+        </button>
+        <button id='lim-example-category' onclick='limCategory(this)'>
+            <p>Category</p>
+            <span class="material-icons">expand_more</span>
+        </button>
+        </div>
+    </div>
+    <div class='lim-menu-list'>
+        <div id='lim-breakfast'>
+            <h3>Breakfast options</h3>
+            <ul>
+                <li id='lim-img1'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_3.jpg',
+                        :alt => 'img alt',
+                        :name => 'Egg Salad',
+                        :price => '7.99',
+                    } do %>
+                        This classic egg salad recipe features foolproof hard-boiled eggs,
+                        homemade mayonnaise, mustard and crunchy mix-in's.
+                    <% end %>
+                </li>
+                <li id='lim-img2'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_1.jpg',
+                        :alt => 'img alt',
+                        :name => 'Sushi',
+                        :price => '10.99',
+                    } do %>
+                        Shaped inside a thin sheet of seaweed.
+                    <% end %>
+                </li>
+            </ul>
+            <p class='lim-description'>
+                Powered by <span>VIZHO͞OƏLS</span>
+            </p>
+        </div>
+        <div id='lim-lunch'>
+            <h3>Lunch options</h3>
+            <ul>
+                <li id='lim-img1'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_4.jpg',
+                        :alt => 'img alt',
+                        :name => 'Pizza',
+                        :price => '12.99',
+                    } do %>
+                      The classic pepperoni pizza with an American variety of salami,
+                      made from cured pork and beef mixed together and seasoned
+                      with paprika or other chili pepper.
+                    <% end %>
+                </li>
+                <li id='lim-img2'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_5.jpg',
+                        :alt => 'img alt',
+                        :name => 'Burger',
+                        :price => '8.99',
+                    } do %>
+                        A hamburger consisting of one
+                        or more cooked patties of ground meat,
+                        placed inside a sliced bread roll or bun.
+                    <% end %>
+                </li>
+            </ul>
+            <p class='lim-description'>
+                Powered by <span>VIZHO͞OƏLS</span>
+            </p>
+        </div>
+        <div id='lim-dinner'>
+            <h3>Dinner options</h3>
+            <ul>
+                <li id='lim-img1'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_6.jpg',
+                        :alt => 'img alt',
+                        :name => 'Chili Shrimp',
+                        :price => '8.99',
+                    } do %>
+                        This spicy shrimp meal is a hit.
+                        The fiery sauce clings to the succulent shrimp.
+                    <% end %>
+                </li>
+                <li id='lim-img2'>
+                    <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
+                        :src => '/assets/landing/img_2.jpg',
+                        :alt => 'img alt',
+                        :name => 'Zucchini Salmon',
+                        :price => '8.99',
+                    } do %>
+                        Salmon drizzled with olive oil and season with salt and pepper, to taste.
+                    <% end %>
+                </li>
+            </ul>
+            <p class='lim-description'>
+                Powered by <span>VIZHO͞OƏLS</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+var limS = document.getElementById('lim-example-search');
+var limC = document.getElementById('lim-example-category');
+var limArray = [
+    document.getElementById('lim-breakfast'),
+    document.getElementById('lim-lunch'),
+    document.getElementById('lim-dinner')
+];
+var limParentClassArray = [
+    'lim-hide-category',
+    'lim-extra-category',
+    'lim-hide-search',
+    'lim-extra-search',
+];
+var limChildClassArray = [
+    'lim-img-hide-description',
+    'lim-img-extra-description'
+]
+var limCategoryArray = [{
+    name: 'Breakfast',
+    id: 'lim-breakfast'
+}, {
+    name: 'Lunch',
+    id: 'lim-lunch'
+}, {
+    name: 'Dinner',
+    id: 'lim-dinner'
+}, {
+    name: 'Category'
+}]
+var limCategoryAllIndex = 0;
+var limCategoryIndex = 0;
+var limCurrentCategoryIndex = 0;
+var limSearchIndex = 0;
+function getCategory(selected, type) {
+    for (var i = 0; i < limArray.length; i++) {
+        limArray[i].classList.remove(...limParentClassArray);
+        if (limArray[i].id !== selected.id) {
+            limArray[i].classList.add(`lim-hide-${type}`);
+        } else {
+        limArray[i].classList.add(`lim-extra-${type}`);
+        }
+    }
+}
+function getSearch(selected) {
+    var limSearchArray = selected.querySelectorAll('li');
+    var limSearchSelected = limSearchArray[limSearchIndex]
+    var foodName = limSearchSelected
+    .querySelectorAll('.lim-img-details')[0]
+    .children[0].textContent;
+    limS.querySelectorAll('p')[0].textContent = foodName;
+    for (var i = 0; i < limSearchArray.length; i++) {
+        limSearchArray[i].classList.remove(...limChildClassArray);
+        if (limSearchArray[i].id !== limSearchSelected.id) {
+            limSearchArray[i].classList.add(limChildClassArray[0]);
+        } else {
+            limSearchArray[i].classList.add(limChildClassArray[1]);
+        }
+    }
+}
+function limSearch(item) {
+    var limCategorySelected;
+    var category = limC.children[0].textContent;
+    if (category === 'Category') {
+        limCategorySelected = document
+        .getElementById(limCategoryArray[limCategoryAllIndex].id);
+        getCategory(limCategorySelected, 'search')
+        getSearch(limCategorySelected)
+        if (limSearchIndex === 1) {
+        if (limCategoryAllIndex === 2) {
+            limCategoryAllIndex = 0;
+            limSearchIndex = 0;
+        } else {
+            limCategoryAllIndex++;
+        }
+            limSearchIndex = 0;
+        } else {
+            limSearchIndex++;
+        }
+    } else {
+        limCategorySelected = document
+        .getElementById(limCategoryArray[limCurrentCategoryIndex].id);
+        if (limSearchIndex < 2) {
+        getCategory(limCategorySelected, 'search')
+        getSearch(limCategorySelected)
+        } else {
+        getCategory(limCategorySelected, 'category')
+            var limSearchArray = limCategorySelected.querySelectorAll('li');
+            for (var i = 0; i < limSearchArray.length; i++) {
+                limSearchArray[i].classList.remove(...limChildClassArray);
+            }
+        }
+        if (limSearchIndex === 2) {
+            if (limCategoryAllIndex === 2) {
+                limCategoryAllIndex = 0;
+                limSearchIndex = 0;
+            } else {
+                limCategoryAllIndex++;
+            }
+            limSearchIndex = 0;
+        } else {
+            limSearchIndex++;
+        }
+    }
+
+}
+function limCategory() {
+    limSearchIndex = 0;
+    limCategoryAllIndex = 0;
+    limS.querySelectorAll('p')[0].textContent = 'Search';
+    limC.children[0].textContent = limCategoryArray[limCategoryIndex].name
+    for (var i = 0; i < limArray.length; i++) {
+        var limSearchArray = limArray[i].querySelectorAll('li');
+        for (var j = 0; j < limSearchArray.length; j++) {
+            limSearchArray[j].classList.remove(...limChildClassArray);
+        }
+    }
+    if (limCategoryIndex < 3) {
+        getCategory(limArray[limCategoryIndex], 'category');
+    } else {
+        for (var i = 0; i < limArray.length; i++) {
+        limArray[i].classList.remove(...limParentClassArray);
+
+        }
+    }
+    if (limCategoryIndex === 3) {
+        limCategoryIndex = 0;
+    } else {
+        limCurrentCategoryIndex = limCategoryIndex;
+        limCategoryIndex++;
+    }
+}
+</script>

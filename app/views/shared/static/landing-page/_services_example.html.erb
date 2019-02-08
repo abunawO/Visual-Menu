@@ -1,6 +1,6 @@
 <div class='ls-example'>
     <div class='lse-header'>
-    <span class='lse-header-title'>TRY A DEMO!</span>
+    <p class='lse-header-title'>TRY A DEMO!</p>
         <div class='lse-profile'>
             <a href="https://www.vizhooels.com/users/31" target="_blank">
                 <img src='/assets/fish-food-icon.png' alt='fish-food-restaurant-icon' />
@@ -9,7 +9,7 @@
                 <a href="https://www.vizhooels.com/users/31" target="_blank">
                     <p>Fish Food Restaurant</p>
                 </a>
-                <p>93 Menu Items</p>
+                <p id='se-menu-item-count'>93 Menu Items</p>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
 var seCounter = 0;
 var seArray = ['Title...', 'Category', 'Price...', 'Description...', 'Picture'];
 function editExampleField(item, text) {
@@ -62,7 +62,10 @@ function editExampleField(item, text) {
             item.children[0].textContent = text;
             item.classList.remove('se-error');
             item.classList.add('se-save');
-            document.getElementById('se-complete').classList.add('se-complete-active');
+            document.getElementById('se-complete')
+            .classList.add('se-complete-active');
+            document.getElementById('se-menu-item-count')
+            .textContent = '94 Menu Items';
         } else {
             item.children[0].textContent = 'Enter all fields';
             item.classList.add('se-error');
@@ -72,5 +75,4 @@ function editExampleField(item, text) {
         item.classList.add('se-save');
     }
 }
-
 </script>

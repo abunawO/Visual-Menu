@@ -64,6 +64,9 @@
       padding-right: 50px;
       background-color: $s-bg-primary;
       border-bottom: 1px solid $s-primary;
+      span {
+        color: $s-secondary;
+      }
     }
     ul {
       padding: 0;
@@ -162,6 +165,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  transition: ease-in-out 0.2s;
   &:hover {
     border-color: rgba($s-primary, 0.1);
     // background-color: $s-bg-primary;
@@ -199,13 +203,16 @@
     justify-content: flex-start;
 
     .lse-header-title {
+      margin-bottom: 5px;
+      font-size: 0.8em;
       color: $s-text-primary;
       font-weight: bold;
     }
     .lse-profile {
+      margin-bottom: 10px;
       display: flex;
       // flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       a {
         img {
@@ -219,10 +226,10 @@
         padding-left: 10px;
         p {
           color: $s-text-primary;
-          height: 20px;
           font-size: 0.7em;
           margin: 0;
           text-align: left;
+          line-height: 2;
         }
         a {
           p {
@@ -305,9 +312,11 @@
     }
     .se-img-c {
       border-radius: 5px;
-      position: relative;
+      position: absolute;
+      top: 25%;
       overflow: hidden;
       box-shadow: 0px 0px 45px rgba($third, 0.2);
+      transition: ease-in-out 0.5s;
       .se-img {
         width: 100%;
       }
