@@ -19,7 +19,7 @@
     </div>
     <div class='lim-menu-list'>
         <div id='lim-breakfast'>
-            <h3>Breakfast</h3>
+            <h3>Breakfast options</h3>
             <ul>
                 <li id='lim-img1'>
                     <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
@@ -28,26 +28,27 @@
                         :name => 'Egg Salad',
                         :price => '7.99',
                     } do %>
-                        TEXT GOES HERE
+                        This classic egg salad recipe features foolproof hard-boiled eggs,
+                        homemade mayonnaise, mustard and crunchy mix-in's.
                     <% end %>
                 </li>
                 <li id='lim-img2'>
                     <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
                         :src => '/assets/landing/img_1.jpg',
                         :alt => 'img alt',
-                        :name => 'Suchi',
+                        :name => 'Sushi',
                         :price => '10.99',
                     } do %>
-                        TEXT GOES HERE
+                        Shaped inside a thin sheet of seaweed.
                     <% end %>
                 </li>
             </ul>
             <p class='lim-description'>
-                TEXT GOES HERE
+                Powered by <span>VIZHO͞OƏLS</span>
             </p>
         </div>
         <div id='lim-lunch'>
-            <h3>Lunch</h3>
+            <h3>Lunch options</h3>
             <ul>
                 <li id='lim-img1'>
                     <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
@@ -56,7 +57,9 @@
                         :name => 'Pizza',
                         :price => '12.99',
                     } do %>
-                        TEXT GOES HERE
+                      The classic pepperoni pizza with an American variety of salami,
+                      made from cured pork and beef mixed together and seasoned
+                      with paprika or other chili pepper.
                     <% end %>
                 </li>
                 <li id='lim-img2'>
@@ -66,25 +69,28 @@
                         :name => 'Burger',
                         :price => '8.99',
                     } do %>
-                        TEXT GOES HERE
+                        A hamburger consisting of one
+                        or more cooked patties of ground meat,
+                        placed inside a sliced bread roll or bun.
                     <% end %>
                 </li>
             </ul>
             <p class='lim-description'>
-                TEXT GOES HERE
+                Powered by <span>VIZHO͞OƏLS</span>
             </p>
         </div>
         <div id='lim-dinner'>
-            <h3>Dinner</h3>
+            <h3>Dinner options</h3>
             <ul>
                 <li id='lim-img1'>
                     <%= render :layout => "shared/static/landing-page/interactive_menu_item.html", :locals => {
                         :src => '/assets/landing/img_6.jpg',
                         :alt => 'img alt',
-                        :name => 'Chili Shrip',
+                        :name => 'Chili Shrimp',
                         :price => '8.99',
                     } do %>
-                        TEXT GOES HERE
+                        This spicy shrimp meal is a hit.
+                        The fiery sauce clings to the succulent shrimp.
                     <% end %>
                 </li>
                 <li id='lim-img2'>
@@ -94,12 +100,12 @@
                         :name => 'Zucchini Salmon',
                         :price => '8.99',
                     } do %>
-                        TEXT GOES HERE
+                        Salmon drizzled with olive oil and season with salt and pepper, to taste.
                     <% end %>
                 </li>
             </ul>
             <p class='lim-description'>
-                TEXT GOES HERE
+                Powered by <span>VIZHO͞OƏLS</span>
             </p>
         </div>
     </div>
@@ -182,7 +188,7 @@ function limSearch(item) {
         }
             limSearchIndex = 0;
         } else {
-            limSearchIndex++;  
+            limSearchIndex++;
         }
     } else {
         limCategorySelected = document
@@ -206,10 +212,10 @@ function limSearch(item) {
             }
             limSearchIndex = 0;
         } else {
-            limSearchIndex++;  
+            limSearchIndex++;
         }
     }
-    
+
 }
 function limCategory() {
     limSearchIndex = 0;
