@@ -1,5 +1,9 @@
-Hi <%= @user.name %>,
+<h1>VIZHO͞OƏLS</h1>
 
-Welcome to the VIZHO͞OƏLS App! Click on the link below to activate your account:
+<p>Hi <%= @user.name %>,</p>
+
+<p>
+Welcome to the vizho͞oəls App! Click on the link below to activate your account:
+</p>
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
