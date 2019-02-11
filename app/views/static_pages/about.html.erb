@@ -1,10 +1,15 @@
 <% provide(:title, "About") %>
 <div class="main-page-bk">
+  <div class="page text-center">
+   <!-- static-navigation -->
+    <!--landing-header-->
+    <%= render :partial => "shared/static/landing-page/header" %>
+  </div>
 <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 style="color: black;">About Vizho͞oəls</h2>
+                    <h2 style="color: black;">Vizho͞oəls</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -13,77 +18,85 @@
                 <div class="col-lg-12 text-center">
                     <div class="well">
                         <p style="color: dimgray;"><font size="4"></font>
-                          Vizho͞oəls is a simple web application that puts the power of control over a visual menu in the hands of the restaurants..the power to update
-                          and change how to visually present the food on the menu.
-                          The Vizho͞oəls platform uses NFC technology to give centralize control of a digital menu to our users, allowing for real time update and presentation of food on the menu. Remember, “You eat first with your eyes.”
+                          Unlock the full potential of your restaurants menu when you enhance it with visuals.
+                          Vizho͞oəls is a simple web application, that offers a service...vizho͞oəl menu, built to be an interactive visual menu.
+                          The menu is easy use, making it easy to add new menu items, edit menu items and categorized menu items.
+                          The Vizho͞oəls platform uses NFC technology / QR code scan, synchronized with your vizho͞oəl menu to make your visual menu
+                          easy to access. Customers can simply use thier smart device to scan the NFC tags / QR code on menus and be
+                          greated with visuals to complement your menu.
+
                         </p>
 
                         <a href="http://www1.opendining.net/blog/are-food-images-really-important-on-your-online-menu">"Are food images really important on your menu?"</a>
+
+                        <p style="color: dimgray;"><font size="4"></font>
+                          Everyone has a smartphone-why not take advantage
+                          of this to enhance your menu?
+                        </p>
                     </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="interest">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 style="color: black;">Benefits</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                        <span class="sr-only">90% Complete</span>
-                        <p>Visual element has such a powerful impact on food choice</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                        <span class="sr-only">95% Complete</span>
-                        <p>Attract and retain customer interest</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                        <span class="sr-only">90% Complete</span>
-                        <p>Customer menu interaction</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only">80% Complete</span>
-                        <p>Customer menu understanding</p>
-                    </div>
+  </section>
+     <!-- Features-->
+     <section class="section novi-background section-66 section-collar">
+       <div class="container"><img class="img-fluid" src="" width="1165" height="365" alt="">
+         <h2 class="offset-top-10"><span class="big">Features Available</span></h2>
+       </div>
+       <div class="container-fluid offset-top-50">
+         <div class="row">
+           <div class="col-md-6 col-xxl-3">
+                   <!-- Icon Box Type 2-->
+                   <div class="unit unit-sm flex-md-row text-md-left">
+                     <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-cellphone-link"></span></div>
+                     <div class="unit-body">
+                       <h4 class="font-weight-bold text-uppercase offset-md-top-14">Responsive &amp; Retina</h4>
+                       <p>A vizho͞oəl menu looks the same on any screen resolution. A responsive and ultra sharp visual menu.</p>
+                     </div>
+                   </div>
+           </div>
+           <div class="col-md-6 col-xxl-3 offset-top-50 offset-md-top-0">
+                   <!-- Icon Box Type 2-->
+                   <div class="unit unit-sm flex-md-row text-md-left">
+                     <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-television-guide"></span></div>
+                     <div class="unit-body">
+                       <h4 class="font-weight-bold text-uppercase offset-md-top-14">Accessibility</h4>
+                       <p>A vizho͞oəl menu is accessible online as well as anywhere you decide to use
+                          your synchronized NFC tag(s) / QR code.
+                       </p>
+                     </div>
+                   </div>
+           </div>
+           <div class="col-md-6 col-xxl-3 offset-top-50 offset-xxl-top-0">
+                   <!-- Icon Box Type 2-->
+                   <div class="unit unit-sm flex-md-row text-md-left">
+                     <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-play-box-outline"></span></div>
+                     <div class="unit-body">
+                       <h4 class="font-weight-bold text-uppercase offset-md-top-14">Interactive menu</h4>
+                       <p>
+                         <ul class="rd-navbar-nav">
+                           <li>Customers can filter your visual menu.</li>
+                           <li>Customers can search your visual menu for menu items.</li>
+                           <li>Your visual menu is easy to update from any smart device.</li>
+                           <li>Your visual menu is fully synchronized...updates show immediately online and anywhere your NFC tag / QR code
+                             is available.
+                           </li>
+                           <li>
+                             Customers can view updated menu items every time they interact with your visual menu.
+                           </li>
+                           <li>
+                             Customers can share your visual menu.
+                           </li>
+                           <li>You can see what customers are looking at the most and pinpoint which menu item gets passed up often.</li>
+                         </ul>
+                       </p>
+                     </div>
+                   </div>
+           </div>
+         </div>
+       </div>
+     </section>
 
-                </div>
-
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only">60% Complete</span>
-                        <p>Increase in variaty of menu items ordered</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-danger" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                        <span class="sr-only">30% Complete</span>
-                        <p>Wrong customer orders</p>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <section id="demo-section">
+    <!--<section id="demo-section">
             <div class="container how-to-vid">
                 <div class="row">
                   <h2 style="color: black;">Demo</h2>
@@ -100,24 +113,6 @@
                   </div>
                </div>
         </div>
-  </section>
+  </section>-->
 
-  <section id="demo-section">
-          <div class="container nfc-tags-pic">
-              <div class="row">
-                <h2 style="color: black;">Vizho͞oəls NFC Tag</h2>
-                  <div>
-                      <div class="well">
-                        <section>
-                          <div style="text-align: center; width: 100%;">
-                            <div>
-                              <%= image_tag('vizhooel-tags.jpg', width: 700, height: 350, alt: 'NFC Tags')%>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-                </div>
-             </div>
-      </div>
-</section>
 </div>
