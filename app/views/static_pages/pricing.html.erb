@@ -14,37 +14,26 @@
 </header>
 <section class='pricing-section'>
     <div class='pricing-box'>
-        <h1 class='pricing-box-title'>Starter</h1>
+        <h1 class='pricing-box-title'>Professional</h1>
         <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'Create a visual menu.'
+            :icon => 'check_circle_outline',
+            :text => 'Create a visual menu.'
         } %>
         <%= render :partial => "shared/pricing_box_item",:locals => {
             :icon => 'check_circle_outline',
-            :text => 'You get 30 days access to your visual menu.'
+            :text => 'You get unlimited access to your visual menu.'
         } %>
         <%= render :partial => "shared/pricing_box_item",:locals => {
             :icon => 'check_circle_outline',
-            :text => 'You get 5 free NFC tags.'
+            :text => 'You get 30 free NFC tags.'
         } %>
-        <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$29.95</span></a>
+        <%= render :partial => "shared/pricing_box_item",:locals => {
+            :icon => 'check_circle_outline',
+            :text => 'You get a QR code and can use as needed.'
+        } %>
+        <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$19.95</span></a>
     </div>
-    <div class='pricing-box pricing-box-important'>
-    <h1 class='pricing-box-title'>Professional</h1>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'Create a visual menu.'
-    } %>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'You get unlimited access to your visual menu.'
-    } %>
-    <%= render :partial => "shared/pricing_box_item",:locals => {
-        :icon => 'check_circle_outline',
-        :text => 'You get 20 free NFC tags.'
-    } %>
-    <a class='pricing-box-action' href='/signup'>$19.95<span class='pricing-box-action-info'>/month</span></a>
-    </div>
+    
     <div class='pricing-box'>
         <h1 class='pricing-box-title'>Enterprise</h1>
         <p class='pricing-box-description'>Get in touch with one of our consultants to see how we can provide you a custom solution for your business.</p>
