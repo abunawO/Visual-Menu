@@ -1,6 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="containe navbar-links">
-    <%= link_to "#{current_user.name}", root_path, id: "logo" %>
+    <%= link_to index_path, method: :get, id: "logo" do %>
+      <p style="padding-left: 25px;font-size: 8px;">Powered by</p>
+      <p style="padding-left: 20px;position: fixed;font-size: 12px;top: 26px;color: #FBB448;">
+        VIZHO͞OƏLS
+      </p>
+    <% end %>
     <nav>
       <div class="row">
         <ul class="nav navbar-nav navbar-right" style="margin-right: 30px;margin-top: 15px;">
