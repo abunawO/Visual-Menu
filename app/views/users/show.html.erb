@@ -1,7 +1,7 @@
 <!-- This is the first page the user sees when they sign in. -->
 <% if @user %>
   <% unless logged_in? %>
-    <di class="row">
+    <div class="row">
     <%= render 'layouts/customer_view_header' %>
     </div>
   <% end %>
@@ -27,8 +27,8 @@
 
         <div class='ushow-title'>
           <div class="wow fadeInRight" data-animate-effect="fadeInUp">
-            <span>
-              <a href="/" target="_blank">VIZHO͞OƏL</a>
+            <span style="font-size: 15px;">
+              <a href="/" target="_blank">VISUAL</a>
               MENU
             </span>
           </div>
