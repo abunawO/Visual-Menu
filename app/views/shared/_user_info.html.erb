@@ -4,9 +4,9 @@
 
   <div class='uidisplay-details'>
     <h1 class='uidisplay-name'><%= current_user.name %></h1>
-    <%= link_to current_user do %>
-      <button class="your-vizhooel-button"> Your VISUAL MENU</button>
-    <% end %>
+    <div class='v-btn-c'>
+        <%= link_to "YOUR VISUAL MENU", current_user, class: "v-btn v-btn-dark v-btn-important" %>
+    </div>
   </div>
 
   <div class='uidisplay-set-picture'><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></div>
