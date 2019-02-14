@@ -1,10 +1,5 @@
 <!-- This is the first page the user sees when they sign in. -->
 <% if @user %>
-  <% unless logged_in? %>
-    <div class="row">
-    <%= render 'layouts/customer_view_header' %>
-    </div>
-  <% end %>
   <% provide(:title, @user.name) %>
   <div class="users-show-menu-page-display">
     <div class="row">
@@ -22,12 +17,12 @@
 
         <div class='ushow-content'>
           <%= gravatar_for @user, size: 50 %>
-          <h3 style="background: white;"><%= @user.name %></h3>
+          <h3 style="background: white; font-size: 30px;"><%= @user.name %></h3>
         </div>
 
         <div class='ushow-title'>
           <div class="wow fadeInRight" data-animate-effect="fadeInUp">
-            <span style="font-size: 15px;">
+            <span style="font-size: 10px;">
               <a href="/" target="_blank">VISUAL</a>
               MENU
             </span>
