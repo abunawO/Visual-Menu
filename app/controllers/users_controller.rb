@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
-      render json: {name: 'vizhooels', email: 'vizhooelmenu@gmail.com' }
+      render json: {name: 'vizhooels', email: 'abunawose@vizhooels.com' }
     end
   end
 
