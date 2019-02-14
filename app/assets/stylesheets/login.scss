@@ -1,0 +1,18 @@
+@import "const";
+
+body {
+  background-image: linear-gradient($s-primary, $s-secondary);
+}
+
+.login-card {
+  border: 1px solid $border;
+  border-radius: $form-comp-size;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  padding: 0;
+  margin: 10px 0;
+  background-color: $s-bg-secondary;
+  flex-direction: column;
+}
