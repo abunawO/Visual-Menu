@@ -83,36 +83,11 @@
           </div>
         </div>
       </section>
-      <!--Clients-->
-      <!--<section id="contact" class="parallax-section">
-        <div class="overlay"></div>
-      	<div class="container">
-      		<div class="row contact-section">
-
-      			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-                  <h2>Say hello</h2>
-              </div>
-      				<div class="wow fadeInUp" data-wow-delay="0.7s">
-                <%= form_for('message_params', url: {:controller => "static_pages", :action => "contact_us", method: "post"} ) do |f| %>
-
-                  <%= f.text_area :name, placeholder: "Your Name", class: 'form-control', required: true %>
-
-                  <%= f.text_area :email, placeholder: "Your email", class: 'form-control', required: true %>
-
-                  <%= f.text_area :message, placeholder: "Message", class: 'form-control', required: true %>
-
-                  <%= f.submit "SEND MESSAGE", class: "form-control submit" %>
-                <% end %>
-      				</div>
-      			</div>
-
-      		</div>
-      	</div>
-      </section>-->
+      <!--landing-clients-->
+      <%= render :partial => "shared/static/landing-page/clients" %>
 
       <!--Default footer-->
-      <footer class="section novi-background section-80 section-bottom-30 page-footer bg-gray-base context-dark" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}'>
+      <footer class="section novi-background section-80 section-bottom-30 page-footer bg-gray-base context-dark" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}' style='margin-top: 0;s'>
         <div class="container section-relative">
           <div class="row justify-content-center grid-group-md text-xl-left" id="contact">
             <div class="col-sm-12 col-xl-4">

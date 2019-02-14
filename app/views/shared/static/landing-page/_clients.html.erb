@@ -1,0 +1,29 @@
+<section class="landing-clients">
+    <h2>Get in touch!</h2>
+    <div class="lc-form-c">
+        <%= form_for(
+            'message_params',
+            url: {:controller => "static_pages", :action => "contact_us", method: "post"}
+        ) do |f| %>
+            <div class='form-component-c'>
+                <%= f.text_field :name, placeholder: "Your Name", class: 'form-component fc-small', required: true %>
+                <span class="material-icons client-icon">person</span>
+            </div>
+            <div class='form-component-c'>
+                <%= f.text_field :email, placeholder: "Your email", class: 'form-component fc-small', required: true %>
+                <span class="material-icons client-icon">email</span>
+            </div>
+            <div class="field form-component-c fc-big">
+                <%= f.text_area :message, :cols => 80, :rows => 5, placeholder: "Message", class: 'form-component fc-big', required: true %>
+                <span class="material-icons client-icon">notes</span>
+            </div>
+            <div class="field form-component-c fc-active ">
+                <%= f.submit "SEND MESSAGE", class: "fc-hide", id: 'send' %>
+                <label class='form-component fc-small fc-point' for="send">
+                Send
+                <span class="material-icons client-icon">send</span>
+                </label>
+            </div>
+        <% end %>
+    </div>
+</section>
