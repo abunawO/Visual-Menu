@@ -8,36 +8,42 @@
     <%# <link rel="stylesheet" href="/assets/css/_form.scss"> %>
   </head>
   <body style='padding-top: 0;'>
-  <p class="header-brand">VIZHO͞OƏLS</p>
+  <p class='header-brand'><%= image_tag '/assets/logo.png', width: 200, height: 150, alt: 'logo'%></p>
     <div class='login-page'>
       <section class="login-card">
-      <a href='/'>
-        <div class='login-exit'>
-          <div></div>
-          <div></div>
-        </div>
+        <a href='/'>
+          <div class='login-exit'>
+            <div></div>
+            <div></div>
+          </div>
         </a>
         <p class="login-logo">O͞O</p>
         <header class="login-header">Sign In</header>
-        <form id="session" accept-charset="UTF-8" data-form-output="form-output-global" action="/login" data-form-type="contact" method="post">
-          <div class="form-component-c">
-            <input class="form-component fc-small" id="email" placeholder="Email" type="email" name="email" required= 'true'>
-            <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
-          </div>
-          <div class="form-component-c">
-            <input class="form-component fc-small" id="password" placeholder="Password" type="password" name="password" required= 'true'>
-            <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
-          </div>
-          <a class='forgot-password-component' href="/password_resets/new">Forgot your password?</a>
-          <div class="form-component-c fc-active btn-animation">
-            <button id="send" class="fc-hide" type="submit">Sign In</button>
-            <label class='form-component fc-small fc-point' for="send">
-              Sign in
-              <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
-            </label>
-          </div>
-          <p class="signup-component">Don't have an account? <a href="signup">Sign up here!</a></p>
-        </form>
+        <%= form_for(:session, url: login_path) do |f| %>
+            <div style="position: relative; bottom: 10px;">
+
+              <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+            </div>
+            <div class="form-component-c">
+              <%= f.email_field :email, class: 'form-component fc-small', required: true, placeholder: "email" %>
+              <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+            </div>
+            <div class="form-component-c">
+              <%= f.password_field :password, class: 'form-component fc-small', placeholder: "Password", required: true %>
+              <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+            </div>
+            <a class='forgot-password-component' href="/password_resets/new">Forgot your password?</a>
+            <div class="form-component-c fc-active btn-animation">
+              <button id="send" class="fc-hide" type="submit">Sign In</button>
+              <label class='form-component fc-small fc-point' for="send">
+                Sign in
+                <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+              </label>
+            </div>
+            <p class="signup-component">Don't have an account? <a href="signup">Sign up here!</a></p>
+        <% end %>
       </section>
     </div>
     <%= render 'layouts/footer' %>
