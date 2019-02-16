@@ -5,66 +5,41 @@
     <title>VIZHO͞OƏLS</title>
     <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
-    <link rel="stylesheet" href="/assets/css/landing_p_style.css">
+    <%# <link rel="stylesheet" href="/assets/css/_form.scss"> %>
   </head>
-  <body style="background: #191919;">
-    <div class="page text-center">
-      <section class="section novi-background one-page bg-shark-radio" style="background: #191919;">
-        <%= render :partial => "shared/home_button" %>
-        <div class="one-page-header">
-          <!--Navbar Brand-->
-          <div class="offset-top-41 text-center">
-            <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VISUAL</span> <span style="color: white;">MENU</span></div>
+  <body style='padding-top: 0;'>
+  <p class="header-brand">VIZHO͞OƏLS</p>
+    <div class='login-page'>
+      <section class="login-card">
+      <a href='/'>
+        <div class='login-exit'>
+          <div></div>
+          <div></div>
+        </div>
+        </a>
+        <p class="login-logo">O͞O</p>
+        <header class="login-header">Sign In</header>
+        <form id="session" accept-charset="UTF-8" data-form-output="form-output-global" action="/login" data-form-type="contact" method="post">
+          <div class="form-component-c">
+            <input class="form-component fc-small" id="email" placeholder="Email" type="email" name="email" required= 'true'>
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
           </div>
-         </div>
-        <!-- Login-->
-        <section>
-          <div class="container">
-            <div class="section-110 section-cover row justify-content-sm-center align-items-sm-center">
-              <div style="width: 100%;" class="col-sm-8 col-md-6 col-lg-4">
-                <div class="card text-center section-34 section-sm-41 inset-left-20 inset-right-20 inset-md-left-20 inset-md-right-20 inset-xl-left-30 inset-xl-right-30 bg-default shadow-drop-md">
-                  <div class="text-center">
-                            <!-- Icon Box Type 4--><span class="icon novi-icon icon-circle icon-bordered icon-lg icon-default mdi mdi-account-multiple-outline"></span>
-                            <div>
-                              <div class="offset-top-24 text-darker big font-weight-bold">SIGN IN</div>
-                            </div>
-                  </div>
-                  <!-- RD Mailform-->
-                  <%= form_for(:session, url: login_path) do |f| %>
-                    <div style="position: relative; bottom: 10px;">
-
-                      <% flash.each do |message_type, message| %>
-                        <div class="alert alert-<%= message_type %>"><%= message %></div>
-                      <% end %>
-                    </div>
-
-                    <div class="form-group">
-                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-icon input-group-addon-inverse"><span class="novi-icon mdi mdi-account-outline"></span></span></span>
-                        <%= f.email_field :email, class: 'form-control', required: true, placeholder: "email" %>
-                      </div>
-                    </div>
-
-                    <div class="form-group offset-top-20">
-                      <div class="input-group input-group-sm"><span class="input-group-prepend"><span class="input-group-text input-group-addon-inverse"><span class="novi-icon mdi mdi-lock-outline"></span></span></span>
-                        <%= f.password_field :password, class: 'form-control', placeholder: "Password", required: true %>
-                      </div>
-                    </div>
-
-                    <button style="margin-bottom: 10px;" class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon novi-icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
-
-                  <% end %>
-                  <div class="offset-top-30 text-md-left text-dark text-extra-small"><a style="color: #55bbeb;" class="text-picton-blue" href="/password_resets/new">Forgot your password?</a>
-                    <div class="offset-top-0">Haven’t an account? <a style="color: #55bbeb;" class="text-picton-blue" href="signup">Sign up here</a>.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="form-component-c">
+            <input class="form-component fc-small" id="password" placeholder="Password" type="password" name="password" required= 'true'>
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
           </div>
-        </section>
+          <a class='forgot-password-component' href="/password_resets/new">Forgot your password?</a>
+          <div class="form-component-c fc-active btn-animation">
+            <button id="send" class="fc-hide" type="submit">Sign In</button>
+            <label class='form-component fc-small fc-point' for="send">
+              Sign in
+              <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+            </label>
+          </div>
+          <p class="signup-component">Don't have an account? <a href="signup">Sign up here!</a></p>
+        </form>
       </section>
     </div>
-    <!-- Global RD Mailform Output -->
-    <div class="snackbars" id="form-output-global"></div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

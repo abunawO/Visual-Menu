@@ -1,0 +1,145 @@
+@import "const";
+
+.header-brand {
+  font-weight: bold;
+  color: $s-text-secondary;
+  display: flex;
+  justify-content: center;
+  margin: 18px 18px;
+  &:hover {
+    color: $s-text-primary;
+    cursor: default;
+  }
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  background-color: $s-bg-secondary;
+  overflow: visible;
+  border-radius: 10px;
+  padding: 30px 30px;
+  background-color: $s-bg-primary;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  .login-exit {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    background: linear-gradient(90deg, $s-primary, $s-secondary);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimateGraident 10s ease-in-out infinite;
+    -moz-animation: AnimateGraident 10s ease-in-out infinite;
+    animation: AnimateGraident 10s ease-in-out infinite;
+
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    &:hover {
+      div {
+        background-color: white;
+      }
+    }
+    div {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      position: absolute;
+      border-radius: 3px;
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(315deg);
+      }
+    }
+  }
+}
+
+.login-logo {
+  font-size: 3em;
+  color: black;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-header {
+  font-size: 2em;
+}
+
+.forgot-password-component {
+  position: relative;
+  bottom: 12px;
+  left: 10px;
+  color: #55bbeb;
+  font-size: 12px;
+}
+
+.btn-animation:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.signup-component {
+  font-size: 12px;
+  a {
+    color: #55bbeb;
+  }
+}
+
+@-webkit-keyframes AnimateGraident {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimateGraident {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimateGraident {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
