@@ -58,14 +58,14 @@
         }
         .lfi-header {
           padding: 20px;
-          padding-bottom: 0px;
           width: 100%;
           display: flex;
-          //flex-direction: column;
+          align-items: center;
           background-color: $s-bg-primary;
           img {
             width: 60px;
             height: 60px;
+            margin-right: 10px;
           }
           h3 {
             font-size: 1.5em;
