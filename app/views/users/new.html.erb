@@ -4,9 +4,7 @@
 <html class="wow-animation" lang="en">
   <head>
     <title>VIZHO͞OƏLS</title>
-    <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
-    <%# <link rel="stylesheet" href="/assets/css/landing_p_style.css"> %>
   </head>
   <body style='padding-top: 0;'>
     <!-- Register-->
@@ -23,10 +21,9 @@
           <header class="login-header">Sign Up</header>
             <!-- RD Mailform-->
             <%= form_for(@user, html: { class: "text-left offset-top-30"}) do |f| %>
-            <div style="position:relative; bottom: 10px;">
-              <%= render 'shared/error_messages', object: f.object %>
-              </div>
-                <form>
+                  <div style="position:relative; bottom: 10px;">
+                    <%= render 'shared/error_messages', object: f.object %>
+                  </div>
                   <div class="form-component-c">
                     <%= f.text_field :name, class: 'form-component fc-small', placeholder: "Business name", required: true, autofocus: true %>
                   </div>
@@ -113,16 +110,12 @@
                   <div class="form-component-c fc-active btn-animation">
                     <button id="send" class="fc-hide" type="submit">Sign In</button>
                       <label class='form-component fc-small fc-point' for="send">
-                      Sign up
+                      Submit
                       <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
-                      </label>
-                    </div>
-                  <%# <button style="margin-bottom: 10px;" class="btn btn-xs btn-icon btn-block btn-primary offset-top-20" type="submit">Sign Up <span class="novi-icon icon mdi mdi-arrow-right-bold-circle-outline"></span></button> %>
-                </form>
+                    </label>
+                  </div>
             <% end %>
         </div>
-      </section>
-    </div>
     <!-- Global RD Mailform Output -->
     <%= render 'layouts/footer' %>
   </body>
