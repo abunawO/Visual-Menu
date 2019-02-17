@@ -38,6 +38,7 @@
     }
   }
   h1 {
+    line-height: 1;
     padding-top: 20px;
     margin: 0;
     color: $s-text-primary;
@@ -51,14 +52,20 @@
     }
   }
   h3 {
+    line-height: 1;
     padding: 0 10px;
     margin: 20px 0;
     max-width: 500px;
     color: $s-text-secondary;
     font-size: 1.5em !important;
   }
+  .lh-fees {
+    margin: 0;
+    margin-top: 5px;
+    color: $s-text-secondary;
+  }
   .menu-example {
-    margin-top: 100px;
+    margin-top: 80px;
     display: flex;
     position: relative;
     p {
@@ -119,9 +126,6 @@
       -ms-overflow-style: none; // IE 10+
       overflow: -moz-scrollbars-none; // Firefox
       -webkit-overflow-scrolling: touch;
-      @media (max-width: 768px) {
-        width: calc(83vw);
-      }
       @media (max-width: 680px) {
         width: calc(100vw);
       }
