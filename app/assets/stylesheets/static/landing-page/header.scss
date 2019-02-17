@@ -12,31 +12,35 @@
   align-items: center;
   min-height: 800px;
   height: auto !important;
-  // max-height: 1074px;
-  // height: 100vh;
-  // padding-bottom: 30px;
-  // overflow: hidden;
+  overflow: visible !important;
   z-index: 0;
   @media (max-width: 680px) {
     padding-top: 50px;
-    // margin-top: 50px;
-    // min-height: auto;
     min-height: 600px;
-    // height: auto !important;
     justify-content: flex-end;
-    // justify-content: flex-start;
-    // padding-bottom: 50px;
     background: $s-text-third !important;
   }
-  .phone-cut {
+  .lh-phone-c {
     position: absolute;
-    width: 670px;
-    bottom: -500px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
     z-index: -1;
-    @media (max-width: 680px) {
-      display: none;
+    .phone-cut {
+      position: absolute;
+      width: 670px;
+      bottom: -500px;
+      z-index: -1;
+      @media (max-width: 680px) {
+        display: none;
+      }
     }
   }
+
   h1 {
     line-height: 1;
     padding-top: 20px;
@@ -153,37 +157,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    bottom: 25px;
+    top: 240px;
     width: 600px;
-    height: 400px;
-    // border-radius: 30px;
     border-radius: 10px;
     background-color: $s-text-primary;
-    // transform: translateY(200px);
     transform: scale(0);
     transition: ease-in-out 0.2s;
     box-shadow: 0px 0px 25px rgba($s-text-primary, 0.5);
     @media (max-width: 680px) {
-      top: 130px;
-      width: 95%;
-      border-radius: 10px;
+      top: 50px;
+      width: 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
     &.hp-active {
-      // transform: translateY(0);
       transform: scale(1);
       opacity: 1;
       visibility: visible;
     }
     .hp-header {
-      // position: absolute;
-      // top: 0;
       margin-bottom: 20px;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
-      // padding-top: 10px;
       background-color: $s-text-secondary;
       h3 {
         color: $s-bg-primary;
@@ -193,8 +191,6 @@
         background-color: transparent;
         border: none;
         position: relative;
-        // right: 10px;
-        // top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -214,25 +210,6 @@
         }
       }
     }
-    .hp-dot-c {
-      padding: 10px;
-      display: flex;
-      width: 100%;
-      align-items: flex-start;
-      justify-content: center;
-      cursor: pointer;
-      .hp-dot {
-        margin-right: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 100%;
-        border: 2px solid $s-bg-secondary;
-        background-color: rgba($s-bg-secondary, 0.3);
-        &.active {
-          background-color: $s-bg-secondary;
-        }
-      }
-    }
     .hp-card-c {
       flex: 1;
       margin: 0;
@@ -243,10 +220,19 @@
       overflow-y: scroll;
       .hp-card {
         padding: 10px;
+        &.highlight {
+          text-align: left;
+          p {
+            background-color: $s-secondary;
+            color: $s-text-primary;
+            display: inline;
+          }
+        }
         p {
           margin: 0;
           text-align: left;
           font-size: 1.3em;
+          color: $s-text-third;
           @media (max-width: 680px) {
             font-size: 1em;
           }
