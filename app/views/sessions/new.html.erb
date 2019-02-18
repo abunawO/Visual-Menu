@@ -34,7 +34,7 @@
             </div>
             <a class='forgot-password-component' href="/password_resets/new">Forgot your password?</a>
             <div class="form-component-c fc-active btn-animation">
-              <button id="send" class="fc-hide" type="submit">Sign In</button>
+              <%= f.submit "Sign In", class: "fc-hide", id: 'send' %>
               <label class='form-component fc-small fc-point' for="send">
                 Sign in
                 <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>

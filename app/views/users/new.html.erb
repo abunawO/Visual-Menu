@@ -108,7 +108,7 @@
                     <%= f.text_field :postal_code, class: 'form-component fc-small', placeholder: "Zip / Postal Code" %>
                   </div>
                   <div class="form-component-c fc-active btn-animation">
-                    <button id="send" class="fc-hide" type="submit">Sign In</button>
+                      <%= f.submit "Submit form", class: "fc-hide", id: 'send' %>
                       <label class='form-component fc-small fc-point' for="send">
                       Submit
                       <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
