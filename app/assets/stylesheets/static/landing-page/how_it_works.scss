@@ -1,7 +1,28 @@
+@import 'const';
 .landing-howitworks {
-  display: flex;
-  justify-content: center;
-  .lhiw-item {
-    width: 320px;
+  padding: 50px 0;
+  h2 {
+    padding: 0 20px;
+    padding-bottom: 50px;
+    font-size: 2em;
+    margin: 0;
+    color: $s-text-primary;
+    font-weight: bold;
+    span {
+      color: $s-secondary;
+    }
+  }
+  .lhiw-c {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .lhiw-item {
+      margin: 10px;
+      width: 420px;
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }
