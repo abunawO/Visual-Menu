@@ -13,7 +13,14 @@
   // @media (max-height: 550px) {
   //   padding: 0;
   // }
-
+  h1 {
+    padding: 0 20px;
+    padding-bottom: 50px;
+    font-size: 2em;
+    margin: 0;
+    color: $s-text-primary;
+    font-weight: bold;
+  }
   .landing-features-item-list {
     padding: 0;
     margin: 0;
