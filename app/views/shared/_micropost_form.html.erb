@@ -21,14 +21,14 @@
     <span class="picture form-component-c">
       <%= f.file_field :picture, class: 'fc-hide', id: 'file', accept: 'image/jpeg,image/gif,image/png' %>
       <label class='form-component fc-small fc-point' for="file">
-        Choose a file
+        Choose a visual
         <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_file'} %>
       </label>
     </span>
     <div class="field form-component-c fc-active ">
       <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
       <label class='form-component fc-small fc-point' for="send">
-        Create
+        Create item
         <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
       </label>
     </div>
@@ -36,7 +36,7 @@
 
   <!--Checking the file size with jQuery.-->
   <script type="text/javascript">
-    $('#micropost_picture').bind('change', function() {
+    $('.fc-hide').bind('change', function() {
       var size_in_megabytes = this.files[0].size/1024/1024;
       if (size_in_megabytes > 5) {
         alert('Maximum file size is 5MB. Please choose a smaller file.');
