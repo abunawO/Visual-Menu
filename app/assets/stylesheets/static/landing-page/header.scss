@@ -20,6 +20,120 @@
     justify-content: flex-end;
     background: $s-text-third !important;
   }
+  .lh-c {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    h1 {
+      line-height: 1;
+      padding-top: 20px;
+      margin: 0;
+      color: $s-text-primary;
+      font-weight: bold;
+      font-size: 3em;
+      span {
+        color: $s-secondary;
+      }
+      @media (max-width: 680px) {
+        font-size: 2em;
+      }
+    }
+    h3 {
+      line-height: 1;
+      padding: 0 10px;
+      margin: 20px 0;
+      max-width: 500px;
+      color: $s-text-secondary;
+      font-size: 1.5em !important;
+    }
+    .lh-fees {
+      margin: 0;
+      margin-top: 5px;
+      color: $s-text-secondary;
+    }
+    .menu-example {
+      margin-top: 80px;
+      display: flex;
+      position: relative;
+      p {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: -40px;
+        left: 20px;
+        color: $s-text-primary;
+        font-weight: bold;
+      }
+      .scroll-btn {
+        cursor: pointer;
+        position: absolute;
+        width: 50px;
+        height: 200px;
+        color: $s-text-primary;
+        z-index: 20;
+        line-height: 200px;
+        @media (max-width: 768px) {
+          display: none;
+        }
+        &.left {
+          left: -50px;
+          background: linear-gradient(
+            90deg,
+            rgba($s-text-primary, 0.2) 0%,
+            rgba($s-text-primary, 0) 100%
+          );
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+          &:after {
+            content: '\21E6';
+          }
+        }
+        &.right {
+          right: -50px;
+          background: linear-gradient(
+            90deg,
+            rgba($s-text-primary, 0) 0%,
+            rgba($s-text-primary, 0.2) 100%
+          );
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+          &:after {
+            content: '\21E8';
+          }
+        }
+      }
+
+      ul {
+        list-style: none;
+        width: 620px;
+        overflow: hidden;
+        overflow-x: scroll;
+        display: flex;
+        padding: 0;
+        -ms-overflow-style: none; // IE 10+
+        overflow: -moz-scrollbars-none; // Firefox
+        -webkit-overflow-scrolling: touch;
+        @media (max-width: 680px) {
+          width: calc(100vw);
+        }
+        li {
+          &:nth-last-child(1) {
+            margin-right: 10px;
+          }
+          margin-left: 10px;
+          img {
+            border-radius: 5px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
   .lh-phone-c {
     position: absolute;
     top: 0;
@@ -41,112 +155,6 @@
     }
   }
 
-  h1 {
-    line-height: 1;
-    padding-top: 20px;
-    margin: 0;
-    color: $s-text-primary;
-    font-weight: bold;
-    font-size: 3em;
-    span {
-      color: $s-secondary;
-    }
-    @media (max-width: 680px) {
-      font-size: 2em;
-    }
-  }
-  h3 {
-    line-height: 1;
-    padding: 0 10px;
-    margin: 20px 0;
-    max-width: 500px;
-    color: $s-text-secondary;
-    font-size: 1.5em !important;
-  }
-  .lh-fees {
-    margin: 0;
-    margin-top: 5px;
-    color: $s-text-secondary;
-  }
-  .menu-example {
-    margin-top: 80px;
-    display: flex;
-    position: relative;
-    p {
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      top: -40px;
-      left: 20px;
-      color: $s-text-primary;
-      font-weight: bold;
-    }
-    .scroll-btn {
-      cursor: pointer;
-      position: absolute;
-      width: 50px;
-      height: 200px;
-      color: $s-text-primary;
-      z-index: 20;
-      line-height: 200px;
-      @media (max-width: 768px) {
-        display: none;
-      }
-      &.left {
-        left: -50px;
-        background: linear-gradient(
-          90deg,
-          rgba($s-text-primary, 0.2) 0%,
-          rgba($s-text-primary, 0) 100%
-        );
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-        &:after {
-          content: '\21E6';
-        }
-      }
-      &.right {
-        right: -50px;
-        background: linear-gradient(
-          90deg,
-          rgba($s-text-primary, 0) 0%,
-          rgba($s-text-primary, 0.2) 100%
-        );
-        border-top-right-radius: 50px;
-        border-bottom-right-radius: 50px;
-        &:after {
-          content: '\21E8';
-        }
-      }
-    }
-
-    ul {
-      list-style: none;
-      width: 620px;
-      overflow: hidden;
-      overflow-x: scroll;
-      display: flex;
-      padding: 0;
-      -ms-overflow-style: none; // IE 10+
-      overflow: -moz-scrollbars-none; // Firefox
-      -webkit-overflow-scrolling: touch;
-      @media (max-width: 680px) {
-        width: calc(100vw);
-      }
-      li {
-        &:nth-last-child(1) {
-          margin-right: 10px;
-        }
-        margin-left: 10px;
-        img {
-          border-radius: 5px;
-          width: 200px;
-          height: 200px;
-          object-fit: cover;
-        }
-      }
-    }
-  }
   #header-pricing {
     opacity: 0;
     visibility: hidden;
@@ -186,6 +194,7 @@
       h3 {
         color: $s-bg-primary;
         margin: 0;
+        padding: 0;
       }
       .hp-close {
         background-color: transparent;
@@ -220,11 +229,16 @@
       overflow-y: scroll;
       .hp-card {
         padding: 10px;
+        @media (max-width: 680px) {
+          padding: 5px;
+        }
         &.highlight {
           text-align: left;
           p {
-            background-color: $s-secondary;
-            color: $s-text-primary;
+            // background-color: $s-secondary;
+            // color: $s-text-primary;
+            color: $s-secondary;
+            text-decoration: underline;
             display: inline;
           }
         }
