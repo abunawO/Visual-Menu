@@ -1,40 +1,15 @@
 <!-- This is the first page the user sees when they sign in. -->
 <% if @user %>
   <% provide(:title, @user.name) %>
-  <div class="users-show-menu-page-display">
+  <div class='user-home'>
+    <%= render :partial => "shared/static/user/header" %>
+  </div>
+  <div>
     <div class="row">
-
       <%= render 'shared/back_to_top' %>
-
-      <header class="ushow-header" role="banner" data-stellar-background-ratio="0.5">
-        <div class='ushow-banner'>
-          <% if @spacial %>
-            <%= image_tag @spacial.picture.url, alt: 'res-banner' %>
-          <% else %>
-            <img src='/assets/img_4.jpg' alt='res-banner'>
-          <% end %>
-        </div>
-
-        <div class='ushow-content'>
-          <%= gravatar_for @user, size: 50 %>
-          <h3 style="background: white; font-size: 30px;"><%= @user.name %></h3>
-        </div>
-
-        <div class='ushow-title'>
-          <div class="wow fadeInRight" data-animate-effect="fadeInUp">
-            <span style="font-size: 10px;">
-              <a href="/" target="_blank">VISUAL</a>
-              MENU
-            </span>
-          </div>
-        </div>
-      </header>
-
     </div>
-
     <div class="config-c row">
         <%= render :partial => "shared/search_option" %>
-
         <%= render :partial => "shared/category_select_search" %>
     </div>
 
