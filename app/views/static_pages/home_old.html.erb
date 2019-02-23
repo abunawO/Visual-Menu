@@ -1,0 +1,45 @@
+<!--This is the page the user sees when they click the home button.-->
+<!--Basically the create menu item page-->
+<% if logged_in? %>
+  <div class="users-create-menu-page-display">
+    <div class="row">
+
+      <%= render 'shared/back_to_top' %>
+      <aside class="uhome-create-c col-md-4">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
+
+      <div class="config-c col-md-6">
+        <div>
+          <%= render :partial => "shared/search_option" %>
+        </div>
+
+        <%= render :partial => "shared/category_select_search" %>
+
+        <div class="row menu-display-section">
+          <%= render :partial=> "shared/micropost_list_display" %>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+<% else %>
+  <div class="center intro-page">
+    <%= render :partial => "static_pages/main_landing_page" %>
+  </div>
+<% end %>
+<%= render 'layouts/footer' %>
+
+
+<script type="text/javascript">
+function openForm() {
+
+}
+</script>
