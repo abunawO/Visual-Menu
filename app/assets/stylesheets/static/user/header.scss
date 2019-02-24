@@ -1,0 +1,71 @@
+@import 'const';
+.user-header {
+  position: relative;
+  background-color: $s-bg-primary;
+  //   padding-bottom: 10px;
+  .uh-banner-c {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    .uh-banner {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      -o-object-fit: cover;
+    }
+    .gravatar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 10px;
+      width: 150px;
+      height: 150px;
+    }
+    .uh-side {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 10px;
+      a {
+        display: block;
+        background-color: $s-text-primary;
+        padding: 5px 15px;
+        border-radius: 30px;
+        color: $s-bg-primary;
+      }
+    }
+  }
+  .uh-profile-c {
+    padding: 5px;
+    .uh-profile-item {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      span {
+        color: $s-text-secondary;
+        &.positive-icon {
+          color: $s-text-primary;
+        }
+      }
+      p {
+        margin: 0;
+        margin-left: 5px;
+        color: $s-text-secondary;
+      }
+      h3 {
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        margin-left: 5px;
+      }
+      a {
+        color: #337ab7;
+      }
+    }
+  }
+}
