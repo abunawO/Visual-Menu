@@ -2,16 +2,41 @@
     <div class='hp-header'>
         <h3>Pricing</h3>
         <button onclick="closeHeaderPricing()" class='hp-close'>
-            <div></div>
-            <div></div>
+            <img src='/assets/close.png'>
         </button>
     </div>
-    <ul id='hp-cards' class='hp-card-c'>
+    <ul id='hp-tabs'>
+        <li onclick="switchPricing(0)" class='active'>Standard</li>
+        <li onclick="switchPricing(1)">Professional</li>
+        <li onclick="switchPricing(2)">Enterprise</li>
+    </ul>
+    <div id='hp-cards'>
+    <ul id='hp-cards-standard' class='hp-card-c active'>
         <li class='hp-card highlight'>
             <p>$9.99 per month</p>
         </li>
         <li class='hp-card highlight'>
-            <p>NFC tag(s) - $1.00 per tag</p>
+            <p>NFC tag(s) - $1.00 per tag.</p>
+        </li>
+        <li class='hp-card highlight'>
+            <p>QR code - FREE</p>
+        </li>
+        <li class='hp-card'>
+            <p>You get access to a visual menu.</p>
+        </li>
+        <li class='hp-card'>
+            <p>You can update your visual menu using any smart device.</p>
+        </li>
+        <li class='hp-card'>
+            <p>Your visual menu is available online and anywhere you place your NFC or QR code technology.</p>
+        </li>
+    </ul>
+    <ul id='hp-cards-professional' class='hp-card-c'>
+        <li class='hp-card highlight'>
+            <p>$19.99 per month</p>
+        </li>
+        <li class='hp-card highlight'>
+            <p>NFC tag(s) - $1.00 per tag / 10 free.</p>
         </li>
         <li class='hp-card highlight'>
             <p>QR code - FREE</p>
@@ -29,9 +54,19 @@
             <p>Customers can search and filter your visual menu for better results.</p>
         </li>
         <li class='hp-card'>
-            <p>Your visual menu looks the same on any screen resolution.</p>
+            <p>Social media connections.</p>
+        </li>
+        <li class='hp-card'>
+            <p>Doordash / UberEats integration.</p>
         </li>
     </ul>
+    <ul id='hp-cards-enterprise' class='hp-card-c'>
+        <li class='hp-card'>
+            <p>Get in touch with us to get a one on one business offer.</p>
+        </li>
+    </ul>
+    </div>
+
     <a href='/signup'>14 days free trial</a>
 </div>
 
@@ -39,5 +74,15 @@
     function closeHeaderPricing() {
         document.getElementById('header-pricing')
         .classList.remove('hp-active');
+    }
+    function switchPricing(index) {
+        var pricingTabArray = document.getElementById('hp-tabs').children;
+        var pricingArray = document.getElementById('hp-cards').children;
+        for (var i = 0; i < pricingArray.length; i++) {
+            pricingArray[i].classList.remove('active');
+            pricingTabArray[i].classList.remove('active');
+        }
+        pricingTabArray[index].classList.add('active');
+        pricingArray[index].classList.add('active');
     }
 </script>
