@@ -8,7 +8,7 @@
         <% end %>
         <%= gravatar_for @user, size: 150 %>
     </div>
-    
+
     <div class='uh-profile-c'>
         <div class='uh-profile-item'>
             <span class="material-icons positive-icon">restaurant</span>
@@ -16,11 +16,11 @@
         </div>
         <div class='uh-profile-item'>
             <span class="material-icons">location_on</span>
-            <p>address</p>
+            <p><a href="http://maps.google.com/maps?q=<%= @user.address_line1 %>"><%= @user.address_line1 %></a></p>
         </div>
         <div class='uh-profile-item'>
             <span class="material-icons">phone</span>
-            <p>phone</p>
+            <p><a href="tel:<%= @user.phone %>"><%= @user.phone %></a></p>
         </div>
     </div>
 </div>
