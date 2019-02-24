@@ -20,15 +20,45 @@
       <%= render :partial => "shared/static/landing-page/services" %>
       <!--landing-features-->
       <%= render :partial => "shared/static/landing-page/features" %>
-      <!--landing-interactive-menu-->
-      <%= render :partial => "shared/static/landing-page/interactive_menu" %>
-      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="shareable" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
+      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="info" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
         <div class="container">
           <div class="row grid-group-md justify-content-between">
             <div class="col-lg-6 col-xl-5">
               <div class="offset-top-41 graph-content wow fadeInLeft">
                 <div>
-                  <img class="img-fluid" src="/assets/menu-wall.png" max-width="441" height="340" alt="">
+                  <img class="img-fluid" src="/assets/visuals-banner.jpg" max-width="441" height="340" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 text-lg-left">
+              <div class="inset-md-lef-100 offset-lg-top-30 wow fadeInRight">
+                <h4 class="font-weight-bold">CUSTOMERS INSTANTLY CONNECT WHILE AT YOUR RESTAURANT</h4>
+                <div class="offset-top-30 inset-lg-right-100">
+                  <p>
+                    We integrate NFC and QR Code technology to let customers quickly and easily pull up your
+                    visual menu on their cell phone while at your restaurant. Add a QR code to your physical menu and
+                    all a customer needs to do is scan it with their mobile device’s camera and your visual menu will
+                    appear in their phone’s browser. Or with the NFC tag Simply bringing their
+                    phone near the tag will load the visual menu on your customer’s phone.
+                  </p>
+                </div>
+                <div class="offset-top-30 offset-lg-top-55">
+                  <%= link_to "Try now for free", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-70" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--landing-interactive-menu-->
+      <%= render :partial => "shared/static/landing-page/interactive_menu" %>
+      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="info" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
+        <div class="container">
+          <div class="row grid-group-md justify-content-between">
+            <div class="col-lg-6 col-xl-5">
+              <div class="offset-top-41 graph-content wow fadeInLeft">
+                <div>
+                  <img class="img-fluid" src="/assets/menu-wall.jpg" max-width="441" height="340" alt="">
                 </div>
               </div>
             </div>
