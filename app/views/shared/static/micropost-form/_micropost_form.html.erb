@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.3/croppie.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.3/croppie.min.js"></script>
 
-
 <div id='micropost-form' class='form-w active'>
     <div class='form-c'>
         
@@ -13,8 +12,9 @@
         </div>
 
         <div class='form-page'>
-        <div id='image-selector'></div>
+            <div id='image-selector'></div>
         </div>
+        <div id='kshdasf'></div>
         <div class='form-footer'>
             <button onclick='imageRotation()'>next</button>
         </div>
@@ -25,27 +25,40 @@
 // http://foliotek.github.io/Croppie/#documentation
 var imageSelector = document.getElementById('image-selector');
 var imageSize = imageSelector.offsetWidth;
-var imageRotate = 4;
-function imageRotation() {
-    imageRotate =  6
-}
+
 var croppie = new Croppie(imageSelector, {
     viewport: { width: imageSize, height: imageSize },
     boundary: { width: imageSize, height: imageSize },
     showZoomer: false,
     enableOrientation: true
 });
+
 croppie.bind({
     // this url is where we first select image.
     url: 'assets/landing/img_1.jpg',
-    // this changes rotation
-    orientation: imageRotate
+    // orientation: 6
 });
+
+function imageRotation() {
+    croppie.rotate(90);
+    // croppie.bind()
+    return imageResult()
+}
+// croppie.rotate(180)
 //on button click
-croppie.result('blob').then(function(blob) {
-    // do something with cropped blob
-    // this is the end result..
-    // this is where we upload the image
-    console.log()
-});
+function imageResult() {
+    
+    return croppie.result('base64').then(function(blob) {
+        // do something with cropped blob
+        // this is the end result..
+        // this is where we upload the image
+        console.log(blob)
+        var img = document.createElement("IMG");
+        img.setAttribute("src", blob);
+        return document.getElementById('kshdasf').appendChild(img)
+        
+    });
+}
+
+
 </script>
