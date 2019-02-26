@@ -76,15 +76,6 @@ class MicropostsController < ApplicationController
     def _set_defaults
       @feed_items = []
       @categories  = []
-
-      @appetizer_cat = []
-      @breakfast_cat = []
-      @lunch_cat = []
-      @dinner_cat = []
-      @dessert_cat = []
-      @beverage_cat = []
-      @special_of_day_cat = []
-      @side_cat = []
     end
 
 end

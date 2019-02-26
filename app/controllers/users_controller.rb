@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   def search
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @categories = []
+    @options    = {}
     if params[:search].blank?
       flash.now[:danger] = "Invalid title search"
       @feed_items = []
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
 
       @categories = _creat_menu_categories(@feed_items)
 
-      _set_default_categories(@feed_items)
+      #_set_default_categories(@feed_items)
 
     end
   end
@@ -68,9 +69,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts
 
-      _set_default_categories(@user.microposts)
+      #_set_default_categories(@user.microposts)
 
       @categories = []
+      @options    = {}
       @categories = _creat_menu_categories(@microposts)
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
@@ -147,7 +149,10 @@ class UsersController < ApplicationController
       no_doubles = []
       feed_items.each do |micropost|
         if micropost.category.present?
-          no_doubles.push(micropost) unless no_doubles.map(&:category).include?(micropost.category)
+          unless no_doubles.map(&:category).include?(micropost.category)
+            no_doubles.push(micropost)
+            @options[micropost.category] = @user.microposts.where(:category => micropost.category)
+          end
         end
       end
       no_doubles
@@ -159,17 +164,6 @@ class UsersController < ApplicationController
                             :password_confirmation, :phone,
                             :address_line1, :address_line2,
                             :city, :region, :postal_code, :country)
-    end
-
-    def _set_default_categories(items)
-      @appetizer_cat = items.select {|mic| mic.category == "APPETIZER" } || []
-      @breakfast_cat = items.select {|mic| mic.category  == "BREAKFAST" } || []
-      @lunch_cat = items.select {|mic| mic.category  == "LUNCH" } || []
-      @dinner_cat = items.select {|mic| mic.category == "DINNER" } || []
-      @dessert_cat = items.select {|mic| mic.category  == "DESSERT" } || []
-      @beverage_cat = items.select {|mic| mic.category  == "BEVERAGE" } || []
-      @special_of_day_cat = items.select {|mic| mic.category  == "SPECIAL OF THE DAY" } || []
-      @side_cat = items.select {|mic| mic.category  == "SIDE" } || []
     end
 
     # Before filters
