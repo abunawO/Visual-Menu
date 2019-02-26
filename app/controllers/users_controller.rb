@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
 
       @categories = _creat_menu_categories(@feed_items)
-
+      @categories = @categories.reverse
       #_set_default_categories(@feed_items)
 
     end
@@ -74,6 +74,7 @@ class UsersController < ApplicationController
       @categories = []
       @options    = {}
       @categories = _creat_menu_categories(@microposts)
+      @categories = @categories.reverse
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
