@@ -1,10 +1,10 @@
-<% @categories.each do |cat| %>
+<% @options.each do |key,value| %>
     <div class="ushow-list">
-      <p><%= cat.category %> OPTIONS</p>
+      <p><%= key %> OPTIONS</p>
     </div>
     <div class='ushow-list'>
       <ol class="microposts">
-        <%= render @options[cat.category] %>
+        <%= render value %>
       </ol>
     </div>
 <% end %>

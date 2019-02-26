@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
-    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
+    @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
     @micropost = current_user.microposts.build(micropost_params)
     @user = current_user
     if @micropost.save
@@ -19,8 +19,8 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
-    standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
+    to_sub_categories   = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
+    standard_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     micropost_category = [@micropost.category]
