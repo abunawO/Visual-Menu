@@ -1,18 +1,15 @@
-<div tabindex="1" onblur='deActiveUserDropdown(this)' id='user-dropdown' class='user-dropdown'>
-    <button class='ud-action' onclick='toggleUserDropdown(this)' onblur='toggleUserDropdown(this)'>Settings</button> 
+<div id='user-dropdown' class='user-dropdown'>
+    <label class='ud-action' onclick='toggleUserDropdown(this, "on")'>Settings</label> 
     <ul>
         <%# <li><button>Edit Profile longer</button></li>
         <li><button>Edit Profile</button></li>
         <hr> %>
-        <li><button>Log Out</button></li>
+        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
     </ul>
 </div>
 
 <script type='text/javascript'>
-    function toggleUserDropdown(e) {
+    function toggleUserDropdown(e, status) {
         e.parentElement.classList.toggle('active')
-    }
-    function deActiveUserDropdown(e) {
-        e.classList.remove('active')
     }
 </script>
