@@ -7,7 +7,9 @@
         <img src='/assets/img_4.jpg' alt='res-banner' class='uh-banner'>
         <% end %>
         <%= gravatar_for @user, size: 150 %>
-        <%= render :partial => "shared/static/user/dropdown" %>
+        <% if logged_in? %>
+          <%= render :partial => "shared/static/user/dropdown" %>
+        <% end %>
     </div>
 
     <div class='uh-profile-c'>
