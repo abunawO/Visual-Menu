@@ -25,5 +25,19 @@
             <span class="material-icons">phone</span>
             <p><a href="tel:<%= @user.phone %>"><%= @user.phone %></a></p>
         </div>
+        <div class='uh-profile-list'>
+            <a href="<%= @user.ubereats_link %>">
+                <img src="/assets/social/ubereats_i.svg">
+                ubereats
+            </a>
+            <a href="<%= @user.doordash_link %>">
+                <img src="/assets/social/doordash_i.svg">
+                doordash
+            </a>
+            <a href="<%= @user.grubhub_link %>">
+                <img src="/assets/social/grubhub_i.svg">
+                grubhub
+            </a>
+        </div>
     </div>
 </div>
