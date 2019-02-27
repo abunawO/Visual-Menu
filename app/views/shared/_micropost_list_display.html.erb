@@ -5,6 +5,7 @@
     <div class='ushow-list'>
       <ol class="microposts">
         <%= render @options[category.category] %>
+        <%= render :partial => "shared/micropost_modal" %>
       </ol>
     </div>
 <% end %>

@@ -5,13 +5,13 @@ class StaticPagesController < ApplicationController
     @user = current_user
     @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
     if logged_in?
+      @currentMicropost = nil
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
 
       @microposts = @user.microposts.paginate(page: params[:page])
       @categories = []
       @options    = {}
-
       @user.microposts.each do |micropost|
         if micropost.category.present?
           unless @categories.map(&:category).include?(micropost.category)

@@ -1,0 +1,12 @@
+<div class="micropost-modal">
+  <%= link_to @micropost.picture.url do %>
+      <div>
+        <%= image_tag @micropost.picture.url, class: "" %>
+          <div>
+            <p><%= @micropost.content %></p>
+            <p><%= number_to_currency(@micropost.price, :unit => "$")%></p>
+            <p><%= @micropost.description %></p>
+          </div>
+      </div>
+  <% end %>
+</div>

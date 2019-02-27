@@ -63,8 +63,7 @@
   // position: relative;
   // box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
 }
-.menu-item-display:nth-last-child(1)
-  .mp-c {
+.menu-item-display:nth-last-child(1) .mp-c {
   margin-right: 10px;
 }
 .mp-image {
@@ -80,10 +79,7 @@
 .mp-info {
   bottom: 0;
   width: 100%;
-  background-color: rgba(
-    $third,
-    0.7
-  ) !important;
+  background-color: rgba($third, 0.7) !important;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   position: absolute;
@@ -119,4 +115,7 @@
   a {
     color: $off !important;
   }
+}
+
+.micropost-modal {
 }
