@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190226215028) do
-
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "ar_internal_metadata", ["key"], name: "sqlite_autoindex_ar_internal_metadata_1", unique: true
+ActiveRecord::Schema.define(version: 20190227193908) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -30,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190226215028) do
     t.string   "description"
     t.float    "price"
     t.string   "category"
+    t.string   "side"
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
@@ -71,6 +64,7 @@ ActiveRecord::Schema.define(version: 20190226215028) do
     t.string   "ubereats_link"
     t.string   "doordash_link"
     t.string   "grubhub_link"
+    t.string   "menu_categories"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

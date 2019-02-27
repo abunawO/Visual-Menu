@@ -4,9 +4,13 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
-    @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
-    @micropost = current_user.microposts.build(micropost_params)
     @user = current_user
+    if @user.menu_categories.present?
+      @categories_select = @user.menu_categories.split(",")
+    else
+      @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+    end
+    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash.now[:success] = "Menu item created successfully!"
       redirect_to root_url
@@ -19,8 +23,15 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    to_sub_categories   = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
-    standard_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERT", "APPETIZER", "SIDE", "BEVERAGE", "SPECIAL OF THE DAY" ]
+    @user = current_user
+    if @user.menu_categories.present?
+      to_sub_categories = @user.menu_categories.split(",")
+      standard_categories = @user.menu_categories.split(",")
+    else
+      to_sub_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+      standard_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+    end
+
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     micropost_category = [@micropost.category]
