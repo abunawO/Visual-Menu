@@ -147,7 +147,7 @@ class UsersController < ApplicationController
         if micropost.category.present?
           unless no_doubles.map(&:category).include?(micropost.category)
             no_doubles.push(micropost)
-            @options[micropost.category] = @user.microposts.where(:category => micropost.category)
+            @options[micropost.category] = feed_items.where(:category => micropost.category)
           end
         end
       end
