@@ -20,7 +20,6 @@ class StaticPagesController < ApplicationController
           end
         end
       end
-      @categories = @categories.reverse
     end
 
   end
