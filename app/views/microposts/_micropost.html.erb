@@ -1,22 +1,37 @@
 
 <!--The representation of a menu item/micropost partial.-->
 <!--Displayed in the feed.html.erb partial.-->
-<%# <li class='micropost_'> %>
   <li class='micropost_' id="micropost-<%= micropost.id %>">
     <span class="mp-w content micropost-item" style="font-size: 20px;">
       <div class="mp-c">
-        <%# <div style="height: 200px;"> %>
-        <%# link_to micropost_show_path(:micropost_id => micropost.id) do %>
+
         <button class='mp-action' onclick="openModal(this)">
-          <%= image_tag micropost.picture.url, class: "mp-image" %>
+          <%= image_tag micropost.picture.url, class: "mp-image", id: 'micropost', alt: "#{micropost.description}" %>
           <div class='mp-info'>
-            <p class='mp-title'> <%= micropost.content %> </p>
-            <!-- <p class="mp-description"> <%= micropost.description %> </p> -->
-            <p class='mp-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
+            <p id="mp-title" class='mp-title'> <%= micropost.content %> </p>
+            <p id="mp-price" class='mp-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
           </div>
-          </button>
-        <%# end %>
-       <%# </div> %>
+        </button>
+
+        <!--menu item display modal -->
+        <div id='micropost-modal' class="micropost-modal">
+          <div onclick='closeModal()' class='mpm-close-bg'></div>
+          <div class='micropost-modal-c'>
+            <button onclick='closeModal()' class='mpm-close'>
+              <img src='/assets/close.png'>
+            </button>
+            <div class='mpm-img-c'>
+              <%= image_tag micropost.picture.url, class: "", id: "viewed-mp" %>
+            </div>
+            <div class='mpm-details'>
+              <p id="title"><%= micropost.content %></p>
+              <p id="price" class='mpm-price'><%= number_to_currency(micropost.price, :unit => "$")%></p>
+              <p id="description" class='mpm-description'><%= micropost.description %></p>
+            </div>
+          </div>
+        </div>
+        <!--menu item display modal -->
+
       </div>
     </span>
   <% if current_user?(micropost.user) %>
@@ -29,7 +44,14 @@
 </li>
 <script type='text/javascript'>
   function openModal(props) {
-    document.getElementById('micropost-modal')
-    .classList.add('active')
+    document.getElementById('micropost-modal').classList.add('active')
+    document.getElementById('viewed-mp').src = props.children[0].src
+    document.getElementById('title').innerText = props.children[1].children["mp-price"].innerText
+    document.getElementById('price').innerText = props.children[1].children["mp-title"].innerText
+    document.getElementById('description').innerText = props.children[0].alt
+
   }
+  function closeModal(props) {
+      document.getElementById('micropost-modal').classList.remove('active')
+    }
 </script>
