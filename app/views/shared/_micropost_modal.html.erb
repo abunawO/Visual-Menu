@@ -5,20 +5,17 @@
     <img src='/assets/close.png'>
   </button>
   <div class='mpm-img-c'>
-    <%= image_tag "https://pcuploader.s3.amazonaws.com/uploads/micropost/picture/145/EB635F39-70AD-4EB1-AD14-0724A38AADF6.jpeg", class: "" %>
+    <%= image_tag "", id: "mpm-image" %>
     </div>
     <div class='mpm-details'>
-      <p>PL1. Gyro Doner Platter</p>
-      <p class='mpm-price'>$19.99</p>
-      <p class='mpm-description'>Mix of marinated lamb and beef grilled
-      in front of spit fire. Served with a side
-      of rice, pita bread, homemade salad and tzatziki sauce.</p>
+      <p id="mpm-title"></p>
+      <p id="mpm-price" class='mpm-price'></p>
+      <p id='mpm-description' class='mpm-description'></p>
     </div>
   </div>
 </div>
 <script type='text/javascript'>
 function closeModal(props) {
-    document.getElementById('micropost-modal')
-    .classList.remove('active')
+    document.getElementById('micropost-modal').classList.remove('active')
   }
 </script>

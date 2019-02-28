@@ -192,6 +192,9 @@ p {
         color: $s-text-primary;
         font-size: 1em;
         line-height: 1em;
+        &.mpm-price {
+          margin-top: 10px;
+        }
         &.mpm-description {
           color: $s-text-secondary;
           margin-top: 10px;
@@ -232,6 +235,7 @@ p {
             position: absolute;
             top: calc(-25px - 5px - 10px);
             left: 5px;
+            margin-top: 0;
           }
         }
       }
