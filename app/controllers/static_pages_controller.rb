@@ -15,7 +15,6 @@ class StaticPagesController < ApplicationController
       @microposts = @user.microposts.paginate(page: params[:page])
       @categories = []
       @options    = {}
-
       @user.microposts.each do |micropost|
         if micropost.category.present?
           unless @categories.map(&:category).include?(micropost.category)

@@ -62,6 +62,9 @@ class MicropostsController < ApplicationController
     end
   end
 
+  # def modal
+  #   @micropost = Micropost.find(params['micropost_id'])
+  # end
   def show
     @micropost = Micropost.find(params['micropost_id'])
   end

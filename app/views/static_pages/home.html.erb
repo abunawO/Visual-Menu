@@ -9,13 +9,9 @@
 
       <%= render 'shared/back_to_top' %>
       <aside class="uhome-create-c col-md-4">
-      <div style="font-size: .5em; width: 50%;" class='v-btn-c'>
-        <%= link_to "YOUR VISUAL MENU", current_user, class: "v-btn v-btn-dark v-btn-important" %>
-    </div>
-        <section class="user_info">
-          <%# render 'shared/user_info' %>
-          
-        </section>
+        <div style="font-size: .5em; width: 50%;" class='v-btn-c'>
+            <%= link_to "YOUR VISUAL MENU", current_user, class: "v-btn v-btn-dark v-btn-important" %>
+        </div>
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
@@ -34,8 +30,6 @@
       </div>
 
     </div>
-
-
   </div>
 <% else %>
   <div class="center intro-page">

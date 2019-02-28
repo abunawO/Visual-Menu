@@ -27,7 +27,6 @@
         <div>
           <% if @selected_cat.any? %>
             <p style="margin: 10px;color: dimgray;"><%= @category_title %></p>
-            <!--<h3>Menu Items (<%= @user.microposts.count %>)</h3>-->
             <ol class="microposts">
               <%= render @selected_cat %>
             </ol>
