@@ -33,6 +33,7 @@
     <% if @feed_items.any? %>
       <div class="row" style="margin-left: 5%;margin-right: 5%; margin-top: 30px;">
         <%= render :partial=> "shared/micropost_list_display" %>
+        <%= render :partial=> "shared/micropost_modal" %>
       </div>
     <% else %>
        <%= image_tag('search-not-found.png', class: 'search-not-found')  %>

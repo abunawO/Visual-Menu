@@ -32,6 +32,7 @@
             </ol>
           <% end %>
         </div>
+        <%= render :partial=> "shared/micropost_modal" %>
       </div>
     <% else %>
        <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
