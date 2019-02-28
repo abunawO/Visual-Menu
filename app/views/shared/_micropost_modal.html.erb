@@ -1,12 +1,24 @@
-<div class="micropost-modal">
-  <%= link_to @micropost.picture.url do %>
-      <div>
-        <%= image_tag @micropost.picture.url, class: "" %>
-          <div>
-            <p><%= @micropost.content %></p>
-            <p><%= number_to_currency(@micropost.price, :unit => "$")%></p>
-            <p><%= @micropost.description %></p>
-          </div>
-      </div>
-  <% end %>
+<div id='micropost-modal' class="micropost-modal">
+<div onclick='closeModal()' class='mpm-close-bg'></div>
+<div class='micropost-modal-c'>
+  <button onclick='closeModal()' class='mpm-close'>
+    <img src='/assets/close.png'>
+  </button>
+  <div class='mpm-img-c'>
+    <%= image_tag "https://pcuploader.s3.amazonaws.com/uploads/micropost/picture/145/EB635F39-70AD-4EB1-AD14-0724A38AADF6.jpeg", class: "" %>
+    </div>
+    <div class='mpm-details'>
+      <p>PL1. Gyro Doner Platter</p>
+      <p class='mpm-price'>$19.99</p>
+      <p class='mpm-description'>Mix of marinated lamb and beef grilled
+      in front of spit fire. Served with a side
+      of rice, pita bread, homemade salad and tzatziki sauce.</p>
+    </div>
+  </div>
 </div>
+<script type='text/javascript'>
+function closeModal(props) {
+    document.getElementById('micropost-modal')
+    .classList.remove('active')
+  }
+</script>
