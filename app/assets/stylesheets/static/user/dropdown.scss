@@ -39,6 +39,7 @@
     position: absolute;
     list-style: none;
     hr {
+      border: 1px solid $s-bg-primary;
       margin: 5px 0;
     }
     li {
