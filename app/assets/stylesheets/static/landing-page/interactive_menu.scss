@@ -35,6 +35,9 @@
       text-align: left;
       padding: 10px;
       font-size: 1.2em;
+      span {
+        color: $s-secondary;
+      }
     }
     .lim-tools-details {
       text-align: left;

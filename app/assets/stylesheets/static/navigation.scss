@@ -3,6 +3,7 @@
   z-index: 99;
   width: 100%;
   position: fixed;
+  top: 0;
   background-color: $s-bg-primary;
   height: 50px;
   display: flex;
@@ -30,6 +31,7 @@
     }
   }
   .sn-brand {
+    margin: 0;
     font-weight: bold;
     color: $s-text-secondary;
     &:hover {
@@ -104,15 +106,18 @@
               color: $s-text-primary;
               transition: ease-in-out 0.1s;
               &:hover {
-                box-shadow: 0 5px 10px 0 rgba($s-text-primary, 0.2);
+                box-shadow: 0 5px 10px 0
+                  rgba($s-text-primary, 0.2);
               }
               &.active {
                 width: 225px;
                 color: $s-primary;
-                box-shadow: 0 5px 10px 0 rgba($s-primary, 0.2);
+                box-shadow: 0 5px 10px 0
+                  rgba($s-primary, 0.2);
                 &:hover {
                   color: $s-secondary;
-                  box-shadow: 0 5px 10px 0 rgba($s-secondary, 0.2);
+                  box-shadow: 0 5px 10px 0
+                    rgba($s-secondary, 0.2);
                 }
               }
             }

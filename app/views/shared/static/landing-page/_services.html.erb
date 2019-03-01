@@ -1,23 +1,25 @@
-<section class='landing-services' id="service">
-<%= render :partial => "shared/static/landing-page/services_example" %>
-<div class='ls-content-c'>
-<h2 class='ls-title'>OUR SERVICE</h2>
-<ul>
-<li class='ls-info'>
-    <p>
-      Our goal is to update the customer menu interaction experience, by providing an easy to use platform
-      for adding the option for customers to see visuals of all your menu items...a visual extension of your menu.
-    </p>
-</li>
-<li class='ls-info'>
-    <p>
-    Everyone has a smartphone-why not take advantage of this to enhance your menu with visuals?
-    </p>
-</li>
-</ul>
-<%= link_to "Try free for 14 days", signup_path, class: "ls-btn" %>
-</div>
-<a class='ls-img-c' href="https://www.vizhooels.com/users/31" target="_blank">
-    <img src='/assets/tall-menu.jpg' alt='create' />
-</a>
+<section class='landing-services-c' id="service">
+    <div class='landing-services'>
+        <%= render :partial => "shared/static/landing-page/services_example" %>
+        <div class='ls-content-c'>
+        <h2 class='ls-title'>OUR SERVICE</h2>
+        <ul>
+        <li class='ls-info'>
+            <p>
+            Our goal is to update the customer menu interaction experience, by providing an easy to use platform
+            for adding the option for customers to see visuals of all your menu items...a visual extension of your menu.
+            </p>
+        </li>
+        <li class='ls-info'>
+            <p>
+            Everyone has a smartphone-why not take advantage of this to enhance your menu with visuals?
+            </p>
+        </li>
+        </ul>
+        <%= link_to "Try free for 14 days", signup_path, class: "ls-btn" %>
+        </div>
+        <a class='ls-img-c' href="https://www.vizhooels.com/users/31" target="_blank">
+            <img src='/assets/tall-menu.jpg' alt='create' />
+        </a>
+    </div>
 </section>

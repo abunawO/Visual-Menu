@@ -4,7 +4,6 @@
     <title>VIZHO͞OƏLS</title>
     <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
-    <link rel="stylesheet" href="/assets/css/landing_p_style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body style="background: white; padding-top: 0;">
@@ -22,112 +21,14 @@
       <%= render :partial => "shared/static/landing-page/features" %>
       <!--landing-interactive-menu-->
       <%= render :partial => "shared/static/landing-page/interactive_menu" %>
-      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="shareable" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
-        <div class="container">
-          <div class="row grid-group-md justify-content-between">
-            <div class="col-lg-6 col-xl-5">
-              <div class="offset-top-41 graph-content wow fadeInLeft">
-                <div>
-                  <img class="img-fluid" src="/assets/menu-wall.png" max-width="441" height="340" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 text-lg-left">
-              <div class="inset-md-lef-100 offset-lg-top-30 wow fadeInRight">
-                <h4 class="font-weight-bold">A <span style="color:#fbb448;">customers</span> view</h4>
-                <div class="offset-top-30 inset-lg-right-100">
-                  <p>
-                    Visuals have such a powerful impact on food choice, from if a customer
-                    should order to what they should order. Adding visuals of your menu
-                    items both attract and retain customer interest, and also help curb customer
-                    guess work and uncertainty with certain food items.
-                  </p>
-                </div>
-                <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "Try now for free", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-70" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--The process-->
-      <section style="background: black !important;" class="section novi-background section-navigation section-80 section-lg-124 bg-white" id="the_process" data-preset='{"title":"Testimonials","category":"testimonials","id":"testimonials"}'>
-        <div class="col-lg-12 container">
-          <div class="row grid-group-md justify-content-center offset-top-50">
-            <div class="wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="overlay"></div>
-              <div class="container">
-                <div class="row">
-                  <div style="" class="">
-                      <%= link_to image_tag('play-icon-2.png'), "https://www.youtube.com/watch?v=Q30F7YyEG64", class: "popup-youtube" %>
-                      <h2 style="color: white; font-size: 25px;" class="wow fadeInUp" data-wow-delay="0.5s">Learn More</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+       <!--landing-customer-->
+      <%= render :partial => "shared/static/landing-page/customer" %>
       <!--landing-clients-->
       <%= render :partial => "shared/static/landing-page/clients" %>
-
-      <section id="about_us">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2 style="color: black;">Who we are</h2>
-                      <hr class="star-primary">
-                  </div>
-              </div>
-              <br>
-              <div class="row">
-                  <div style="margin-bottom: 30px;" class="col-lg-12 text-center">
-                      <div class="">
-                          <p style="color: dimgray;"><font size="4"></font>
-                            VIZHO͞OƏLS is a technology company and our goal is to update the customer menu interaction experience.
-                            We do this by providing a platform that makes it possible for restauranteurs to create a visual extension of their menu.
-                            Restaurant interaction always begins with a menu, so that is where we focused our attention.
-                            We see this as just the beginning of the many things possible with VIZHO͞OƏLS - visuals.
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <!--Default footer-->
-      <footer class="section novi-background section-80 section-bottom-30 page-footer bg-gray-base context-dark" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}' style='margin-top: 0;s'>
-        <div class="container section-relative">
-          <div class="row justify-content-center grid-group-md text-xl-left" id="contact">
-            <div class="col-sm-12 col-xl-4">
-              <!-- Footer brand-->
-              <div class="offset-top-30">
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="novi-icon icon fa" href="mailto:abunawose@vizhooels.com,arslan.abdallah@vizhooels.com"><img style="top: -10px;position: relative;"src="https://img.icons8.com/cotton/64/000000/secured-letter.png"></a></li>
-                  <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://www.instagram.com/vizhooel_menu/" target="_blank"></a></li>
-                  <li class="list-inline-item">
-                    <article class="post widget-post text-left">
-                      <a href="https://www.vizhooels.com/users/31" target="_blank">
-                            <div class="unit flex-row unit-spacing-xs align-items-center">
-                              <div class="unit-body">
-                                <div class="post-meta"><span class="novi-icon icon-xxs mdi mdi-arrow-right text-macaroni"></span>
-                                  <time datetime="2018-01-01">Click here to interact with a</time>
-                                </div>
-                                <div class="post-title">
-                                  <h6 class="text-regular"><span style="color:#fbb448;">visual</span> menu</h6>
-                                </div>
-                              </div>
-                            </div>
-                        </a>
-                      </article>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </footer>
+      <!--landing-about-->
+      <%= render :partial => "shared/static/landing-page/about" %>
+      <!--landing-clients-->
+      <%= render :partial => "shared/static/landing-page/footer" %>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>

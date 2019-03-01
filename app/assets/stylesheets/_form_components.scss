@@ -13,7 +13,7 @@
   border: 1px solid $border;
   border-radius: $form-comp-size;
   &:hover {
-    border-color: $third !important;
+    border-color: $third;
     .form-component-btn-c {
       .form-component-btn {
         color: $third;

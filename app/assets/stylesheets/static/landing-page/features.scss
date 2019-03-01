@@ -7,12 +7,6 @@
   justify-content: center;
   align-items: center;
   padding: 50px 0;
-  // @media (max-width: 550px) {
-  //   padding: 0;
-  // }
-  // @media (max-height: 550px) {
-  //   padding: 0;
-  // }
   h1 {
     padding: 0 20px;
     padding-bottom: 50px;
@@ -80,7 +74,6 @@
         p {
           color: $s-text-secondary;
           text-align: left;
-          margin: 0;
           padding: 20px;
           a {
             color: $s-secondary;

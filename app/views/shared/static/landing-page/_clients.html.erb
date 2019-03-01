@@ -1,29 +1,37 @@
-<section class="landing-clients">
-    <h2>Get in touch</h2>
-    <div class="lc-form-c">
-        <%= form_for(
-            'message_params',
-            url: {:controller => "static_pages", :action => "contact_us", method: "post"}
-        ) do |f| %>
-            <div class='form-component-c'>
-                <%= f.text_field :name, placeholder: "Your Name", class: 'form-component fc-small', required: true %>
-                <span class="material-icons client-icon">person</span>
-            </div>
-            <div class='form-component-c'>
-                <%= f.text_field :email, placeholder: "Your email", class: 'form-component fc-small', required: true %>
-                <span class="material-icons client-icon">email</span>
-            </div>
-            <div class="field form-component-c fc-big">
-                <%= f.text_area :message, :cols => 80, :rows => 5, placeholder: "Message", class: 'form-component fc-big', required: true %>
-                <span class="material-icons client-icon">notes</span>
-            </div>
-            <div class="field form-component-c fc-active ">
-                <%= f.submit "SEND MESSAGE", class: "fc-hide", id: 'send' %>
-                <label class='form-component fc-small fc-point' for="send">
-                Send
-                <span class="material-icons client-icon">send</span>
-                </label>
-            </div>
-        <% end %>
+<section class="landing-clients-c">
+    <div class='landing-clients'>
+        <div class='lc-video-c'>
+            <h2>Learn More</h2>
+            <%= link_to image_tag('/assets/play-btn.png'), "https://www.youtube.com/watch?v=Q30F7YyEG64", class: "popup-youtube" %>
+        </div>
+        <div class='lc-form'>
+            <%= form_for(
+                    'message_params',
+                    url: {:controller => "static_pages", :action => "contact_us", method: "post"}
+                ) do |f| %>
+                    <h2>GET IN TOUCH</h2>
+                    <div class='lc-input'>
+                        <%= f.text_field :name, placeholder: "Your Name", class: 'form-component fc-small', required: true %>
+                        <span class="material-icons client-icon">person</span>
+                    </div>
+                    <div class='lc-input'>
+                        <%= f.text_field :email, placeholder: "Your email", class: 'form-component fc-small', required: true %>
+                        <span class="material-icons client-icon">email</span>
+                    </div>
+                    <div class="lc-input lc-textarea fc-big">
+                        <%= f.text_area :message, :cols => 80, :rows => 5, placeholder: "Message", class: 'form-component fc-big', required: true %>
+                        <span class="material-icons client-icon">notes</span>
+                    </div>
+                    <div class="ls-btn">
+                        <%= f.submit "SEND MESSAGE", class: "fc-hide", id: 'send' %>
+                        <label class='form-component fc-point' for="send">
+                        Send
+                        </label>
+                    </div>
+                <% end %>
+        </div>
+        <a class='lc-img-c' href="https://www.vizhooels.com/users/31" target="_blank">
+            <img src='/assets/tall-menu.jpg' alt='create' />
+        </a>
     </div>
 </section>
