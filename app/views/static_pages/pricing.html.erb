@@ -1,0 +1,86 @@
+<% provide(:title, "Pricing") %>
+<div class='pricing'>
+<header class='pricing-header'>
+    <div style="position: relative;left: 45%;top: -5px;">
+      <%= render :partial => "shared/home_button" %>
+    </div>
+    <h1 class='pricing-title ph-h1'>
+      <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VISUAL</span> <span style="color: white;">MENU</span></div>
+    </h1>
+    <h3 class='pricing-title ph-h2'>Ever heard the old adage “You eat first with your eyes”? </h3>
+    <div class='pricing-action-c'>
+      <%= link_to "Try free for 14 days", signup_path, class: "wow fadeInUp btn pricing-action ph-important" %>
+    </div>
+</header>
+<section class='pricing-section'>
+    <div class='pricing-box'>
+        <h1 class='pricing-box-title'>Professional</h1>
+        <%= render :partial => "shared/pricing_box_item",:locals => {
+            :icon => 'check_circle_outline',
+            :text => 'Get access to a visual menu'
+        } %>
+        <a class='pricing-box-action' href='/signup'><span class='pricing-box-action-info'>$9.99/month</span></a>
+    </div>
+
+    <div class='pricing-box'>
+        <h1 class='pricing-box-title'>Enterprise</h1>
+        <p class='pricing-box-description'>Get in touch with one of our consultants to see how we can provide you a custom solution for your business.</p>
+        <a class="pricing-box-action" href="mailto:abunawose@vizhooels.com,arslan.abdallah@vizhooels.com">GET IN TOUCH</a>
+    </div>
+</section>
+
+   <!-- Features-->
+   <section class="section novi-background section-66 section-collar">
+     <div class="container"><img class="img-fluid" src="" width="1165" height="365" alt="">
+     </div>
+     <div style="color: white;" class="container-fluid offset-top-50">
+       <div class="row">
+         <div class="col-md-6 col-xxl-3">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-cellphone-link"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">Responsive Menu</h4>
+                     <p>A visual menu looks the same on any screen resolution.</p>
+                   </div>
+                 </div>
+         </div>
+         <div class="col-md-6 col-xxl-3 offset-top-50 offset-md-top-0">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-television-guide"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">accessible menu</h4>
+                     <p>A visual menu is accessible online as well as anywhere you decide to place
+                        your synchronized NFC tag(s) / QR code.
+                     </p>
+                   </div>
+                 </div>
+         </div>
+         <div class="col-md-6 col-xxl-3 offset-top-50 offset-xxl-top-0">
+                 <!-- Icon Box Type 2-->
+                 <div class="unit unit-sm flex-md-row text-md-left">
+                   <div class="unit-left"><span class="icon novi-icon text-gray mdi mdi-play-box-outline"></span></div>
+                   <div class="unit-body">
+                     <h4 class="font-weight-bold text-uppercase offset-md-top-14">Interactive menu</h4>
+                     <p>
+                       <ul class="rd-navbar-nav">
+                         <li>
+                           Customers can feast with their eyes every time they interact with your visual menu
+                         </li>
+                         <li>Customers can filter your visual menu</li>
+                         <li>Customers can search your visual menu for menu items</li>
+                         <li>Your visual menu is easy to update using any smart device</li>
+                         <li>
+                           Customers can share your visual menu
+                         </li>
+                       </ul>
+                     </p>
+                   </div>
+                 </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <%= render 'layouts/footer' %>
+</div>

@@ -1,0 +1,15 @@
+<div id='user-dropdown' class='user-dropdown'>
+    <label class='ud-action' onclick='toggleUserDropdown(this, "on")'>Settings</label> 
+    <ul>
+        <%# <li><button>Edit Profile longer</button></li>
+        <li><button>Edit Profile</button></li>
+        <hr> %>
+        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+    </ul>
+</div>
+
+<script type='text/javascript'>
+    function toggleUserDropdown(e, status) {
+        e.parentElement.classList.toggle('active')
+    }
+</script>

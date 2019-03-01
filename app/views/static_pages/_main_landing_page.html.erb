@@ -4,211 +4,47 @@
     <title>VIZHO͞OƏLS</title>
     <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/landing_p_style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
-  <body style="background: white;">
+  <body style="background: white; padding-top: 0;">
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="/assets/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="page text-center">
-      <!-- RD Navbar-->
-      <header class="section rd-navbar-wrap page-head" data-preset='{"title":"Header","category":"header","reload":true,"id":"header"}'>
-        <nav class="rd-navbar novi-background" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static">
-          <!-- RD Navbar Panel-->
-          <div class="rd-navbar-panel">
-            <!-- RD Navbar Toggle-->
-            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-            <div class="rd-navbar-brand" style="    position: relative;top: -95px;">
-              <img class="logo-dark" src="/assets/logo-black.png" width="250" height="50" alt="">
-            </div>
-          </div>
-          <div class="rd-navbar-nav-wrap">
-            <!-- RD Navbar Nav-->
-            <ul class="rd-navbar-nav">
-              <li class="active"><a href="#home">Home</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#service">Service</a></li>
-              <li><a href="#benefit">Benefit</a></li>
-              <li><a href="#responsive">Responsive</a></li>
-              <li><a href="#shareable">Menu IQ</a>
-              <li><a href="#the_process">The Process</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><%= link_to "Log in", login_path %></li>
-            </ul>
-          </div>
-          <div class="rd-navbar-subpanel">
-            <ul class="list-inline list-inline-primary list-inline-md">
-              <li class="list-inline-item"><a class="novi-icon icon fa" href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com"><img style="top: 10px;position: relative;"src="https://img.icons8.com/cotton/64/000000/secured-letter.png"></a></li>
-              <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://instagram.com/visualmenu?utm_source=ig_profile_share&igshid=1u0mbbjb4344g" target="_blank"></a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <section class="section novi-background section-navigation bg-macaroni context-dark" id="home" data-preset='{"title":"Intro","category":"content","id":"intro"}'>
-        <div class="container">
-          <div class="row section-cover justify-content-center align-items-center justify-content-lg-between">
-            <div class="col-xl-5 text-xl-left section-80 section-relative">
-              <h2 class="font-weight-bold">
-                <div class="wow fadeInUp rd-navbar-brand"><span style="color:#fbb448;">VIZHO͞OƏL</span> <span style="color: white;">MENU</span></div>
-              </h2>
-              <div class="offset-top-34">
-                <p class="big">
-                  A smart visual menu available for access everywhere.
-                </p>
-              </div>
-              <%= link_to "Sign up free", signup_path, class: "wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" %>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Our Key Features-->
-      <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-white" id="features" data-preset='{"title":"Key Features","category":"content","id":"key-features"}'>
-        <div class="container">
-          <h3 class="font-weight-bold">Our Features</h3>
-          <div class="row grid-group-md offset-top-50 offset-lg-top-93">
-            <div class="col-md-4"><img class="img-fluid d-inline-block" src="/assets/menu-icon.png" width="64" height="64" alt="">
-              <div class="offset-lg-top-40 offset-top-20">
-                <h6>
-                    <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank"><span style="color:#fbb448;">vizho͞oəl</span></a> menu</span>
-                </h6>
-              </div>
-              <div class="offset-top-10">
-                <p>
-                  A fully interactive, real-time updatable, filterable,
-                  searchable, synchronized visual menu.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4"><img class="img-fluid d-inline-block" src="/assets/nfc-signal-chip.png" width="64" height="64" alt="">
-              <div class="offset-lg-top-40 offset-top-20">
-                <h6>NFC Technology</h6>
-              </div>
-              <div class="offset-top-10">
-                <p>
-                  Near Field Communication, a short-range wireless technology
-                  that enables simple and secure communication between electronic devices is synchronized
-                  with your
-                    <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank"><span style="color:#fbb448;">vizho͞oəl</span></a> menu</span>
-                  for easy access.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4"><img class="img-fluid d-inline-block" src="/assets/phone-scan-nfc.png" width="64" height="64" alt="">
-              <div class="offset-lg-top-40 offset-top-20">
-                <h6>SMARTPHONE/DEVICE</h6>
-              </div>
-              <div class="offset-top-10">
-                <p>
-                  A smartphone with NFC scan technology can be used
-                  to scan synchronized NFC technology to access your
-                  <a href="https://vizhooels.herokuapp.com/users/31" target="_blank"><span style="color:#fbb448;">vizho͞oəl</span></a> menu.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--Our Services-->
-      <section class="section novi-background section-navigation section-80 bg-gray-lighter" id="service">
-        <div class="container">
-          <div class="row grid-group-md justify-content-between">
-            <div class="col-lg-5 text-lg-left">
-              <div class="offset-lg-top-30 wow fadeInRight">
-                <h3 class="font-weight-bold">Our Service</h3>
-                <p>
-                  While websites offer just a basic menu, we give our users
-                  access to a <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank"><span style="color:#fbb448;">vizho͞oəl</span></a> menu</span>
-                  that is ready to adapt to your daily needs, with full control over the presentation of your food.
-                </p>
-                <p>
-                  Pairing our platform with NFC technology
-                  allows for a fully synchronized and accessible visual menu.
-                </p>
-                <p>
-                  Customers can simply use their NFC enabled smartphone( no app download needed ) to scan
-                  the paired NFC technology and be greeted to beautiful images of your
-                  <span><a href="https://vizhooels.herokuapp.com/users/31" target="_blank"><span style="color:#fbb448;">vizho͞oəl</span></a> menu.</span>
-                </p>
-                <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "CREATE MENU ITEM", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6"><img style="margin-top: -60px;" class="img-fluid d-inline-block wow fadeInUp offset-lg-top--160" src="/assets/create-menu-item.png" width="617" height="599" alt=""></div>
-          </div>
-        </div>
-      </section>
-      <!--We Help You Grow-->
-      <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="benefit" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
-        <div class="container">
-          <div class="row grid-group-md justify-content-between">
-            <div class="col-lg-6 col-xl-5">
-              <div class="offset-top-41 graph-content wow fadeInLeft">
-                <div style="width: 100%; height: 450px; margin-bottom: 30px;">
-                  <img class="img-fluid" src="/assets/menu-black.png" width="360" height="240" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 text-lg-left">
-              <div class="inset-md-lef-100 offset-lg-top-30 wow fadeInRight">
-                <h3 class="font-weight-bold">We Help You Grow</h3>
-                <div class="offset-top-30 inset-lg-right-100">
-                  <p>
-                    A <span style="color:yellow;">vizho͞oəl</span> menu has a wide set of tools to help you
-                    better understand your customers as they interact with the
-                    food on your menu.
-                  </p>
-                </div>
-                <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "Try it free for 30 days", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-70" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Extremely Responsive and Retina-->
-      <section class="section novi-background section-navigation section-80 section-lg-110 section-lg-bottom-135 bg-gray-lighter" id="responsive" data-preset='{"title":"Content","category":"content","id":"content"}'>
-        <div class="container">
-          <div class="row grid-group-md justify-content-sm-center align-items-md-center">
-            <div class="col-lg-6 text-lg-left wow fadeInLeft">
-              <h3 class="font-weight-bold">Extremely Responsive</h3>
-              <p class="inset-lg-right-100">
-                Due to the responsive design built in
-                our platform, a <span style="color:#fbb448;">vizho͞oəl</span> menu can be launched on any smart device.
-              </p>
-              <div class="offset-top-30">
-                <%= link_to "SIGN UP FOR FREE", signup_path, class: "btn btn-primary btn-ellipse btn-anis-effect" %>
-              </div>
-            </div>
-            <div class="col-lg-6"><img class="img-fluid" src="/assets/responsive.png" width="441" height="240" alt=""></div>
-          </div>
-        </div>
-      </section>
+     <!-- static-navigation -->
+      <%= render :partial => "shared/static/navigation/navigation" %>
+      <!--landing-header-->
+      <%= render :partial => "shared/static/landing-page/header" %>
+      <!--landing-how-it-works-->
+      <%= render :partial => "shared/static/landing-page/how_it_works" %>
+      <!--landing-services-->
+      <%= render :partial => "shared/static/landing-page/services" %>
+      <!--landing-features-->
+      <%= render :partial => "shared/static/landing-page/features" %>
+      <!--landing-interactive-menu-->
+      <%= render :partial => "shared/static/landing-page/interactive_menu" %>
       <section class="section novi-background section-navigation section-80 bg-caribbean context-dark" id="shareable" data-preset='{"title":"Schedule","category":"content, schedule","reload":true,"id":"schedule"}'>
         <div class="container">
           <div class="row grid-group-md justify-content-between">
             <div class="col-lg-6 col-xl-5">
               <div class="offset-top-41 graph-content wow fadeInLeft">
-                <div style="width: 100%; height: 250px; margin-bottom: 30px;">
-                  <img class="img-fluid" src="/assets/shareable.png" width="441" height="340" alt="">
+                <div>
+                  <img class="img-fluid" src="/assets/menu-wall.png" max-width="441" height="340" alt="">
                 </div>
               </div>
             </div>
             <div class="col-lg-5 text-lg-left">
               <div class="inset-md-lef-100 offset-lg-top-30 wow fadeInRight">
-                <h3 style="font-size:40px;"class="font-weight-bold">A Smart Menu</h3>
+                <h4 class="font-weight-bold">A <span style="color:#fbb448;">customers</span> view</h4>
                 <div class="offset-top-30 inset-lg-right-100">
                   <p>
-                    With a <span style="color:yellow;">vizho͞oəl</span> menu, you get feedback data on what customers are looking at the most
-                    and can pinpoint which menu item gets passed up often.
+                    Visuals have such a powerful impact on food choice, from if a customer
+                    should order to what they should order. Adding visuals of your menu
+                    items both attract and retain customer interest, and also help curb customer
+                    guess work and uncertainty with certain food items.
                   </p>
                 </div>
                 <div class="offset-top-30 offset-lg-top-55">
-                  <%= link_to "Try now", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-50" %>
+                  <%= link_to "Try now for free", signup_path, class: "btn btn-default btn-ellipse d-inline-block btn-anis-effect w-70" %>
                 </div>
               </div>
             </div>
@@ -217,15 +53,15 @@
       </section>
       <!--The process-->
       <section style="background: black !important;" class="section novi-background section-navigation section-80 section-lg-124 bg-white" id="the_process" data-preset='{"title":"Testimonials","category":"testimonials","id":"testimonials"}'>
-        <div style="width: 50%;"class="col-lg-8 container">
+        <div class="col-lg-12 container">
           <div class="row grid-group-md justify-content-center offset-top-50">
             <div class="wow fadeInLeft" data-wow-delay="0.2s">
               <div class="overlay"></div>
               <div class="container">
                 <div class="row">
                   <div style="" class="">
-                      <%= link_to image_tag('play-icon-2.png'), "https://www.youtube.com/watch?v=0HYcYjGLAAk", class: "popup-youtube" %>
-                      <h2 style="color: white; font-size: 25px;" class="wow fadeInUp" data-wow-delay="0.5s">THE <span style="color:#fbb448;">vizho͞oəl</span> <span style="color:dimgray;">menu</span> PROCESS</h2>
+                      <%= link_to image_tag('play-icon-2.png'), "https://www.youtube.com/watch?v=Q30F7YyEG64", class: "popup-youtube" %>
+                      <h2 style="color: white; font-size: 25px;" class="wow fadeInUp" data-wow-delay="0.5s">Learn More</h2>
                   </div>
                 </div>
               </div>
@@ -233,54 +69,54 @@
           </div>
         </div>
       </section>
-      <!--Clients-->
-      <section id="contact" class="parallax-section">
-        <div class="overlay"></div>
-      	<div class="container">
-      		<div class="row contact-section">
 
-      			<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-              <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
-                  <h2>Say hello</h2>
+      <!--landing-clients-->
+      <%= render :partial => "shared/static/landing-page/clients" %>
+
+      <section id="about_us">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 text-center">
+                      <h2 style="color: black;">Who we are</h2>
+                      <hr class="star-primary">
+                  </div>
               </div>
-      				<div class="wow fadeInUp" data-wow-delay="0.7s">
-                <%= form_for('message_params', url: {:controller => "static_pages", :action => "contact_us", method: "post"} ) do |f| %>
-
-                  <%= f.text_area :name, placeholder: "Your Name", class: 'form-control', required: true %>
-
-                  <%= f.text_area :email, placeholder: "Your email", class: 'form-control', required: true %>
-
-                  <%= f.text_area :message, placeholder: "Message", class: 'form-control', required: true %>
-
-                  <%= f.submit "SEND MESSAGE", class: "form-control submit" %>
-                <% end %>
-      				</div>
-      			</div>
-
-      		</div>
-      	</div>
+              <br>
+              <div class="row">
+                  <div style="margin-bottom: 30px;" class="col-lg-12 text-center">
+                      <div class="">
+                          <p style="color: dimgray;"><font size="4"></font>
+                            VIZHO͞OƏLS is a technology company and our goal is to update the customer menu interaction experience.
+                            We do this by providing a platform that makes it possible for restauranteurs to create a visual extension of their menu.
+                            Restaurant interaction always begins with a menu, so that is where we focused our attention.
+                            We see this as just the beginning of the many things possible with VIZHO͞OƏLS - visuals.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </section>
 
       <!--Default footer-->
-      <footer class="section novi-background section-80 section-bottom-30 page-footer bg-gray-base context-dark" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}'>
+      <footer class="section novi-background section-80 section-bottom-30 page-footer bg-gray-base context-dark" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}' style='margin-top: 0;s'>
         <div class="container section-relative">
-          <div class="row justify-content-center grid-group-md text-xl-left">
+          <div class="row justify-content-center grid-group-md text-xl-left" id="contact">
             <div class="col-sm-12 col-xl-4">
               <!-- Footer brand-->
               <div class="offset-top-30">
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="novi-icon icon fa" href="mailto:abunawose@vizhooels.com,ericamartin@vizhooels.com,arslan.abdallah@vizhooels.com"><img style="top: -10px;position: relative;"src="https://img.icons8.com/cotton/64/000000/secured-letter.png"></a></li>
-                  <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://instagram.com/visualmenu?utm_source=ig_profile_share&igshid=1u0mbbjb4344g" target="_blank"></a></li>
+                  <li class="list-inline-item"><a class="novi-icon icon fa" href="mailto:abunawose@vizhooels.com,arslan.abdallah@vizhooels.com"><img style="top: -10px;position: relative;"src="https://img.icons8.com/cotton/64/000000/secured-letter.png"></a></li>
+                  <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-gray-darkest-filled" href="https://www.instagram.com/vizhooel_menu/" target="_blank"></a></li>
                   <li class="list-inline-item">
                     <article class="post widget-post text-left">
-                      <a href="https://vizhooels.herokuapp.com/users/31" target="_blank">
+                      <a href="https://www.vizhooels.com/users/31" target="_blank">
                             <div class="unit flex-row unit-spacing-xs align-items-center">
                               <div class="unit-body">
                                 <div class="post-meta"><span class="novi-icon icon-xxs mdi mdi-arrow-right text-macaroni"></span>
                                   <time datetime="2018-01-01">Click here to interact with a</time>
                                 </div>
                                 <div class="post-title">
-                                  <h6 class="text-regular"><span style="color:#fbb448;">vizho͞oəl</span> menu</h6>
+                                  <h6 class="text-regular"><span style="color:#fbb448;">visual</span> menu</h6>
                                 </div>
                               </div>
                             </div>
@@ -291,7 +127,6 @@
               </div>
             </div>
           </div>
-          <%= render 'layouts/footer' %>
       </footer>
     </div>
     <!-- Global Mailform Output-->

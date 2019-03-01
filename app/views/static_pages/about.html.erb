@@ -1,123 +1,120 @@
 <% provide(:title, "About") %>
-<div class="main-page-bk">
-<section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 style="color: black;">About Vizho͞oəls</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="well">
-                        <p style="color: dimgray;"><font size="4"></font>
-                          Vizho͞oəls is a simple web application that puts the power of control over a visual menu in the hands of the restaurants..the power to update
-                          and change how to visually present the food on the menu.
-                          The Vizho͞oəls platform uses NFC technology to give centralize control of a digital menu to our users, allowing for real time update and presentation of food on the menu. Remember, “You eat first with your eyes.”
-                        </p>
-
-                        <a href="http://www1.opendining.net/blog/are-food-images-really-important-on-your-online-menu">"Are food images really important on your menu?"</a>
-                    </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="interest">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 style="color: black;">Benefits</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                        <span class="sr-only">90% Complete</span>
-                        <p>Visual element has such a powerful impact on food choice</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                        <span class="sr-only">95% Complete</span>
-                        <p>Attract and retain customer interest</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                        <span class="sr-only">90% Complete</span>
-                        <p>Customer menu interaction</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only">80% Complete</span>
-                        <p>Customer menu understanding</p>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only">60% Complete</span>
-                        <p>Increase in variaty of menu items ordered</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active progress-bar-danger" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                        <span class="sr-only">30% Complete</span>
-                        <p>Wrong customer orders</p>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <section id="demo-section">
-            <div class="container how-to-vid">
-                <div class="row">
-                  <h2 style="color: black;">Demo</h2>
-                    <div>
-                        <div class="well">
-                          <section>
-                            <div style="text-align: center; width: 100%;">
-                              <div class="vid">
-                                <iframe width="500" height="300" src="https://www.youtube.com/embed/WNQdzaVXClo" frameborder="0" allowfullscreen></iframe>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                  </div>
-               </div>
-        </div>
-  </section>
-
-  <section id="demo-section">
-          <div class="container nfc-tags-pic">
-              <div class="row">
-                <h2 style="color: black;">Vizho͞oəls NFC Tag</h2>
-                  <div>
-                      <div class="well">
-                        <section>
-                          <div style="text-align: center; width: 100%;">
-                            <div>
-                              <%= image_tag('vizhooel-tags.jpg', width: 700, height: 350, alt: 'NFC Tags')%>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-                </div>
-             </div>
+<!DOCTYPE html>
+<html class="wow-animation" lang="en">
+<head>
+    <title>VIZHO͞OƏLS</title>
+  </head>
+  <body style='padding-top: 0;'>
+    <div class='about-page'>
+      <div class='about-header'>
+        <%= image_tag '/assets/logo.png', alt: 'logo'%>
       </div>
-</section>
-</div>
+      <div class='about-section'>
+        <h2>CREATE DYNAMIC, VISUAL MENUS WITH VIZHO͞OƏLS</h2>
+        <div class='about-section-images'>
+        <%= image_tag '/assets/about_menu_orig.jpg', alt: 'logo'%>
+        <%= image_tag '/assets/plus.svg', class:'asi-small', alt: 'logo'%>
+        <%= image_tag '/assets/about_instructions.jpg', alt: 'logo'%>
+        <%= image_tag '/assets/equals.svg', class:'asi-small', alt: 'logo'%>
+        <%= image_tag '/assets/menu-wall.png', alt: 'logo'%>
+        </div>
+        <p>
+          We all know what it’s like to scroll through an online menu or physical menu that’s nothing but dish names
+          and text descriptions. It works, but it’s certainly not ideal. How often have you wished you
+          could pull up a picture of the items you’re interested in?
+          As a restauranteur you understand better than most how powerful that would be. That one, single
+          feature would endear your customers to you and draw in many more. If you ran the only pizza and sub
+          shop in the area that featured a dynamic, fully-visual menu, people would favor you over the competition.
+          And they would recommend you to friends.
+          This is what you get with VIZHO͞OƏLS (visuals). Easy to create, high-resolution,
+          fully-visual menus that patrons can use both online and in restaurant. With no app download required.
+          Your menu presents in their regular web browser. Read on to discover what this can do for your business.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+
+      <div class='about-section'>
+        <h2>Easy to Set Up</h2>
+        <p>
+          The app features pre-built menu templates. Using our simple interface you’ll add your photos,
+          sort menu items into categories, and add your prices. The entire process, from taking your photos
+          to adding them to your visual menu can be done entirely with your smartphone. In nearly no time you
+          can set up an exciting visual menu that your customers will love.
+          And your menu can be updated whenever you like. Any time you add or remove menu items simply enter the
+          app and make your changes. The new menu will be instantly accessible to your customers.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+      <div class='about-section'>
+        <h2>Fully Searchable</h2>
+        <p>
+          Our dynamic visual menu is entirely filterable and searchable. If a customer only wants
+          to see images of the different burgers you sell, they can do that. They can filter to see
+          only dessert items, or menu items under a particular price. Your patrons will love the flexibility
+          your visual menu will provide them.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+      <div class='about-section'>
+        <h2>Add Your Visual Menu to Your Website</h2>
+        <p>
+          It’s easy to include a link to your menu on your website.
+          This can be done in place of your normal online menu or as a
+          complement to it. Having both will give your customers more options
+          and let them search your menu however they prefer. Customers appreciate choice.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+      <div class='about-section'>
+        <h2>Let Your Customers Instantly Connect While At Your Restaurant</h2>
+        <p>
+          We integrate NFC and QR Code technology to let customers quickly and easily pull up
+          your visual menu on their cell phone while at your restaurant. Add a QR code to your
+          physical menu. Then all a customer needs to do is scan it with their mobile device’s camera
+          and your visual menu will appear in their phone’s browser. Or place an NFC tag on your counter, or at
+          each table. Simply bringing their phone near the tag will load the menu on your customer’s phone.
+        </p>
+        <p>
+          Both of these technologies make loading your visual menu incredibly simple. Your online visual menu becomes
+          an instant extension of your physical menu. Customers could be browsing your paper menu and then quickly jump
+          to your visual menu to see a picture of the dish they’re thinking about ordering. It gives them far more information
+          than a printed menu, or most online menus can convey.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+      <div class='about-section'>
+        <h2>Improving Your Customer’s Experience</h2>
+        <p>
+          Adding the option for your customers to see photographs of all your menu
+          items increases their engagement with your offerings and improves their overall experience.
+          It demonstrates that you take customer service seriously and that you want to do everything you
+          can to win, and keep, their business.
+        </p>
+        <p>
+          With the VIZHO͞OƏLS app, creating a visual menu enhancement is easy and well worth the small financial
+          and time investment. And right now you can try the app free for 14 days. Visit us at <a href="https://www.vizhooels.com">VIZHO͞OƏLS</a>
+          to learn more.
+        </p>
+        <p>
+          Everyone has a smartphone-why not take advantage
+          of this to enhance your menu?
+        </p>
+      </div>
+    </div>
+<%= render 'layouts/footer' %>
+</body>

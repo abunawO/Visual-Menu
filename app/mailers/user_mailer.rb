@@ -17,7 +17,7 @@ class UserMailer < ApplicationMailer
 
     message = " Hi from #{contact_name} < #{contact_email} >.  My message is,  #{contact_message}"
 
-    mail(:to => "vizhooelmenu@gmail.com>", :subject => "Say Hello", :body => message)
+    mail(:to => "abunawose@vizhooels.com", :subject => "Say Hello", :body => message)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

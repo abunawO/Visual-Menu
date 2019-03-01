@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>VIZHO͞OƏLS</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -10,9 +11,10 @@
 
     <meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<meta name="keywords" content="">
-  	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="title" content="VIZHO͞OƏLS">
+  	<meta name="keywords" content="menu designs, menu, menu ideas, food menu, visual menu, event planning, food truck menu, Restaurant Menu Templates, Restaurant Menu Designs ">
+  	<meta name="description" content="Enhance your menu with visuals.">
     <meta name="google-site-verification" content="fRD1FzHUEveMq-OwTw5cFd8pWRrr-36_JShIY3P1c8w" />
 
 
@@ -43,22 +45,23 @@
   	<script src="js/respond.min.js"></script>
   	<![endif]-->
 
-    <%= render 'shared/full_story_script' %>
-    <!--<%= render 'shared/identify_users_script' %>-->
+    <% if Rails.env.production? %>
+      <%= render 'shared/google_analytics_script' %>
+    <% end %>
 
 
   </head>
   <body>
     <% if logged_in? %>
-      <di class="row">
+      <div class="row">
         <%= render 'layouts/header' %>
       </div>
-      <div class="">
+      <div class="margin-top">
         <%= yield %>
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <div>
+      <div class="no-margin-top">
         <%= yield %>
       </div>
       <%= debug(params) if Rails.env.development? %>
@@ -73,8 +76,6 @@
 	<script src="/assets/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="/assets/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="/assets/owl.carousel.min.js"></script>
 
 	<!-- Stellar Parallax -->
 	<script src="/assets/jquery.stellar.min.js"></script>

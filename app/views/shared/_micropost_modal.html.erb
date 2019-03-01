@@ -1,0 +1,25 @@
+<div id='micropost-modal' class="micropost-modal">
+<div onclick='closeModal()' class='mpm-close-bg'></div>
+<% if logged_in? %>
+<div class='micropost-modal-c'>
+<% else %>
+<div class='micropost-modal-c no-top'>
+<% end %>
+  <button onclick='closeModal()' class='mpm-close'>
+    <img src='/assets/close.png'>
+  </button>
+  <div class='mpm-img-c'>
+    <%= image_tag "", id: "mpm-image" %>
+    </div>
+    <div class='mpm-details'>
+      <p id="mpm-title"></p>
+      <p id="mpm-price" class='mpm-price'></p>
+      <p id='mpm-description' class='mpm-description'></p>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+function closeModal(props) {
+    document.getElementById('micropost-modal').classList.remove('active')
+  }
+</script>

@@ -4,9 +4,13 @@ class MicropostsController < ApplicationController
     before_action :correct_user,   only: :destroy
 
   def create
-    @categories_select = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
-    @micropost = current_user.microposts.build(micropost_params)
     @user = current_user
+    if @user.menu_categories.present?
+      @categories_select = @user.menu_categories.split(",")
+    else
+      @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+    end
+    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash.now[:success] = "Menu item created successfully!"
       redirect_to root_url
@@ -19,8 +23,15 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    to_sub_categories   = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
-    standard_categories = ["APPETIZER", "BREAKFAST", "LUNCH", "DINNER", "DESSERT", "BEVERAGE", "SPECIAL OF THE DAY", "SIDE"]
+    @user = current_user
+    if @user.menu_categories.present?
+      to_sub_categories = @user.menu_categories.split(",")
+      standard_categories = @user.menu_categories.split(",")
+    else
+      to_sub_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+      standard_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+    end
+
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
     micropost_category = [@micropost.category]
@@ -51,6 +62,9 @@ class MicropostsController < ApplicationController
     end
   end
 
+  # def modal
+  #   @micropost = Micropost.find(params['micropost_id'])
+  # end
   def show
     @micropost = Micropost.find(params['micropost_id'])
   end
@@ -76,15 +90,6 @@ class MicropostsController < ApplicationController
     def _set_defaults
       @feed_items = []
       @categories  = []
-
-      @appetizer_cat = []
-      @breakfast_cat = []
-      @lunch_cat = []
-      @dinner_cat = []
-      @dessert_cat = []
-      @beverage_cat = []
-      @special_of_day_cat = []
-      @side_cat = []
     end
 
 end

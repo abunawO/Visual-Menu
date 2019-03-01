@@ -1,0 +1,179 @@
+@import 'const';
+.pricing {
+  background: linear-gradient(
+    90deg,
+    $s-primary 0%,
+    $s-secondary 100%
+  );
+  position: relative;
+  top: -90px;
+}
+.pricing-header {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: url('/assets/pricing-bg-debris.svg') no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: transparent;
+  .pricing-title {
+    text-align: center;
+    &.ph-h1 {
+      // text-decoration: underline;
+      color: $s-text-primary;
+      font-weight: bold;
+      font-size: 2em !important;
+    }
+    &.ph-h2 {
+      max-width: 500px;
+      color: $s-text-secondary;
+      font-size: 1.5em !important;
+    }
+  }
+  .pricing-action-c {
+    display: flex;
+    flex-direction: column;
+    .pricing-action {
+      text-align: center;
+      min-width: 200px;
+      font-weight: bold;
+      border: 2px solid $s-text-third;
+      color: $s-text-third;
+      margin: 0 5px;
+      border-radius: 30px;
+      padding: 10px 20px !important;
+      background-color: transparent;
+      font-size: 1.2em;
+      &:hover {
+        background-color: rgba($s-text-third, 0.2);
+      }
+      &.ph-important {
+        background-color: $s-text-third;
+        color: $s-text-primary !important;
+        transition: ease-in-out 0.2s !important;
+        &:hover {
+          padding: 10px 25px !important;
+          transform: scale(1.2);
+          background-color: $s-text-third !important;
+          box-shadow: 0px 0px 20px 0px rgba($s-text-third, 0.5) !important;
+        }
+      }
+    }
+  }
+}
+
+.pricing-section {
+  overflow: visible !important;
+  padding-bottom: 50px;
+  // background-color: $s-extra;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+    .pricing-box {
+      margin: 20px !important;
+    }
+  }
+  .pricing-box {
+    margin: 20px;
+    z-index: 20;
+    box-shadow: 0px 10px 25px rgba(#ff5f6d, 0.2);
+    border-radius: 10px;
+    max-width: 450px !important;
+    display: flex;
+    flex-direction: column;
+    background-color: $s-text-third;
+    overflow: hidden;
+    transition: ease-in-out 0.2s;
+    background-color: $s-bg-primary;
+    &.pricing-box-important {
+      margin-top: -58px;
+      background-color: #fff2ea;
+      border: 1px solid #ff5f6d;
+      &:hover {
+        border: 1px solid #ee6c55;
+      }
+      .pricing-box-title {
+        border: none;
+      }
+    }
+    &:hover {
+      box-shadow: 0px 10px 45px rgba(#ee6c55, 0.2);
+      .pricing-box-title {
+        border-color: rgba(#ee6c55, 0.5);
+      }
+      .pricing-box-action {
+        background-color: #ee6c55;
+        font-size: 1.6em;
+      }
+    }
+    .pricing-box-item {
+      display: flex;
+      padding: 10px 0;
+      transition: ease-in-out 0.1s;
+      &:hover {
+        padding-left: 10px;
+        // background-color: #ee6c55;
+        box-shadow: 0px 10px 45px rgba(#ff5f6d, 0.2);
+        // box-shadow: 0px 10px 25px rgba(#ff5f6d, 0.5);
+        background-color: $s-text-third;
+        .pricing-box-item-icon {
+          color: #ff5f6d;
+        }
+      }
+      .pricing-box-item-icon {
+        color: $s-text-primary;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        padding: 0 20px;
+      }
+      .pricing-box-item-text {
+        color: $s-text-primary;
+        font-size: 20px !important;
+        line-height: 24px !important;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .pricing-box-title {
+      //   background-color: #ffc371;
+      border-bottom: 2px solid rgba(#ff5f6d, 0.5);
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 !important;
+      font-size: 1em;
+      font-weight: bold;
+      padding: 20px 0;
+    }
+    .pricing-box-description {
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 1em;
+      margin: 0;
+    }
+    .pricing-box-action {
+      margin-top: 20px;
+      transition: ease-in-out 0.1s !important;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      color: $s-text-third;
+      background-color: #ff5f6d;
+      font-size: 1.4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        font-size: 2em;
+      }
+    }
+  }
+}

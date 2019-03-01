@@ -4,15 +4,25 @@ $form-comp-size: 40px;
 $s-primary: #ff5f6d;
 $s-secondary: #ffc371;
 $s-bg-primary: #f5f5f5;
+<<<<<<< HEAD
 $s-bg-secondary: #fff2ea;
 $s-text-primary: #1f1f1f;
 $s-text-secondary: #4f4f4f;
 
+=======
+$s-bg-secondary: #faf6f4;
+$s-bg-third: #fff;
+$s-text-primary: #1f1f1f;
+$s-text-secondary: #4f4f4f;
+$s-text-third: #fff;
+
+// colors for user pages
+>>>>>>> 4d3c136ffd539fdd106eb2efcee44f40002008a6
 // blue
 $bg: #f9f9f9;
 $border: #1f1f1f;
 $primary: #1f1f1f;
-$secondary: hsl(0, 0%, 100%);
+$secondary: #ffffff;
 $third: darken(#47bbff, 10%);
 $extra: #f1f1f1;
 $fade: #6f6f6f;
