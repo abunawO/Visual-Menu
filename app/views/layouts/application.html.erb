@@ -56,12 +56,12 @@
       <div class="row">
         <%= render 'layouts/header' %>
       </div>
-      <div class="">
+      <div class="margin-top">
         <%= yield %>
         <%= debug(params) if Rails.env.development? %>
       </div>
     <% else %>
-      <div>
+      <div class="no-margin-top">
         <%= yield %>
       </div>
       <%= debug(params) if Rails.env.development? %>

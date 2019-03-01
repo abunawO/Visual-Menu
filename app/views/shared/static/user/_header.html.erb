@@ -1,9 +1,5 @@
 <!--The partial for the user info sidebar on the home.html.erb file-->
-<% if logged_in? %>
 <div class="user-header">
-<% else %>
-<div class="user-header no-margin">
-<% end %>
     <div class='uh-banner-c'>
         <% if @spacial %>
         <%= image_tag @spacial.picture.url, alt: 'res-banner', class: 'uh-banner' %>

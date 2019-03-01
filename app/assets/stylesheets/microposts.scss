@@ -156,9 +156,6 @@ p {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    &.no-top {
-      top: 0 !important;
-    }
     .mpm-close {
       width: 40px;
       position: absolute;
@@ -213,6 +210,9 @@ p {
       right: 0;
       width: 80vw;
       transform: none;
+      &.no-top {
+        top: 0 !important;
+      }
       .mpm-close {
         border-radius: 0;
         border-bottom-left-radius: 20px;
@@ -259,6 +259,9 @@ p {
       left: 0;
       right: auto;
       width: auto;
+      &.no-top {
+        top: 0 !important;
+      }
       .mpm-img-c {
         width: 40vw;
         height: 40vw;
