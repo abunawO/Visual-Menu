@@ -1,9 +1,9 @@
 <div id='user-dropdown' class='user-dropdown'>
-    <label class='ud-action' onclick='toggleUserDropdown(this, "on")'>Settings</label> 
+    <label class='ud-action' onclick='toggleUserDropdown(this, "on")'>Settings</label>
     <ul>
-        <%# <li><button>Edit Profile longer</button></li>
-        <li><button>Edit Profile</button></li>
-        <hr> %>
+        <!-- <li><button>Edit Profile longer</button></li>-->
+        <li><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></li>
+        <hr>
         <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
     </ul>
 </div>
