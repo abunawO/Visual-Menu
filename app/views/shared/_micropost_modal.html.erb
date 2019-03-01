@@ -1,6 +1,10 @@
 <div id='micropost-modal' class="micropost-modal">
 <div onclick='closeModal()' class='mpm-close-bg'></div>
+<% if logged_in? %>
 <div class='micropost-modal-c'>
+<% else %>
+<div class='micropost-modal-c no-top'>
+<% end %>
   <button onclick='closeModal()' class='mpm-close'>
     <img src='/assets/close.png'>
   </button>

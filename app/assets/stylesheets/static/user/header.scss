@@ -1,8 +1,12 @@
 @import 'const';
 .user-header {
+  margin-top: 56px;
   position: relative;
   background-color: $s-bg-primary;
   //   padding-bottom: 10px;
+  &.no-margin {
+    margin-top: 0;
+  }
   .uh-banner-c {
     position: relative;
     display: flex;

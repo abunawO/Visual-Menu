@@ -156,6 +156,9 @@ p {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    &.no-top {
+      top: 0 !important;
+    }
     .mpm-close {
       width: 40px;
       position: absolute;
