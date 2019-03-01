@@ -1,0 +1,24 @@
+@import 'const';
+.app-nav {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $s-text-primary;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    li {
+      a {
+        color: $s-bg-primary;
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}

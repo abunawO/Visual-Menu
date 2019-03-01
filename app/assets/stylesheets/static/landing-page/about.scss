@@ -6,6 +6,7 @@
   justify-content: center;
   padding: 50px 0;
   .la-content-c {
+    max-width: 620px;
     background-color: $s-text-third;
     display: flex;
     flex-direction: column;
@@ -26,14 +27,13 @@
       align-items: center;
       background-color: $s-bg-primary;
 
-      font-size: 1.5em;
+      font-size: 1.2em;
       margin: 0;
       font-weight: bold;
       color: $s-text-primary;
       text-align: left;
     }
     p {
-      max-width: 620px;
       margin: 0;
       color: $s-text-secondary;
       text-align: left;

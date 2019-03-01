@@ -3,12 +3,11 @@
   <head>
     <title>VIZHO͞OƏLS</title>
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
-
+    <!-- Meta -->
     <meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -16,35 +15,14 @@
   	<meta name="keywords" content="menu designs, menu, menu ideas, food menu, visual menu, event planning, food truck menu, Restaurant Menu Templates, Restaurant Menu Designs ">
   	<meta name="description" content="Enhance your menu with visuals.">
     <meta name="google-site-verification" content="fRD1FzHUEveMq-OwTw5cFd8pWRrr-36_JShIY3P1c8w" />
-
-
-    <!-- Favicons
-        ================================================== -->
-
-    <!-- Stylesheet
-        ================================================== -->
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  	<!-- Bootstrap  -->
-
-
-  	<!-- Modernizr JS -->
-  	<script src="/assets/modernizr-2.6.2.min.js"></script>
-  	<!-- FOR IE9 below -->
-  	<!--[if lt IE 9]>
-  	<script src="js/respond.min.js"></script>
-  	<![endif]-->
-
+    <!-- Favicons -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <% if Rails.env.production? %>
       <%= render 'shared/google_analytics_script' %>
     <% end %>
-
-
   </head>
   <body>
     <% if logged_in? %>
@@ -61,28 +39,8 @@
       </div>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
-
     <!-- jQuery -->
-	<script src="/assets/jquery.min.js"></script>
-  <!-- Java script -->
-  <script src="/assets/core.min.js"></script>
-  <script src="/assets/script.js"></script>
-	<!-- Bootstrap -->
-	<script src="/assets/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="/assets/jquery.waypoints.min.js"></script>
-
-	<!-- Stellar Parallax -->
-	<script src="/assets/jquery.stellar.min.js"></script>
-
-	<!-- Magnific Popup -->
-	<script src="/assets/jquery.magnific-popup.min.js"></script>
-	<script src="/assets/magnific-popup-options.js"></script>
-
-	<script src="/assets/moment.min.js"></script>
-
-	<!-- Main -->
-	<script src="/assets/main.js"></script>
-
+    <script src="/assets/jquery.min.js"></script>
+    <script src="/assets/moment.min.js"></script>
   </body>
 </html>

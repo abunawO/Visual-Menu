@@ -1,5 +1,8 @@
 @import 'const';
 .landing-howitworks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 50px 0;
   h1 {
     padding: 0 20px;
@@ -21,7 +24,10 @@
       flex-direction: column;
       align-items: center;
       margin: 10px;
-      width: 420px;
+      width: 300px;
+      @media (max-width: 400px) {
+        width: 90%;
+      }
       h3 {
         color: $s-text-primary;
         margin: 0;

@@ -1,0 +1,50 @@
+@import 'const';
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  p,
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .e4-title {
+    margin: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    span {
+      color: $s-secondary;
+    }
+  }
+  .e4-error {
+    margin: 0;
+    color: red;
+  }
+  h1 {
+    margin: 20px;
+  }
+  h2 {
+    color: $s-text-secondary;
+    font-size: 100px;
+    padding: 0;
+    margin: 0;
+  }
+  .e4-message {
+    color: $s-text-secondary;
+    margin: 20px;
+  }
+  .e4-button-c {
+    display: flex;
+    a {
+      color: $s-text-primary;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px 15px;
+      display: block;
+      border: 1px solid $s-text-primary;
+      //   background-color: $s-text-primary;
+    }
+  }
+}

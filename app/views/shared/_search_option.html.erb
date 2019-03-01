@@ -1,4 +1,4 @@
-<div style="position:relative;">
+<div class="search-option">
   <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
     <%= hidden_field_tag :user_id, @user.id %>
     <div class="input-group form-component-c fc-min-width">
@@ -7,7 +7,7 @@
         <%= hidden_field_tag :category, @category %>
       <% end %>
       <div class="form-component-btn-c">
-        <%= button_tag "search", :class => 'material-icons category-search form-component-btn fcb-active fcb-hover', :name => nil %>
+        <%= button_tag "search", :class => 'material-icons category-search form-component-btn fcb-small fcb-hover', :name => nil %>
       </div>
     </div>
   <% end %>

@@ -4,6 +4,7 @@
   background-color: $s-bg-primary;
   //   padding-bottom: 10px;
   .uh-banner-c {
+    // overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,12 +13,21 @@
     width: 100%;
     height: 170px;
     // overflow: hidden;
-    .uh-banner {
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      -o-object-fit: cover;
+    .uh-banner-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      .uh-banner {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+      }
     }
+
     .gravatar {
       position: absolute;
       bottom: 0;

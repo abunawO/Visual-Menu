@@ -3,9 +3,11 @@
   //   outline: none;
   margin: 10px;
   position: absolute;
-  top: calc(100% - 20px - 38px);
+  bottom: 0;
+  // top: calc(100% - 29px);
   left: 160px;
   .ud-action {
+    display: block;
     cursor: pointer;
     outline: none;
     border: none;

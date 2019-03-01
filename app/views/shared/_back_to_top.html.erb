@@ -1,9 +1,13 @@
-<button onclick="topFunction()" id="backToTopBtn" title="Go to top"><i class="material-icons">arrow_upward</i></button>
+<button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+  <span class="material-icons">arrow_upward</span>
+</button>
 
 <!--scroll jQuery.-->
 <script>
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {
+  scrollFunction()
+};
 
 function scrollFunction() {
   if (!document.getElementById("backToTopBtn")) {

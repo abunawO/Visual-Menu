@@ -2,7 +2,9 @@
     <div class='landing-clients'>
         <div class='lc-video-c'>
             <h2>Learn More</h2>
-            <%= link_to image_tag('/assets/play-btn.png'), "https://www.youtube.com/watch?v=Q30F7YyEG64", class: "popup-youtube" %>
+            <button onclick='clientIframe()'>
+                <img src='/assets/play-btn.png'>
+            </button>
         </div>
         <div class='lc-form'>
             <%= form_for(
@@ -34,4 +36,20 @@
             <img src='/assets/tall-menu.jpg' alt='create' />
         </a>
     </div>
+    <div id="client-iframe" class='lc-iframe' onclick='clientIframe()'>
+        <div class='iframe-c'>
+            <img src='/assets/close.png'>
+            <div class='iframe'>
+                <iframe src="https://www.youtube.com/embed/Q30F7YyEG64?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 </section>
+
+
+<script type="text/javascript">
+    function clientIframe() {
+        document.getElementById('client-iframe')
+        .classList.toggle('active')
+    }
+</script>

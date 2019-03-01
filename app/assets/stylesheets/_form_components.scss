@@ -49,6 +49,7 @@
     right: 0;
     border-radius: $form-comp-size !important;
     .form-component-btn {
+      cursor: pointer;
       outline: none !important;
       display: flex !important;
       align-items: center;

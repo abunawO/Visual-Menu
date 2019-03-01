@@ -22,7 +22,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
     li {
+      max-width: 400px;
       margin: 10px;
       transition: ease-in-out 0.2s;
       overflow: hidden;
@@ -38,28 +40,34 @@
         box-shadow: 0px 0px 45px rgba($s-secondary, 0.2);
       }
       .landing-features-item {
+        width: 100%;
         height: 100%;
         background-color: $s-text-third;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 420px;
+        // width: 420px;
         @media (max-width: 550px) {
           width: auto;
         }
         .lfi-header {
-          padding: 20px;
+          padding: 10px 20px;
           width: 100%;
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
           background-color: $s-bg-primary;
           img {
             width: 60px;
             height: 60px;
             margin-right: 10px;
+            @media (max-width: 414px) {
+              width: 40px;
+              height: 40px;
+            }
           }
           h3 {
-            font-size: 1.5em;
+            font-size: 1.2em;
             padding: 10px 0;
             margin: 0;
             font-weight: bold;
@@ -75,6 +83,9 @@
           color: $s-text-secondary;
           text-align: left;
           padding: 20px;
+          margin: 0;
+          // font-size: 1.2em;
+          font-size: 1em;
           a {
             color: $s-secondary;
           }

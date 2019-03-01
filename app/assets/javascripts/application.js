@@ -10,25 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require core.min.js
-//= require script.js
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
-//= require bootstrap.min
-//= require custom
-//= require jquery.magnific-popup.min
-//= require nivo-lightbox.min
-//= require smoothscroll
-//= require wow.min
-//= require bootstrap.min
-//= require jquery.easing.1.3
-//= require jquery.magnific-popup.min
 //= require jquery.min
-//= require jquery.stellar.min
-//= require magnific-popup-options
-//= require main
-//= require modernizr-2.6.2.min
-//= require respond.min
 //= require_tree .

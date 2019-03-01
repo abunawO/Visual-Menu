@@ -16,6 +16,8 @@
 }
 
 .microposts {
+  padding: 0;
+  list-style: none;
   display: flex;
   overflow-x: scroll;
   margin-bottom: 0;
@@ -42,6 +44,11 @@
 .microposts {
   li {
     border: none !important;
+  }
+}
+.micropost_ {
+  .micropost-settings {
+    margin-left: 10px;
   }
 }
 .mp-c {
@@ -205,7 +212,7 @@ p {
   @media (max-width: 500px) {
     .micropost-modal-c {
       position: absolute;
-      top: 55px;
+      top: 41px;
       left: auto;
       right: 0;
       width: 80vw;
@@ -254,7 +261,7 @@ p {
     .micropost-modal-c {
       display: flex;
       flex-direction: row;
-      top: 55px;
+      top: 41px;
       transform: none;
       left: 0;
       right: auto;

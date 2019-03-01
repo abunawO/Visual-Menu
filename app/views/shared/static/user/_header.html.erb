@@ -2,9 +2,13 @@
 <div class="user-header">
     <div class='uh-banner-c'>
         <% if @spacial %>
-        <%= image_tag @spacial.picture.url, alt: 'res-banner', class: 'uh-banner' %>
+        <div class='uh-banner-wrapper'>
+            <%= image_tag @spacial.picture.url, alt: 'res-banner', class: 'uh-banner' %>
+        </div>
         <% else %>
-        <img src='/assets/img_4.jpg' alt='res-banner' class='uh-banner'>
+        <div class='uh-banner-wrapper'>
+            <img src='/assets/img_4.jpg' alt='res-banner' class='uh-banner'>
+        </div>
         <% end %>
         <%= gravatar_for @user, size: 150 %>
         <% if logged_in? %>

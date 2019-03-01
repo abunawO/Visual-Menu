@@ -1,16 +1,67 @@
 @import 'const';
 .landing-clients-c {
+  position: relative;
   background-color: $s-bg-primary;
   display: flex;
   align-items: center;
   justify-content: center;
+  .lc-iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $s-text-primary;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    &.active {
+      display: flex;
+    }
+  }
+  .iframe-c {
+    position: relative;
+    img {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 30px;
+    }
+    .iframe {
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      iframe {
+        width: 640px;
+        height: 360px;
+      }
+    }
+    @media (max-width: 800px) {
+      width: 100%;
+      img {
+        position: absolute;
+        top: -30px;
+        right: 20px;
+        width: 20px;
+      }
+      .iframe {
+        margin: 0 10px;
+        iframe {
+          width: 100%;
+          height: 360px;
+        }
+      }
+    }
+  }
   .landing-clients {
+    min-height: 700px;
+    overflow: hidden;
     position: relative;
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 50px 10px;
     @media (min-width: 1200px) {
       width: 1320px;
     }
@@ -74,13 +125,20 @@
         border: none !important;
         box-shadow: none !important;
       }
-      img {
-        width: 100%;
+      button {
+        border: none;
+        outline: 0;
+        background-color: transparent;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
       }
       h2 {
+        margin: 0;
         text-align: left;
         margin-bottom: 20px;
-        font-size: 0.8em;
+        font-size: 1em;
         color: $s-text-primary;
         font-weight: bold;
       }
@@ -90,7 +148,7 @@
         cursor: pointer;
         opacity: 0.75;
         border-radius: 10px;
-        width: 500px;
+        width: 600px;
         position: absolute;
         z-index: -10;
         bottom: 0;
@@ -102,8 +160,7 @@
           box-shadow: 0px 0px 45px rgba($s-primary, 0.1);
         }
         @media (max-width: 1200px) {
-          bottom: -100%;
-          width: 600px;
+          bottom: -50%;
         }
         @media (max-width: 960px) {
           left: -10%;
@@ -147,7 +204,7 @@
           font-weight: bold;
           text-align: left;
           max-width: 500px;
-          font-size: 1.5em;
+          font-size: 1.2em;
           width: 100%;
           margin: 0;
           padding: 20px;
@@ -218,6 +275,8 @@
             font-size: 1.4em;
           }
           label {
+            text-align: center;
+            display: block;
             width: 100%;
             height: 70px;
             margin: 0;
