@@ -1,0 +1,115 @@
+@import "const";
+.edit-profile {
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 10px;
+  // ul
+  .ep-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $s-text-primary;
+    border-radius: $border-radius;
+    overflow: hidden;
+    li {
+      .ep-item-header {
+        background-color: transparent;
+        font-size: 1em;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid $s-text-primary;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:last-of-type {
+          border-bottom: none;
+        }
+        &:hover {
+          background-color: $s-bg-primary;
+        }
+        &.active {
+          background-color: $s-bg-primary;
+          .epih-value,
+          .epih-action {
+            display: none;
+          }
+        }
+        p,
+        h3 {
+          color: $s-text-primary;
+          margin: 0;
+          padding: 0;
+          font-size: 1.2em;
+          span {
+            display: block;
+            font-size: 1em;
+            padding-left: 5px;
+          }
+          &.epih-key {
+            font-weight: bold;
+          }
+          // &.epih-value {}
+          &.epih-action {
+            color: $third;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .ep-item-body {
+        display: none;
+        padding: 10px;
+        background-color: $s-bg-primary;
+        &.active {
+          display: block;
+        }
+        form {
+          max-width: 500px;
+          display: flex;
+          flex-direction: column;
+          .epib-note {
+            font-display: 1em;
+            color: $s-text-secondary;
+          }
+          input,
+          button {
+            font-size: 1em;
+            border: 1px solid $s-text-secondary;
+            border-radius: $border-radius;
+            margin-top: 10px;
+            padding: 5px 15px;
+            &:hover,
+            &:active,
+            &:focus {
+              border-color: $third;
+            }
+            &.epib-btn {
+              cursor: pointer;
+              width: max-content;
+              background-color: $third;
+              border-color: darken($third, 5%);
+              color: $s-bg-primary;
+              &:hover {
+                background-color: darken($third, 5%);
+              }
+              &.danger {
+                margin-left: 10px;
+                background-color: $s-primary;
+                border-color: darken($s-primary, 5%);
+                &:hover {
+                  background-color: darken($s-primary, 5%);
+                }
+              }
+            }
+          }
+          .epib-btns {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

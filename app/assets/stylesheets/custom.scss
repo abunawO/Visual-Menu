@@ -1,6 +1,6 @@
 @import 'const';
 .margin-top {
-  margin-top: 41px;
+  margin-top: 39px;
 }
 .no-margin-top {
   margin-top: 0;
@@ -42,4 +42,8 @@ body {
   background-color: rgba($s-text-primary, 0.4);
   border: 1px solid rgba($s-text-primary, 0.4);
   border-radius: 100%;
+}
+
+button {
+  cursor: pointer;
 }

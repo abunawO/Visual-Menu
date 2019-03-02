@@ -19,7 +19,6 @@
         <header class="login-header">Sign In</header>
         <%= form_for(:session, url: login_path) do |f| %>
             <div style="position: relative;">
-
               <% flash.each do |message_type, message| %>
                 <div class="alert alert-<%= message_type %>"><%= message %></div>
               <% end %>

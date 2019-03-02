@@ -1,0 +1,72 @@
+<div class='edit-profile'>
+    <ul id='ep-list' class='ep-list'>
+        <li>
+            <button class='ep-item-header' href="#" onclick='openEPform(this, "add")'>
+                <h3 class='epih-key'>Name</h3>
+                <p class='epih-value'><%= @user.name %></p>
+                <p class='epih-action'>Edit<span class='material-icons'>edit</span></p>
+            </button>
+            <div class='ep-item-body'>
+                <%= form_for(@user) do |f| %>
+                    <span class='epib-note'>Enter the name of your restaurant</span>
+                    <%= f.text_field :name, placeholder: "Menu item title...", class: "epib-input"  %>
+                    <span class='epib-btns'>
+                        <%= f.submit "Save changes", class: "epib-btn" %>
+                        <button onclick='return closeEPform(this, "remove")' class="epib-btn danger">CANCEL</button>
+                    </span>
+                <% end %>
+            </div>
+        </li>
+        <li>
+            <button class='ep-item-header' href="#" onclick='openEPform(this, "add")'>
+                <h3 class='epih-key'>Phone</h3>
+                <p class='epih-value'><%= @user.phone %></p>
+                <p class='epih-action'>Edit<span class='material-icons'>edit</span></p>
+            </button>
+            <div class='ep-item-body'>
+                <%= form_for(@user) do |f| %>
+                    <span class='epib-note'>Enter the name of your restaurant</span>
+                    <%= f.text_field :phone, placeholder: "Menu item title...", class: "epib-input"  %>
+                    <span class='epib-btns'>
+                        <%= f.submit "Save changes", class: "epib-btn" %>
+                        <button onclick='return closeEPform(this, "remove")' class="epib-btn danger">CANCEL</button>
+                    </span>
+                <% end %>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script type='text/javascript'>
+    function removeEPactive() {
+        var arrayEP = document.getElementById('ep-list').children
+        for (var i = 0; i < arrayEP.length; i++) {
+            arrayEP[i].children[0].classList.remove('active');
+            arrayEP[i].children[1].classList.remove('active');
+            arrayEP[i].children[1].querySelector('form').reset()
+        }
+    }
+    function openEPform(self, action) {
+        if (!self.classList.contains('active')) {
+            removeEPactive();
+            // ---
+            self.classList[action]('active');
+            // ---
+            self.parentElement
+            .querySelector('.ep-item-body')
+            .classList[action]('active');
+        }
+    }
+    function closeEPform(self, action) {
+        self.closest('form').reset()
+        // ---
+        self.closest('li')
+        .querySelector('.ep-item-header')
+        .classList.remove('active');
+        // ---
+        self.closest('li')
+        .querySelector('.ep-item-body')
+        .classList.remove('active');
+        return false;
+    }
+</script>

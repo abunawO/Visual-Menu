@@ -1,37 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VIZHO͞OƏLS</title>
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
-    <!-- Meta -->
-    <meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="title" content="VIZHO͞OƏLS">
-  	<meta name="keywords" content="menu designs, menu, menu ideas, food menu, visual menu, event planning, food truck menu, Restaurant Menu Templates, Restaurant Menu Designs ">
-  	<meta name="description" content="Enhance your menu with visuals.">
-    <meta name="google-site-verification" content="fRD1FzHUEveMq-OwTw5cFd8pWRrr-36_JShIY3P1c8w" />
-    <!-- Favicons -->
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <% if Rails.env.production? %>
-      <%= render 'shared/google_analytics_script' %>
-    <% end %>
+    <%= render 'layouts/head' %>
   </head>
   <body>
     <% if logged_in? %>
-      <div class="row">
+      <div>
         <%= render 'layouts/header' %>
       </div>
       <div class="margin-top">
-        <%= yield %>
-        <%= debug(params) if Rails.env.development? %>
+        <%# yield %>
+        <%= render 'users/settings/edit_profile' %>
+        <%# debug(params) if Rails.env.development? %>
       </div>
     <% else %>
       <div class="no-margin-top">
@@ -39,8 +19,6 @@
       </div>
       <%= debug(params) if Rails.env.development? %>
     <% end %>
-    <!-- jQuery -->
-    <script src="/assets/jquery.min.js"></script>
-    <script src="/assets/moment.min.js"></script>
+    <%= render 'layouts/script' %>
   </body>
 </html>
