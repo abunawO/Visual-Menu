@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .user-dropdown {
   //   outline: none;
   margin: 10px;
@@ -45,13 +45,14 @@
     li {
       button,
       a {
+        font-size: 1em;
         display: block;
         transition: none;
         user-select: none;
         background-color: $s-bg-third;
         color: $s-text-primary;
         text-align: left;
-        padding: 0 5px;
+        padding: 5px;
         width: 100%;
         border: none;
         &:hover,

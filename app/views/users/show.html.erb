@@ -3,7 +3,9 @@
 <% if @user %>
   <% provide(:title, @user.name) %>
   <div class='user-home'>
-    <%= render :partial => "shared/static/user/header" %>
+    <%= render :partial => "shared/static/user/header", :locals => {
+      :settings => false
+    } %>
   </div>
   <div>
     <div class="row">
@@ -26,6 +28,6 @@
 <% else %>
   <%= render :partial=> "shared/user_not_found_error" %>
 <% end %>
-<%= render 'layouts/footer' %>
+<%# render 'layouts/footer' %>
 
 <%# </body> %>

@@ -11,7 +11,7 @@
         </div>
         <% end %>
         <%= gravatar_for @user, size: 150 %>
-        <% if logged_in? %>
+        <% if logged_in? && settings %>
           <%= render :partial => "shared/static/user/dropdown" %>
         <% end %>
     </div>

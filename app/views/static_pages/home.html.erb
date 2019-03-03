@@ -1,8 +1,11 @@
 <!--This is the page the user sees when they click the home button.-->
 <!--Basically the create menu item page-->
 <% if logged_in? %>
+<div id='user-container'>
   <div class='user-home'>
-    <%= render :partial => "shared/static/user/header" %>
+    <%= render :partial => "shared/static/user/header", :locals => {
+      :settings => true
+    } %>
   </div>
   <div class="users-create-menu-page-display">
     <div class="row">
@@ -30,9 +33,10 @@
 
     </div>
   </div>
+  </div>
 <% else %>
   <div class="center intro-page">
     <%= render :partial => "static_pages/main_landing_page" %>
   </div>
 <% end %>
-<%= render 'layouts/footer' %>
+<%# render 'layouts/footer' %>

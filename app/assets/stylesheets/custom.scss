@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .margin-top {
   margin-top: 39px;
 }
@@ -7,7 +7,7 @@
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   outline: none;
 }
@@ -46,4 +46,11 @@ body {
 
 button {
   cursor: pointer;
+}
+
+#user-container {
+  display: block;
+  &.hide {
+    display: none;
+  }
 }
