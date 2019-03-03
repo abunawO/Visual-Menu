@@ -1,13 +1,10 @@
 @import "const";
 .edit-profile {
-  display: none;
+  display: block;
   padding-top: 50px;
   margin: 0 auto;
   max-width: 960px;
   padding: 10px;
-  &.active {
-    display: block;
-  }
   .ep-header {
     font-size: 1.2em;
     color: $s-text-primary;
