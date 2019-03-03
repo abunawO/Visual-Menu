@@ -2,7 +2,7 @@
   <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
     <%= hidden_field_tag :user_id, @user.id %>
     <div class="input-group form-component-c fc-min-width">
-      <%= search_field_tag :search, params[:search], placeholder: "Enter title", class: "form-component fc-small" %>
+      <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-component fc-small" %>
       <% if @category %>
         <%= hidden_field_tag :category, @category %>
       <% end %>
