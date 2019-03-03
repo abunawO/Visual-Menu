@@ -1,0 +1,29 @@
+<div class="search-modal">
+    <button id='search-modal-fab' onclick="showSearchModal()">
+    <span class="material-icons">search</span>
+    </button>
+    <div id='search-modal' class='search-modal-c'>
+        <div onclick='hideSearchModal()' id='close-search-modal'></div>
+        <div class='search-modal-card'>
+        <%# make it focus %>
+        <%= render :partial => "shared/search_option" %>
+        </div>
+    </div>
+</div>
+<script type='text/javascript'>
+    function showSearchModal() {
+        document.getElementById('search-modal')
+        .classList.add('active')
+    };
+    function hideSearchModal() {
+         document.getElementById('search-modal')
+        .classList.remove('active');
+    }
+
+  window.onscroll = function() {
+  document.getElementById('search-modal-fab').classList.add('dimmed-fab');
+  window.setTimeout(function() {
+    document.getElementById('search-modal-fab').classList.remove('dimmed-fab');
+  }, 500)
+};
+</script>
