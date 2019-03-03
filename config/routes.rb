@@ -46,6 +46,8 @@ Rails.application.routes.draw do
 
   patch "/microposts/:id" => 'microposts#edit'
 
+  get 'info_edit'  => 'users#info_edit'
+
 
   #Adding following and followers actions to the Users controller.
   resources :users do

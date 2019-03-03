@@ -103,7 +103,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def info_edit
     @user = User.find(params[:id])
   end
 
