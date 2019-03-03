@@ -4,22 +4,22 @@
     <h3 class='ep-header'>Restaurant Information</h3>
     <div id='ep-form-c' class='ep-form-c'>
         <%= form_for(@user) do |f| %>
-            <%# -name %>
+            <!-- name -->
             <span class='epib-note'>Enter the name of your restaurant.</span>
             <%= f.text_field :name, placeholder: "Business name", class: "epib-input", id: "epib-input"  %>
-            <%# -phone %>
+            <!-- phone -->
             <span class='epib-note'>Enter the phone number of your restaurant.</span>
             <%= f.text_field :phone, placeholder: "Phone number", class: "epib-input", id: "epib-input"  %>
-            <%# -address %>
+            <!-- address -->
             <span class='epib-note'>Enter the street address of your restaurant.</span>
             <%= f.text_field :address_line1, placeholder: "Street address", class: "epib-input", id: "epib-input"  %>
-            <%# -addess 2 %>
+            <!-- addess 2 -->
             <span class='epib-note'>Enter the street address of your restaurant.</span>
             <%= f.text_field :address_line2, placeholder: "Apartment, suite , unit, building, floor, etc.", class: "epib-input", id: "epib-input"  %>
-            <%# -city %>
+            <!-- city -->
             <span class='epib-note'>Enter the city/town address of your restaurant.</span>
             <%= f.text_field :city, placeholder: "City / Town", class: "epib-input", id: "epib-input"  %>
-            <%# -state %>
+            <!-- state -->
             <span class='epib-note'>Enter the state address of your restaurant.</span>
             <select class="form-component-c form-component fc-small" name="region">
                 <option value="">Select state...</option>
@@ -75,10 +75,10 @@
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </select>
-            <%# -postal code %>
+            <!-- postal code -->
             <span class='epib-note'>Enter the city/town address of your restaurant.</span>
             <%= f.text_field :postal_code, placeholder: "Zip / Postal Code", class: "epib-input", id: "epib-input"  %>
-            <%# submission %>
+            <!-- submission -->
             <span class='epib-note'>Please review your changes before saving.</span>
             <span class='epib-btns'>
                 <%= f.submit "Save changes", class: "epib-btn" %>
