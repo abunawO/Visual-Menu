@@ -26,6 +26,9 @@ body {
   padding: 0 15px;
   margin: 0 15px;
   max-width: 500px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 #backToTopBtn {
