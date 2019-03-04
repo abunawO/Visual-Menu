@@ -26,10 +26,8 @@
       <div class="row">
         <div>
           <% if @selected_cat.any? %>
-            <p style="margin: 10px;color: dimgray;"><%= @category_title %></p>
-            <ol class="microposts">
-              <%= render @selected_cat %>
-            </ol>
+            <%= render :partial=> "shared/micropost_list_display" %>
+            <%= render :partial=> "shared/micropost_modal" %>
           <% end %>
         </div>
         <%= render :partial=> "shared/micropost_modal" %>

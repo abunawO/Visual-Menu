@@ -39,6 +39,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @categories = []
     @options    = {}
+    @isCategorySearch = false
     if params[:search].blank?
       flash.now[:danger] = "Invalid title search"
       @feed_items = []
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
       end
 
 
-      @categories = _creat_menu_categories(@feed_items)
+      @categories = _creat_menu_categories(@feed_items, @isCategorySearch)
 
     end
   end
@@ -66,10 +67,11 @@ class UsersController < ApplicationController
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts
+      @isCategorySearch = false
 
       @categories = []
       @options    = {}
-      @categories = _creat_menu_categories(@microposts)
+      @categories = _creat_menu_categories(@microposts, @isCategorySearch)
       @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
@@ -80,6 +82,9 @@ class UsersController < ApplicationController
   def category_search
     @user = User.find(params[:id] || params[:user_id]) || current_user
     @microposts = @user.microposts
+    @categories = []
+    @options    = {}
+    @isCategorySearch = true
 
     unless params[:category][:title].present?
       flash.now[:danger] = "Invalid category search"
@@ -90,6 +95,7 @@ class UsersController < ApplicationController
       @category_title = params[:category][:title]
       @feed_items = @microposts.where(:category => params[:category][:title])
     end
+    @categories = _creat_menu_categories(@selected_cat, @isCategorySearch)
   end
 
   def create
@@ -141,13 +147,17 @@ class UsersController < ApplicationController
 
   private
 
-    def _creat_menu_categories(feed_items)
+    def _creat_menu_categories(feed_items, isCategorySearch)
       no_doubles = []
       feed_items.each do |micropost|
         if micropost.category.present?
           unless no_doubles.map(&:category).include?(micropost.category)
             no_doubles.push(micropost)
-            @options[micropost.category] = feed_items.where(:category => micropost.category)
+            if isCategorySearch
+              @options[micropost.category] = feed_items
+            else
+              @options[micropost.category] = feed_items.where(:category => micropost.category)
+            end
           end
         end
       end
