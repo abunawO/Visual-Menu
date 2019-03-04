@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .landing-howitworks {
   display: flex;
   flex-direction: column;
@@ -23,10 +23,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
       margin: 10px;
       width: 300px;
       @media (max-width: 400px) {
         width: 90%;
+      }
+      img {
+        width: 300px;
+        height: 300px;
       }
       h3 {
         color: $s-text-primary;
@@ -34,6 +39,7 @@
         padding: 0;
       }
       p {
+        display: block;
         max-width: 300px;
         text-align: center;
         color: $s-text-secondary;
