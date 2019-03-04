@@ -1,10 +1,23 @@
 <% @categories.each do |category| %>
-    <div class="ushow-list">
-      <p><%= category.category %></p>
-    </div>
-    <div class='ushow-list'>
+    <div class='microposts-c'>
+      <button class='microposts-title' onclick='openMicropostList(this)'>
+        <p><%= category.category %></p>
+        <span class='material-icons'>add</span>
+      </button>
       <ol class="microposts">
         <%= render @options[category.category] %>
       </ol>
     </div>
 <% end %>
+
+<script>
+  function openMicropostList(self) {
+    var micropostActiveIcon = self.querySelector('span')
+    self.parentElement.querySelector('ol')
+    .classList.toggle('active')
+    console.log(micropostActiveIcon)
+    micropostActiveIcon.textContent === 'add'
+    ? micropostActiveIcon.textContent = 'remove'
+    : micropostActiveIcon.textContent = 'add';
+  }
+</script>

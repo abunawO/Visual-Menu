@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -14,21 +14,142 @@
 .row {
   margin: 0 !important;
 }
+.microposts-c {
+  .microposts-title {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba($s-text-secondary, 0.1);
+    border-bottom: 1px solid rgba($s-text-secondary, 0.1);
+    // box-shadow: 0px -1px 1px 0 rgba($s-text-secondary, 0.2);
+    padding: 10px;
+    margin: 0;
+    background-color: $s-bg-primary;
 
+    font-weight: bold;
+    p,
+    span {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      color: $s-text-primary;
+    }
+    span {
+      font-size: 1.2em;
+    }
+  }
+}
 .microposts {
+  margin-top: 5px;
+  display: none;
+  grid-template-columns: 1fr 1fr;
   padding: 0;
   list-style: none;
-  display: flex;
-  overflow-x: scroll;
   margin-bottom: 0;
   -ms-overflow-style: none; // IE 10+
   overflow: -moz-scrollbars-none; // Firefox
   -webkit-overflow-scrolling: touch;
-  li {
-    padding: 0 !important;
+  &.active {
+    display: grid;
   }
-  .content {
-    margin: 0 !important;
+  .micropost {
+    width: calc(50vw - 10px);
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 5px;
+    margin-bottom: 10px;
+
+    .micropost-action {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      font-size: 1em;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: calc(50vw - 10px);
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        min-width: calc(50vw - 10px);
+        min-height: calc(50vw - 10px);
+
+        object-fit: cover;
+      }
+      .micropost-price {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 5px;
+        padding: 5px;
+        margin: 0;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        background-color: rgba($s-bg-primary, 0.9);
+        color: $s-text-secondary;
+      }
+    }
+    .micropost-info {
+      position: relative;
+      display: block;
+      background-color: $s-bg-primary;
+      flex: 1;
+      padding: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      .micropost-title {
+        color: $s-text-secondary;
+        padding: 0;
+        margin: 0;
+        font-size: 0.8em;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .micropost {
+      width: calc((100vw / 4) - 10px);
+      .micropost-action {
+        height: calc((100vw / 4) - 10px);
+        img {
+          min-height: calc((100vw / 4) - 10px);
+          min-width: calc((100vw / 4) - 10px);
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+    .micropost {
+      width: calc((100vw / 5) - 10px);
+      .micropost-action {
+        height: calc((100vw / 5) - 10px);
+        img {
+          min-height: calc((100vw / 5) - 10px);
+          min-width: calc((100vw / 5) - 10px);
+        }
+        .micropost-price {
+          font-size: 1.4em;
+        }
+      }
+      .micropost-info {
+        .micropost-title {
+          font-size: 1em;
+        }
+      }
+    }
   }
 }
 .microposts::-webkit-scrollbar {
@@ -53,8 +174,8 @@
 }
 .mp-c {
   // width: auto;
-  width: 200px !important;
-  height: 200px !important;
+  // width: 200px !important;
+  // height: 200px !important;
   // padding: 10px;
   margin: 0;
   margin-left: 10px;
@@ -144,6 +265,8 @@ p {
   left: 0;
   background-color: rgba($s-text-primary, 0.3);
   z-index: 10500;
+  justify-content: center;
+  align-items: center;
   &.active {
     display: flex;
   }
@@ -163,6 +286,9 @@ p {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
     .mpm-close {
       width: 40px;
       position: absolute;
@@ -175,16 +301,21 @@ p {
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 0;
+      border-bottom-left-radius: 10px;
       img {
         width: 20px;
       }
     }
     .mpm-img-c {
-      width: 100%;
+      width: 400px;
+      height: 400px;
       overflow: hidden;
       img {
         width: 100%;
         height: 100%;
+        min-width: 400px;
+        min-height: 400px;
         object-fit: cover;
       }
     }
@@ -193,7 +324,8 @@ p {
       height: max-content;
       position: relative;
       padding: 5px;
-      // padding-right: 40px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
       p {
         margin: 0;
         color: $s-text-primary;
@@ -211,18 +343,21 @@ p {
   }
   @media (max-width: 500px) {
     .micropost-modal-c {
-      position: absolute;
-      top: 41px;
+      position: relative;
+      top: auto;
       left: auto;
-      right: 0;
+      right: auto;
+      bottom: auto;
       width: 80vw;
       transform: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       &.no-top {
         top: 0 !important;
       }
       .mpm-close {
-        border-radius: 0;
-        border-bottom-left-radius: 20px;
       }
       .mpm-img-c {
         width: 80vw;
@@ -231,11 +366,12 @@ p {
         img {
           width: 100%;
           height: 100%;
+          min-width: 80vw;
+          min-height: 80vw;
           object-fit: cover;
         }
       }
       .mpm-details {
-        border-bottom-left-radius: 5px;
         p {
           &.mpm-price {
             background-color: rgba($s-bg-primary, 0.8);

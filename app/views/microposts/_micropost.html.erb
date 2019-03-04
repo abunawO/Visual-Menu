@@ -1,21 +1,18 @@
 
 <!--The representation of a menu item/micropost partial.-->
 <!--Displayed in the feed.html.erb partial.-->
-  <li class='micropost_' id="micropost-<%= micropost.id %>">
-    <span class="mp-w content micropost-item" style="font-size: 20px;">
-      <div class="mp-c">
-        <button class='mp-action' onclick="openModal(this)">
-          <%= image_tag micropost.picture.url, class: "mp-image", id: 'micropost', alt: "#{micropost.description}" %>
-          <div class='mp-info'>
-            <p id="mp-title" class='mp-title'> <%= micropost.content %> </p>
-            <p id="mp-price" class='mp-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
-          </div>
-        </button>
+<li class="micropost" id="micropost-<%= micropost.id %>">
+  <button class='micropost-action' onclick="openModal(this)">
+    <%= image_tag micropost.picture.url, class: "mp-image", id: 'micropost', alt: "#{micropost.description}" %>
+    <p id="mp-price" class='micropost-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
+    <% if current_user?(micropost.user) %>
+    <% end %>
+  </button>
+  <div class='micropost-info'>
+        <p id="mp-title" class='micropost-title'> <%= micropost.content %> </p>
       </div>
-    </span>
-  <% if current_user?(micropost.user) %>
+        <% if current_user?(micropost.user) %>
     <div class='micropost-settings'>
-      <!--Posted <%= time_ago_in_words(micropost.created_at) %> ago. --->
       <%= link_to "Delete", micropost, method: :delete, data: { confirm: "Are you sure?" } %> |
       <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) %>
     <div>
@@ -25,8 +22,8 @@
  function openModal(props) {
     document.getElementById('micropost-modal').classList.add('active')
     document.getElementById('mpm-image').src = props.children[0].src
-    document.getElementById('mpm-title').innerText = props.children[1].children["mp-title"].innerText
-    document.getElementById('mpm-price').textContent = props.children[1].children["mp-price"].textContent
-    document.getElementById('mpm-description').innerText = props.children[0].alt
+    document.getElementById('mpm-title').textContent = props.parentElement.querySelector('#mp-title').textContent
+    document.getElementById('mpm-price').textContent = props.parentElement.querySelector('#mp-price').textContent
+    document.getElementById('mpm-description').textContent = props.children[0].alt
   }
 </script>
