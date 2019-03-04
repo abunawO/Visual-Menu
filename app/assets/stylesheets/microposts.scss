@@ -298,6 +298,7 @@ p {
       background-color: $s-text-primary;
       border: none;
       padding: 10px;
+      margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -321,6 +322,7 @@ p {
     }
     .mpm-details {
       background-color: $s-bg-primary;
+      width: calc(100% - 10px);
       height: max-content;
       position: relative;
       padding: 5px;
@@ -397,7 +399,7 @@ p {
     .micropost-modal-c {
       display: flex;
       flex-direction: row;
-      top: 41px;
+      top: 40px;
       transform: none;
       left: 0;
       right: auto;
@@ -406,8 +408,8 @@ p {
         top: 0 !important;
       }
       .mpm-img-c {
-        width: 40vw;
-        height: 40vw;
+        width: 30vw;
+        height: 30vw;
         overflow: hidden;
         img {
           width: 100%;

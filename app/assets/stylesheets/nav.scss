@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .app-nav {
   position: fixed;
   z-index: 1000;
@@ -12,7 +12,9 @@
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding-right: 20px;
+    height: 40px;
     li {
       a {
         color: $s-bg-primary;
