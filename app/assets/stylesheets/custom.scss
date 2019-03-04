@@ -20,31 +20,53 @@ body {
   width: 100%;
   overflow: hidden;
 }
-
+.category-select {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
 .search-option,
 .category-select {
   padding: 0 15px;
-  margin: 0 15px;
-  max-width: 500px;
-  @media (max-width: 768px) {
-    display: none;
+  margin: 0;
+  max-width: 768px;
+  &.non-mobile {
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
 #backToTopBtn {
   position: fixed;
   z-index: 1000;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
+  top: calc(41px + 10px);
+  // left: calc(5
+  margin: 0;
+  right: 0;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 0;
-  width: 40px;
-  height: 40px;
-  background-color: rgba($s-text-primary, 0.4);
-  border: 1px solid rgba($s-text-primary, 0.4);
-  border-radius: 100%;
+  padding-right: 10px;
+  font-size: 2em;
+  line-height: 2em;
+  background-color: $s-bg-primary;
+  border: 1px solid darken($s-bg-primary, 5%);
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  // width: 40px;
+  // height: 40px;
+  // background-color: rgba($s-text-primary, 0.4);
+  // border: 1px solid rgba($s-text-primary, 0.4);
+  // border-radius: 10px;
+  span {
+    display: block;
+    font-size: 1em;
+    line-height: 1em;
+    color: $third;
+  }
 }
 
 button {
