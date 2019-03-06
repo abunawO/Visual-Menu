@@ -1,0 +1,69 @@
+@import "const";
+.landing-box-container {
+  &.has-offcolor {
+    background-color: $s-bg-primary;
+  }
+  .landing-box {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 0;
+    margin: 0 auto;
+    padding: 50px 0;
+    @media (min-width: 1320px) {
+      width: 1320px;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+    h2 {
+      margin: 0;
+      padding: 0 10px;
+      padding-bottom: 40px;
+      font-size: 2em;
+      color: $s-text-primary;
+      font-weight: bold;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .landing-container-img {
+      width: 400px;
+      margin: 10px;
+      border-radius: 10px;
+      @media (max-width: 400px) {
+        width: calc(100% - 20px);
+      }
+    }
+    .landing-container-bg {
+      position: absolute;
+      top: -20%;
+      right: 0;
+      z-index: -1;
+      &.go-left {
+        right: auto;
+        left: 0;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        top: 0;
+      }
+      @media (max-width: 400px) {
+        top: 0;
+        left: 0;
+        img {
+          width: 450px;
+        }
+      }
+    }
+  }
+}

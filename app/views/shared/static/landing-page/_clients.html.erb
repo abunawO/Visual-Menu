@@ -1,37 +1,32 @@
-<section id="contact" class="landing-clients-c">
-    <div class='landing-clients'>
-        <div class='lc-form'>
-            <%= form_for(
-                    'message_params',
-                    url: {:controller => "static_pages", :action => "contact_us", method: "post"}
-                ) do |f| %>
-                    <h2>GET IN TOUCH</h2>
-                    <div class='lc-input'>
-                        <%= f.text_field :name, placeholder: "Your Name", class: 'form-component fc-small', required: true %>
-                        <span class="material-icons client-icon">person</span>
-                    </div>
-                    <div class='lc-input'>
-                        <%= f.text_field :email, placeholder: "Your email", class: 'form-component fc-small', required: true %>
-                        <span class="material-icons client-icon">email</span>
-                    </div>
-                    <div class="lc-input lc-textarea fc-big">
-                        <%= f.text_area :message, :cols => 80, :rows => 5, placeholder: "Message", class: 'form-component fc-big', required: true %>
-                        <span class="material-icons client-icon">notes</span>
-                    </div>
-                    <div class="ls-btn">
-                        <%= f.submit "SEND MESSAGE", class: "fc-hide", id: 'send' %>
-                        <label class='form-component fc-point' for="send">
-                        Send
-                        </label>
-                    </div>
-                <% end %>
-        </div>
-        <a class='lc-img-c' href="https://www.vizhooels.com/users/31" target="_blank">
-            <img src='/assets/tall-menu.jpg' alt='create' />
-        </a>
+<section id="contact" class="landing-box-container has-offcolor">
+    <div class='landing-box'>
+        <img src='/assets/tall-menu.jpg' alt='create' class='landing-container-bg go-left' />
+        <%= form_for(
+            'message_params',
+            url: {:controller => "static_pages", :action => "contact_us", method: "post"},
+            html: { class: "landing-card landing-card-small has-shadow" }
+        ) do |f| %>
+            <div class='landing-card-title has-border'>
+                <h3>GET IN TOUCH</h3>
+            </div>
+            <div class='landing-card-content'>
+                <div class="input">
+                    <%= f.text_field :name, placeholder: "Your name", required: true %>
+                </div>
+                <div class="input">
+                    <%= f.text_field :email, placeholder: "Your email", class: "input", required: true %>
+                </div>
+                <div class="input">
+                    <%= f.text_area :message, :cols => 40, :rows => 5, placeholder: "Message", class: 'input', required: true %>
+                </div>
+            </div>
+            <div class="landing-card-action">
+                <%= f.submit "SEND MESSAGE", class: "fc-hide", id: 'send' %>
+                <label for="send">Send</label>
+            </div>
+        <% end %>
     </div>
 </section>
-
 
 <script type="text/javascript">
     function clientIframe() {

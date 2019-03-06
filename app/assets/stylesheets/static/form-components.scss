@@ -1,0 +1,15 @@
+@import "const";
+.input {
+  margin-bottom: 10px;
+  input,
+  textarea {
+    width: calc(100% - 2px - 30px);
+    font-size: 1em;
+    border: 1px solid $s-text-secondary;
+    border-radius: $border-radius;
+    margin: 0;
+    padding: 10px 15px;
+    appearance: none;
+    box-shadow: inset 0 0 5px 0 rgba($s-text-secondary, 0.3);
+  }
+}

@@ -1,25 +1,23 @@
-<section class='landing-services-c' id="service">
-    <div class='landing-services'>
+<section class='landing-box-container has-offcolor' id="service">
+    <div class='landing-box'>
         <%= render :partial => "shared/static/landing-page/services_example" %>
-        <div class='ls-content-c'>
-        <h2 class='ls-title'>OUR SERVICE</h2>
-        <ul>
-        <li class='ls-info'>
-            <p>
-            Our goal is to update the customer menu interaction experience, by providing an easy to use platform
-            for adding the option for customers to see visuals of all your menu items...a visual extension of your menu.
-            </p>
-        </li>
-        <li class='ls-info'>
-            <p>
-            Everyone has a smartphone-why not take advantage of this to enhance your menu with visuals?
-            </p>
-        </li>
-        </ul>
-        <%= link_to "Try free for 14 days", signup_path, class: "ls-btn" %>
+        <div class='landing-card landing-card-small has-shadow'>
+            <div class='landing-card-title has-border'>
+                <h3>OUR SERVICE</h3>
+            </div>
+            <div class='landing-card-content'>
+                <p>
+                    Our goal is to update the customer menu interaction experience, by providing an easy to use platform
+                    for adding the option for customers to see visuals of all your menu items...a visual extension of your menu.
+                </p>
+                <p>
+                    Everyone has a smartphone-why not take advantage of this to enhance your menu with visuals?
+                </p>
+            </div>
+            <div class='landing-card-action'>
+                <%= link_to "Try free for 14 days", signup_path %>
+            </div>
         </div>
-        <a class='ls-img-c' href="https://www.vizhooels.com/users/31" target="_blank">
-            <img src='/assets/tall-menu.jpg' alt='create' />
-        </a>
+        <img src='/assets/tall-menu.jpg' alt='create' class='landing-container-bg' />
     </div>
 </section>
