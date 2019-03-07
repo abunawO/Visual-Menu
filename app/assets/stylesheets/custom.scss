@@ -79,3 +79,25 @@ button {
     display: none;
   }
 }
+
+.form-errors {
+  background-color: pink;
+  box-shadow: inset 0 0 5px 0 rgba(black, 0.2);
+  //
+  border-radius: 3px;
+  margin: 5px;
+  width: max-content;
+  p {
+    padding: 5px 10px;
+    margin: 0;
+  }
+}
+.form-message {
+  background-color: #ebebeb;
+  box-shadow: inset 0 0 5px 0 rgba(black, 0.2);
+  border-radius: 3px;
+  p {
+    padding: 5px 10px;
+    margin: 0;
+  }
+}

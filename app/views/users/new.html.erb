@@ -23,7 +23,7 @@
           <header class="login-header">Sign Up</header>
             <!-- RD Mailform-->
             <%= form_for(@user, html: { class: "text-left offset-top-30"}) do |f| %>
-                  <div style="position:relative; bottom: 10px;">
+                  <div>
                     <%= render 'shared/error_messages', object: f.object %>
                   </div>
                   <div class="form-component-c">
