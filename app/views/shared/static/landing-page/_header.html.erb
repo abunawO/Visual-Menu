@@ -1,8 +1,8 @@
 <!-- landing-header -->
 <header class='landing-header' id="home">
-    <div style="margin-bottom: 10px;" class="row">
+    <div class="form-message">
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <p class="alert-<%= message_type %>"><%= message %></p>
       <% end %>
     </div>
     <div class='lh-c'>

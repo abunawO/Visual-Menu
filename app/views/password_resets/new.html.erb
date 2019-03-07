@@ -19,9 +19,9 @@
         <%= image_tag '/assets/vizhooels-primary-icon.svg', height: 30, alt: 'logo', style: "padding: 20px 0;"%>
         <header class="login-header">Forgot Password</header>
         <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-            <div style="position:relative; bottom: 10px;">
+            <div class="form-errors">
               <% flash.each do |message_type, message| %>
-                <div class="alert alert-<%= message_type %>"><%= message %></div>
+                <p class="alert-<%= message_type %>"><%= message %></p>
               <% end %>
             </div>
             <div class="form-component-c">

@@ -21,9 +21,9 @@
         <%= image_tag '/assets/vizhooels-primary-icon.svg', height: 30, alt: 'logo', style: "padding: 20px 0;"%>
         <header class="login-header">Sign In</header>
         <%= form_for(:session, url: login_path) do |f| %>
-            <div style="position: relative;">
+            <div class="form-errors">
               <% flash.each do |message_type, message| %>
-                <div class="alert alert-<%= message_type %>"><%= message %></div>
+                <p class="alert alert-<%= message_type %>"><%= message %></p>
               <% end %>
             </div>
             <div class="form-component-c">

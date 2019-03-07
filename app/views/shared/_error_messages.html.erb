@@ -1,12 +1,14 @@
 <!--Error messages that work with other objects-->
 <% if object.errors.any? %>
-  <div class="row" id="error_explanation">
-    <div class="alert alert-danger">
+  <div id="error_explanation">
+  <div class="form-errors">
+    <p>
       The form contains <%= pluralize(object.errors.count, "error") %>.
+    </p>
     </div>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="form-errors"><%= msg %></li>
     <% end %>
     </ul>
   </div>
