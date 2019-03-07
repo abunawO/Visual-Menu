@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,900">
   </head>
   <body style='padding-top: 0;'>
-  <p class='header-brand'><%= image_tag '/assets/logo.png', width: 200, height: 150, alt: 'logo'%></p>
+  <div style="padding: 50px 0; display: flex; align-items: center; justify-content: center;">
+    <%= image_tag '/assets/vizhooels-secondary-icon.svg', height: 60, alt: 'logo'%>
+  </div>
     <div class='login-page'>
       <section class="login-card">
         <a href='/'>
@@ -15,7 +17,8 @@
             <div></div>
           </div>
         </a>
-        <p class="login-logo">O͞O</p>
+        <%# <p class="login-logo">O͞O</p> %>
+        <%= image_tag '/assets/vizhooels-primary-icon.svg', height: 30, alt: 'logo', style: "padding: 20px 0;"%>
         <header class="login-header">Sign In</header>
         <%= form_for(:session, url: login_path) do |f| %>
             <div style="position: relative;">

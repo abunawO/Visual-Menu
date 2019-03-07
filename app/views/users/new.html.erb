@@ -8,7 +8,9 @@
   </head>
   <body style='padding-top: 0;'>
     <!-- Register-->
-    <p class='header-brand'><%= image_tag '/assets/logo.png', width: 200, height: 150, alt: 'logo'%></p>
+    <div style="padding: 50px 0; display: flex; align-items: center; justify-content: center;">
+    <%= image_tag '/assets/vizhooels-secondary-icon.svg', height: 60, alt: 'logo'%>
+  </div>
     <div class='login-page'>
       <section class="login-card">
         <a href='/'>
@@ -17,7 +19,7 @@
               <div></div>
             </div>
           </a>
-          <p class="login-logo">O͞O</p>
+          <%= image_tag '/assets/vizhooels-primary-icon.svg', height: 30, alt: 'logo', style: "padding: 20px 0;"%>
           <header class="login-header">Sign Up</header>
             <!-- RD Mailform-->
             <%= form_for(@user, html: { class: "text-left offset-top-30"}) do |f| %>
