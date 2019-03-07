@@ -12,9 +12,8 @@
 
 <script>
   function openMicropostList(self) {
-    var micropostActiveIcon = self.querySelector('span')
-    self.parentElement.querySelector('ol')
-    .classList.toggle('active')
+    var micropostActiveIcon = self.querySelector('span');
+    self.parentElement.querySelector('ol').classList.toggle('active');
     micropostActiveIcon.textContent === 'add'
     ? micropostActiveIcon.textContent = 'remove'
     : micropostActiveIcon.textContent = 'add';
