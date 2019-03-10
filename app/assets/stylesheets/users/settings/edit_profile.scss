@@ -33,6 +33,22 @@
           margin-top: 0;
         }
       }
+      .epib-input-c {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        input {
+          margin-top: 0;
+          width: calc(100% - 15px - 80px);
+          padding-left: 80px;
+        }
+        img {
+          position: absolute;
+          height: 20px;
+          top: calc(50% - 10px);
+          left: 10px;
+        }
+      }
       input {
         &.epib-changed {
           border-color: $third !important;
