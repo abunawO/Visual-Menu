@@ -169,7 +169,7 @@ class UsersController < ApplicationController
                             :name, :email, :password,
                             :password_confirmation, :phone,
                             :address_line1, :address_line2,
-                            :city, :region, :postal_code, :country)
+                            :city, :region, :postal_code, :country, :facebook_link, :instagram_link, :grubhub_link, :doordash_link, :ubereats_link)
     end
 
     # Before filters
