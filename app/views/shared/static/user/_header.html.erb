@@ -7,7 +7,7 @@
         </div>
         <% else %>
         <div class='uh-banner-wrapper'>
-            <img src='/assets/img_4.jpg' alt='res-banner' class='uh-banner'>
+            <img src='/assets/landing/img_4.jpg' alt='res-banner' class='uh-banner'>
         </div>
         <% end %>
         <%= gravatar_for @user, size: 150 %>
@@ -45,6 +45,20 @@
           <% if @user.grubhub_link %>
               <a href="<%= @user.grubhub_link %>" target="_blank">
                   <img src="/assets/social/grubhub.svg">
+                  <%# grubhub %>
+              </a>
+          <% end %>
+        </div>
+        <div class='uh-profile-list'>
+        <% if @user.facebook_link %>
+              <a href="<%= @user.facebook_link %>" target="_blank">
+                  <img src="/assets/social/facebook.svg">
+                  <%# grubhub %>
+              </a>
+          <% end %>
+          <% if @user.instagram_link %>
+              <a href="<%= @user.instagram_link %>" target="_blank">
+                  <img src="/assets/social/instagram.png">
                   <%# grubhub %>
               </a>
           <% end %>
