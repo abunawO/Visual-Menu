@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
       else
         @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
       end
+
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
 

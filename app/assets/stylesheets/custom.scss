@@ -101,3 +101,11 @@ button {
     margin: 0;
   }
 }
+
+// create micropost category modal;
+#category-modal {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

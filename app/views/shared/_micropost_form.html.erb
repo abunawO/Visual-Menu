@@ -6,10 +6,22 @@
       <%= f.text_field :content, placeholder: "Menu item title...", class: "form-component fc-small"  %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
-    <div class="field form-component-c">
-      <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
-      <%= render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
-    </div>
+    <%# <div class="field form-component-c"> %>
+      <%# f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
+      <%# f.select(:category, options_from_collection_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
+      <%# select_tag 'stores[]', options_from_collection_for_select(@categories_select, :store_id, :store_name, [4,5,6]), multiple: true, size: '10%' %>
+      <div>
+        <div class="field form-component-c fc-active">
+          <input class='form-component fc-small fc-point' onclick='openCategoryModal()'>here </input>
+        </div>
+      <div id='category-modal'>
+        <% @categories_select.each do |category| %>
+          <%= f.check_box :category, { multiple: true }, category %> <%= category %> <br>
+        <% end %>
+        </div>
+      </div>
+      <%# render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
+    <%# </div> %>
     <div class="field form-component-c">
       <%= f.text_field :price, placeholder: "Menu item price...", class: "form-component fc-small" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
@@ -25,7 +37,7 @@
         <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_file'} %>
       </label>
     </span>
-    <div class="field form-component-c fc-active ">
+    <div class="field form-component-c fc-active">
       <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
       <label class='form-component fc-small fc-point' for="send">
         Create item
@@ -42,5 +54,10 @@
         alert('Maximum file size is 5MB. Please choose a smaller file.');
       }
     });
+function openCategoryModal() {
+let me = document.getElementById('category-modal')
+.classList.toggle('active');
+}
   </script>
 </div>
+
