@@ -36,7 +36,10 @@
         <%= render :partial=> "shared/micropost_modal" %>
       </div>
     <% else %>
-       <%= image_tag('search-not-found.png', class: 'search-not-found')  %>
+       <div class='not-found'>
+       <span class="material-icons">search</span>
+       No matching items found.
+       </div>
     <% end %>
  </div>
 </div>
