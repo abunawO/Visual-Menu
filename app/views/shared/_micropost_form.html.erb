@@ -6,28 +6,30 @@
       <%= f.text_field :content, placeholder: "Menu item title...", class: "form-component fc-small"  %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
-    <%# <div class="field form-component-c"> %>
-      <%# f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
-      <%# f.select(:category, options_from_collection_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
-      <%# select_tag 'stores[]', options_from_collection_for_select(@categories_select, :store_id, :store_name, [4,5,6]), multiple: true, size: '10%' %>
-      <div>
+      <div class='form-category-c'>
         <div class="field form-component-c fc-active">
-          <input class='form-component fc-small fc-point' onclick='openCategoryModal()'>here </input>
+          <input class='fc-hide' id='openCatModalBtn' onclick='openCategoryModal(this); return false;'>
+          <label class='form-component fc-small fc-point' for="openCatModalBtn">
+            Create item
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'add'} %>
+          </label>
         </div>
-      <div id='category-modal'>
-        <% @categories_select.each do |category| %>
-          <%= f.check_box :category, { multiple: true }, category %> <%= category %> <br>
-        <% end %>
+
+        <div id='category-modal'>
+          <% @categories_select.each do |category| %>
+            <div class='category-modal-input-c'>
+              <%= f.check_box :category, { multiple: true, :id => 'categoryCheckBox' }, category %>
+              <label onclick="categoryCheckBox(this)"><%= category %></label>
+            </div>
+          <% end %>
         </div>
       </div>
-      <%# render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
-    <%# </div> %>
     <div class="field form-component-c">
       <%= f.text_field :price, placeholder: "Menu item price...", class: "form-component fc-small" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
     </div>
     <div class="field form-component-c fc-big">
-      <%= f.text_area :description, placeholder: "Menu item description...", class: "form-component fc-big" %>
+      <%= f.text_area :description, :rows => 5, placeholder: "Menu item description...", class: "form-component fc-big" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
     </div>
     <span class="picture form-component-c">
@@ -45,8 +47,8 @@
       </label>
     </div>
   <% end %>
-
-  <!--Checking the file size with jQuery.-->
+</div>
+ <!--Checking the file size with jQuery.-->
   <script type="text/javascript">
     $('.fc-hide').bind('change', function() {
       var size_in_megabytes = this.files[0].size/1024/1024;
@@ -54,10 +56,25 @@
         alert('Maximum file size is 5MB. Please choose a smaller file.');
       }
     });
-function openCategoryModal() {
-let me = document.getElementById('category-modal')
-.classList.toggle('active');
-}
+    function openCategoryModal(self) {
+      const _modal = self.parentElement.parentElement
+      .querySelector('#category-modal');
+      _modal.classList.toggle('active');
+      let _modalIcon = self.parentElement.querySelector('span')
+      if (_modalIcon.textContent === 'add') {
+        _modalIcon.textContent = 'remove';
+      } else {
+        _modalIcon.textContent = 'add';
+      }
+      
+    }
+    function categoryCheckBox(self) {
+      let checkedCatergory = self.parentElement.querySelector('#categoryCheckBox');
+      if (checkedCatergory.checked) {
+        checkedCatergory.checked = false
+      } else {
+        checkedCatergory.checked = true
+      }
+    }
   </script>
-</div>
 

@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .filter-form {
   width: 100% !important;
 }
@@ -101,5 +101,56 @@
   &:hover {
     background-color: $third !important;
     color: $secondary !important;
+  }
+}
+
+// create micropost category modal;
+.form-category-c {
+  position: relative;
+  #category-modal {
+    box-shadow: 0 0 20px 0 rgba($s-text-primary, 0.3);
+    overflow: hidden;
+    overflow-y: scroll;
+    z-index: 90;
+    // top: 10px;
+    // left: -10px;
+    display: none;
+    // position: absolute;
+    background-color: $s-bg-primary;
+    border: 1px solid $s-text-primary;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    padding: 5px 0;
+    &.active {
+      display: block;
+    }
+    .category-modal-input-c {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 5px 0;
+      border-bottom: 1px solid $s-text-secondary;
+      &:last-child {
+        border-bottom: none;
+      }
+      // &:focus {
+      //   background-color: $third;
+      //   label {
+      //     color: $s-bg-primary;
+      //     // padding-left: 10px;
+      //   }
+      // }
+      label {
+        // transition: padding-left ease-in-out 0.2s;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+        // padding: 5px 0;
+        padding-left: 5px;
+        font-size: 1em;
+      }
+    }
   }
 }
