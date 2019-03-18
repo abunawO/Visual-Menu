@@ -109,6 +109,10 @@
       padding: 5px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+      .micropost-add-btn {
+        position: absolute;
+        top: -30px;
+      }
       .micropost-title {
         color: $s-text-secondary;
         padding: 0;
