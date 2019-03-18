@@ -3,16 +3,14 @@
 <!--Displayed in the feed.html.erb partial.-->
 <li class="micropost" id="micropost-<%= micropost.id %>">
   <button class='micropost-action' onclick="openModal(this)">
-    <%= image_tag micropost.picture.url, class: "mp-image", id: 'micropost', alt: "#{micropost.description}" %>
-    <p id="mp-price" class='micropost-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
-    <% if current_user?(micropost.user) %>
-    <% end %>
+  <%= image_tag micropost.picture.url, class: "mp-image", id: 'micropost', alt: "#{micropost.description}" %>
+  <p id="mp-price" class='micropost-price'> <%= number_to_currency(micropost.price, :unit => "$")%> </p>
   </button>
-  <div class='micropost-info'>
-  <button class='micropost-add-btn' onclick="addToOrderList(this)">add to list</button>
-        <p id="mp-title" class='micropost-title'> <%= micropost.content %> </p>
-      </div>
-        <% if current_user?(micropost.user) %>
+    <div class='micropost-info'>
+      <button class='micropost-add-btn' onclick="addToOrderList(this)">add to list</button>
+      <p id="mp-title" class='micropost-title'> <%= micropost.content %> </p>
+    </div>
+  <% if current_user?(micropost.user) %>
     <div class='micropost-settings'>
       <%= link_to "Delete", micropost, method: :delete, data: { confirm: "Are you sure?" } %> |
       <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) %>
@@ -20,11 +18,14 @@
   <% end %>
 </li>
 <script type='text/javascript'>
- function openModal(props) {
+  function openModal(props) {
     document.getElementById('micropost-modal').classList.add('active')
     document.getElementById('mpm-image').src = props.children[0].src
     document.getElementById('mpm-title').textContent = props.parentElement.querySelector('#mp-title').textContent
     document.getElementById('mpm-price').textContent = props.parentElement.querySelector('#mp-price').textContent
     document.getElementById('mpm-description').textContent = props.children[0].alt
+  }
+  function addToOrderList(self) {
+
   }
 </script>
