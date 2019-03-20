@@ -9,8 +9,8 @@
     <%= image_tag "", id: "mpm-image" %>
     </div>
     <div class='mpm-details'>
-      <p id="mpm-title"></p>
       <p id="mpm-price" class='mpm-price'></p>
+      <p id="mpm-title"></p>
       <p id='mpm-description' class='mpm-description'></p>
     </div>
     <button class='micropost-add-btn' onclick='addToOrderList(this)'><span class="material-icons">add</span> add to list</button>
@@ -22,7 +22,7 @@ function closeModal(props) {
     document.getElementById('micropost-modal').classList.remove('active')
   }  
   function addToOrderList(micropost) {
-    debugger
+    console.log(micropost.id)
     a.push(micropost.id);
   }
 </script>

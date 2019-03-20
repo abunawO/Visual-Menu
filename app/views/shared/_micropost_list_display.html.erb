@@ -6,6 +6,14 @@
       </button>
       <ol class="microposts">
         <%= render @options[category.category] %>
+         <%# if current_user?(micropost.user) %>
+          <%# <li class="micropost">
+            <button class='micropost-action empty'>
+              <span class="material-icons">add</span>
+              <p>add a new item</p>
+            </button>
+          </li> %>
+        <%# end %>
       </ol>
     </div>
 <% end %>
