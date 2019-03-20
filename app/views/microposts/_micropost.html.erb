@@ -22,7 +22,7 @@
     document.getElementById('micropost-modal').classList.add('active')
     document.getElementById('mpm-image').src = props.children[0].src
     document.getElementById('mpm-title').textContent = title
-    document.getElementById('mpm-price').textContent = price
+    document.getElementById('mpm-price').textContent = `$${price}`
     document.getElementById('mpm-description').textContent = description
   }
 </script>
