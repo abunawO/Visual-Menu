@@ -7,14 +7,12 @@
   </button>
   <% if current_user?(micropost.user) %>
     <div class='micropost-settings'>
-    <%= link_to micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) do %>
-    <span class='material-icons'>edit</span> Edit
-    <%end%>
+      <%= link_to micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) do %>
+        <span class='material-icons'>edit</span> Edit
+      <%end%>
       <%= link_to(micropost, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-red') do %>
-
-      <span class='material-icons'>delete</span> Delete
+        <span class='material-icons'>delete</span> Delete
       <% end %>
-
     </div>
   <% end %>
 </li>
@@ -22,7 +20,6 @@
   function openModal(props) {
     const {title, price, description, id} = props.querySelector('img').dataset
     document.getElementById('micropost-modal').classList.add('active')
-    document.getElementById('micropost-modal').querySelector('.micropost-add-btn').id = id
     document.getElementById('mpm-image').src = props.children[0].src
     document.getElementById('mpm-title').textContent = title
     document.getElementById('mpm-price').textContent = price
