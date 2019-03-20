@@ -177,9 +177,34 @@
     border: none !important;
   }
 }
-.micropost_ {
+.micropost {
   .micropost-settings {
-    margin-left: 10px;
+    // margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // align-self: flex-start;
+      margin-top: 5px;
+      // position: absolute;
+      // top: -30px;
+      width: max-content;
+      border: none;
+      background-color: #4ca64c;
+      color: $s-bg-primary;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.8em;
+      &.btn-red {
+        background-color: #ea4335;
+      }
+      span {
+        padding-right: 5px;
+        font-size: 1em;
+      }
+    }
   }
 }
 .mp-c {
