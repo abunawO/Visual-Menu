@@ -1,0 +1,14 @@
+<div>
+    <h1>Your Food Selection</h1>
+        <% @categories.each do |category| %>
+        <div class='microposts-c'>
+        <button class='microposts-title'>
+            <p><%= category.category %></p>
+            <span class='material-icons'>add</span>
+        </button>
+        <ol class="microposts">
+            <%= render @options[category.category] %>
+        </ol>
+        </div>
+    <% end %>
+</div>
