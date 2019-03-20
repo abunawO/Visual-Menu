@@ -14,8 +14,6 @@
       <%= link_to "Delete", micropost, method: :delete, data: { confirm: "Are you sure?" } %> |
       <%= link_to "Edit", micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) %>
     <div>
-    <% else %>
-    
   <% end %>
 </li>
 <script type='text/javascript'>
@@ -23,7 +21,6 @@
     document.getElementById('micropost-modal').classList.add('active')
     document.getElementById('mpm-image').src = props.children[0].src
     document.getElementById('mpm-title').textContent = props.parentElement.querySelector('#mp-title').textContent
-    // document.getElementById('mpm-price').textContent = props.parentElement.querySelector('#mp-price').textContent
     document.getElementById('mpm-description').textContent = props.children[0].alt
     document.getElementById('micropost-modal').querySelector('.micropost-add-btn').id = id
   }
