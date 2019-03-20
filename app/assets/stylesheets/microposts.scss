@@ -109,15 +109,16 @@
       padding: 5px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
-      .micropost-add-btn {
-        position: absolute;
-        top: -30px;
-      }
+
       .micropost-title {
         color: $s-text-secondary;
         padding: 0;
         margin: 0;
         font-size: 0.8em;
+        span {
+          color: black;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -282,6 +283,26 @@ p {
     bottom: 0;
     right: 0;
     left: 0;
+  }
+  .micropost-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 5px;
+    // position: absolute;
+    // top: -30px;
+    width: max-content;
+    border: none;
+    background-color: #4ca64c;
+    color: $s-bg-primary;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    span {
+      padding-right: 5px;
+      font-size: 1em;
+    }
   }
   .micropost-modal-c {
     width: 400px;
