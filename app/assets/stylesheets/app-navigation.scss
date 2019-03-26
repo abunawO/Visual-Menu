@@ -74,6 +74,11 @@
     }
     ul {
       display: none;
+      li {
+        span {
+          font-size: 1em;
+        }
+      }
     }
   }
 }
