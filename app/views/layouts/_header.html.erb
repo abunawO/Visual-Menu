@@ -1,9 +1,37 @@
-<nav class='app-nav'>
-  <ul>
-    <% if logged_in? %>
-        <li><%= link_to "Dashboard", root_path %></li>
-    <% else %>
-        <li><%= link_to "Log in", login_path %></li>
-    <% end %>
+<nav class='app-navigation'>
+<% if logged_in? %>
+  <button onclick="openAppNavigation(this)" class='app-navigation-btn'><span class='material-icons'>menu</span></button>
+  <ul class='app-navigation-list'>
+      <li>
+          <span class='material-icons'>dashboard</span>
+          <span><%= link_to "Dashboard", root_path %></span>
+      </li>
+      <li>
+          <span class='material-icons'>local_dining</span>
+          <span><%= link_to "YOUR VISUAL MENU", current_user %></span>
+      </li>
+      <li>
+          <span class='material-icons'>account_box</span>
+          <span><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
+      </li>
+       <li>
+          <span class='material-icons'>edit</span>
+          <span><%= link_to "Edit profile", info_edit_path(:id => current_user.id), :method => "get" %></span>
+      </li>
+      <li>
+          <span class='material-icons'>exit_to_app</span>
+          <span><%= link_to "Log Out", logout_path, method: "delete" %></span>
+      </li>
   </ul>
+<% else %>
+  <%= link_to "Log in", login_path %>
+<% end %>
 </nav>
+
+<script>
+  function openAppNavigation(self) {
+    self.parentElement.classList.toggle('active')
+  }
+</script>
+
+
