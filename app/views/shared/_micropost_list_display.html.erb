@@ -1,3 +1,23 @@
+<% @spacials.each do |category| %>
+    <div class='microposts-c'>
+      <button class='microposts-title' onclick='openMicropostList(this)'>
+        <p><%= category.category %></p>
+        <span class='material-icons'>add</span>
+      </button>
+      <ol class="microposts">
+        <%= render @options[category.category] %>
+         <%# if current_user?(micropost.user) %>
+          <%# <li class="micropost">
+            <button class='micropost-action empty'>
+              <span class="material-icons">add</span>
+              <p>add a new item</p>
+            </button>
+          </li> %>
+        <%# end %>
+      </ol>
+    </div>
+<% end %>
+
 <% @categories.each do |category| %>
     <div class='microposts-c'>
       <button class='microposts-title' onclick='openMicropostList(this)'>

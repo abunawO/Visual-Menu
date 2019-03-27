@@ -72,7 +72,7 @@ class UsersController < ApplicationController
       @categories = []
       @options    = {}
       @categories = _creat_menu_categories(@microposts, @isCategorySearch)
-      @spacial = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"}.first || nil
+      @spacials = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"} || nil
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
       flash.now[:danger] = "User does not exists."
