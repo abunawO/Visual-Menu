@@ -1,15 +1,8 @@
 <!--The partial for the user info sidebar on the home.html.erb file-->
 <div class="user-header">
     <div class='uh-banner-c'>
-        <% if @spacial %>
-        <div class='uh-banner-wrapper'>
-            <%= image_tag @spacial.picture.url, alt: 'res-banner', class: 'uh-banner' %>
-        </div>
-        <% else %>
-        <div class='uh-banner-wrapper'>
-            <img src='/assets/landing/img_4.jpg' alt='res-banner' class='uh-banner'>
-        </div>
-        <% end %>
+      <div class='uh-banner-wrapper'>
+      </div>
         <%= gravatar_for @user, size: 150 %>
     </div>
     <div class='uh-profile-c'>
