@@ -23,6 +23,7 @@ class StaticPagesController < ApplicationController
           end
         end
       end
+      @spacials = @categories.select {|mic| mic.category == "SPECIAL OF THE DAY"} || nil
     end
 
   end
