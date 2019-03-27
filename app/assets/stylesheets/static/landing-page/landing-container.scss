@@ -13,11 +13,27 @@
     z-index: 0;
     margin: 0 auto;
     padding: 50px 0;
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+    .sn-login {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: $s-text-secondary;
+      font-weight: bold;
+      &:hover {
+        color: $s-text-primary;
+      }
+      @media (max-width: 550px) {
+        right: 20px;
+      }
+    }
     @media (min-width: 1320px) {
       width: 1320px;
     }
     @media (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: column !important;
       flex-wrap: nowrap;
     }
     h2 {
@@ -44,6 +60,11 @@
       @media (max-width: 400px) {
         width: calc(100% - 20px);
       }
+    }
+    .landing-phone-img {
+      height: 500px;
+      margin: 10px;
+      border-radius: 10px;
     }
     .landing-container-bg {
       position: absolute;

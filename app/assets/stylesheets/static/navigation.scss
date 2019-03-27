@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .static-navigation {
   z-index: 99;
   width: 100%;
@@ -40,6 +40,7 @@
   }
   .sn-login {
     position: absolute;
+    top: 0;
     right: 30px;
     color: $s-text-secondary;
     font-weight: bold;
@@ -106,18 +107,15 @@
               color: $s-text-primary;
               transition: ease-in-out 0.1s;
               &:hover {
-                box-shadow: 0 5px 10px 0
-                  rgba($s-text-primary, 0.2);
+                box-shadow: 0 5px 10px 0 rgba($s-text-primary, 0.2);
               }
               &.active {
                 width: 225px;
                 color: $s-primary;
-                box-shadow: 0 5px 10px 0
-                  rgba($s-primary, 0.2);
+                box-shadow: 0 5px 10px 0 rgba($s-primary, 0.2);
                 &:hover {
                   color: $s-secondary;
-                  box-shadow: 0 5px 10px 0
-                    rgba($s-secondary, 0.2);
+                  box-shadow: 0 5px 10px 0 rgba($s-secondary, 0.2);
                 }
               }
             }

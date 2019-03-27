@@ -1,21 +1,24 @@
 <!-- landing-header -->
 <header class='landing-header' id="home">
+<%= link_to "Login", login_path, class: 'sn-login' %>
     <div class="form-message">
       <% flash.each do |message_type, message| %>
         <p class="alert-<%= message_type %>"><%= message %></p>
       <% end %>
     </div>
+
     <div class='lh-c'>
+    <%= image_tag '/assets/vizhooels-primary-full-icon.svg', height: 30, alt: 'logo'%>
         <h1><span>VISUAL</span> MENU</h1>
         <h3>Let customers feast with their eyes before they buy.</h3>
-        <div class='v-btn-c'>
+        <%# <div class='v-btn-c'>
             <button onclick="openHeaderPricing()" class="v-btn v-btn-dark v-btn-important">See Pricing</button>
         </div>
-        <p class='lh-fees'>no hidden costs or fees</p>
-        <div class='menu-example'>
+        <p class='lh-fees'>no hidden costs or fees</p> %>
+        <%# <div class='menu-example'>
             <div onclick="scrollHorizontal(-640)" class='scroll-btn left'>
-                <img src='/assets/arrow.png'></div>
-            <p>Slide to see more menu items</p>
+                <img src='/assets/arrow.png'></div> %>
+            <%# <p>Slide to see more menu items</p>
             <ul id='_menu_example'>
                 <li><img src='/assets/landing/img_1.jpg' alt='sample' /></li>
                 <li><img src='/assets/landing/img_6.jpg' alt='sample' /></li>
@@ -23,16 +26,17 @@
                 <li><img src='/assets/landing/img_2.jpg' alt='sample' /></li>
                 <li><img src='/assets/landing/img_4.jpg' alt='sample' /></li>
                 <li><img src='/assets/landing/img_5.jpg' alt='sample' /></li>
-            </ul>
-            <div onclick="scrollHorizontal(640)" class='scroll-btn right'>
+            </ul> %>
+            <%# <div onclick="scrollHorizontal(640)" class='scroll-btn right'>
                 <img src='/assets/arrow.png'>
-            </div>
-        </div>
+            </div> %>
+        <%# </div> %>
     </div>
+
      <%= render :partial => "shared/static/landing-page/header_pricing" %>
-    <div class='lh-phone-c'>
+    <%# <div class='lh-phone-c'>
         <img class='phone-cut' src='/assets/phone-cut.svg' alt='phone-cut' />
-    </div>
+    </div> %>
 </header>
 <script type="text/javascript">
     function scrollHorizontal(amount) {

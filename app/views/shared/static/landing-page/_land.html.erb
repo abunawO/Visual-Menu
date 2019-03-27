@@ -1,0 +1,16 @@
+<section class='landing-box-container has-offcolor'>
+    <div class='landing-box'>
+    <%= link_to "Login", login_path, class: 'sn-login' %>
+    <div class="form-message">
+      <% flash.each do |message_type, message| %>
+        <p class="alert-<%= message_type %>"><%= message %></p>
+      <% end %>
+    </div>
+        <div class='landing-card center'>
+            <%= image_tag '/assets/vizhooels-primary-full-icon.svg', height: 30, alt: 'logo'%>
+            <h3>A VISUAL MENU</h3>
+            <a href='/signup'>GET STARTED</a>
+        </div>
+       <%= image_tag '/assets/food-coll.png', height: 400, alt: 'logo'%>
+    </div>
+</section>

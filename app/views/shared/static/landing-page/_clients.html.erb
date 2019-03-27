@@ -1,12 +1,12 @@
 <section id="contact" class="landing-box-container has-offcolor">
     <div class='landing-box'>
-        <img src='/assets/tall-menu.jpg' alt='create' class='landing-container-bg go-left' />
+        
         <%= form_for(
             'message_params',
             url: {:controller => "static_pages", :action => "contact_us", method: "post"},
             html: { class: "landing-card landing-card-small has-shadow" }
         ) do |f| %>
-            <div class='landing-card-title has-border'>
+            <div class='landing-card-title'>
                 <h3>GET IN TOUCH</h3>
             </div>
             <div class='landing-card-content'>

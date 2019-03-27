@@ -1,21 +1,36 @@
 @import "const";
 .landing-header {
-  margin-top: 50px;
+  // margin-top: 50px;
   position: relative;
-  background: linear-gradient(90deg, $s-primary 0%, $s-secondary 100%);
+  // background: linear-gradient(90deg, $s-primary 0%, $s-secondary 100%);
+  background-color: white;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  min-height: 800px;
+  // min-height: 800px;
   height: auto !important;
   overflow: visible !important;
   z-index: 0;
   @media (max-width: 680px) {
     padding-top: 50px;
-    min-height: 600px;
+    // min-height: 600px;
     justify-content: flex-end;
     background: $s-text-third !important;
+  }
+  .sn-login {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: $s-text-secondary;
+    font-weight: bold;
+    &:hover {
+      color: $s-text-primary;
+    }
+    @media (max-width: 550px) {
+      right: 20px;
+    }
   }
   .lh-c {
     display: flex;
@@ -44,7 +59,7 @@
       margin: 20px 0;
       max-width: 500px;
       color: $s-text-secondary;
-      font-size: .9em !important;
+      font-size: 0.9em !important;
     }
     .lh-fees {
       margin: 0;
@@ -159,7 +174,7 @@
   #header-pricing {
     opacity: 0;
     visibility: hidden;
-    z-index: 1000;
+    z-index: 1001;
     overflow: hidden;
     position: absolute;
     display: flex;

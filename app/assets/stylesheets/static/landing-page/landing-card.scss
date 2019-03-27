@@ -9,6 +9,31 @@
   border-radius: 10px;
   margin: 10px;
   transition: 0.1s ease-in-out;
+  &.center {
+    overflow: visible;
+    background-color: transparent;
+    align-items: center;
+    h3 {
+      margin: 20px;
+      font-size: 2em;
+      color: $s-text-secondary;
+    }
+    p {
+      text-align: center;
+      margin: 0;
+    }
+    a {
+      transition: 0.1s ease-in-out;
+      background-color: $s-green;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba($s-green, 0.4);
+      }
+    }
+  }
+
   &.landing-card-small {
     max-width: 400px;
   }
@@ -38,9 +63,9 @@
       a,
       label {
         font-size: 1.2em;
-        background-color: $s-secondary;
-        color: $s-text-secondary;
-        box-shadow: 0px 0px 45px rgba($s-secondary, 0.4);
+        // background-color: $s-secondary;
+        // color: $s-text-secondary;
+        box-shadow: 0px 0px 45px rgba($s-text-secondary, 0.4);
       }
     }
   }
@@ -54,6 +79,11 @@
     transition: inherit;
     &.has-border {
       border-bottom: 1px solid $s-primary;
+    }
+    &.big {
+      h3 {
+        font-size: 2em;
+      }
     }
     h3 {
       padding: 20px;
@@ -94,12 +124,13 @@
   }
   .landing-card-action {
     width: 100%;
+
     transition: inherit;
     a,
     label {
       cursor: pointer;
       display: block;
-      background-color: $s-primary;
+      background-color: $s-text-secondary;
       color: $s-bg-primary;
       font-size: 1em;
       font-weight: bold;
@@ -108,11 +139,11 @@
       line-height: 70px;
       text-align: center;
       border-top-right-radius: 10px;
-      box-shadow: 0px 0px 45px rgba($s-primary, 0.2);
+      box-shadow: 0px 0px 45px rgba($s-text-secondary, 0.2);
       transition: inherit;
       &:hover {
         font-size: 1.4em;
-        color: $s-text-primary;
+        // color: $s-text-primary;
       }
     }
   }
