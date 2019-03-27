@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
     mail to: user.email, subject: "Account activation"
-    mail(:to => "abunawose@vizhooels.com", :subject => "User sign up", :body => "A new user signed up called #{@user.name}. Please reach out.")
+    #mail(:to => "abunawose@vizhooels.com", :subject => "User sign up", :body => "A new user signed up called #{@user.name}. Please reach out.")
   end
 
   def say_hello(params)
