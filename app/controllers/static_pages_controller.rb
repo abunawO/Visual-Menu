@@ -15,10 +15,9 @@ class StaticPagesController < ApplicationController
       @microposts = @user.microposts.paginate(page: params[:page])
       @categories = []
       @options    = {}
-      @spacials = []
+      @specials = @microposts.where(:category => "SPECIALS")
       @user.microposts.each do |micropost|
         if micropost.category.present?
-          @spacials.push(micropost) if  micropost.category == "SPECIALS"
           unless @categories.map(&:category).include?(micropost.category)
             @categories.push(micropost) if micropost.category != "SPECIALS"
             @options[micropost.category] = @user.microposts.where(:category => micropost.category)

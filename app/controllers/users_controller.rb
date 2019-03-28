@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
       @categories = []
       @options    = {}
-      @spacials = []
+      @specials = @microposts.where(:category => "SPECIALS")
       @categories = _creat_menu_categories(@microposts, @isCategorySearch)
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
@@ -151,7 +151,6 @@ class UsersController < ApplicationController
       no_doubles = []
       feed_items.each do |micropost|
         if micropost.category.present?
-          @spacials.push(micropost) if  micropost.category == "SPECIALS"
           unless no_doubles.map(&:category).include?(micropost.category)
             no_doubles.push(micropost) if micropost.category != "SPECIALS"
             if isCategorySearch

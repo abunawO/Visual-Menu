@@ -55,6 +55,9 @@
   -webkit-overflow-scrolling: touch;
   &.active {
     display: grid;
+    &.horizontal {
+      display: flex;
+    }
   }
   .micropost {
     width: calc(50vw - 10px);
