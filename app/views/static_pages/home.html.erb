@@ -23,21 +23,17 @@
         <%= render :partial => "shared/category_select_search" %>
 
         <div class="row menu-display-section">
-
           <% if @specials.present? %>
-          <%# binding.pry %>
-          <button class='microposts-title' onclick='openMicropostList(this)'>
-                  <p><%= @specials.first.category %></p>
-                  <span class='material-icons'>add</span>
-          </button>
-          <% @specials.each do |category| %>
-              <div class='microposts-c'>
-                <ol class="microposts">
-                  <%= render category %>
-                </ol>
-              </div>
+                <div class='microposts-c'>
+                  <button class='microposts-title special'>
+                    <p><%= @specials.first.category %></p>
+                    <span class='material-icons'>add</span>
+                  </button>
+                  <ol class="microposts active horizontal">
+                    <%= render @specials %>
+                  </ol>
+                </div>
           <% end %>
-        <% end %>
           <%= render :partial=> "shared/micropost_list_display" %>
           <%= render :partial=> "shared/micropost_modal" %>
           <%= render :partial=> "shared/search_fab" %>

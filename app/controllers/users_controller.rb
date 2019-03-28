@@ -71,8 +71,8 @@ class UsersController < ApplicationController
 
       @categories = []
       @options    = {}
-      @specials = @microposts.where(:category => "SPECIALS")
       @categories = _creat_menu_categories(@microposts, @isCategorySearch)
+      @specials = @microposts.where(:category => "SPECIALS")
     rescue ActiveRecord::RecordNotFound => e
       @user = nil
       flash.now[:danger] = "User does not exists."
@@ -149,6 +149,7 @@ class UsersController < ApplicationController
 
     def _creat_menu_categories(feed_items, isCategorySearch)
       no_doubles = []
+      # binding.pry
       feed_items.each do |micropost|
         if micropost.category.present?
           unless no_doubles.map(&:category).include?(micropost.category)

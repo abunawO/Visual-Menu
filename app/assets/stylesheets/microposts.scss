@@ -30,6 +30,13 @@
     background-color: $s-bg-primary;
 
     font-weight: bold;
+    &.special {
+      border: none;
+      background-color: transparent;
+      .material-icons {
+        display: none;
+      }
+    }
     p,
     span {
       font-size: 1em;
@@ -56,7 +63,16 @@
   &.active {
     display: grid;
     &.horizontal {
-      display: flex;
+      display: flex !important;
+      overflow: hidden;
+      overflow-x: scroll;
+      .micropost {
+        width: calc(45vw - 10px) !important;
+        .micropost-action {
+          width: 100%;
+          // height: calc(45vw - 10px) !important;
+        }
+      }
     }
   }
   .micropost {
