@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 .filter-form {
   width: 100% !important;
 }
@@ -22,6 +22,26 @@
   }
   &.fc-max-content {
     min-width: max-content;
+  }
+  &.picture {
+    width: 300px;
+    height: 300px;
+    border-style: dashed;
+    border-radius: 10px;
+    padding: 5px;
+    .form-component {
+      padding: 0 !important;
+      img {
+        width: 100%;
+      }
+      .image-message {
+        // position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 10px;
+        color: rgba(white, 0.7);
+      }
+    }
   }
   .form-component {
     -webkit-appearance: none;
@@ -73,6 +93,9 @@
   @media (min-width: 450px) {
     min-width: 400px;
   }
+}
+.fc-box-width {
+  min-width: 446px;
 }
 .fc-hide {
   display: none !important;

@@ -43,6 +43,15 @@
     }
   }
 }
+.micropost-form-container {
+  form {
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
 .microposts {
   margin-top: 5px;
   display: none;
