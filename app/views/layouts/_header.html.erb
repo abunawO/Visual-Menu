@@ -1,26 +1,26 @@
-<nav class='app-navigation'>
+<nav id="app-navigation" class='app-navigation'>
 <% if logged_in? %>
-  <button onclick="openAppNavigation(this)" class='app-navigation-btn'><span class='material-icons'>menu</span></button>
+  <p  class='app-navigation-btn'><span id="app-navigation-btn" class='material-icons'>menu</span></p>
   <ul class='app-navigation-list'>
       <li>
           <span class='material-icons'>dashboard</span>
-          <span><%= link_to "Create Menu Item", root_path %></span>
+          <span class='nav-link'><%= link_to "Create Menu Item", root_path %></span>
       </li>
       <li>
           <span class='material-icons'>local_dining</span>
-          <span><%= link_to "Menu", current_user %></span>
+          <span class='nav-link'><%= link_to "Menu", current_user %></span>
       </li>
       <li>
           <span class='material-icons'>account_box</span>
-          <span><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
+          <span class='nav-link'><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
       </li>
        <li>
           <span class='material-icons'>edit</span>
-          <span><%= link_to "Edit profile", info_edit_path(:id => current_user.id), :method => "get" %></span>
+          <span class='nav-link'><%= link_to "Edit profile", info_edit_path(:id => current_user.id), :method => "get" %></span>
       </li>
       <li>
           <span class='material-icons'>exit_to_app</span>
-          <span><%= link_to "Log Out", logout_path, method: "delete" %></span>
+          <span class='nav-link'><%= link_to "Log Out", logout_path, method: "delete" %></span>
       </li>
   </ul>
 <% else %>
@@ -28,8 +28,14 @@
 <% end %>
 </nav>
 
-<script>
-  function openAppNavigation(self) {
-    self.parentElement.classList.toggle('active')
+  <script>
+    window.onclick = function(event) {
+      let modal = document.getElementById('app-navigation')
+      let isModal =  document.getElementById('app-navigation-btn') 
+    if (event.target == modal || event.target == isModal) {
+      modal.classList.add('active')
+    } else {
+      modal.classList.remove('active')
+    }
   }
 </script>

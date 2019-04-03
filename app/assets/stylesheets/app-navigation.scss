@@ -68,8 +68,25 @@
       border-top-right-radius: 0;
       border-top-left-radius: 0;
       box-shadow: 0 0 30px 0 rgba(black, 0.3);
+      .material-icons {
+        padding-left: 10px;
+      }
+      .app-navigation-btn {
+        display: none;
+      }
       ul {
         display: block;
+        li {
+          padding: 0;
+          .nav-link {
+            width: 100%;
+            a {
+              width: 100%;
+              display: block;
+              padding: 10px;
+            }
+          }
+        }
       }
     }
     ul {
