@@ -2,26 +2,48 @@
 <% if logged_in? %>
   <p  class='app-navigation-btn'><span id="app-navigation-btn" class='material-icons'>menu</span></p>
   <ul class='app-navigation-list'>
-      <li>
+    <li>
+      <span class='nav-link'>
+        <%= link_to(root_path) do %>
           <span class='material-icons'>dashboard</span>
-          <span class='nav-link'><%= link_to "Create Menu Item", root_path %></span>
-      </li>
-      <li>
+          Create Menu Item
+        <% end %>
+      </span>
+    </li>
+    <li>
+      <span class='nav-link'>
+        <%= link_to(current_user) do %>
           <span class='material-icons'>local_dining</span>
-          <span class='nav-link'><%= link_to "Menu", current_user %></span>
-      </li>
+          Menu
+        <% end %>
+      </span>
+    </li>
+    <li>
+        
+        <span class='nav-link'>
+          <%= link_to("https://en.gravatar.com/", {:target => "_blank"}) do %>
+            <span class='material-icons'>account_box</span>
+            Set profile picture
+          <% end %>
+        </span>
+    </li>
       <li>
-          <span class='material-icons'>account_box</span>
-          <span class='nav-link'><%= link_to "Set profile picture", "https://en.gravatar.com/", target: :_blank %></span>
-      </li>
-       <li>
-          <span class='material-icons'>edit</span>
-          <span class='nav-link'><%= link_to "Edit profile", info_edit_path(:id => current_user.id), :method => "get" %></span>
-      </li>
-      <li>
-          <span class='material-icons'>exit_to_app</span>
-          <span class='nav-link'><%= link_to "Log Out", logout_path, method: "delete" %></span>
-      </li>
+        
+        <span class='nav-link'>
+          <%= link_to(info_edit_path(:id => current_user.id), {:method => "get"}) do %>
+            <span class='material-icons'>edit</span>
+            Edit profile
+          <% end %>
+        </span>
+    </li>
+    <li>
+        <span class='nav-link'>
+          <%= link_to(logout_path, {:method => "delete"}) do %>
+            <span class='material-icons'>exit_to_app</span>
+            Log Out
+          <% end %>
+        </span>
+    </li>
   </ul>
 <% else %>
   <%= link_to "Log in", login_path %>
