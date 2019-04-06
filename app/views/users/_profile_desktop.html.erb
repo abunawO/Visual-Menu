@@ -1,0 +1,48 @@
+<div class='user-profile'>
+    <div class='user-profile-header'>
+        <%= gravatar_for @user, size: 150 %>
+        <div class='user-profile-info'>
+            <h1>
+                <span class="material-icons positive-icon">restaurant</span>
+                <%= @user.name %>
+            </h1>
+            <a href="http://maps.google.com/maps?q=<%= @user.address_line1 %>">
+                <span class="material-icons">location_on</span>
+                <%= @user.address_line1 %>
+            </a>
+            <a href="tel:<%= @user.phone %>">
+                <span class="material-icons">phone</span>
+                <%= @user.phone %>
+            </a>
+        </div>
+    </div>
+    <div class='user-profile-list'>
+          <% if @user.ubereats_link %>
+              <a href="<%= @user.ubereats_link %>" target="_blank">
+                  <img src="/assets/social/ubereats.svg">
+              </a>
+          <% end %>
+          <% if @user.doordash_link %>
+              <a href="<%= @user.doordash_link %>" target="_blank">
+                  <img src="/assets/social/doordash.svg">
+              </a>
+          <% end %>
+          <% if @user.grubhub_link %>
+              <a href="<%= @user.grubhub_link %>" target="_blank">
+                  <img src="/assets/social/grubhub.svg">
+              </a>
+          <% end %>
+        </div>
+        <div class='user-profile-list'>
+        <% if @user.facebook_link %>
+              <a href="<%= @user.facebook_link %>" target="_blank">
+                  <img src="/assets/social/facebook.svg">
+              </a>
+        <% end %>
+        <% if @user.instagram_link %>
+            <a href="<%= @user.instagram_link %>" target="_blank">
+                <img src="/assets/social/instagram.png">
+            </a>
+        <% end %>
+        </div>
+</div>

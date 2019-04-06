@@ -11,6 +11,15 @@
   transition: 0.4s ease-in-out;
   width: 100%;
   min-height: 40px;
+  .app-navigation-close-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(black, 0.2);
+  }
   .app-navigation-btn {
     display: none;
     position: absolute;
@@ -73,10 +82,14 @@
       display: block;
     }
     &.active {
-      border-radius: 10px;
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
+      // border-radius: 10px;
+      // border-top-right-radius: 0;
+      // border-top-left-radius: 0;
       box-shadow: 0 0 30px 0 rgba(black, 0.3);
+      .app-navigation-close-bg {
+        display: block;
+        position: fixed;
+      }
       .app-navigation-btn {
         display: none;
       }

@@ -3,9 +3,8 @@
 <% if @user %>
   <% provide(:title, @user.name) %>
   <div class='user-home'>
-    <%= render :partial => "shared/static/user/header", :locals => {
-      :settings => false
-    } %>
+    <%= render :partial => "users/profile_desktop" %>
+    <%= render :partial => "users/profile_mobile" %>
   </div>
   <div>
     <div class="row">
