@@ -12,7 +12,7 @@ class MicropostsController < ApplicationController
     end
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash.now[:success] = "Menu item created successfully!"
+      flash[:success] = "Menu item created successfully!"
       redirect_to root_url
     else
       #Adding an (empty) @feed_items instance variable to the create action.
@@ -71,7 +71,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash.now[:success] = "Menu item deleted successfully"
+    flash[:success] = "Menu item deleted successfully"
     redirect_to request.referrer || root_url
   end
 

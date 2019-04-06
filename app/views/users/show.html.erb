@@ -7,6 +7,11 @@
     <%= render :partial => "users/profile_mobile" %>
   </div>
   <div>
+    <div class="form-message">
+      <% flash.each do |message_type, message| %>
+        <p class="alert-<%= message_type %>"><%= message %></p>
+      <% end %>
+    </div>
     <div class="row">
       <%= render 'shared/back_to_top' %>
     </div>
