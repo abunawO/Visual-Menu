@@ -6,6 +6,7 @@ This documentation will contain several thoughts for Vizhooels on how to market,
 
 - **Customer** - The user that creates a menu to sell products.
 - **Consumer** - The user that sees the menu to make a purchase.
+- **Profile Feed** - Information about the customer to the consumer.
 - **Product Feed** - A list of products that is on sale.
 - **Selected Product Feed** - A list of products that consumers will create temporarily.
 
