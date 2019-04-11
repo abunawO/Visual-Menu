@@ -24,11 +24,11 @@ This documentation will contain several thoughts for Vizhooels on how to market,
 
 We need to create a social media for consumers to understand Vizhooels.
 
--- Get consumers excited about using a visual menu.
+  - Get consumers excited about using a visual menu.
 
 We need to create a standard that customers will like to use to enhance menu experience.
 
--- Get customers to create a visual menu easily using Vizhooels.
+  - Get customers to create a visual menu easily using Vizhooels.
 
 ---
 
