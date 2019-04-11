@@ -33,7 +33,7 @@ We need to create a standard that customers will like to use to enhance menu exp
 ---
 
 - **LinkedIn**
-  - Create professional articles about Vizhooels.
+  - Create professional media about Vizhooels.
 - **Facebook**
   - Create ads for customers to see how easy it is to enhance their menu.
   - Create ads for consumers to excite them about a visual menu.
