@@ -1,5 +1,6 @@
 @import "const";
 .landing-card {
+  z-index: 20;
   overflow: hidden;
   display: flex;
   flex-direction: column;
