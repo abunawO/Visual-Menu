@@ -1,10 +1,44 @@
-<h1>VIZHO͞OƏLS</h1>
-
-<p>Hi <%= @user.name %>,</p>
-
-<p>
-  Welcome to the vizho͞oəls App! Click on the link below to activate your account:
-</p>
-
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<div class='email'>
+  <div class='email-wrapper'>
+  <h1>Thank you for signing up!</h1>
+  <img class='img-burger' src="assets/email-img-burger.svg" >
+  <h2>Hello, <%= @user.name %></h2>
+  <h3>Welcome to the vizho͞oəls App!</h3>
+  <div class=activate>
+    <p>Click on the link below to activate your account.</p>
+    <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
+  </div>
+  <div class='email-extra'>
+  <h3>Getting Started</h3>
+
+  <div class='profile-image'>
+    <p>To set up your profile image, follow the steps:</p>
+    <i>Gravatar is a globally recognized avatar.</i>
+    <ol>
+      <li><a href='https://www.youtube.com/watch?v=wnQryW8bvMk&feature=em-share_video_user'>Create a gravatar account.</a></li>
+      <li><a href='https://www.youtube.com/watch?v=D3bNVKX8yII&feature=em-share_video_user'>Set up gravatar image.</a></li>
+    </ol>
+  </div>
+ 
+ <div class='profile-image'>
+  <p>Email us a list of all the categories that exists on your menu.</p>
+  <ol>
+    <li>Example "Appetizers, Deserts, Salads" etc</li>
+    <li>We will build your categories.</li>
+  </ol>
+ </div>
+<hr>
+ <div class='email-end'>
+  <p>You are now ready to start building your visual menu.</p>
+  <a href='https://www.youtube.com/watch?v=CAvAf24pCTA&feature=em-share_video_user'>Learn how to create your first menu item</a>
+  <p> We will mail you your personal QR/NFC vizhooels cards.</p>
+  <img class='qrnfc-card' src='assets/qrnfc_card.png' >
+ </div>
+
+ <div class='email-footer'>
+ <p class='email-quote'>You may use the app for 1 month free.</p>
+ <p>Thanks for joining Vizhooels.</p>
+ </div>
+  </div>
+</div>

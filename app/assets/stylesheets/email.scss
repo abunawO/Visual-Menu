@@ -1,8 +1,97 @@
+$color: #77dd76;
 .email {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ebebeb;
-  h1 {
+  background-color: #f9f9f9;
+  p {
+    margin: 0;
+  }
+  hr {
+    width: 100%;
+  }
+  .email-extra {
+    display: flex;
+    flex-direction: column;
+    //   align-items: center;
+    h3 {
+      text-align: center;
+      padding: 10px;
+    }
+    p,
+    i {
+      padding-top: 10px;
+    }
+  }
+  .email-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .qrnfc-card {
+      align-self: center;
+      //   padding-left: 10px;
+      width: 40%;
+      margin: 10px;
+    }
+    p,
+    a {
+      text-align: center;
+      margin: 0;
+      padding-top: 10px;
+    }
+  }
+  .email-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+    }
+    .email-quote {
+      width: calc(100% - 50px);
+      border-radius: 5px;
+      border: 1px dashed darken($color, 10%);
+      background-color: rgba($color, 0.3);
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  .email-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 5px 0 rgba(30, 30, 30, 0.1);
+    max-width: 600px;
+    background-color: #f5f5f5;
+    h1 {
+      @media (max-width: 500px) {
+        font-size: 24px;
+      }
+    }
+    .img-burger {
+      max-width: 400px;
+    }
+    .activate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% - 50px);
+      padding: 10px;
+      border: 1px dashed darken($color, 10%);
+      border-radius: 5px;
+      background-color: rgba($color, 0.3);
+      color: #1f1f1f;
+      font-style: italic;
+      a {
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: white;
+        padding: 10px 20px;
+      }
+    }
+    .profile-image {
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
