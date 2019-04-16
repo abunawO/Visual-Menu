@@ -4,6 +4,8 @@ This documentation will contain several thoughts for Vizhooels on how to market,
 
 ## Vizhooels in a wrap
 
+> Vizhooels is a feed of products easily created and accessed.
+
 - **Customer** - The user that creates a menu to sell products.
 - **Consumer** - The user that sees the menu to make a purchase.
 - **Profile Feed** - Information about the customer to the consumer.
