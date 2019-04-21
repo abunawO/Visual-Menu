@@ -20,22 +20,13 @@
       </span>
     </li>
     <li>
-        
-        <span class='nav-link'>
-          <%= link_to("https://en.gravatar.com/", {:target => "_blank"}) do %>
-            <span class='material-icons'>account_box</span>
-            Set profile picture
-          <% end %>
-        </span>
-    </li>
-      <li>
-        
-        <span class='nav-link'>
-          <%= link_to(info_edit_path(:id => current_user.id), {:method => "get"}) do %>
-            <span class='material-icons'>edit</span>
-            Edit profile
-          <% end %>
-        </span>
+
+      <span class='nav-link'>
+        <%= link_to(info_edit_path(:id => current_user.id), {:method => "get"}) do %>
+          <span class='material-icons'>edit</span>
+          Edit profile
+        <% end %>
+      </span>
     </li>
     <li>
         <span class='nav-link'>
@@ -54,7 +45,7 @@
   <script>
     window.onclick = function(event) {
       let modal = document.getElementById('app-navigation')
-      let isModal =  document.getElementById('app-navigation-btn') 
+      let isModal =  document.getElementById('app-navigation-btn')
     if (event.target == modal || event.target == isModal) {
       modal.classList.add('active')
     } else {

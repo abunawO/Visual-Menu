@@ -5,6 +5,9 @@
     <div id='ep-form-c' class='ep-form-c'>
         <%= form_for(@user) do |f| %>
             <!-- name -->
+            <span class="picture">
+              <%= f.file_field :picture,  id: "user_picture", accept: 'image/jpeg,image/gif,image/png' %>
+            </span>
             <span class='epib-note'>Enter the name of your restaurant.</span>
             <%= f.text_field :name, placeholder: "Business name", class: "epib-input", id: "epib-input"  %>
             <!-- phone -->
@@ -125,5 +128,11 @@
         document.getElementById('user-container')
         .classList.remove('hide');
         return false;
-    }
+    };
+    $('#user_picture').bind('change', function() {
+      var size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+        alert('Maximum file size is 5MB. Please choose a smaller file.');
+      }
+    });
 </script>
