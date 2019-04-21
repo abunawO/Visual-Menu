@@ -1,6 +1,6 @@
 <!--The partial for the user info sidebar on the home.html.erb file-->
 <div class="user-info-display">
-  <%= link_to gravatar_for(current_user, size: 50), current_user %>
+  <%= link_to image_tag(current_user.picture), current_user %>
 
   <div class='uidisplay-details'>
     <h1 class='uidisplay-name'><%= current_user.name %></h1>

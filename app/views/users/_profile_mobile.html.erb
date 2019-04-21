@@ -1,12 +1,12 @@
 <div class='user-profile mobile'>
     <div class='user-profile-header'>
-        <%= gravatar_for @user, size: 150 %>
+        <img id='user-image' src= <%= @user.picture %>>
         <div class='user-profile-info'>
             <h1>
                 <span class="material-icons positive-icon">restaurant</span>
                 <%= @user.name %>
             </h1>
-            <button onclick="openProfileModal()">            
+            <button onclick="openProfileModal()">
                 <span>See More</span>
                 <span class="material-icons">arrow_drop_down</span>
             </button>
@@ -16,7 +16,7 @@
     <div onclick='closeProfileModal()' class='user-profile-close-bg'></div>
         <div class='user-profile-modal-c'>
             <div class='user-profile-header mobile'>
-            <%= gravatar_for @user, size: 150 %>
+            <img id='user-image' src= <%= @user.picture %>>
             <div class='user-profile-info'>
                 <h1>
                     <span class="material-icons positive-icon">restaurant</span>
