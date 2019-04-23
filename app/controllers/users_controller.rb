@@ -119,6 +119,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    puts "paramsssss #{params}" 
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts
