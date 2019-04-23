@@ -119,7 +119,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    puts "HTTP_USER_AGENT issssssss #{@_env["HTTP_USER_AGENT"]}"
     begin
       @user = User.find(params[:id] || params[:user_id]) || current_user
       @microposts = @user.microposts
