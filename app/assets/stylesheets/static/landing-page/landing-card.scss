@@ -23,14 +23,23 @@
       text-align: center;
       margin: 0;
     }
-    a {
+    .action {
       transition: 0.1s ease-in-out;
       background-color: $s-green;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
+      margin-bottom: 10px;
       &:hover {
         box-shadow: 0 0 20px 0 rgba($s-green, 0.4);
+      }
+    }
+    .landing-demo {
+      display: flex;
+      align-items: center;
+      color: darken($s-green, 40%);
+      span {
+        font-size: inherit;
       }
     }
   }
@@ -70,6 +79,30 @@
       }
     }
   }
+  .logo {
+    // min-width: 300px;
+
+    @media (max-width: 500px) {
+      width: 300px;
+    }
+  }
+  .landing-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+    h3 {
+      font-size: 1.8em;
+      margin: 0;
+      color: $s-text-primary;
+    }
+    p {
+      color: $s-text-secondary;
+      margin: 10px;
+    }
+  }
+
   .landing-card-title {
     width: 100%;
     margin: 0;

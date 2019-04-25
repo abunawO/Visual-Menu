@@ -1,5 +1,5 @@
 <section class='landing-box-container has-offcolor'>
-  <div class='landing-box'>
+  <div class='landing-box column no-padding'>
   
     <%= link_to "Login", login_path, class: 'sn-login' %>
     <div class="form-message">
@@ -8,13 +8,15 @@
       <% end %>
     </div>
     <div class='landing-card center'>
-        <%= image_tag '/assets/vizhooels-primary-full-icon.svg', height: 30, alt: 'logo'%>
-        <h3>A VISUAL MENU</h3>
-        <a href='/signup'>GET STARTED</a>
+        <%= image_tag '/assets/avisualmenu-logo.svg', width: 500, alt: 'logo', class: 'logo'%>
+        <div class='landing-description'>
+        <h3 id='landing'>Your Menu Visualized</h3>
+        <p>A Visual Menu makes your menu more appetizing, easier to maintain, and helps keep your customers coming back.</p>
+        <a class='action' href='/signup'>GET STARTED</a>
+      <a class='landing-demo' href='https://www.vizhooels.com/users/82'><span class='material-icons'>arrow_forward</span> Demo A Visual Menu</a>
+        </div>
     </div>
-    <div class='illustration'>
-      <%= image_tag '/assets/food-coll.png', height: 300, alt: 'logo'%>
-      <img src='/assets/landing-illus-1.svg' alt='illustration' id='landing-illus-1'>
-    </div>
+     <%= image_tag '/assets/visual-landing-main-pic.png', height: 300, alt: 'logo'%>
+  
   </div>
 </section>

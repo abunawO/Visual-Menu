@@ -13,6 +13,12 @@
     z-index: 0;
     margin: 0 auto;
     padding: 50px 0;
+    &.column {
+      flex-direction: column;
+    }
+    &.no-padding {
+      padding: 0;
+    }
     &.reverse {
       flex-direction: row-reverse;
     }
