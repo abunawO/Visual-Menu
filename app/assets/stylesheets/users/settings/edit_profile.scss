@@ -11,80 +11,80 @@
     margin: 10px;
     padding: 0;
   }
-  .ep-form-c {
+}
+.ep-form-c {
+  display: flex;
+  padding: 10px;
+  &.active {
+    display: block;
+  }
+  form {
+    // max-width: 500px;
+    min-width: 50%;
     display: flex;
-    padding: 10px;
-    &.active {
-      display: block;
+    flex-direction: column;
+    @media (max-width: 768px) {
+      width: 100%;
     }
-    form {
-      // max-width: 500px;
-      min-width: 50%;
-      display: flex;
-      flex-direction: column;
-      @media (max-width: 768px) {
-        width: 100%;
+    .epib-note {
+      margin-top: 10px;
+      font-display: 1em;
+      color: $s-text-secondary;
+      &:nth-of-type(1) {
+        margin-top: 0;
       }
-      .epib-note {
-        margin-top: 10px;
-        font-display: 1em;
-        color: $s-text-secondary;
-        &:nth-of-type(1) {
-          margin-top: 0;
-        }
-      }
-      .epib-input-c {
-        position: relative;
-        width: 100%;
-        margin-top: 10px;
-        input {
-          margin-top: 0;
-          width: calc(100% - 15px - 80px);
-          padding-left: 80px;
-        }
-        img {
-          position: absolute;
-          height: 20px;
-          top: calc(50% - 10px);
-          left: 10px;
-        }
-      }
+    }
+    .epib-input-c {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
       input {
-        &.epib-changed {
-          border-color: $third !important;
-        }
+        margin-top: 0;
+        width: calc(100% - 15px - 80px);
+        padding-left: 80px;
       }
-      input,
-      button {
-        font-size: 1em;
-        border: 1px solid $s-text-secondary;
-        border-radius: $border-radius;
-        margin-top: 10px;
-        padding: 5px 15px;
+      img {
+        position: absolute;
+        height: 20px;
+        top: calc(50% - 10px);
+        left: 10px;
+      }
+    }
+    input {
+      &.epib-changed {
+        border-color: $third !important;
+      }
+    }
+    input,
+    button {
+      font-size: 1em;
+      border: 1px solid $s-text-secondary;
+      border-radius: $border-radius;
+      margin-top: 10px;
+      padding: 5px 15px;
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: $third;
+      }
+      &.epib-btn {
+        cursor: pointer;
+        width: max-content;
+        border-color: $s-text-secondary;
+        color: $s-text-primary;
         &:hover,
         &:active,
         &:focus {
           border-color: $third;
         }
-        &.epib-btn {
-          cursor: pointer;
-          width: max-content;
-          border-color: $s-text-secondary;
-          color: $s-text-primary;
-          &:hover,
-          &:active,
-          &:focus {
-            border-color: $third;
-          }
-          &.danger {
-            margin-left: 10px;
-            border-color: darken($s-primary, 5%);
-          }
+        &.danger {
+          margin-left: 10px;
+          border-color: darken($s-primary, 5%);
         }
       }
-      .epib-btns {
-        display: flex;
-      }
+    }
+    .epib-btns {
+      display: flex;
     }
   }
 }
