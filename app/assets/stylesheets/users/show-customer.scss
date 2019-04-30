@@ -1,0 +1,39 @@
+@import "const";
+.menu-display-section-customer {
+  .microposts {
+    // display: flex;
+    flex-direction: column;
+    &.active {
+      display: flex;
+    }
+    li {
+      //   width: calc(100% - 10px);
+      width: 100%;
+      margin: 0;
+      height: 70px;
+      .micropost-action {
+        color: $s-text-primary;
+        // border-top: 1px dashed $s-bg-primary;
+        // height: 50px;
+        // width: 50px;
+        // background-color: green;
+        display: flex;
+        flex-direction: row;
+        align-items: canter;
+        justify-content: flex-start;
+        border-radius: 0;
+        p {
+          margin: 0 10px;
+          font-size: 12px;
+        }
+        img {
+          min-height: 70px;
+          min-width: 70px;
+          height: 70px;
+          width: 70px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

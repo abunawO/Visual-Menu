@@ -2,19 +2,14 @@
 <!--The representation of a menu item/micropost partial.-->
 <!--Displayed in the feed.html.erb partial.-->
 <li class="micropost" id="micropost-<%= micropost.id %>">
-  <button class='micropost-action' onclick='openModal(this)'>
+<%= link_to micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true), :class => 'micropost-action' do %>
+        <%# <span class='material-icons'>edit</span> Edit %>
+     
+  <%# <button class='micropost-action' onclick='openModal(this)'> %>
     <%= image_tag micropost.picture.url, class: "mp-image", id: "#{micropost.id}", alt: "#{micropost.description}", :data => {:title => micropost.content, :price => number_to_currency(micropost.price), :description => micropost.description, :id => micropost.id} %>
-  </button>
-  <% if current_user?(micropost.user) %>
-    <div class='micropost-settings'>
-      <%= link_to micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true) do %>
-        <span class='material-icons'>edit</span> Edit
-      <%end%>
-      <%= link_to(micropost, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-red') do %>
-        <span class='material-icons'>delete</span> Delete
-      <% end %>
-    </div>
-  <% end %>
+  <%# </button> %>
+   <p><%= micropost.content %></p>
+    <%end%>
 </li>
 <script type='text/javascript'>
   function openModal(props) {
