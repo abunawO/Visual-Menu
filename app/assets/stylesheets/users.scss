@@ -139,7 +139,7 @@
           border-radius: 5px;
           box-shadow: none;
           outline: none;
-          border: 1px solid $s-text-primary;
+          border: 1px dashed rgba($s-text-secondary, 0.1);
           display: flex;
           align-items: center;
         }

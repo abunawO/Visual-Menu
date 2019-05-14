@@ -8,7 +8,10 @@
   <%# <button class='micropost-action' onclick='openModal(this)'> %>
     <%= image_tag micropost.picture.url, class: "mp-image", id: "#{micropost.id}", alt: "#{micropost.description}", :data => {:title => micropost.content, :price => number_to_currency(micropost.price), :description => micropost.description, :id => micropost.id} %>
   <%# </button> %>
-   <p><%= micropost.content %></p>
+   <div class='micropost-detail'>
+    <p class='micropost-detail-price'><%= micropost.price %></p>
+    <p><%= micropost.content %></p>
+   </div>
     <%end%>
 </li>
 <script type='text/javascript'>

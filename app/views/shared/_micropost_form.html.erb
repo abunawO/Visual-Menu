@@ -1,5 +1,6 @@
 <!--The form partial for creating menu item on the home.html.erb file-->
 <div class="micropost-form-container">
+<%= render 'shared/back_to_top' %>
   <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <span class="picture form-component-c">
@@ -25,7 +26,7 @@
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
     </div>
     <div class="field form-component-c fc-big">
-      <%= f.text_area :description, placeholder: "Menu item description...", rows: "8", class: "form-component fc-big fc-box-width " %>
+      <%= f.text_area :description, placeholder: "Menu item description...", rows: "8", class: "form-component fc-big" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
     </div>
     <div class="field form-component-c fc-active ">
