@@ -1,24 +1,52 @@
 <!--This is the page the user sees when they click the home button.-->
 <!--Basically the create menu item page-->
 <% if logged_in? %>
-<div id='user-container'>
-  <div class="users-create-menu-page-display">
+<%# <body style="padding-top: 0;"> %>
+<!-- This is the first page the user sees when they sign in. -->
+<% if @user %>
+  <% provide(:title, @user.name) %>
+  <div class='user-home'>
+    <%= render :partial => "users/profile_desktop" %>
+    <%= render :partial => "users/profile_mobile" %>
+  </div>
+
+  <div>
+
+    <div class="form-message">
+      <% flash.each do |message_type, message| %>
+        <p class="alert-<%= message_type %>"><%= message %></p>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <%= render 'shared/back_to_top' %>
+    </div>
+
+    <div class="config-c row">
+        <%= render :partial => "shared/search_option" %>
+        <%= render :partial => "shared/category_select_search" %>
+    </div>
+
     <div class="row">
 
-      <aside class="uhome-create-c col-md-4">
-        <div class="form-message">
-          <% flash.each do |message_type, message| %>
-            <p class="alert-<%= message_type %>"><%= message %></p>
-          <% end %>
-        </div>
-        <section class="micropost_form">
-        <h1>Create Menu Item</h1>
-          <%= render 'shared/micropost_form' %>
-        </section>
-      </aside>
+      <%# <div class="menu-display-section"> %>
+      <div class="menu-display-section-customer">
+        <%= render :partial=> "shared/micropost_list_display" %>
+        <%= render :partial=> "shared/micropost_modal" %>
+        <%= render :partial=> "shared/search_fab" %>
+      </div>
+
     </div>
+
   </div>
-  </div>
+
+<% else %>
+  <%= render :partial=> "shared/user_not_found_error" %>
+<% end %>
+<%# render 'layouts/footer' %>
+
+<%# </body> %>
+
 <% else %>
   <div class="center intro-page">
     <%= render :partial => "static_pages/main_landing_page" %>
