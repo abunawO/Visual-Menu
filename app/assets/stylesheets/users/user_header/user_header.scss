@@ -1,12 +1,11 @@
 @import "const";
 .user-header {
   .user-header-c {
-    padding: 10px;
+    padding: 10px 0;
     display: flex;
     #user-image {
       width: 200px;
       height: 200px;
-      border-radius: 5px;
     }
     .user-profile-info {
       display: flex;
