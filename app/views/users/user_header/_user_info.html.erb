@@ -1,0 +1,25 @@
+<div class='user-profile-info'>
+    <h1>
+        <span class="material-icons">restaurant</span>
+        <%= @user.name %>
+    </h1>
+    <a href="http://maps.google.com/maps?q=<%= @user.address_line1 %>">
+        <span class="material-icons">location_on</span>
+        <%= @user.address_line1 %>
+    </a>
+    <a href="tel:<%= @user.phone %>">
+        <span class="material-icons">phone</span>
+        <%= @user.phone %>
+    </a>
+    <button onclick="openProfileModal()">
+        <span>See More</span>
+        <span class="material-icons">arrow_drop_down</span>
+    </button>
+    <%= render partial: "/users/user_header/social_link_group" %>
+</div>
+<script>
+    function openProfileModal() {
+        document.querySelector('#user-profile-modal')
+        .classList.add('active')
+    }
+</script>

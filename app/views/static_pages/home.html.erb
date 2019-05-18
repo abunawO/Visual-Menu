@@ -5,21 +5,13 @@
 <!-- This is the first page the user sees when they sign in. -->
 <% if @user %>
   <% provide(:title, @user.name) %>
-  <div class='user-home'>
-    <%= render :partial => "users/profile_desktop" %>
-    <%= render :partial => "users/profile_mobile" %>
-  </div>
-
-  <div>
-
+  <%= render :partial => 'users/user_header/user_header' %>
+  <%= render 'shared/back_to_top' %>
+  
     <div class="form-message">
       <% flash.each do |message_type, message| %>
         <p class="alert-<%= message_type %>"><%= message %></p>
       <% end %>
-    </div>
-
-    <div class="row">
-      <%= render 'shared/back_to_top' %>
     </div>
 
     <div class="config-c row">
@@ -27,18 +19,14 @@
         <%= render :partial => "shared/category_select_search" %>
     </div>
 
-    <div class="row">
-
       <%# <div class="menu-display-section"> %>
       <div class="menu-display-section-customer">
-        <%= render :partial=> "shared/micropost_list_display" %>
+        <%# render :partial=> "shared/micropost_list_display" %>
+        <%= render :partial=> "users/menu_display/menu_display_user" %>
         <%= render :partial=> "shared/micropost_modal" %>
         <%= render :partial=> "shared/search_fab" %>
       </div>
 
-    </div>
-
-  </div>
 
 <% else %>
   <%= render :partial=> "shared/user_not_found_error" %>
