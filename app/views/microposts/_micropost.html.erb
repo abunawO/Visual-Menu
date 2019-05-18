@@ -3,17 +3,17 @@
 <!--Displayed in the feed.html.erb partial.-->
 <li class="micropost" id="micropost-<%= micropost.id %>">
   <%= link_to micropost_edit_path(:micropost_id => micropost.id, :edit_clicked => true), :class => 'micropost-action' do %>
-        <%# <span class='material-icons'>edit</span> Edit %>
+  <%# <span class='material-icons'>edit</span> Edit %>
      
   <%# <button class='micropost-action' onclick='openModal(this)'> %>
     <div class='micropost-image-c'>
       <%= image_tag micropost.picture.url, class: "mp-image", id: "#{micropost.id}", alt: "#{micropost.description}", :data => {:title => micropost.content, :price => number_to_currency(micropost.price), :description => micropost.description, :id => micropost.id} %>
     </div>
   <%# </button> %>
-  <div class='micropost-detail'>
+    <div class='micropost-detail'>
       <p><%= micropost.content %></p>
       <span class='micropost-detail-price'>$<%= micropost.price %></span>
-   </div>
+    </div>
     <%end%>
 </li>
 <script type='text/javascript'>
