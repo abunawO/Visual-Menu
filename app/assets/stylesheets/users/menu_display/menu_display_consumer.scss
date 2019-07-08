@@ -1,0 +1,110 @@
+@import "const";
+$whsize: calc(50vw - 1px);
+$whsize2: calc(25vw - 1px);
+$whsize3: calc(20vw - 1px);
+.menu_display_consumer {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: $s-bg-primary;
+  &.active {
+    display: grid;
+    grid-gap: 2px;
+  }
+  .micropost {
+    width: $whsize3;
+    height: calc(20vw - 1px + 25px);
+    background-color: white;
+    .micropost-action {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      .micropost-image-c {
+        width: $whsize3;
+        height: $whsize3;
+        .mp-image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .micropost-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        .micropost-detail-price {
+          position: absolute;
+          padding: 0 5px;
+          border-radius: 21px;
+          background-color: white;
+          top: calc(20vw - 1px - 21px);
+          left: 0;
+          margin-top: -5px;
+          margin-left: 5px;
+          color: $s-text-primary;
+        }
+        p {
+          width: calc(20vw - 1px - 10px);
+          padding: 0 5px;
+          margin: 0;
+          font-size: 14px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: $s-text-primary;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 960px) {
+  .menu_display_consumer {
+    grid-template-columns: repeat(4, 1fr);
+    .micropost {
+      width: $whsize2;
+      height: calc(25vw - 1px + 25px);
+      .micropost-action {
+        .micropost-image-c {
+          width: $whsize2;
+          height: $whsize2;
+        }
+        .micropost-detail {
+          .micropost-detail-price {
+            top: calc(25vw - 1px - 21px);
+          }
+          p {
+            width: calc(25vw - 1px - 10px);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .menu_display_consumer {
+    grid-template-columns: repeat(2, 1fr);
+    .micropost {
+      width: $whsize;
+      height: calc(50vw - 1px + 25px);
+      .micropost-action {
+        .micropost-image-c {
+          width: $whsize;
+          height: $whsize;
+        }
+        .micropost-detail {
+          .micropost-detail-price {
+            top: calc(50vw - 1px - 21px);
+          }
+          p {
+            width: calc(50vw - 1px - 10px);
+          }
+        }
+      }
+    }
+  }
+}

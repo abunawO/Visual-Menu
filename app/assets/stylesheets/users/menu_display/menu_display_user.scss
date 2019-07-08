@@ -1,0 +1,123 @@
+@import "const";
+.menu_display_user {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &.active {
+    display: flex;
+  }
+  .micropost {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2px;
+    max-width: 250px;
+    &:hover {
+      background-color: $s-bg-primary;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    @media (max-width: 540px) {
+      max-width: 100%;
+    }
+    .micropost-action {
+      display: flex;
+      width: 100%;
+      .micropost-image-c {
+        width: 100px;
+        height: 100px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .micropost-detail {
+        position: relative;
+        padding-left: 5px;
+        padding-top: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .micropost-detail-price {
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+          // color: $s-text-primary;
+          color: $third;
+        }
+        p {
+          color: $s-text-primary;
+          margin: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  // li {
+  //   //   width: calc(100% - 10px);
+  //   width: 100%;
+  // margin: 0 10px;
+  // margin-bottom: 10px;
+  // // padding: 0 10px;
+  //   height: 70px;
+  //   overflow: hidden;
+  //   border-radius: 2px;
+  //   &:hover {
+  //     background-color: $s-bg-primary;
+  //   }
+  //   .micropost-action {
+  //     color: $s-text-primary;
+  //     // border-top: 1px dashed $s-bg-primary;
+  //     // height: 50px;
+  //     // width: 50px;
+  //     // background-color: green;
+  //     display: flex;
+  //     flex-direction: row;
+  //     align-items: canter;
+  //     justify-content: flex-start;
+  //     border-radius: 0;
+
+  //     p {
+  //       margin: 0 10px;
+  //       font-size: 12px;
+  //     }
+  //     img {
+  //       min-height: 70px;
+  //       min-width: 70px;
+  //       height: 70px;
+  //       width: 70px;
+  //       object-fit: contain;
+  //       border-radius: 2px;
+  //     }
+  //     .micropost-detail {
+  //       display: flex;
+  //       flex-direction: column;
+  //       .micropost-detail-price {
+  //         font-weight: bold;
+  //       }
+  //     }
+  //   }
+  // }
+  // @media (max-width: 629px) {
+  //   .micropost {
+  //     // flex: 1;
+  //     width: auto;
+  //     width: 200px;
+  //   }
+  // }
+  // @media (max-width: 440px) {
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+  //   .micropost {
+  //     flex: 1;
+  //     margin-right: 0;
+  //     width: 100%;
+  //     // width: 200px;
+  //   }
+  // }
+}

@@ -4,16 +4,8 @@
         <p><%= category.category %></p>
         <span class='material-icons'>add</span>
       </button>
-      <ol class="microposts consumer">
+      <ol class="menu_display_consumer">
         <%= render @options[category.category] %>
-         <%# if current_user?(micropost.user) %>
-          <%# <li class="micropost">
-            <button class='micropost-action empty'>
-              <span class="material-icons">add</span>
-              <p>add a new item</p>
-            </button>
-          </li> %>
-        <%# end %>
       </ol>
     </div>
 <% end %>

@@ -84,38 +84,6 @@
       margin: 10px;
       margin-bottom: 0;
     }
-    .user-profile-info {
-      h1 {
-        font-size: 2em;
-        color: $s-text-primary;
-        margin: 0;
-      }
-      a {
-        display: block;
-        color: $third;
-        font-size: 1em;
-      }
-    }
-  }
-  .user-profile-list {
-    background-color: transparent;
-    display: flex;
-    align-items: flex-end;
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 10px;
-      color: $s-text-secondary;
-      transition: none;
-      &:hover {
-        color: $third;
-      }
-      img {
-        height: 30px;
-      }
-    }
   }
   @media (max-width: 500px) {
     display: none;
@@ -129,70 +97,6 @@
       img {
         width: 100px;
         margin: 10px;
-      }
-      .user-profile-info {
-        margin: 10px 0;
-        button {
-          background: transparent;
-          color: $third;
-          padding-right: 0;
-          border-radius: 5px;
-          box-shadow: none;
-          outline: none;
-          border: 1px dashed rgba($s-text-secondary, 0.1);
-          display: flex;
-          align-items: center;
-        }
-        h1 {
-          margin-bottom: 5px;
-          span {
-            display: none;
-          }
-          font-size: 1em;
-        }
-      }
-    }
-    .user-profile-modal {
-      top: -100vh;
-      width: 100vw;
-      z-index: 10000;
-      position: absolute;
-      transition: 0.3s ease-in-out;
-      &.active {
-        opacity: 1;
-        top: 0;
-        .user-profile-close-bg {
-          position: fixed;
-        }
-      }
-      .user-profile-modal-c {
-        position: relative;
-        z-index: 10000;
-        background-color: white;
-        border-radius: 10px;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-        box-shadow: 0 0 30px 0 rgba(black, 0.3);
-        .user-profile-info {
-          h1 {
-            font-size: 1.1em;
-            span {
-              display: inline;
-            }
-          }
-          a {
-            font-size: 0.9em;
-          }
-        }
-      }
-      .user-profile-close-bg {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 1000;
-        background-color: rgba(black, 0.2);
       }
     }
   }

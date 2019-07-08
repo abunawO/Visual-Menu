@@ -1,0 +1,7 @@
+<div class='user-header'>
+    <div class='user-header-c'>
+        <%= image_tag(@user.picture, :alt => 'user-image', :id => 'user-image') %>
+        <%= render partial: '/users/user_header/user_info' %>
+    </div>
+    <%= render partial: '/users/user_header/user_modal'%>
+</div>

@@ -23,6 +23,7 @@ class MicropostsController < ApplicationController
   end
 
   def edit
+    #binding.pry
     @user = current_user
     if @user.menu_categories.present?
       to_sub_categories = @user.menu_categories.split(",")
