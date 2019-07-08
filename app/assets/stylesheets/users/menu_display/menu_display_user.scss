@@ -45,8 +45,9 @@
         .micropost-detail-price {
           position: absolute;
           bottom: 5px;
-          right: 5px;
-          color: $s-text-primary;
+          left: 5px;
+          // color: $s-text-primary;
+          color: $third;
         }
         p {
           color: $s-text-primary;
