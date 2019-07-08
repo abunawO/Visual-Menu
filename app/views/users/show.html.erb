@@ -16,7 +16,11 @@
       <%# <div class="menu-display-section-customer"> %>
       <%# render :partial=> "shared/micropost_list_display_customer" %>
       <%# render :partial=> "shared/micropost_list_display" %>
-      <%= render :partial=> "users/menu_display/menu_display_consumer" %>
+      <% if current_user %>
+        <%= render :partial=> "users/menu_display/menu_display_user" %>
+      <% else %>
+        <%= render :partial=> "users/menu_display/menu_display_consumer" %>
+      <% end %>
       <%= render :partial=> "shared/micropost_modal" %>
       <%= render :partial=> "shared/search_fab" %>
     </div>

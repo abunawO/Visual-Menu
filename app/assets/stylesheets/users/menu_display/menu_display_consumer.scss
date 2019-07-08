@@ -18,6 +18,7 @@ $whsize3: calc(20vw - 1px);
     height: calc(20vw - 1px + 25px);
     background-color: white;
     .micropost-action {
+      cursor: pointer;
       position: relative;
       display: flex;
       flex-direction: column;
