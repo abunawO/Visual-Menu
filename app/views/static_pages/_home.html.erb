@@ -1,0 +1,43 @@
+<!--This is the page the user sees when they click the home button.-->
+<!--Basically the create menu item page-->
+<% if logged_in? %>
+<%# <body style="padding-top: 0;"> %>
+<!-- This is the first page the user sees when they sign in. -->
+<% if @user %>
+  <% provide(:title, @user.name) %>
+  <%= render :partial => 'users/user_header/user_header' %>
+  <%= render 'shared/back_to_top' %>
+  
+    <div class="form-message">
+      <% flash.each do |message_type, message| %>
+        <p class="alert-<%= message_type %>"><%= message %></p>
+      <% end %>
+    </div>
+
+    <div class="config-c row">
+        <%= render :partial => "shared/search_option" %>
+        <%= render :partial => "shared/category_select_search" %>
+    </div>
+
+      <%# <div class="menu-display-section"> %>
+      <div class="menu-display-section-customer">
+        <%# render :partial=> "shared/micropost_list_display" %>
+        <%= render :partial=> "users/menu_display/menu_display_user" %>
+        <%= render :partial=> "shared/micropost_modal" %>
+        <%= render :partial=> "shared/search_fab" %>
+      </div>
+
+
+<% else %>
+  <%= render :partial=> "shared/user_not_found_error" %>
+<% end %>
+<%# render 'layouts/footer' %>
+
+<%# </body> %>
+
+<% else %>
+  <div class="center intro-page">
+    <%= render :partial => "static_pages/main_landing_page" %>
+  </div>
+<% end %>
+<%# render 'layouts/footer' %>

@@ -31,7 +31,6 @@
 <script type='text/javascript'>
   function openModal(props) {
     const {title, price, description, id} = props.querySelector('img').dataset
-    console.log(title)
     document.getElementById('micropost-modal').classList.add('active')
     document.getElementById('mpm-image').src = props.children[0].children[0].src
     document.getElementById('mpm-title').textContent = title
