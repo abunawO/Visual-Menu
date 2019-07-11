@@ -23,20 +23,20 @@
     width: 100%;
     border: none;
     border-top: 1px dashed rgba($s-text-secondary, 0.1);
-    padding: 10px;
+    padding: 17px;
     margin: 0;
-    background-color: rgba($s-bg-primary, 0.2);
+    background-color: rgba($s-bg-primary, 0.3);
     font-weight: bold;
     p,
     span {
-      font-size: 1em;
+      font-size: 1.1em;
       margin: 0;
       padding: 0;
       font-weight: bold;
       color: $s-text-primary;
     }
     span {
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
   }
 }
