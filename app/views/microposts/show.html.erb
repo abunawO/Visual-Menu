@@ -1,10 +1,9 @@
-<!--This is the page returned when user clicks a menu item-->
+<!--
 <div class="selected-menu-item-display" style="height: auto;">
   <div class="">
     <div class="row">
       <%# render :partial => "shared/back_button" %>
     </div>
-
     <div>
       <%= link_to @micropost.picture.url do %>
           <div class="row" style="position:relative;height: 100%;text-align: center;">
@@ -14,7 +13,7 @@
             <span>
               <div class="mp-info" style="color: dimgray; margin-top: 20px;background: black; position: relative;overflow: hidden;text-overflow: ellipsis;width: 90%;margin-left: 5%;">
                 <%= @micropost.content %> | <%= number_to_currency(@micropost.price, :unit => "$")%>
-                <br><p style="color:white;"><%= @micropost.description %></p>
+                <br><p style="color:white;"><%= @micropost.description %>            hellooo</p>
               </div>
             </span>
           </div>
@@ -23,3 +22,4 @@
   </div>
 </div>
 <%# render 'layouts/footer' %>
+--->
