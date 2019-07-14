@@ -23,11 +23,7 @@
       <div class="row">
         <div>
           <% if @selected_cat.any? %>
-            <% if current_user %>
-              <%= render :partial=> "users/menu_display/menu_display_user" %>
-            <% else %>
-              <%= render :partial=> "users/menu_display/menu_display_consumer" %>
-            <% end %>
+            <%= render :partial=> "users/menu_display/menu_display" %>
             <%= render :partial=> "shared/micropost_modal" %>
           <% end %>
         </div>

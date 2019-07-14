@@ -4,7 +4,11 @@
         <p><%= category.category %></p>
         <span class='material-icons'>add</span>
       </button>
+      <% if current_user %>
       <ol class="menu_display_user">
+      <% else %>
+      <ol class="menu_display_consumer">
+      <% end %>
         <%= render @options[category.category] %>
       </ol>
     </div>

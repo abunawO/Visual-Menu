@@ -29,11 +29,7 @@
   <div class="" style="margin-top: 30px;">
     <% if @feed_items.any? %>
       <div class="row" style="margin-left: 5%;margin-right: 5%; margin-top: 30px;">
-          <% if current_user %>
-            <%= render :partial=> "users/menu_display/menu_display_user" %>
-          <% else %>
-            <%= render :partial=> "users/menu_display/menu_display_consumer" %>
-          <% end %>
+        <%= render :partial=> "users/menu_display/menu_display" %>
         <%= render :partial=> "shared/micropost_modal" %>
       </div>
     <% else %>
