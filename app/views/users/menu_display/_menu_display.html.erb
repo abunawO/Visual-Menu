@@ -2,7 +2,7 @@
     <div class='microposts-c'>
       <button class='microposts-title' onclick='openMicropostList(this)'>
         <span class='micropost-t-left'>
-          <%= image_tag(@user.picture, :alt => 'category-img', :id => 'category-img') %>
+          <%= image_tag(category.picture, :alt => 'category-img', :id => 'category-img') %>
           <p><%= category.category %></p>
         </span>
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
