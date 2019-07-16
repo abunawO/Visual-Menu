@@ -17,7 +17,6 @@
         </a>
         <%= image_tag '/assets/avisualmenu-bold-logo.svg', height: 50, alt: 'logo', style: "padding: 20px 0;"%>
         <header class="login-header">Forgot Password</header>
-        heloo
         <%= form_for(:password_reset, url: password_resets_path) do |f| %>
             <div class="form-errors">
               <% flash.each do |message_type, message| %>
