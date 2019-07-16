@@ -1,8 +1,9 @@
-@import 'const';
+@import "const";
 .landing-footer {
   background-color: $s-text-primary;
-  padding: 80px 0 !important;
+  padding: 0 !important;
   margin: 0 !important;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,6 +1,5 @@
 <section class='landing-box-container has-offcolor'>
   <div class='landing-box column no-padding'>
-
     <%= link_to "Login", login_path, class: 'sn-login' %>
     <div class="form-message">
       <% flash.each do |message_type, message| %>
@@ -8,15 +7,14 @@
       <% end %>
     </div>
     <div class='landing-card center'>
-        <%= image_tag '/assets/avisualmenu-logo.svg', width: 500, alt: 'logo', class: 'logo'%>
-        <div class='landing-description'>
+      <%= image_tag '/assets/avisualmenu-logo.svg', width: 500, alt: 'logo', class: 'logo'%>
+      <div class='landing-description'>
         <h3 id='landing'>Your Menu Visualized</h3>
         <p>A Visual Menu makes your menu more appetizing, easier to maintain, and helps keep your customers coming back.</p>
         <a class='action' href='/signup'>GET STARTED</a>
         <a class='landing-demo' href='https://www.avisualmenu.com/users/31'><span class='material-icons'>arrow_forward</span> Demo A Visual Menu</a>
-        </div>
+      </div>
     </div>
      <%= image_tag '/assets/visual-landing-main-pic.png', height: 300, alt: 'logo'%>
-
   </div>
 </section>

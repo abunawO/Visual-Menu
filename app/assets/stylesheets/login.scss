@@ -29,13 +29,13 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  background: url(/assets/sign-up-img.jpg) no-repeat top center;
+  background: url(/assets/sign-up-img.jpg) no-repeat top
+    center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   // background-size: 100vw;
-  background-color: blue;
   @media (max-width: 600px) {
     padding-top: 500px;
   }
@@ -117,10 +117,15 @@
     align-items: center;
     justify-content: center;
     border: 2px solid white;
-    background: linear-gradient(90deg, $s-primary, $s-secondary);
+    background: linear-gradient(
+      90deg,
+      $s-primary,
+      $s-secondary
+    );
     background-size: 400% 400%;
 
-    -webkit-animation: AnimateGraident 10s ease-in-out infinite;
+    -webkit-animation: AnimateGraident 10s ease-in-out
+      infinite;
     -moz-animation: AnimateGraident 10s ease-in-out infinite;
     animation: AnimateGraident 10s ease-in-out infinite;
 
