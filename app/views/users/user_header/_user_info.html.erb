@@ -11,15 +11,5 @@
         <span class="material-icons">phone</span>
         <%= @user.phone %>
     </a>
-    <button onclick="openProfileModal()">
-        <span>See More</span>
-        <span class="material-icons">arrow_drop_down</span>
-    </button>
     <%= render partial: "/users/user_header/social_link_group" %>
 </div>
-<script>
-    function openProfileModal() {
-        document.querySelector('#user-profile-modal')
-        .classList.add('active')
-    }
-</script>

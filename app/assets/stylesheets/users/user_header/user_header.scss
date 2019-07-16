@@ -1,9 +1,69 @@
 @import "const";
 .user-header {
+  .user-header-full {
+    .user-header-c {
+      #user-image {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+      }
+      justify-content: flex-start !important;
+    }
+    .user-profile-info {
+      justify-content: center;
+      h1 {
+        span {
+          display: inline;
+        }
+      }
+      a {
+        display: flex !important;
+        font-size: 0.9em;
+      }
+      button {
+        display: none;
+      }
+      .user-profile-links {
+        display: none;
+      }
+    }
+    .user-profile-links {
+      display: block;
+      .user-profile-list {
+        background-color: transparent;
+        display: flex;
+        align-items: flex-end;
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin: 10px;
+          color: $s-text-secondary;
+          transition: none;
+          &:hover {
+            color: $third;
+          }
+          img {
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
   .user-header-c {
     padding: 10px 0;
     display: flex;
+    .user-hc-left {
+      display: flex;
+      align-items: center;
+    }
+    .userbtn {
+      display: none;
+    }
     #user-image {
+      margin-left: 15px;
+      border-radius: 15px;
       width: 200px;
       height: 200px;
     }
@@ -73,6 +133,14 @@
       .user-profile-close-bg {
         position: fixed;
       }
+      .user-header-c {
+        justify-content: flex-start;
+        #user-image {
+          width: 100px;
+          height: 100px;
+          margin-left: 10px;
+        }
+      }
     }
     .user-profile-modal-c {
       position: relative;
@@ -83,7 +151,8 @@
       border-top-left-radius: 0;
       box-shadow: 0 0 30px 0 rgba(black, 0.3);
       .user-profile-info {
-        justify-content: flex-start;
+        // justify-content: flex-start;
+        justify-content: center;
         h1 {
           span {
             display: inline;
@@ -136,12 +205,26 @@
   }
   @media (max-width: 500px) {
     .user-header-c {
+      display: flex;
+      justify-content: space-between;
+      // justify-content: center;
+      align-items: center;
+      .user-hc-left {
+        display: flex;
+        align-items: center;
+      }
+      .userbtn {
+        display: block;
+        margin-right: 15px;
+      }
       #user-image {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        // border: 1px solid orange;
+        margin-left: 15px;
       }
       .user-profile-info {
-        justify-content: space-between;
         button {
           display: flex;
           align-items: center;
@@ -155,7 +238,7 @@
           border: 1px dashed rgba($s-text-secondary, 0.1);
         }
         h1 {
-          font-size: 1em;
+          font-size: 1.3em;
           span {
             display: none;
           }

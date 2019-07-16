@@ -1,7 +1,32 @@
-<div class='user-header'>
-    <div class='user-header-c'>
-        <%= image_tag(@user.picture, :alt => 'user-image', :id => 'user-image') %>
-        <%= render partial: '/users/user_header/user_info' %>
-    </div>
-    <%= render partial: '/users/user_header/user_modal'%>
+<div class='user-header' onclick="openProfileModal()">
+    <% if !current_user %>
+        <div class='user-header-c'>
+            <span class='user-hc-left'>
+                <%= image_tag(@user.picture, :alt => 'user-image', :id => 'user-image') %>
+                <%= render partial: '/users/user_header/user_info' %>
+            </span>
+            <span class='material-icons userbtn'>menu</span>
+        </div>
+        <%= render partial: '/users/user_header/user_modal'%>
+    <% else %>
+    <div class='user-header-full'>
+        <div class='user-header-c'>
+            <%= image_tag(@user.picture, :alt => 'user-image', :id => 'user-image') %>
+            <%= render partial: '/users/user_header/user_info' %>
+        </div>
+        <%= render partial: "/users/user_header/social_link_group" %>
+        </div>
+    <% end %>
 </div>
+<script>
+    function openProfileModal() {
+        let profilebutton = document.querySelector('#user-profile-modal')
+        if (window.innerWidth <= 500) {
+            if (!profilebutton.classList.contains('active')) {
+                profilebutton.classList.add('active')
+            } else {
+                profilebutton.classList.remove('active')
+            }
+        }
+    }
+</script>
