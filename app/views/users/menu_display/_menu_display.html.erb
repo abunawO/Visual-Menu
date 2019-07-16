@@ -1,8 +1,11 @@
 <% @categories.each do |category| %>
     <div class='microposts-c'>
       <button class='microposts-title' onclick='openMicropostList(this)'>
-        <p><%= category.category %></p>
-        <span class='material-icons'>add</span>
+        <span class='micropost-t-left'>
+          <%= image_tag(category.picture, :alt => 'category-img', :id => 'category-img') %>
+          <p><%= category.category %></p>
+        </span>
+        <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
       <% if current_user %>
       <ol class="menu_display_user">
@@ -16,10 +19,10 @@
 
 <script>
   function openMicropostList(self) {
-    var micropostActiveIcon = self.querySelector('span');
+    var micropostActiveIcon = self.querySelector('.openListIcon');
     self.parentElement.querySelector('ol').classList.toggle('active');
-    micropostActiveIcon.textContent === 'add'
-    ? micropostActiveIcon.textContent = 'remove'
-    : micropostActiveIcon.textContent = 'add';
+    micropostActiveIcon.textContent === 'keyboard_arrow_down'
+    ? micropostActiveIcon.textContent = 'keyboard_arrow_up'
+    : micropostActiveIcon.textContent = 'keyboard_arrow_down';
   }
 </script>
