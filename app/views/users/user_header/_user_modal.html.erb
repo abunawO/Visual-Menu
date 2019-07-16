@@ -1,5 +1,5 @@
 <div id='user-profile-modal' class='user-profile-modal'>
-    <div onclick='closeProfileModal()' class='user-profile-close-bg'></div>
+    <div  class='user-profile-close-bg'></div>
     <div class='user-profile-modal-c'>
         <div class='user-header-c'>
             <%= image_tag(@user.picture, :alt => 'user-image', :id => 'user-image') %>
@@ -8,9 +8,3 @@
         <%= render partial: "/users/user_header/social_link_group" %>
     </div>
 </div>
-<script>
-    function closeProfileModal() {
-        document.getElementById('user-profile-modal')
-        .classList.remove('active')
-    }
-</script>
