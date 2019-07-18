@@ -10,6 +10,11 @@
         <p><%= micropost.content %></p>
         <span class='micropost-detail-price'>$<%= micropost.price %></span>
       </div>
+      <div class='micropost-detail'>
+          <%= link_to(micropost, method: :delete, data: { confirm: "Delete menu item?" }, style: 'color: black') do %>
+            <span class='material-icons'>delete</span>
+          <% end %>
+      </div>
     <% end %>
   <% else %>
     <div class='micropost-action' onclick='openModal(this)'>

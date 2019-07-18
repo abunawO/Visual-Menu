@@ -56,7 +56,7 @@ class MicropostsController < ApplicationController
     @micropost.description = params[:micropost][:description]
 
     if @micropost.save
-      flash.now[:success] = "Menu item updated successfully!"
+      flash[:success] = "Menu item updated successfully."
       redirect_to "/users/#{current_user.id}"
     else
       flash[:info] = "An error occured while saving the menu item."
@@ -72,7 +72,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash[:success] = "Menu item deleted successfully"
+    flash[:success] = "Menu item deleted successfully."
     redirect_to request.referrer || root_url
   end
 
