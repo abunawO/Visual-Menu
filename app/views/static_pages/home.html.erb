@@ -5,6 +5,11 @@
     <% provide(:title, @user.name) %>
     <%= render 'shared/back_to_top' %>
     <div class="menu-display-section">
+      <div class="form-message">
+        <% flash.each do |message_type, message| %>
+          <p class="alert-<%= message_type %>"><%= message %></p>
+        <% end %>
+      </div>
       <%= render :partial=> "shared/create_category" %>
       <%= render :partial=> "users/menu_display/menu_board" %>
       <%= render :partial=> "shared/micropost_modal" %>
