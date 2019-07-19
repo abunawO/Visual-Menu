@@ -23,7 +23,6 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    #binding.pry
     @user = current_user
     if @user.menu_categories.present?
       to_sub_categories = @user.menu_categories.split(",")
@@ -71,9 +70,12 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost.destroy
-    flash[:success] = "Menu item deleted successfully."
-    redirect_to request.referrer || root_url
+    if @micropost.destroy
+      flash[:success] = "Menu item deleted successfully."
+      redirect_to root_url
+    else
+      flash[:info] = "An error occured while deleting the menu item."
+    end
   end
 
   private
