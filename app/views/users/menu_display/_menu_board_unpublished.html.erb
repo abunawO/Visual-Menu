@@ -1,10 +1,10 @@
 <div class='categories-wrapper'>
-  <h3>Published Categories</h3>
+  <h3>Un-Published Categories</h3>
   <% @categories.each do |category| %>
       <div class='microposts-c'>
         <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
           <span class='material-icons openCategorySettings'>
-            assignment_turned_in
+            assignment
           </span>
           <span class='micropost-t-left'>
             <%= category.category %>

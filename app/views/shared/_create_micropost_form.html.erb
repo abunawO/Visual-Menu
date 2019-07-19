@@ -1,0 +1,53 @@
+<!--The form partial for creating menu item on the home.html.erb file-->
+<div class="micropost-form-container">
+  <%= form_for(@micropost, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <span class="picture form-component-c">
+      <%= f.file_field :picture, class: 'fc-hide', id: 'file', accept: 'image/jpeg,image/gif,image/png' %>
+      <label class='form-component fc-small fc-point' for="file">
+      <% if @micropost.picture.present? %>
+        <img id='post-image' src= <%= @micropost.picture %>>
+      <% else %>
+        <img id='post-image' src='/assets/upload_image.png'>
+      <% end %>
+      </label>
+    </span>
+    <div class="field form-component-c">
+      <%= f.text_field :content, placeholder: "Menu item title...", class: "form-component fc-small"  %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+    </div>
+    <div class="field form-component-c">
+      <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
+    </div>
+    <div class="field form-component-c">
+      <%= f.text_field :price, placeholder: "Menu item price...", class: "form-component fc-small" %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
+    </div>
+    <div class="field form-component-c fc-big">
+      <%= f.text_area :description, placeholder: "Menu item description...", rows: "8", class: "form-component fc-big" %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
+    </div>
+    <div class="field form-component-c fc-active ">
+      <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+      <label class='form-component fc-small fc-point' for="send">
+        Submit
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+      </label>
+    </div>
+  <% end %>
+
+  <!--Checking the file size with jQuery.-->
+  <script type="text/javascript">
+    $('.fc-hide').bind('change', function() {
+      var size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+        alert('Maximum file size is 5MB. Please choose a smaller file.');
+      }else {
+        var output = document.getElementById('post-image');
+        output.src = URL.createObjectURL(event.target.files[0]);
+      }
+
+    });
+  </script>
+</div>
