@@ -1,0 +1,31 @@
+<% @categories.each do |category| %>
+    <div class='microposts-c'>
+      <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
+        <span class='material-icons openCategorySettings'>
+          settings
+        </span>
+        <span class='micropost-t-left'>
+          <%= category.category %>
+        </span>
+      </button>
+      <ol class="menu_display_user">
+        <li class="micropost micropost-create-btn">
+          <div class='micropost-action'>
+            <div class='micropost-image-c'>
+              <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
+            </div>
+            <div class='micropost-detail'>
+              <p>Create new item</p>
+            </div>
+          </div>
+        </li>
+        <%= render @options[category.category] %>
+      </ol>
+    </div>
+<% end %>
+
+<script>
+  function openCategorySettings(self) {
+    console.log('I AM CLICKED!')
+  }
+</script>

@@ -7,11 +7,7 @@
         </span>
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
-      <% if current_user %>
-      <ol class="menu_display_user">
-      <% else %>
       <ol class="menu_display_consumer">
-      <% end %>
         <%= render @options[category.category] %>
       </ol>
     </div>

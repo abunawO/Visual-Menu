@@ -2,6 +2,26 @@
 .filter-form {
   width: 100% !important;
 }
+.delete-micropost {
+  display: flex;
+  .delete-micropost-btn {
+    border: 1px dashed $s-primary;
+    padding: 3px 5px;
+    padding-right: 10px;
+    border-radius: 5px;
+    color: $s-primary;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    &:hover {
+      background: rgba($s-primary, 0.1);
+      color: red;
+    }
+    span {
+      font-size: inherit;
+    }
+  }
+}
 .form-component-c {
   width: 100%;
   overflow: hidden;

@@ -21,6 +21,9 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+    &.micropost-create-btn {
+      cursor: pointer;
+    }
     @media (max-width: 540px) {
       max-width: 100%;
     }
