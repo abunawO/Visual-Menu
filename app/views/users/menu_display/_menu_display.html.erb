@@ -8,7 +8,7 @@
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
       <ol class="menu_display_consumer">
-        <%= render @options[category.category] %>
+        <%= render :partial => "microposts/micropost_to_modal", locals: {micropost: category} %>
       </ol>
     </div>
 <% end %>

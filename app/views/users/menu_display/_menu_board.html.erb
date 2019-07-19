@@ -19,7 +19,7 @@
             </div>
           </div>
         </li>
-        <%= render @options[category.category] %>
+        <%= render :partial => "microposts/micropost", locals: {micropost: category} %>
       </ol>
     </div>
 <% end %>

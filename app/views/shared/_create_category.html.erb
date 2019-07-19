@@ -1,0 +1,58 @@
+<div>
+    <button>Create a Category</button>
+    <div>
+
+
+
+
+
+
+
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field form-component-c">
+        <%= f.text_field :content, placeholder: "Menu item title...", class: "form-component fc-small"  %>
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+    </div>
+    <div class="field form-component-c">
+        <%= f.select(:category, options_for_select(@categories_select, :selected => f.object.category), {:prompt => "Select Category"}, :class => "form-component fc-small fc-point") %>
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
+    </div>
+    <div class="field form-component-c">
+        <%= f.text_field :price, placeholder: "Menu item price...", class: "form-component fc-small" %>
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
+    </div>
+    <span>
+        <label for='isPublished'>isPublished</label>
+        <input id='isPublished' type="checkbox" checked>
+    </span>
+    <div class="field form-component-c fc-big">
+        <%= f.text_area :description, placeholder: "Menu item description...", rows: "8", class: "form-component fc-big" %>
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
+    </div>
+    <div class="field form-component-c fc-active ">
+        <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+        <label class='form-component fc-small fc-point' for="send">
+        Submit
+        <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+        </label>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{
+    name: String,
+    priority: Number
+    isPublished: Boolean   
+}
