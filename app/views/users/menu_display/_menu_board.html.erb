@@ -21,10 +21,12 @@
               </div>
             </div>
           </li>
-          <%= render :partial => "microposts/micropost", locals: {micropost: category} %>
+          <% @options[category.category].each do |micropost|  %>
+            <%= render :partial => "microposts/micropost", locals: {micropost: micropost} %>
+          <% end %>
         </ol>
       </div>
-  <% end %>
+ <% end %>
 </div>
 <script>
   function openCategorySettings(self) {
