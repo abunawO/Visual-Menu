@@ -1,0 +1,24 @@
+
+<!--The representation of a menu item/micropost partial.-->
+<!--Displayed in the feed.html.erb partial.-->
+<li class="micropost" id="micropost-<%= micropost.id %>">
+    <div class='micropost-action' onclick='openModal(this)'>
+        <div class='micropost-image-c'>
+        <%= image_tag micropost.picture.url, class: "mp-image", id: "#{micropost.id}", alt: "#{micropost.description}", :data => {:title => micropost.content, :price => number_to_currency(micropost.price), :description => micropost.description, :id => micropost.id} %>
+        </div>
+        <div class='micropost-detail'>
+        <p><%= micropost.content %></p>
+        <span class='micropost-detail-price'>$<%= micropost.price %></span>
+        </div>
+    </div>
+</li>
+<script type='text/javascript'>
+  function openModal(props) {
+    const {title, price, description, id} = props.querySelector('img').dataset
+    document.getElementById('micropost-modal').classList.add('active')
+    document.getElementById('mpm-image').src = props.children[0].children[0].src
+    document.getElementById('mpm-title').textContent = title
+    document.getElementById('mpm-price').textContent = price
+    document.getElementById('mpm-description').textContent = description
+  }
+</script>

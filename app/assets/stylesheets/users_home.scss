@@ -1,4 +1,4 @@
-@import 'const';
+@import "const";
 // below does not belong here but for the time being...
 .gravatar {
   border-radius: 5px !important;
@@ -136,4 +136,19 @@
 }
 
 .file-label {
+}
+.create-category-wrapper {
+  width: 400px;
+  padding: 10px 20px;
+  h3 {
+    color: $s-text-secondary;
+  }
+}
+
+.categories-wrapper {
+  h3 {
+    padding: 20px;
+    margin: 0;
+    color: $s-text-secondary;
+  }
 }

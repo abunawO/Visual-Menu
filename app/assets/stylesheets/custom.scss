@@ -29,7 +29,10 @@ body {
 .category-select {
   padding: 0 15px;
   margin: 0;
-  max-width: 768px;
+  max-width: 300px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
   &.non-mobile {
     @media (max-width: 768px) {
       display: none;
@@ -110,4 +113,7 @@ button {
 
 .category-show-edit-title {
   padding-top: 10px;
+}
+.openCategorySettings {
+  padding: 10px 15px;
 }

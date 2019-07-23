@@ -1,0 +1,17 @@
+<div class='create-category-wrapper'>
+    <h3>Create a Category</h3>
+    <%= form_for(@micropost, html: { multipart: true }) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field form-component-c">
+            <%= f.text_field :content, placeholder: "Category Name", class: "form-component fc-small"  %>
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+        </div>
+        <div class="field form-component-c fc-active ">
+            <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+            <label class='form-component fc-small fc-point' for="send">
+            Submit
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+            </label>
+        </div>
+    <% end %>
+</div> 
