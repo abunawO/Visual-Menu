@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   #
   get 'micropost_edit' => 'microposts#edit'
   #
+  get 'micropost_new' =>  'microposts#new'
+  #
   get 'micropost_show' => 'microposts#show'
   #
   get 'category_search' => 'users#category_search'

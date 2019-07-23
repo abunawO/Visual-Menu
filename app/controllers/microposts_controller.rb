@@ -22,6 +22,11 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def new
+    @micropost = Micropost.new
+    @selected_category = params[:category]
+  end
+
   def edit
     @user = current_user
     if @user.menu_categories.present?

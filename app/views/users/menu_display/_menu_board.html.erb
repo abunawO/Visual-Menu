@@ -4,7 +4,7 @@
       <div class='microposts-c'>
         <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
           <span class='material-icons openCategorySettings'>
-            assignment_turned_in
+            settings
           </span>
           <span class='micropost-t-left'>
             <%= category.category %>
@@ -17,7 +17,9 @@
                 <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
               </div>
               <div class='micropost-detail'>
-                <p>Create new item</p>
+                <%= link_to micropost_new_path(:category => category.category) do %>
+                  Create Menu Item
+                <% end %>
               </div>
             </div>
           </li>
@@ -26,7 +28,7 @@
           <% end %>
         </ol>
       </div>
- <% end %>
+  <% end %>
 </div>
 <script>
   function openCategorySettings(self) {
