@@ -10,12 +10,9 @@
           <p class="alert-<%= message_type %>"><%= message %></p>
         <% end %>
       </div>
-      <% if 1 == 1 %>
-        <%= render :partial=> "shared/create_category" %>  
-      <% else %>
-        <%= render :partial=> "users/menu_display/menu_board_unpublished" %>
-        <%= render :partial=> "users/menu_display/menu_board" %>
-      <% end %>
+      <%= render :partial=> "shared/create_category" %>  
+      <%= render :partial=> "users/menu_display/menu_board_unpublished" %>
+      <%= render :partial=> "users/menu_display/menu_board" %>
       <%= render :partial=> "shared/micropost_modal" %>
       <%= render :partial=> "shared/search_fab" %>
     </div>
