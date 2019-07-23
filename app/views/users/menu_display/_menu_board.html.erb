@@ -13,14 +13,16 @@
         <ol class="menu_display_user">
           <li class="micropost micropost-create-btn">
             <div class='micropost-action'>
-              <div class='micropost-image-c'>
-                <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
-              </div>
-              <div class='micropost-detail'>
-                <%= link_to micropost_new_path(:category => category.category) do %>
-                  Create Menu Item
-                <% end %>
-              </div>
+              <%= link_to micropost_new_path(:category => category.category) do %>
+                <div class='micropost-image-c'>
+                  <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
+                </div>
+                <div class='micropost-detail'>
+                  <%= link_to micropost_new_path(:category => category.category) do %>
+                    Create Menu Item
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </li>
           <% @options[category.category].each do |micropost|  %>
