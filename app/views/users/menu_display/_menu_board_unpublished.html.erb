@@ -1,0 +1,33 @@
+<div class='categories-wrapper'>
+  <h3>Un-Published Categories</h3>
+  <% @categories.each do |category| %>
+      <div class='microposts-c'>
+        <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
+          <span class='material-icons openCategorySettings'>
+            assignment
+          </span>
+          <span class='micropost-t-left'>
+            <%= category.category %>
+          </span>
+        </button>
+        <ol class="menu_display_user">
+          <li class="micropost micropost-create-btn">
+            <div class='micropost-action'>
+              <div class='micropost-image-c'>
+                <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
+              </div>
+              <div class='micropost-detail'>
+                <p>Create new item</p>
+              </div>
+            </div>
+          </li>
+          <%= render :partial => "microposts/micropost", locals: {micropost: category} %>
+        </ol>
+      </div>
+  <% end %>
+</div>
+<script>
+  function openCategorySettings(self) {
+    console.log('I AM CLICKED!')
+  }
+</script>
