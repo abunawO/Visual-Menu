@@ -71,9 +71,12 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost.destroy
-    flash[:success] = "Menu item deleted successfully."
-    redirect_to request.referrer || root_url
+    if @micropost.destroy
+      flash[:success] = "Menu item deleted successfully."
+      redirect_to root_url
+    else
+      flash[:info] = "An error occured while deleting the menu item."
+    end
   end
 
   private

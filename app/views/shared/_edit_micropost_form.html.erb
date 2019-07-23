@@ -1,7 +1,7 @@
 <!--The form partial for creating menu item on the home.html.erb file-->
 <div class="micropost-form-container">
 <%= render 'shared/back_to_top' %>
-  <div class='delete-micropost'>
+<div class='delete-micropost'>
     <%= link_to(@micropost, method: :delete, data: { confirm: "Delete menu item?" }, class: 'delete-micropost-btn') do %>
       <span class='material-icons'>delete</span>Remove
     <% end %>
