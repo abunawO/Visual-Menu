@@ -1,36 +1,43 @@
 <div class='categories-wrapper'>
   <h3>Published Categories</h3>
-  <% @categories.each do |category| %>
-      <div class='microposts-c'>
-        <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
-          <span class='material-icons openCategorySettings'>
-            settings
-          </span>
-          <span class='micropost-t-left'>
-            <%= category.category %>
-          </span>
-        </button>
-        <ol class="menu_display_user">
-          <li class="micropost micropost-create-btn">
-            <div class='micropost-action'>
-              <%= link_to micropost_new_path(:category => category.category) do %>
-                <div class='micropost-image-c'>
-                  <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
-                </div>
-                <div class='micropost-detail'>
-                  <%= link_to micropost_new_path(:category => category.category) do %>
-                    Create Menu Item
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </li>
-          <% @options[category.category].each do |micropost|  %>
-            <%= render :partial => "microposts/micropost", locals: {micropost: micropost} %>
-          <% end %>
-        </ol>
-      </div>
+  <% if @categories.present? %>
+    <% @categories.each do |category| %>
+        <div class='microposts-c'>
+          <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
+            <span class='material-icons openCategorySettings'>
+              settings
+            </span>
+            <span class='micropost-t-left'>
+              <%= category.category %>
+            </span>
+          </button>
+          <ol class="menu_display_user">
+            <li class="micropost micropost-create-btn">
+              <div class='micropost-action'>
+                <%= link_to micropost_new_path(:category => category.category) do %>
+                  <div class='micropost-image-c'>
+                    <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
+                  </div>
+                  <div class='micropost-detail'>
+                    <%= link_to micropost_new_path(:category => category.category) do %>
+                      Create Menu Item
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+            <% @options[category.category].each do |micropost|  %>
+              <%= render :partial => "microposts/micropost", locals: {micropost: micropost} %>
+            <% end %>
+          </ol>
+        </div>
+    <% end %>
+<% else %>
+  <%= link_to micropost_new_path do %>
+    Create Menu Item
   <% end %>
+<% end %>
+
 </div>
 <script>
   function openCategorySettings(self) {

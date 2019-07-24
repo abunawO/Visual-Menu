@@ -17,10 +17,8 @@
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
     <div class="field form-component-c">
-      <%# f.text_field :category, :value => @selected_category, required: true, class: "form-component fc-small"  %>
-      <%# render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
-      <%# please add the category selected here.. which ever category was clicked. %>
-      <span>category selected from board<span>
+      <%= f.text_field :category, :value => @selected_category, required: true, class: "form-component fc-small"  %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'expand_more'} %>
     </div>
     <div class="field form-component-c">
       <%= f.text_field :price, placeholder: "Menu item price...", required: true, class: "form-component fc-small" %>
