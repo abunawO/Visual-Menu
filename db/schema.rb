@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190421153040) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "micropost_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(version: 20190725152328) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
