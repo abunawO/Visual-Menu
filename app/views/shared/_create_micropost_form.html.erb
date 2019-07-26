@@ -17,8 +17,9 @@
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
     <div class="field form-component-c">
-      <%= f.text_field :category, placeholder: "Category Title", :value => @selected_category, required: true, class: "form-component fc-small"  %>
-      <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>    </div>
+      <%= f.text_field :category, placeholder: "Category Title", :value => @selected_category, disabled: true, class: "form-component fc-small"  %>
+      <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+   </div>
     <div class="field form-component-c">
       <%= f.text_field :price, placeholder: "Menu item price...", required: true, class: "form-component fc-small" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
@@ -27,6 +28,9 @@
       <%= f.text_area :description, placeholder: "Menu item description...", required: true, rows: "8", class: "form-component fc-big" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
     </div>
+    <div class="field form-component-c">
+      <%= hidden_field_tag :category_id, @category_id %>
+   </div>
     <div class="field form-component-c fc-active ">
       <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
       <label class='form-component fc-small fc-point' for="send">

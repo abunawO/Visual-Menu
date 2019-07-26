@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :categories
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -49,6 +50,8 @@ Rails.application.routes.draw do
   patch "/microposts/:id" => 'microposts#edit'
 
   get 'info_edit'  => 'users#info_edit'
+
+  get 'category_new' =>  'categories#new'
 
 
   #Adding following and followers actions to the Users controller.

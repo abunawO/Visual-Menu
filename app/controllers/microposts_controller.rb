@@ -5,12 +5,18 @@ class MicropostsController < ApplicationController
 
   def create
     @user = current_user
-    if @user.menu_categories.present?
-      @categories_select = @user.menu_categories.split(",")
+
+    user_categories = Category.where(:user_id => @user.id)
+
+    if user_categories.map(&:name).present?
+      @categories_select = user_categories.map(&:name)
     else
-      @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+      @categories_select = []
     end
+
     @micropost = current_user.microposts.build(micropost_params)
+    @micropost[:category_id] = params["category_id"]
+
     if @micropost.save
       flash[:success] = "Menu item created successfully!"
       redirect_to root_url
@@ -25,36 +31,36 @@ class MicropostsController < ApplicationController
   def new
     @micropost = Micropost.new
     @selected_category = params[:category]
+    @category_id = Category.where("name LIKE ?", "%#{@selected_category}%").first.id
   end
 
   def edit
     @user = current_user
-    if @user.menu_categories.present?
-      to_sub_categories = @user.menu_categories.split(",")
-      standard_categories = @user.menu_categories.split(",")
+
+    user_categories = Category.where(:user_id => @user.id)
+
+    if user_categories.map(&:name).present?
+      @categories_select = user_categories.map(&:name)
     else
-      to_sub_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
-      standard_categories = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+      @categories_select = []
     end
 
     micropost_id = params['micropost_id'] || params['id']
     @micropost = Micropost.find(micropost_id)
-    micropost_category = [@micropost.category]
 
-    if @micropost.category.present?
-      @categories = (to_sub_categories.replace(micropost_category) + micropost_category.replace(standard_categories)).uniq
-    else
-      @categories = standard_categories
-    end
+    @category = Category.find(params['category_id'])
+    @category_id = @category.id
+    @category_name = @category.name
 
-    @categories_select = @categories
+    #@selected_category = params[:category]
+    #@category_id = Category.where("name LIKE ?", "%#{@selected_category}%").first.id
 
     update_micropost(params) if !params['edit_clicked']
   end
 
   def update_micropost params
     @micropost.content  = params[:micropost][:content]
-    @micropost.category = params[:micropost][:category]
+    #@micropost.category = params[:micropost][:category]
     @micropost.picture  = params[:micropost][:picture]
     @micropost.price    = params[:micropost][:price]
     @micropost.description = params[:micropost][:description]
@@ -87,7 +93,7 @@ class MicropostsController < ApplicationController
 
     #Adding picture to the list of permitted attributes.
     def micropost_params
-      params.require(:micropost).permit(:content, :category, :price, :description, :picture, :side)
+      params.require(:micropost).permit(:content, :category, :price, :description, :picture, :category_id)
     end
 
      def correct_user

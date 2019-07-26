@@ -1,38 +1,36 @@
 <div class='categories-wrapper'>
     <div class='micropost-action'>
       <div>
-        <%= link_to micropost_new_path() do %>
-          <%= image_tag '/assets/edit-icon.jpg', style: "width:50px; height:50px;" %>
-        <% end %>
+        <%= render :partial => "categories/create_form" %>
       </div>
     </div>
   <h3>Published Categories</h3>
-  <% @categories.each do |category| %>
+  <% @categories.each do |category_title, category_items| %>
       <div class='microposts-c'>
         <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
           <span class='material-icons openCategorySettings'>
             settings
           </span>
           <span class='micropost-t-left'>
-            <%= category.category %>
+            <%= category_title %>
           </span>
         </button>
         <ol class="menu_display_user">
           <li class="micropost micropost-create-btn">
             <div class='micropost-action'>
-              <%= link_to micropost_new_path(:category => category.category) do %>
+              <%= link_to micropost_new_path(:category => category_title) do %>
                 <div class='micropost-image-c'>
                   <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
                 </div>
                 <div class='micropost-detail'>
-                  <%= link_to micropost_new_path(:category => category.category) do %>
+                  <%= link_to micropost_new_path(:category => category_title) do %>
                     Create Category Item
                   <% end %>
                 </div>
               <% end %>
             </div>
           </li>
-          <% @options[category.category].each do |micropost|  %>
+          <% category_items.each do |micropost|  %>
             <%= render :partial => "microposts/micropost", locals: {micropost: micropost} %>
           <% end %>
         </ol>

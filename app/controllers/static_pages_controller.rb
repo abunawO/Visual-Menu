@@ -3,24 +3,28 @@ class StaticPagesController < ApplicationController
  #Adding a feed instance variable to the home action.
   def home
     @user = current_user
+    @category = Category.new
     if logged_in?
-      if @user.menu_categories.present?
-        @categories_select = @user.menu_categories.split(",")
+      user_categories = Category.where(:user_id => @user.id)
+      if user_categories.map(&:name).present?
+        @categories_select = user_categories.map(&:name)
       else
-        @categories_select = ["BREAKFAST", "LUNCH", "DINNER", "DESSERTS", "APPETIZERS", "SIDES", "BEVERAGES", "SPECIALS" ]
+        @categories_select = []
       end
+
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
 
       @microposts = @user.microposts.paginate(page: params[:page])
-      @categories = []
-      @options    = {}
-      @user.microposts.each do |micropost|
-        if micropost.category.present?
-          unless @categories.map(&:category).include?(micropost.category)
-            @categories.push(micropost)
-            @options[micropost.category] = @user.microposts.where(:category => micropost.category)
-          end
+      @categories    = {}
+
+      if @user.microposts
+        user_categories.each do |category|
+          @categories[category.name] = @user.microposts.where(:category_id => category.id)
+        end
+      else
+        user_categories.map(&:name).each do |title|
+          @categories[title] = []
         end
       end
     end
