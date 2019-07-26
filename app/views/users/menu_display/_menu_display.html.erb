@@ -1,19 +1,22 @@
+
+
 <% @categories.each do |category_title, category_items| %>
     <div class='microposts-c'>
       <button class='microposts-title' onclick='openMicropostList(this)'>
         <span class='micropost-t-left'>
-          <%= image_tag(category.picture, :alt => 'category-img', :id => 'category-img') %>
-          <p><%= category_title %></p>
+          <%= category_title %>
         </span>
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
+
       <% if current_user %>
-      <ol class="menu_display_user">
+        <ol class="menu_display_user">
       <% else %>
-      <ol class="menu_display_consumer">
+        <ol class="menu_display_consumer">
       <% end %>
-        <%= render category_items%>
-      </ol>
+      <% category_items.each do |micropost|  %>
+        <%= render :partial => "microposts/micropost_to_modal", locals: {micropost: micropost} %>
+      <% end %>
     </div>
 <% end %>
 
