@@ -38,6 +38,7 @@ class CategoriesController < ApplicationController
       #format.html { render :new }
       #format.json { render json: @category.errors, status: :unprocessable_entity }
       flash[:info] = "An error occured while saving the menu item."
+      redirect_to root_url
     end
   end
 
