@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    binding.pry
     @user = current_user
     @category = Category.new
   end
@@ -26,7 +25,6 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    binding.pry
     params["category"][:user_id] = params["user_id"]
     @category = Category.new(category_params)
 
