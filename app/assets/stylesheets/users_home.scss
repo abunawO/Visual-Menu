@@ -47,7 +47,17 @@
 // micropost form
 .micropost_form {
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 10px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    // padding: 20px;
+    padding: 20px 0 !important;
+    margin: 0;
+    color: #4f4f4f;
+  }
 }
 .category-select-form {
 }
@@ -68,14 +78,14 @@
 // .create-form-item-effect input:hover,
 // .create-form-item-effect input:active,
 // .create-form-item-effect input:focus,
-.create-form-item-effect select:hover,
-.create-form-item-effect select:active,
-.create-form-item-effect select:focus,
-.create-form-item-effect textarea:hover,
-.create-form-item-effect textarea:active,
-.create-form-item-effect textarea:focus {
-  background-color: $extra !important;
-}
+// .create-form-item-effect select:hover,
+// .create-form-item-effect select:active,
+// .create-form-item-effect select:focus,
+// .create-form-item-effect textarea:hover,
+// .create-form-item-effect textarea:active,
+// .create-form-item-effect textarea:focus {
+//   background-color: $extra !important;
+// }
 .menu-item-file {
   width: max-content;
   padding-bottom: 5px !important;
@@ -141,7 +151,10 @@
   width: 400px;
   padding: 10px 20px;
   h3 {
-    color: $s-text-secondary;
+    // padding: 20px;
+    padding: 20px 0 !important;
+    margin: 0;
+    color: #4f4f4f;
   }
 }
 

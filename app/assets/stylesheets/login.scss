@@ -29,8 +29,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  background: url(/assets/sign-up-img.jpg) no-repeat top
-    center;
+  background: url(/assets/sign-up-img.jpg) no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -117,15 +116,10 @@
     align-items: center;
     justify-content: center;
     border: 2px solid white;
-    background: linear-gradient(
-      90deg,
-      $s-primary,
-      $s-secondary
-    );
+    background: linear-gradient(90deg, $s-primary, $s-secondary);
     background-size: 400% 400%;
 
-    -webkit-animation: AnimateGraident 10s ease-in-out
-      infinite;
+    -webkit-animation: AnimateGraident 10s ease-in-out infinite;
     -moz-animation: AnimateGraident 10s ease-in-out infinite;
     animation: AnimateGraident 10s ease-in-out infinite;
 
@@ -166,9 +160,11 @@
 }
 
 .forgot-password-component {
-  position: relative;
-  bottom: 12px;
-  left: 10px;
+  display: block;
+  // position: relative;
+  // bottom: 12px;
+  // left: 10px;
+  margin-top: 10px;
   color: #55bbeb;
   font-size: 12px;
 }

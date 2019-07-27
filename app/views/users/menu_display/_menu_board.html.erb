@@ -7,7 +7,7 @@
   <h3>Published Categories</h3>
   <% @categories.each do |category_title, category_items| %>
       <div class='microposts-c'>
-        <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
+        <button class='microposts-title title-board'>
           <span class='material-icons openCategorySettings'>
             settings
           </span>
@@ -22,10 +22,11 @@
                 <div class='micropost-image-c'>
                   <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
                 </div>
-                <div class='micropost-detail'>
-                  <%= link_to micropost_new_path(:category => category_title) do %>
-                    Create Category Item
-                  <% end %>
+                <div class='micropost-detail create'>
+                <span>Create</span>
+                <span>Category</span>
+                <span>Item</span>
+                  <%# image_tag '/assets/create-micropost-text.png' %>
                 </div>
               <% end %>
             </div>
@@ -38,8 +39,8 @@
   <% end %>
 
 </div>
-<script>
+<%# <script>
   function openCategorySettings(self) {
     console.log('I AM CLICKED!');
   }
-</script>
+</script> %>

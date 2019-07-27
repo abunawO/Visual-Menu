@@ -22,7 +22,7 @@
       <%= f.text_field :content, placeholder: "Menu item title...", required: true, class: "form-component fc-small"  %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
     </div>
-    <div class="field form-component-c">
+    <div class="field form-component-c locked">
       <%= f.text_field :category, placeholder: "Category Title", :value => @category_name, disabled: true, class: "form-component fc-small"  %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
    </div>
@@ -31,12 +31,10 @@
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'attach_money'} %>
     </div>
     <div class="field form-component-c fc-big">
-      <%= f.text_area :description, placeholder: "Menu item description...", required: true, rows: "8", class: "form-component fc-big" %>
+      <%= f.text_area :description, placeholder: "Menu item description...", required: true, rows: "3", class: "form-component fc-big" %>
       <%= render :partial => "shared/form_icon", :locals => {:icon => 'notes'} %>
     </div>
-    <div class="field form-component-c">
       <%= hidden_field_tag :category_id, @category_id %>
-   </div>
     <div class="field form-component-c fc-active ">
       <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
       <label class='form-component fc-small fc-point' for="send">

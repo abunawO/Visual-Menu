@@ -9,11 +9,7 @@
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
 
-      <% if current_user %>
-        <ol class="menu_display_user">
-      <% else %>
-        <ol class="menu_display_consumer">
-      <% end %>
+       <ol class="menu_display_consumer">
       <% category_items.each do |micropost|  %>
         <%= render :partial => "microposts/micropost_to_modal", locals: {micropost: micropost} %>
       <% end %>

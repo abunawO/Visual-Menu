@@ -2,7 +2,7 @@
   <h3>Un-Published Categories</h3>
   <% @categories.each do |category| %>
       <div class='microposts-c'>
-        <button class='microposts-title title-board' onclick='openCategorySettings(this)'>
+        <button class='microposts-title title-board'>
           <span class='material-icons openCategorySettings'>
             assignment
           </span>
@@ -26,8 +26,8 @@
       </div>
   <% end %>
 </div>
-<script>
+<%# <script>
   function openCategorySettings(self) {
     console.log('I AM CLICKED!')
   }
-</script>
+</script> %>

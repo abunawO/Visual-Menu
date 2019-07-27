@@ -19,10 +19,15 @@
       background-color: $s-bg-primary;
     }
     &:last-of-type {
-      margin-bottom: 0;
+      // margin-bottom: 0;
     }
     &.micropost-create-btn {
       cursor: pointer;
+      .micropost-action {
+        a {
+          display: flex;
+        }
+      }
     }
     @media (max-width: 540px) {
       max-width: 100%;
@@ -39,15 +44,25 @@
         }
       }
       .micropost-detail {
+        // max-height: 100px;
         position: relative;
-        padding: 0 5px;
+        padding: 5px;
         flex: 1;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        &.create {
+          width: 150px;
+          justify-content: center;
+          align-items: center;
+          span {
+            color: $s-text-primary;
+          }
+        }
         .micropost-detail-price {
-          position: absolute;
-          bottom: 5px;
-          left: 5px;
+          // position: absolute;
+          // bottom: 5px;
+          // left: 5px;
           // color: $s-text-primary;
           color: $third;
         }

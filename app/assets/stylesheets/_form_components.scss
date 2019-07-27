@@ -4,6 +4,7 @@
 }
 .delete-micropost {
   display: flex;
+  margin-bottom: 10px;
   .delete-micropost-btn {
     border: 1px dashed $s-primary;
     padding: 3px 5px;
@@ -22,6 +23,13 @@
     }
   }
 }
+.form-component-pic-width {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 10px;
+}
 .form-component-c {
   width: 100%;
   overflow: hidden;
@@ -29,27 +37,61 @@
   display: flex !important;
   background-color: white;
   padding: 0 !important;
-  margin: 10px 0 !important;
+  margin: 10px 0 0 0;
   border: 1px solid $border;
   // border-radius: $form-comp-size;
   border-radius: $border-radius;
+
+  // transition: 0.1s ease-in-out;
   &:hover {
     border-color: $third;
+    // background: linear-gradient(
+    //   342deg,
+    //   rgba(#ebebeb, 0.3) 0%,
+    //   rgba(white, 0) 50%
+    // );
     .form-component-btn-c {
       .form-component-btn {
         color: $third;
       }
     }
   }
+  &.locked {
+    border-color: lighten($s-text-secondary, 25%);
+    background: rgba(lighten($s-text-secondary, 25%), 0.05);
+    cursor: not-allowed;
+    .form-component-btn-c {
+      .form-component-btn {
+        cursor: default !important;
+      }
+    }
+    // &:hover {
+    //   border-color: lighten($s-text-secondary, 25%);
+    //   .form-component-btn-c {
+    //     .form-component-btn {
+    //       color: lighten($s-text-secondary, 25%);
+    //     }
+    //   }
+    // }
+    .form-component-btn-c {
+      .form-component-btn {
+        color: lighten($s-text-secondary, 25%);
+      }
+    }
+    .form-component {
+      color: lighten($s-text-secondary, 25%) !important;
+    }
+  }
   &.fc-max-content {
     min-width: max-content;
   }
   &.picture {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-style: dashed;
     border-radius: 10px;
     padding: 5px;
+    margin: 0;
     .form-component {
       padding: 0 !important;
       img {
@@ -77,6 +119,7 @@
     margin: 0 !important;
     padding: 0 15px !important;
     padding-right: $form-comp-size !important;
+    cursor: inherit;
     &:hover {
       border-color: $third !important;
     }
@@ -126,7 +169,8 @@
   line-height: $form-comp-size !important;
 }
 .fc-big {
-  border-radius: 10px !important;
+  line-height: 40px;
+  // border-radius: 10px !important;
 }
 .fcb-icon-behind {
   z-index: -99;
