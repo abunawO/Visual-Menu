@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    binding.pry
     if current_user
       @user = current_user
     else
