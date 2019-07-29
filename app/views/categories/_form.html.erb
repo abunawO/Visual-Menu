@@ -2,7 +2,7 @@
     <%= form_for(@category) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
-          <%= f.label :priority %><br>
+          <%= f.label :priority, required: true %><br>
           <%= f.number_field :priority %>
         </div>
         <div class="field form-component-c">

@@ -4,7 +4,7 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
           <%= f.label :priority %><br>
-          <%= f.number_field :priority %>
+          <%= f.number_field :priority,required: true %>
         </div>
         <div class="field form-component-c">
             <%= f.text_field :name, required: true, placeholder: "Category Name", class: "form-component fc-small"  %>

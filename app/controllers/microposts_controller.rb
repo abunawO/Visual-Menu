@@ -31,7 +31,7 @@ class MicropostsController < ApplicationController
   def new
     @micropost = Micropost.new
     @selected_category = params[:category]
-    @category_id = Category.where("name LIKE ?", "%#{@selected_category}%").first.id
+    @category_id = Category.where("name LIKE ?", "%#{@selected_category.gsub!(/\d+/,"").lstrip}%").first.id
   end
 
   def edit
