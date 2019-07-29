@@ -12,7 +12,7 @@
             settings
           </span>
           <span class='micropost-t-left'>
-            <%= category_title %>
+            <%= cleanCategoryTitle(category_title) %>
           </span>
         </button>
         <ol class="menu_display_user">
@@ -39,8 +39,3 @@
   <% end %>
 
 </div>
-<%# <script>
-  function openCategorySettings(self) {
-    console.log('I AM CLICKED!');
-  }
-</script> %>

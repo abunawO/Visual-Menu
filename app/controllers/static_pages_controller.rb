@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  helper_method :cleanCategoryTitle
+
  #Adding a feed instance variable to the home action.
   def home
     @user = current_user
@@ -20,15 +22,23 @@ class StaticPagesController < ApplicationController
 
       if @user.microposts
         user_categories.each do |category|
-          @categories[category.name] = @user.microposts.where(:category_id => category.id)
+          @categories["#{category.priority} #{category.name}"] = @user.microposts.where(:category_id => category.id)
         end
       else
         user_categories.map(&:name).each do |title|
           @categories[title] = []
         end
       end
+      @categories = @categories.sort_by { |k,v| k.scan(/\d+/).first.to_i }
+      @categories
     end
 
+  end
+
+  def cleanCategoryTitle string
+    str = string.dup
+    str.gsub!(/\d+/,"").lstrip
+    str
   end
 
   def contact_us
