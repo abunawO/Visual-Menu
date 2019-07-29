@@ -20,6 +20,9 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @user = current_user
+    @category = Category.find(params["id"])
+    @selected_category = @category.name
   end
 
   # POST /categories
