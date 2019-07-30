@@ -37,7 +37,7 @@ class StaticPagesController < ApplicationController
 
   def cleanCategoryTitle string
     str = string.dup
-    str.gsub!(/\d+/,"").lstrip
+    str = str[1,str.length].strip
     str
   end
 
