@@ -37,9 +37,12 @@
       padding: 20px 15px;
       justify-content: flex-start;
       font-size: 1.1em;
+      .openCategorySettings {
+        color: $s-text-secondary;
+      }
       &:hover {
         .openCategorySettings {
-          color: $s-text-secondary;
+          // color: $s-text-secondary;
         }
       }
     }
@@ -70,9 +73,12 @@
       color: $s-text-primary;
       &.openCategorySettings {
         margin-right: 10px;
-        // cursor: pointer;
+        cursor: pointer;
         color: $s-text-primary;
-        cursor: default;
+        // cursor: default;
+        &:hover {
+          color: $third;
+        }
       }
     }
     span {

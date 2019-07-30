@@ -7,7 +7,7 @@
   <h3>Published Categories</h3>
   <% @categories.each do |category_title, category_items| %>
       <div class='microposts-c'>
-        <button class='microposts-title title-board'>
+        <button class='microposts-title title-board' onclick="openCategorySettings(this)">
           <span class='material-icons openCategorySettings'>
             settings
           </span>
@@ -15,6 +15,27 @@
             <%= cleanCategoryTitle(category_title) %>
           </span>
         </button>
+        <div id="edit-category" class='create-category-wrapper edit-category'>
+            <%= form_for(@category) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+                <div class="field form-component-c rotate-icon">
+                  <%= f.number_field :priority, required: true, placeholder: "Priority", class: "form-component fc-small" %>
+                  <%= render :partial => "shared/form_icon", :locals => {:icon => 'compare_arrows'} %>
+                </div>
+                <div class="field form-component-c">
+                    <%= f.text_field :name, required: true, :value => category_title, placeholder: "Category Name", class: "form-component fc-small"  %>
+                    <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+                </div>
+                <%= hidden_field_tag :user_id, @user.id %>
+                <div class="field form-component-c fc-active ">
+                    <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+                    <label class='form-component fc-small fc-point' for="send">
+                    Submit
+                    <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
         <ol class="menu_display_user">
           <li class="micropost micropost-create-btn">
             <div class='micropost-action'>
@@ -39,3 +60,9 @@
   <% end %>
 
 </div>
+
+<script>
+function openCategorySettings(props) {
+  props.parentElement.querySelector("#edit-category").classList.toggle("active")
+}
+</script>

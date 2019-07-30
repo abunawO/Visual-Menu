@@ -36,9 +36,15 @@ class StaticPagesController < ApplicationController
   end
 
   def cleanCategoryTitle string
-    str = string.dup
-    str.gsub!(/\d+/,"").lstrip
-    str
+    # binding.pry
+    if string.present?
+      str = string.dup
+      # str.gsub!(/\d+/,"").lstrip
+      str.strip
+      str
+    else
+      return string 
+    end
   end
 
   def contact_us
