@@ -1,13 +1,17 @@
-<div class='create-category-wrapper'>
+<div id="edit-category" class='create-category-wrapper edit-category'>
     <%= form_for(@category) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
-          <%= f.label :priority, required: true %><br>
-          <%= f.number_field :priority %>
+        <div class="field form-component-c rotate-icon">
+            <%= f.number_field :priority, required: true, placeholder: "Priority", class: "form-component fc-small" %>
+            <%= render :partial => "shared/form_icon", :locals => {:icon => 'compare_arrows'} %>
         </div>
         <div class="field form-component-c">
-            <%= f.text_field :name, required: true, :value => @selected_category, placeholder: "Category Name", class: "form-component fc-small"  %>
+            <%= f.text_field :name, required: true, :value => category_title, placeholder: "Category Name", class: "form-component fc-small"  %>
             <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+        </div>
+        <div class="field">
+            <%= f.label :is_published %><br>
+            <%= f.check_box :is_published %>
         </div>
         <%= hidden_field_tag :user_id, @user.id %>
         <div class="field form-component-c fc-active ">

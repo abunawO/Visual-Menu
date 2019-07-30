@@ -111,6 +111,10 @@
       transform: rotate(90deg);
     }
   }
+  &.no-box {
+    border: none;
+    margin: 15px 0;
+  }
   .form-component {
     -webkit-appearance: none;
     -moz-appearance: none;
