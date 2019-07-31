@@ -40,6 +40,7 @@ class StaticPagesController < ApplicationController
     category = Category.find(params["category_id"])
     category.name = params["name"]
     category.priority = params["priority"]
+    category.is_published = if params["is_published"] == "on" then true else false end
     if category.save!
       flash[:success] = "Category was successfully updated."
      redirect_to root_url

@@ -133,13 +133,16 @@ class UsersController < ApplicationController
 
        if @user.microposts
          user_categories.each do |category|
-           @categories[category.name] = @user.microposts.where(:category_id => category.id)
+           @categories[category] = @user.microposts.where(:category_id => category.id)
          end
        else
          user_categories.map(&:name).each do |title|
            @categories[title] = []
          end
        end
+
+       @categories = @categories.sort_by { |k,v| k.priority}
+       @categories
 
      rescue ActiveRecord::RecordNotFound => e
        @user = nil

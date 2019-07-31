@@ -26,7 +26,7 @@
               <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
             </div>
             <div class="field form-component-c no-box">
-                <%= check_box :is_published, id: 'checkbox' %>
+                <%= check_box_tag :is_published, nil, category.is_published %>
                  <label for="checkbox">
                   Publish
                 </label>

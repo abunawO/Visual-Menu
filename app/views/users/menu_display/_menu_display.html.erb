@@ -1,10 +1,10 @@
 
-
-<% @categories.each do |category_title, category_items| %>
+<% @categories.each do |category, category_items| %>
+  <% if category.is_published %>
     <div class='microposts-c'>
       <button class='microposts-title' onclick='openMicropostList(this)'>
         <span class='micropost-t-left'>
-          <%= category_title %>
+          <%= category.name %>
         </span>
         <span class='material-icons openListIcon'>keyboard_arrow_down</span>
       </button>
@@ -14,6 +14,7 @@
         <%= render :partial => "microposts/micropost_to_modal", locals: {micropost: micropost} %>
       <% end %>
     </div>
+  <% end %>
 <% end %>
 
 <script>
