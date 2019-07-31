@@ -4,42 +4,42 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    if current_user
-      @categories = Category.where(:user_id => current_user.id)
-    else
-      redirect_to root_url
-    end
+    #if current_user
+      #@categories = Category.where(:user_id => current_user.id)
+    #else
+    redirect_to root_url
+    #end
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
-    if current_user
-      @user = current_user
-    else
-      redirect_to root_url
-    end
+    #if current_user
+      #@user = current_user
+    #else
+    redirect_to root_url
+    #end
   end
 
   # GET /categories/new
   def new
-    if current_user
-      @user = current_user
-      @category = Category.new
-    else
-      redirect_to root_url
-    end
+    #if current_user
+      #@user = current_user
+      #@category = Category.new
+    #else
+    redirect_to root_url
+    #end
   end
 
   # GET /categories/1/edit
   def edit
-    if current_user
-      @user = current_user
-      @category = Category.find(params["id"])
-      @selected_category = @category.name
-    else
-      redirect_to root_url
-    end
+    #if current_user
+      #@user = current_user
+      #@category = Category.find(params["id"])
+      #@selected_category = @category.name
+    #else
+    redirect_to root_url
+    #end
   end
 
   # POST /categories
