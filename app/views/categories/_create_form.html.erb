@@ -2,17 +2,13 @@
     <h3>Create a Category</h3>
     <%= form_for(@category) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
-          <%= f.label :priority %><br>
-          <%= f.number_field :priority,required: true %>
-        </div>
         <div class="field form-component-c">
             <%= f.text_field :name, required: true, placeholder: "Category Name", class: "form-component fc-small"  %>
             <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
         </div>
         <%= hidden_field_tag :user_id, @user.id %>
         <div class="field form-component-c fc-active ">
-            <%= f.submit "Post", class: 'fc-hide', id: 'send' %>
+            <%= f.submit "Post", class: 'fc-hide', id: 'create_category' %>
             <label class='form-component fc-small fc-point' for="send">
             Submit
             <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>

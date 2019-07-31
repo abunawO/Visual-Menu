@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 
   patch "/microposts/:id" => 'microposts#edit'
 
+  post "category_edit_save" => 'static_pages#update'
+
   get 'info_edit'  => 'users#info_edit'
 
   get 'category_new' =>  'categories#new'

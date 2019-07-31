@@ -1,12 +1,12 @@
 <div class='create-category-wrapper'>
     <%= form_for(@category) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
-          <%= f.label :priority, required: true %><br>
-          <%= f.number_field :priority %>
-        </div>
         <div class="field form-component-c">
             <%= f.text_field :name, required: true, :value => @selected_category, placeholder: "Category Name", class: "form-component fc-small"  %>
+            <div class="field">
+              <%= f.label :priority %><br>
+              <%= f.number_field :priority %>
+            </div>
             <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
         </div>
         <%= hidden_field_tag :user_id, @user.id %>

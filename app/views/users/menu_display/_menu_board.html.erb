@@ -5,20 +5,46 @@
       </div>
     </div>
   <h3>Published Categories</h3>
-  <% @categories.each do |category_title, category_items| %>
+  <% @categories.each do |category, category_items| %>
       <div class='microposts-c'>
-        <button class='microposts-title title-board'>
+        <button class='microposts-title title-board' onclick="openCategorySettings(this)">
           <span class='material-icons openCategorySettings'>
             settings
           </span>
           <span class='micropost-t-left'>
-            <%= cleanCategoryTitle(category_title) %>
+            <%= cleanCategoryTitle(category.name) %>
           </span>
         </button>
+        <div id="edit-category" class='create-category-wrapper edit-category'>
+          <%= form_tag({controller: "static_pages", action: "update"}, method: "post", class: "nifty_form") do %>
+            <div class="field form-component-c rotate-icon">
+              <%= text_field_tag :priority, category.priority, required: true, placeholder: "Category Priority Number", class: "form-component fc-small" %>
+              <%= render :partial => "shared/form_icon", :locals => {:icon => 'compare_arrows'} %>
+            </div>
+            <div class="field form-component-c">
+              <%= text_field_tag :name, category.name, required: true, placeholder: "Category Name", class: "form-component fc-small" %>
+              <%= render :partial => "shared/form_icon", :locals => {:icon => 'edit'} %>
+            </div>
+            <div class="field form-component-c no-box">
+                <%= check_box :is_published, id: 'checkbox' %>
+                 <label for="checkbox">
+                  Publish
+                </label>
+            </div>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= hidden_field_tag :category_id, category.id %>
+            <div class="field form-component-c fc-active ">
+              <label class='form-component fc-small fc-point' >
+                <%= submit_tag("Submit", style: "border: none; font-size: 15px;") %>
+                <%= render :partial => "shared/form_icon", :locals => {:icon => 'send'} %>
+              </label>
+            </div>
+          <% end %>
+        </div>
         <ol class="menu_display_user">
           <li class="micropost micropost-create-btn">
             <div class='micropost-action'>
-              <%= link_to micropost_new_path(:category => category_title) do %>
+              <%= link_to micropost_new_path(:category => category.name) do %>
                 <div class='micropost-image-c'>
                   <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
                 </div>
@@ -39,3 +65,9 @@
   <% end %>
 
 </div>
+
+<script>
+function openCategorySettings(props) {
+  props.parentElement.querySelector("#edit-category").classList.toggle("active")
+}
+</script>

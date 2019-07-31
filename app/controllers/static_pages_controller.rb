@@ -22,23 +22,35 @@ class StaticPagesController < ApplicationController
 
       if @user.microposts
         user_categories.each do |category|
-          @categories["#{category.priority} #{category.name}"] = @user.microposts.where(:category_id => category.id)
+          @categories[category] = @user.microposts.where(:category_id => category.id)
         end
       else
         user_categories.map(&:name).each do |title|
           @categories[title] = []
         end
       end
-      @categories = @categories.sort_by { |k,v| k.scan(/\d+/).first.to_i }
+
+      @categories = @categories.sort_by { |k,v| k.priority}
       @categories
     end
 
   end
 
+  def update
+    category = Category.find(params["category_id"])
+    category.name = params["name"]
+    category.priority = params["priority"]
+    if category.save!
+      flash[:success] = "Category was successfully updated."
+     redirect_to root_url
+    else
+      flash[:error] = "AN error accurred while updating the category."
+    end
+  end
+
+  #can be used in view
   def cleanCategoryTitle string
-    str = string.dup
-    str = str[1,str.length].strip
-    str
+    string.strip
   end
 
   def contact_us

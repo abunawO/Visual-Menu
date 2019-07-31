@@ -31,7 +31,7 @@ class MicropostsController < ApplicationController
   def new
     @micropost = Micropost.new
     @selected_category = params[:category]
-    @category_id = Category.where("name LIKE ?", "%#{@selected_category.gsub!(/\d+/,"").lstrip}%").first.id
+    @category_id = Category.where("name LIKE ?", "%#{@selected_category}%").first.id
   end
 
   def edit
@@ -55,7 +55,9 @@ class MicropostsController < ApplicationController
     #@selected_category = params[:category]
     #@category_id = Category.where("name LIKE ?", "%#{@selected_category}%").first.id
 
-    update_micropost(params) if !params['edit_clicked']
+    if !params['edit_clicked']
+      update_micropost(params)
+    end
   end
 
   def update_micropost params
@@ -67,7 +69,7 @@ class MicropostsController < ApplicationController
 
     if @micropost.save
       flash[:success] = "Menu item updated successfully."
-      redirect_to "/users/#{current_user.id}"
+      redirect_to root_url
     else
       flash[:info] = "An error occured while saving the menu item."
     end
