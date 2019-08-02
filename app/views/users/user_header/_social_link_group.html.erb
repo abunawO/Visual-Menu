@@ -1,31 +1,41 @@
 <div class='user-profile-links'>
     <div class='user-profile-list'>
-        <%= render partial: "/users/user_header/social_link", locals: {
-            image: "/assets/social/ubereats.svg",
-            link: @user.ubereats_link,
-            alt: 'ubereats-link'
-        } %>
-        <%= render partial: "/users/user_header/social_link", locals: {
-            image: "/assets/social/doordash.svg",
-            link: @user.doordash_link,
-            alt: 'doordash-link'
-        } %>
-        <%= render partial: "/users/user_header/social_link", locals: {
-            image: "/assets/social/grubhub.svg",
-            link: @user.grubhub_link,
-            alt: 'grubhub-link'
-        } %>
+        <% if  @user.ubereats_link.present? %>
+          <%= render partial: "/users/user_header/social_link", locals: {
+              image: "/assets/social/ubereats.svg",
+              link: @user.ubereats_link,
+              alt: 'ubereats-link'
+          } %>
+        <% end %>
+        <% if  @user.doordash_link.present? %>
+          <%= render partial: "/users/user_header/social_link", locals: {
+              image: "/assets/social/doordash.svg",
+              link: @user.doordash_link,
+              alt: 'doordash-link'
+          } %>
+        <% end %>
+        <% if  @user.grubhub_link.present? %>
+          <%= render partial: "/users/user_header/social_link", locals: {
+              image: "/assets/social/grubhub.svg",
+              link: @user.grubhub_link,
+              alt: 'grubhub-link'
+          } %>
+        <% end %>
     </div>
     <div class='user-profile-list'>
-        <%= render partial: "/users/user_header/social_link", locals: {
-            image: "/assets/social/facebook.svg",
-            link: @user.facebook_link,
-            alt: 'facebook-link'
-        } %>
-        <%= render partial: "/users/user_header/social_link", locals: {
-            image: "/assets/social/instagram.png",
-            link: @user.instagram_link,
-            alt: 'instagram-link'
-        } %>
+      <% if  @user.facebook_link.present? %>
+          <%= render partial: "/users/user_header/social_link", locals: {
+              image: "/assets/social/facebook.svg",
+              link: @user.facebook_link,
+              alt: 'facebook-link'
+          } %>
+        <% end %>
+        <% if  @user.instagram_link.present? %>
+          <%= render partial: "/users/user_header/social_link", locals: {
+              image: "/assets/social/instagram.png",
+              link: @user.instagram_link,
+              alt: 'instagram-link'
+          } %>
+        <% end %>
     </div>
 </div>
