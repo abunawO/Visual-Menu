@@ -18,6 +18,7 @@
       <ul>
       <li><p>Features</p><li>
       <li><p><span class='material-icons'>done</span>Integration with social apps for sharing.</p><li>
+        <li><p><span class='material-icons'>done</span>Integration with food delivery platforms.</p><li>
       <li><p><span class='material-icons'>done</span>Customer loyalty program.</p><li>
       <li><p><span class='material-icons'>done</span>Up-sell opportunities.</p><li>
       <li><p><span class='material-icons'>done</span>Share your menu everywhere.</p><li>
@@ -52,24 +53,24 @@
                   <div class="form-component-c">
                     <%= f.password_field :password_confirmation, class: 'form-component fc-small', placeholder: "Confirm password", required: true %>
                   </div>
-                  <!-- address-line1 input-->
+                  <!--
                   <div class="form-component-c">
-                    <%= f.text_field :address_line1, class: 'form-component fc-small', placeholder: "Street address, P.O. box, company name, c/o" %>
+                    < f.text_field :address_line1, class: 'form-component fc-small', placeholder: "Street address, P.O. box, company name, c/o" %>
                   </div>
-                  <!-- address-line2 input-->
+
                   <div class="form-component-c">
-                    <%= f.text_field :address_line2, class: 'form-component fc-small', placeholder: "Apartment, suite , unit, building, floor, etc." %>
+                    < f.text_field :address_line2, class: 'form-component fc-small', placeholder: "Apartment, suite , unit, building, floor, etc." %>
                   </div>
-                  <!-- city input-->
+
                   <div class="form-component-c">
-                    <%= f.text_field :city, class: 'form-component fc-small', placeholder: "City / Town" %>
+                    < f.text_field :city, class: 'form-component fc-small', placeholder: "City / Town" %>
                   </div>
-                  <!-- region input-->
-                  <%= f.select(:region, options_for_select(@states, :selected => f.object.region), {:prompt => "Select State"}, :class => "form-component-c form-component fc-small") %>
-                  <!-- postal-code input-->
+
+                  < f.select(:region, options_for_select(@states, :selected => f.object.region), {:prompt => "Select State"}, :class => "form-component-c form-component fc-small") %>
+
                   <div class="form-component-c">
-                    <%= f.text_field :postal_code, class: 'form-component fc-small', placeholder: "Zip / Postal Code" %>
-                  </div>
+                    < f.text_field :postal_code, class: 'form-component fc-small', placeholder: "Zip / Postal Code" %>
+                  </div> -->
                   <div class='login-card-footer'>
                   <p>Sign up for a free 1 month trial with no obligation.</p>
                   </div>
