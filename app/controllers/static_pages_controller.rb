@@ -14,15 +14,12 @@ class StaticPagesController < ApplicationController
         @categories_select = []
       end
 
-      @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
-
-      @microposts = @user.microposts.paginate(page: params[:page])
+      @micropost  = Micropost.where(:user_id => current_user.id)
       @categories    = {}
 
-      if @user.microposts
+      if @micropost
         user_categories.each do |category|
-          @categories[category] = @user.microposts.where(:category_id => category.id)
+          @categories[category] = @micropost.where(:category_id => category.id)
         end
       else
         user_categories.map(&:name).each do |title|

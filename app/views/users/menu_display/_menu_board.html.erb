@@ -44,7 +44,7 @@
         <ol class="menu_display_user">
           <li class="micropost micropost-create-btn">
             <div class='micropost-action'>
-              <%= link_to micropost_new_path(:category => category.name) do %>
+              <%= link_to micropost_new_path(:category => category.name, :category_id => category.id) do %>
                 <div class='micropost-image-c'>
                   <%= image_tag '/assets/create-micropost-placeholder.png', class: "mp-image" %>
                 </div>
