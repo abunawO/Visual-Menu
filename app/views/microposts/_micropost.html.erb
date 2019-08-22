@@ -7,7 +7,7 @@
     </div>
     <div class='micropost-detail'>
       <p><%= micropost.content %></p>
-      <span class='micropost-detail-price'>$<%= micropost.price %></span>
+      <span class='micropost-detail-price'><%= number_to_currency(micropost.price) %></span>
     </div>
   <% end %>
 </li>
