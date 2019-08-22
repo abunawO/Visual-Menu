@@ -366,13 +366,12 @@ p {
   position: fixed;
   // top: 0;
   top: -100vh;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
   // background-color: rgba($s-text-primary, 0.3);
   z-index: 10500;
   justify-content: center;
-  transition: 0.3s ease-in-out;
+  align-items: center;
+  right: 0;
+  left: 0;
   &.active {
     display: flex;
     align-items: flex-start;
@@ -483,6 +482,7 @@ p {
     }
   }
   @media (max-width: 500px) {
+    transition: 0.3s ease-in-out;
     .micropost-modal-c {
       position: relative;
       top: auto;
