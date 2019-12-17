@@ -1,4 +1,4 @@
-# Vizhooels plan of action
+# Ignore this README doc
 
 This documentation will contain several thoughts for Vizhooels on how to market, design, build, maintain, etc.
 
