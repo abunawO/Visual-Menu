@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.4.9'
 # gem 'bootstrap-sass', '3.2.0.0'
 gem 'rails',        '4.2.8'
 gem 'thin'
